@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 210" width="768" height="210" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="210" rx="10" fill="#ffffff"/>
+<text x="384.0" y="26" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">'C' = 0x43 in 8E1 (even parity)</text>
+<rect x="20" y="44" width="56" height="116" fill="#eef0f2" stroke="#ffffff" stroke-width="2"/>
+<text x="48.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">idle</text>
+<text x="48.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="76" y="44" width="56" height="116" fill="#fde2e1" stroke="#ffffff" stroke-width="2"/>
+<text x="104.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#b42318">Start</text>
+<text x="104.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="132" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="160.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D0</text>
+<text x="160.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="188" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="216.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D1</text>
+<text x="216.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="244" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="272.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D2</text>
+<text x="272.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="300" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="328.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D3</text>
+<text x="328.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="356" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="384.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D4</text>
+<text x="384.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="412" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="440.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D5</text>
+<text x="440.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="468" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="496.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D6</text>
+<text x="496.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="524" y="44" width="56" height="116" fill="#e0ecfb" stroke="#ffffff" stroke-width="2"/>
+<text x="552.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D7</text>
+<text x="552.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0</text>
+<rect x="580" y="44" width="56" height="116" fill="#fff1cc" stroke="#ffffff" stroke-width="2"/>
+<text x="608.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#a16207">P</text>
+<text x="608.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="636" y="44" width="56" height="116" fill="#dff3e4" stroke="#ffffff" stroke-width="2"/>
+<text x="664.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#15803d">Stop</text>
+<text x="664.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<rect x="692" y="44" width="56" height="116" fill="#eef0f2" stroke="#ffffff" stroke-width="2"/>
+<text x="720.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">idle</text>
+<text x="720.0" y="184" font-size="18" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<polyline fill="none" stroke="#111827" stroke-width="3" stroke-linejoin="round" points="20,80 76,80 76,140 132,140 132,80 244,80 244,140 468,140 468,80 524,80 524,140 580,140 580,80 748,80"/>
+<text x="14" y="85" font-size="12" text-anchor="end" fill="#6b7280">1</text>
+<text x="14" y="145" font-size="12" text-anchor="end" fill="#6b7280">0</text>
+</svg>

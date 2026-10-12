@@ -14,10 +14,7 @@ Every byte is sent inside its own frame:
 | **Parity bit** | 0 or 1 | `0` / `1` | Optional simple error check (see below) |
 | **Stop bit(s)** | 1, 1.5 or 2 | always `1` | Returns the line to high so the next start bit's falling edge can be seen |
 
-```
- idle  Start  D0   D1   D2   D3   D4   D5   D6   D7  Parity Stop  idle
-   1     0    LSB  ...                          MSB  (opt.)   1     1
-```
+![One UART frame: idle, start bit, data bits LSB first, optional parity, stop bit](assets/serial/frame-structure.svg)
 
 ### How the receiver reads it
 
@@ -74,12 +71,7 @@ Not every bit carries data. With 8N1, 8 of the 10 bits are data, so the **effici
 
 Sent LSB first, the data bits are `D0…D7` = `1 0 0 0 0 0 1 0`.
 
-```
- idle  S    D0   D1   D2   D3   D4   D5   D6   D7   Sp  idle
-‾‾‾‾‾|    |‾‾‾‾|                        |‾‾‾‾|    |‾‾‾‾‾‾‾‾‾
-     |____|    |________________________|    |____|
-  1    0    1    0    0    0    0    0    1    0    1    1
-```
+![Waveform of 'A' (0x41) in 8N1](assets/serial/frame-A-8N1.svg)
 
 10 bits on the wire for one byte. At 9600 baud this frame takes 10 × 104.17 µs ≈ 1.04 ms.
 
@@ -89,12 +81,7 @@ Sent LSB first, the data bits are `D0…D7` = `1 0 0 0 0 0 1 0`.
 
 The data contains **three** `1`s (odd), so for even parity the parity bit is **`1`**, making the total four.
 
-```
- idle  S    D0   D1   D2   D3   D4   D5   D6   D7   P    Sp  idle
-‾‾‾‾‾|    |‾‾‾‾‾‾‾‾‾|                   |‾‾‾‾|    |‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-     |____|         |___________________|    |____|
-  1    0    1    1    0    0    0    0    1    0    1    1    1
-```
+![Waveform of 'C' (0x43) in 8E1](assets/serial/frame-C-8E1.svg)
 
 With **odd** parity the same byte would get parity bit `0`.
 
@@ -106,12 +93,7 @@ If noise flips `D2` from `0` to `1`, the receiver counts five `1`s (data + parit
 
 The data contains **four** `1`s (even), so for odd parity the parity bit is **`1`**.
 
-```
- idle  S    D0   D1   D2   D3   D4   D5   D6   P    Sp  idle
-‾‾‾‾‾|    |‾‾‾‾‾‾‾‾‾|    |‾‾‾‾|         |‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-     |____|         |____|    |_________|
-  1    0    1    1    0    1    0    0    1    1    1    1
-```
+![Waveform of 'K' (0x4B) in 7O1](assets/serial/frame-K-7O1.svg)
 
 Notice that the parity bit and the stop bit are both `1`, so the line simply stays high until the next start bit.
 
@@ -119,9 +101,9 @@ Notice that the parity bit and the stop bit are both `1`, so the line simply sta
 
 A logic analyser shows these bits, from the start bit to the stop bit:
 
-```
-0  0 1 0 0 1 1 1 0  1
-```
+![A captured 8N1 frame](assets/serial/frame-decode-8N1.svg)
+
+As bits: `0  0 1 0 0 1 1 1 0  1`
 
 1. First bit `0` is the start bit; last bit `1` is the stop bit – the frame is valid.
 2. The data bits in the order received (D0…D7): `0 1 0 0 1 1 1 0`.
