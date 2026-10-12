@@ -563,7 +563,7 @@ a { color: var(--accent); }
 
 .entry-theme { position: absolute; top: 16px; right: 16px; }
 
-.entry-inner { max-width: 22ch; animation: rise 0.7s ease both; }
+.entry-inner { max-width: 56rem; animation: rise 0.7s ease both; }
 .entry-inner > * { text-shadow: 0 0 8px var(--bg), 0 0 18px var(--bg), 0 0 32px var(--bg); }
 
 .entry-title {

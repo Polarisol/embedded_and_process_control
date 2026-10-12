@@ -1,10 +1,10 @@
 {
   "site": {
-    "title": "Practical Programming",
+    "title": "Embedded System and Process Control",
     "author": "Dr. Tal Alon",
     "home": "home.md",
     "views": "polarisol-embedded-and-process-control",
-    "footer": "Practical Programming · Dr. Tal Alon"
+    "footer": "Embedded System and Process Control · Dr. Tal Alon"
   },
   "topics": []
 }
