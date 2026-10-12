@@ -105,7 +105,7 @@ To update the site later, upload or push the changed files. The site refreshes b
 index.html            the whole site: Main page + every topic (switches in place)
 topic.html            redirect for old topic.html?id=... links
 css/style.css         colours, layout, colour schemes
-js/ascii-bg.js        interactive ASCII background
+js/ascii-bg.js        interactive field-lines background
 js/app.js             reads topics.json and builds the pages
 js/grid-sim.js        the grid path-finding simulation (BFS, DFS, A*)
 content/topics.json   your topics  ← edit this

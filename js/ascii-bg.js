@@ -1,6 +1,8 @@
 /*
- * Full-screen ASCII field that drifts on its own and reacts to the mouse
- * (or finger on phones). Click / tap sends out a ripple.
+ * Full-screen "field lines" background: a grid of short needles that drift
+ * with a slow flow and curl around the mouse (or finger on phones) like
+ * iron filings around a current-carrying wire. Click / tap sends out a pulse
+ * that flips the needles outward as it passes.
  *
  * Usage: <canvas id="ascii-bg" aria-hidden="true"></canvas>
  *        set data-intensity="dim" (any time) for a quieter background behind text.
@@ -13,22 +15,23 @@
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext('2d');
 
-  const RAMP = ' .,:-=+*%#@';
   const ALPHA_STEPS = 8;
   const FRAME_MS = 1000 / 30;
-  const RIPPLE_SPEED = 280;  // px per second
-  const RIPPLE_LIFE = 1.6;   // seconds
+  const PULSE_SPEED = 340;  // px per second
+  const PULSE_LIFE = 1.8;   // seconds
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  let w = 0, h = 0, cw = 0, ch = 0, cols = 0, rows = 0, radius = 120;
+  let w = 0, h = 0, gap = 24, cols = 0, rows = 0, radius = 160;
   let colors = ['110,231,183', '247,163,92'];
   let time = 0, lastFrame = 0, rafId = 0;
-  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? 0.14 : 1);
+  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? 0.16 : 1);
   let dimFactor = dimTarget();  // eases toward dimTarget() so intensity changes fade
-  const pointer = { x: -1e4, y: -1e4, strength: 0, target: 0 };
-  const ripples = [];
-  // buckets[color][alphaStep] = flat list of x, y, charIndex
-  const buckets = [0, 1].map(() => Array.from({ length: ALPHA_STEPS }, () => []));
+  const pointer = { x: -1e4, y: -1e4, strength: 0, target: 0, spin: 1 };
+  const pulses = [];
+  // lines[color][alphaStep] = flat list of x1, y1, x2, y2
+  const lines = [0, 1].map(() => Array.from({ length: ALPHA_STEPS }, () => []));
+  // dots[alphaStep] = flat list of x, y (the faint grid that shows where needles rest)
+  const dots = Array.from({ length: ALPHA_STEPS }, () => []);
 
   function readColors() {
     const s = getComputedStyle(document.documentElement);
@@ -43,81 +46,114 @@
     w = window.innerWidth;
     h = window.innerHeight;
     const small = w < 640;
-    const size = small ? 15 : 14;
-    ch = size * 1.3;
-    cw = size * 0.78;
-    radius = small ? 90 : 130;
-    cols = Math.ceil(w / cw) + 1;
-    rows = Math.ceil(h / ch) + 1;
+    gap = small ? 22 : 26;
+    radius = small ? 120 : 180;
+    cols = Math.ceil(w / gap) + 1;
+    rows = Math.ceil(h / gap) + 1;
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.font = `${size}px "JetBrains Mono", ui-monospace, monospace`;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
+    ctx.lineCap = 'round';
     if (reduced.matches) draw();
   }
 
-  // Smooth drifting bands built from a few overlapping sine waves.
-  function field(x, y, t) {
-    const v =
-      Math.sin(x * 0.011 + t * 0.7) +
-      Math.sin(y * 0.017 - t * 0.5) +
-      Math.sin((x + y) * 0.007 + t * 0.35) +
-      Math.sin(Math.hypot(x - w * 0.7, y - h * 0.3) * 0.014 - t * 0.9);
-    const n = (v + 4) / 8;                 // 0..1
-    return Math.max(0, n - 0.5) / 0.5;     // sparse: most cells stay blank
+  // Slowly turning flow direction (radians) and a sparse "energy" level (0..1).
+  function flow(x, y, t) {
+    const a =
+      Math.sin(x * 0.004 + t * 0.15) * 1.6 +
+      Math.cos(y * 0.005 - t * 0.12) * 1.6 +
+      Math.sin((x - y) * 0.002 + t * 0.08);
+    const e =
+      Math.sin(x * 0.009 - t * 0.6) +
+      Math.sin(y * 0.012 + t * 0.45) +
+      Math.sin((x + y) * 0.006 - t * 0.3);
+    return [a, Math.max(0, (e + 3) / 6 - 0.45) / 0.55];
   }
 
   function draw() {
-    for (const group of buckets) for (const b of group) b.length = 0;
+    for (const group of lines) for (const b of group) b.length = 0;
+    for (const b of dots) b.length = 0;
 
     const r2 = 2 * radius * radius;
     const ps = pointer.strength;
+    const half = gap * 0.42;
 
     for (let r = 0; r < rows; r++) {
-      const y = r * ch;
+      // Offset every other row for a less mechanical, hex-like grid.
+      const y = r * gap;
+      const xo = r & 1 ? gap / 2 : 0;
       for (let c = 0; c < cols; c++) {
-        const x = c * cw;
+        const x = c * gap + xo;
+        let [angle, energy] = flow(x, y, time);
+
         const dx = x - pointer.x;
         const dy = y - pointer.y;
         const d2 = dx * dx + dy * dy;
         const infl = ps > 0.01 ? ps * Math.exp(-d2 / r2) : 0;
-
-        let ring = 0;
-        for (const rp of ripples) {
-          const rd = Math.hypot(x - rp.x, y - rp.y) - rp.r;
-          if (rd > -40 && rd < 40) ring += Math.exp(-(rd * rd) / 450) * rp.fade;
+        if (infl > 0.01) {
+          // Field lines circle the pointer; blend toward the tangent direction.
+          const tangent = Math.atan2(dy, dx) + (Math.PI / 2) * pointer.spin;
+          let diff = tangent - angle;
+          diff = Math.atan2(Math.sin(diff), Math.cos(diff));
+          angle += diff * Math.min(1, infl * 1.6);
         }
 
-        const b = Math.min(1, field(x, y, time) * 0.8 + infl * 0.95 + ring);
-        if (b < 0.04) continue;
-
-        // Characters near the pointer get nudged outward.
-        let ox = x, oy = y;
-        if (infl > 0.02) {
-          const d = Math.sqrt(d2) || 1;
-          ox += (dx / d) * infl * 10;
-          oy += (dy / d) * infl * 10;
+        let kick = 0;
+        for (const p of pulses) {
+          const pd = Math.hypot(x - p.x, y - p.y) - p.r;
+          if (pd > -50 && pd < 50) {
+            const k = Math.exp(-(pd * pd) / 600) * p.fade;
+            if (k > kick) {
+              kick = k;
+              // The passing pulse points needles straight away from where it started.
+              const radial = Math.atan2(y - p.y, x - p.x);
+              let diff = radial - angle;
+              diff = Math.atan2(Math.sin(diff), Math.cos(diff));
+              angle += diff * Math.min(1, k * 1.4);
+            }
+          }
         }
 
-        const ci = 1 + Math.floor(b * (RAMP.length - 2));
-        const alpha = (0.1 + b * 0.75) * dimFactor;
+        const b = Math.min(1, energy * 0.7 + infl * 0.9 + kick);
+        const restAlpha = 0.18 * dimFactor;
+        if (b < 0.05) {
+          dots[Math.min(ALPHA_STEPS - 1, Math.floor(restAlpha * ALPHA_STEPS))].push(x, y);
+          continue;
+        }
+
+        const len = half * (0.35 + b * 0.85);
+        const ux = Math.cos(angle) * len;
+        const uy = Math.sin(angle) * len;
+        const alpha = (0.12 + b * 0.78) * dimFactor;
         const step = Math.min(ALPHA_STEPS - 1, Math.floor(alpha * ALPHA_STEPS));
-        const hot = infl + ring > 0.3 ? 1 : 0;
-        buckets[hot][step].push(ox, oy, ci);
+        const hot = infl + kick > 0.35 ? 1 : 0;
+        lines[hot][step].push(x - ux, y - uy, x + ux, y + uy);
       }
     }
 
     ctx.clearRect(0, 0, w, h);
+
+    for (let s = 0; s < ALPHA_STEPS; s++) {
+      const list = dots[s];
+      if (!list.length) continue;
+      ctx.fillStyle = `rgba(${colors[0]},${((s + 0.5) / ALPHA_STEPS).toFixed(3)})`;
+      ctx.beginPath();
+      for (let i = 0; i < list.length; i += 2) ctx.rect(list[i] - 0.75, list[i + 1] - 0.75, 1.5, 1.5);
+      ctx.fill();
+    }
+
     for (let k = 0; k < 2; k++) {
+      ctx.lineWidth = k ? 2 : 1.5;
       for (let s = 0; s < ALPHA_STEPS; s++) {
-        const list = buckets[k][s];
+        const list = lines[k][s];
         if (!list.length) continue;
-        ctx.fillStyle = `rgba(${colors[k]},${((s + 0.5) / ALPHA_STEPS).toFixed(3)})`;
-        for (let i = 0; i < list.length; i += 3) {
-          ctx.fillText(RAMP[list[i + 2]], list[i], list[i + 1]);
+        ctx.strokeStyle = `rgba(${colors[k]},${((s + 0.5) / ALPHA_STEPS).toFixed(3)})`;
+        ctx.beginPath();
+        for (let i = 0; i < list.length; i += 4) {
+          ctx.moveTo(list[i], list[i + 1]);
+          ctx.lineTo(list[i + 2], list[i + 3]);
         }
+        ctx.stroke();
       }
     }
   }
@@ -129,14 +165,14 @@
     lastFrame = now;
     time += dt;
 
-    pointer.strength += (pointer.target - pointer.strength) * Math.min(1, dt * 5);
+    pointer.strength += (pointer.target - pointer.strength) * Math.min(1, dt * 4);
     dimFactor += (dimTarget() - dimFactor) * Math.min(1, dt * 2.5);
-    for (let i = ripples.length - 1; i >= 0; i--) {
-      const rp = ripples[i];
-      rp.age += dt;
-      rp.r = rp.age * RIPPLE_SPEED;
-      rp.fade = 1 - rp.age / RIPPLE_LIFE;
-      if (rp.fade <= 0) ripples.splice(i, 1);
+    for (let i = pulses.length - 1; i >= 0; i--) {
+      const p = pulses[i];
+      p.age += dt;
+      p.r = p.age * PULSE_SPEED;
+      p.fade = 1 - p.age / PULSE_LIFE;
+      if (p.fade <= 0) pulses.splice(i, 1);
     }
     draw();
   }
@@ -159,16 +195,17 @@
     pointer.target = 1;
   };
   const leave = () => { pointer.target = 0; };
-  const addRipple = (x, y) => {
+  const addPulse = (x, y) => {
     if (reduced.matches) return;
-    if (ripples.length > 5) ripples.shift();
-    ripples.push({ x, y, age: 0, r: 0, fade: 1 });
+    if (pulses.length > 5) pulses.shift();
+    pulses.push({ x, y, age: 0, r: 0, fade: 1 });
+    pointer.spin = -pointer.spin;  // each click reverses the "current"
   };
 
   window.addEventListener('pointermove', (e) => move(e.clientX, e.clientY), { passive: true });
   window.addEventListener('pointerdown', (e) => {
     move(e.clientX, e.clientY);
-    addRipple(e.clientX, e.clientY);
+    addPulse(e.clientX, e.clientY);
   }, { passive: true });
   window.addEventListener('touchmove', (e) => {
     const t = e.touches[0];
@@ -196,6 +233,5 @@
 
   readColors();
   resize();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(resize);
   start();
 })();
