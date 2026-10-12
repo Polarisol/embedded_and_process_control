@@ -1,8 +1,9 @@
 /*
  * Full-screen "field lines" background: a grid of short needles that drift
- * with a slow flow and curl around the mouse (or finger on phones) like
- * iron filings around a current-carrying wire. Click / tap sends out a pulse
- * that flips the needles outward as it passes.
+ * and sway across the screen, turn with a slow flow and curl around the mouse
+ * (or finger on phones) like iron filings around a current-carrying wire, with
+ * spiral arms sweeping around it. Click / tap sends out a pulse that flips the
+ * needles outward as it passes.
  *
  * Usage: <canvas id="ascii-bg" aria-hidden="true"></canvas>
  *        set data-intensity="dim" (any time) for a quieter background behind text.
@@ -19,14 +20,18 @@
   const FRAME_MS = 1000 / 30;
   const PULSE_SPEED = 340;  // px per second
   const PULSE_LIFE = 1.8;   // seconds
+  const DIM = 0.1;          // overall opacity behind text
+  const DIM_POINTER = 0.45; // how much of the pointer / pulse glow survives when dim
+  const DRIFT_SPEED = 11;   // px per second
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   let w = 0, h = 0, gap = 24, cols = 0, rows = 0, radius = 160;
   let colors = ['110,231,183', '247,163,92'];
   let time = 0, lastFrame = 0, rafId = 0;
-  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? 0.14 : 1);
+  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? DIM : 1);
   let dimFactor = dimTarget();  // eases toward dimTarget() so intensity changes fade
   const pointer = { x: -1e4, y: -1e4, strength: 0, target: 0, spin: 1 };
+  const drift = { x: 0, y: 0 };  // how far the whole grid has wandered
   const pulses = [];
   // lines[color][alphaStep] = flat list of x1, y1, x2, y2
   const lines = [0, 1].map(() => Array.from({ length: ALPHA_STEPS }, () => []));
@@ -48,8 +53,11 @@
     const small = w < 640;
     gap = small ? 22 : 26;
     radius = small ? 120 : 180;
-    cols = Math.ceil(w / gap) + 1;
-    rows = Math.ceil(h / gap) + 1;
+    // One spare cell on each side so the drifting grid can wrap around off-screen;
+    // an even row count keeps the row offsets alternating across the wrap.
+    cols = Math.ceil(w / gap) + 3;
+    rows = Math.ceil(h / gap) + 3;
+    rows += rows & 1;
     canvas.width = Math.round(w * dpr);
     canvas.height = Math.round(h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -77,25 +85,37 @@
     const r2 = 2 * radius * radius;
     const ps = pointer.strength;
     const half = gap * 0.42;
+    const spanX = cols * gap;
+    const spanY = rows * gap;
+    const sway = gap * 0.28;
+    // The pointer and pulses glow less the dimmer the background is.
+    const calm = Math.min(1, Math.max(0, (1 - dimFactor) / (1 - DIM)));
+    const glow = 1 - (1 - DIM_POINTER) * calm;
 
     for (let r = 0; r < rows; r++) {
       // Offset every other row for a less mechanical, hex-like grid.
-      const y = r * gap;
+      const y0 = (((r * gap + drift.y) % spanY) + spanY) % spanY - 1.5 * gap;
       const xo = r & 1 ? gap / 2 : 0;
       for (let c = 0; c < cols; c++) {
-        const x = c * gap + xo;
+        const x0 = (((c * gap + xo + drift.x) % spanX) + spanX) % spanX - 1.5 * gap;
+        // Needles ride a slow ripple on top of the drift, like weeds in a current.
+        const x = x0 + Math.sin(y0 * 0.011 + time * 0.5) * sway;
+        const y = y0 + Math.cos(x0 * 0.009 + time * 0.4) * sway;
         let [angle, energy] = flow(x, y, time);
 
         const dx = x - pointer.x;
         const dy = y - pointer.y;
         const d2 = dx * dx + dy * dy;
-        const infl = ps > 0.01 ? ps * Math.exp(-d2 / r2) : 0;
+        let infl = ps > 0.01 ? ps * Math.exp(-d2 / r2) : 0;
         if (infl > 0.01) {
           // Field lines circle the pointer; blend toward the tangent direction.
-          const tangent = Math.atan2(dy, dx) + (Math.PI / 2) * pointer.spin;
+          const theta = Math.atan2(dy, dx);
+          const tangent = theta + (Math.PI / 2) * pointer.spin;
           let diff = tangent - angle;
           diff = Math.atan2(Math.sin(diff), Math.cos(diff));
           angle += diff * Math.min(1, infl * 1.6);
+          // Spiral arms sweep around the pointer in the direction of the "current".
+          infl *= 0.65 + 0.35 * Math.sin(3 * theta + Math.sqrt(d2) * 0.04 - pointer.spin * time * 2.4);
         }
 
         let kick = 0;
@@ -114,7 +134,7 @@
           }
         }
 
-        const b = Math.min(1, energy * 0.7 + infl * 0.9 + kick);
+        const b = Math.min(1, energy * 0.7 + (infl * 0.9 + kick) * glow);
         const restAlpha = 0.18;
         if (b < 0.05) {
           dots[Math.min(ALPHA_STEPS - 1, Math.floor(restAlpha * ALPHA_STEPS))].push(x, y);
@@ -126,7 +146,7 @@
         const uy = Math.sin(angle) * len;
         const alpha = 0.12 + b * 0.78;
         const step = Math.min(ALPHA_STEPS - 1, Math.floor(alpha * ALPHA_STEPS));
-        const hot = infl + kick > 0.35 ? 1 : 0;
+        const hot = (infl + kick) * glow > 0.35 ? 1 : 0;
         lines[hot][step].push(x - ux, y - uy, x + ux, y + uy);
       }
     }
@@ -166,6 +186,9 @@
     const dt = Math.min((now - lastFrame) / 1000, 0.1);
     lastFrame = now;
     time += dt;
+    // The drift direction itself turns slowly, so the grid never settles into one heading.
+    drift.x += Math.cos(time * 0.06) * DRIFT_SPEED * dt;
+    drift.y += Math.sin(time * 0.06) * DRIFT_SPEED * dt;
 
     pointer.strength += (pointer.target - pointer.strength) * Math.min(1, dt * 4);
     dimFactor += (dimTarget() - dimFactor) * Math.min(1, dt * 2.5);
