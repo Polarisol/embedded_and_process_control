@@ -41,6 +41,11 @@
       "id": "motors",
       "title": "Motors",
       "icon": "⚙"
+    },
+    {
+      "id": "process-control",
+      "title": "Process Control",
+      "icon": "🎛"
     }
   ]
 }
