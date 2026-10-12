@@ -30,7 +30,8 @@
     {
       "id": "serial-communication",
       "title": "Serial Communication",
-      "icon": "⇄"
+      "icon": "⇄",
+      "material": "topics/serial-frame.md"
     },
     {
       "id": "electronics",
