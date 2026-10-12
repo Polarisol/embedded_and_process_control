@@ -326,7 +326,11 @@ a { color: var(--accent); }
   text-decoration: none;
   white-space: nowrap;
 }
-.site-link-logo { width: 24px; height: 24px; border-radius: 6px; }
+.site-link-logo { width: 24px; height: 24px; flex: 0 0 auto; }
+/* The Practical Programming logo, drawn in the current theme's colours. */
+.site-link-logo .logo-tile { fill: var(--bg); stroke: rgba(var(--glyph), 0.7); stroke-width: 4; }
+.site-link-logo .logo-chevron { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.site-link-logo .logo-cursor { fill: rgb(var(--type-quiz)); }
 .site-link:hover { border-color: var(--accent); background: rgba(var(--glyph), 0.12); }
 @media (max-width: 860px) {
   .site-link { width: 40px; padding: 0; justify-content: center; }
