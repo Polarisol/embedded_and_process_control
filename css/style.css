@@ -311,24 +311,32 @@ a { color: var(--accent); }
 .theme-toggle svg, .view-toggle svg, .icons-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .icons-toggle[aria-pressed="false"] { color: var(--muted); border-style: dashed; }
 
-.py-toggle {
+/* Link to the Practical Programming site, with its logo. */
+.site-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   height: 40px;
-  padding: 0 16px;
+  padding: 0 16px 0 8px;
   border: 1px solid rgba(var(--glyph), 0.55);
   border-radius: 999px;
   background: var(--surface);
   color: var(--text);
   font: 600 0.9rem var(--font-mono);
-  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.py-toggle-icon { color: var(--accent); }
-.colab-link { text-decoration: none; }
-.colab-link .py-toggle-icon { font-weight: 700; }
-.py-toggle:hover, .py-toggle[aria-expanded="true"] { border-color: var(--accent); background: rgba(var(--glyph), 0.12); }
-.py-toggle:focus-visible, .theme-toggle:focus-visible, .view-toggle:focus-visible, .icons-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.site-link-logo { width: 24px; height: 24px; flex: 0 0 auto; }
+/* The Practical Programming logo, drawn in the current theme's colours. */
+.site-link-logo .logo-tile { fill: var(--bg); stroke: rgba(var(--glyph), 0.7); stroke-width: 4; }
+.site-link-logo .logo-chevron { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.site-link-logo .logo-cursor { fill: rgb(var(--type-quiz)); }
+.site-link:hover { border-color: var(--accent); background: rgba(var(--glyph), 0.12); }
+@media (max-width: 860px) {
+  .site-link { width: 40px; padding: 0; justify-content: center; }
+  .site-link-label { display: none; }
+}
+.site-link:focus-visible, .theme-toggle:focus-visible, .view-toggle:focus-visible, .icons-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* Unit icons (beside unit names and atop a unit page) can be switched off. */
 :root[data-icons="off"] .nav-icon, :root[data-icons="off"] .card-icon,
 :root[data-icons="off"] .search-topic-icon { display: none; }
@@ -367,10 +375,6 @@ a { color: var(--accent); }
   border: 1px solid var(--border);
   background: linear-gradient(135deg, var(--sw-bg) 50%, var(--sw-accent) 50%);
 }
-@media (max-width: 420px) {
-  .py-toggle { width: 40px; padding: 0; justify-content: center; }
-  .py-toggle-label { display: none; }
-}
 
 /* Search box in the top bar; on phones it gets its own row under the bar */
 .search { position: relative; flex: 1 1 auto; max-width: 420px; margin: 0 16px 0 auto; }
@@ -393,155 +397,6 @@ a { color: var(--accent); }
   .search { order: 3; flex-basis: 100%; max-width: none; margin: 0; }
 }
 
-/* ---------- Python practice panel ---------- */
-.playground {
-  --pg-width: min(560px, 100%);
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: var(--pg-width);
-  height: 100vh;
-  height: 100dvh;
-  padding: 16px;
-  border-left: 1px solid var(--border);
-  background: var(--bg);
-  box-shadow: var(--shadow);
-  animation: pg-in 0.25s ease both;
-}
-.playground[hidden] { display: none; }
-
-/* On wide screens the page moves over so notes stay readable next to the panel. */
-@media (min-width: 1100px) {
-  .playground { --pg-width: min(560px, 42vw); }
-  body.pg-open { padding-right: min(560px, 42vw); }
-}
-
-.pg-head { display: flex; align-items: center; justify-content: space-between; }
-.pg-title {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.pg-title::before { content: ">_ "; }
-.pg-close {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-}
-.pg-close:hover { border-color: var(--accent); }
-
-.pg-toolbar { display: flex; flex-wrap: wrap; gap: 8px; }
-.pg-toolbar button, .pg-examples {
-  height: 36px;
-  padding: 0 14px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--text);
-  font: 600 0.85rem var(--font-mono);
-  cursor: pointer;
-}
-.pg-toolbar .pg-run { border-color: var(--accent); background: var(--accent); color: var(--accent-contrast); }
-.pg-toolbar button:disabled { opacity: 0.45; cursor: default; }
-.pg-toolbar button:not(:disabled):hover, .pg-examples:hover { border-color: var(--accent); }
-.pg-examples { margin-left: auto; }
-
-.pg-editor {
-  display: flex;
-  flex: 1 1 55%;
-  min-height: 160px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface-2);
-}
-.pg-editor:focus-within { border-color: var(--accent); }
-.pg-gutter, .pg-code, .pg-output, .pg-stdin {
-  font: 0.9rem/1.55 var(--font-mono);
-  tab-size: 4;
-}
-.pg-gutter {
-  flex: 0 0 auto;
-  min-width: 3.2em;
-  margin: 0;
-  padding: 12px 8px;
-  overflow: hidden;
-  border-right: 1px solid var(--border);
-  color: var(--muted);
-  text-align: right;
-  user-select: none;
-  opacity: 0.7;
-}
-.pg-code {
-  flex: 1;
-  min-width: 0;
-  padding: 12px;
-  border: 0;
-  outline: 0;
-  resize: none;
-  background: transparent;
-  color: var(--text);
-  white-space: pre;
-  overflow: auto;
-}
-
-.pg-hint { margin: -4px 0 0; font: 0.75rem var(--font-mono); color: var(--muted); }
-
-.pg-input summary { font: 600 0.85rem var(--font-mono); cursor: pointer; }
-.pg-input summary .muted { font-weight: 400; }
-.pg-stdin {
-  display: block;
-  width: 100%;
-  margin-top: 6px;
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface-2);
-  color: var(--text);
-  resize: vertical;
-}
-.pg-stdin:focus { border-color: var(--accent); outline: 0; }
-
-.pg-out-head { display: flex; align-items: center; gap: 12px; font: 600 0.85rem var(--font-mono); }
-.pg-status { flex: 1; min-width: 0; font-weight: 400; color: var(--muted); }
-.pg-status[data-state="ok"] { color: var(--accent); }
-.pg-status[data-state="error"] { color: rgb(var(--type-video)); }
-.pg-status[data-state="busy"]::before { content: "● "; animation: bot-pulse 1s ease-in-out infinite; }
-.pg-clear {
-  border: 0;
-  background: none;
-  color: var(--muted);
-  font: 600 0.75rem var(--font-mono);
-  cursor: pointer;
-}
-.pg-clear:hover { color: var(--accent); }
-
-.pg-output {
-  flex: 1 1 35%;
-  min-height: 100px;
-  margin: 0;
-  padding: 12px;
-  overflow: auto;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface-2);
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-.pg-output .err { color: rgb(var(--type-video)); }
-.pg-output .note { color: var(--muted); font-style: italic; }
-
 /* ---------- Entry screen (shown until ENTER is pressed) ---------- */
 .entry { display: none; }
 :root[data-entry] .topbar,
@@ -563,7 +418,7 @@ a { color: var(--accent); }
 
 .entry-theme { position: absolute; top: 16px; right: 16px; }
 
-.entry-inner { max-width: 22ch; animation: rise 0.7s ease both; }
+.entry-inner { max-width: 56rem; animation: rise 0.7s ease both; }
 .entry-inner > * { text-shadow: 0 0 8px var(--bg), 0 0 18px var(--bg), 0 0 32px var(--bg); }
 
 .entry-title {
@@ -1342,7 +1197,6 @@ a { color: var(--accent); }
   0% { box-shadow: 0 0 0 0 rgba(var(--glyph), 0.6); background: rgba(var(--glyph), 0.28); }
   100% { box-shadow: 0 0 18px rgba(var(--glyph), 0.18); background: rgba(var(--glyph), 0.1); }
 }
-@keyframes pg-in { from { opacity: 0; translate: 24px 0; } }
 @keyframes bot-bob { 50% { transform: translateY(-5px); } }
 @keyframes bot-pulse { 50% { opacity: 0.3; } }
 @keyframes bot-blink { 0%, 90%, 100% { transform: scaleY(1); } 94% { transform: scaleY(0.1); } }

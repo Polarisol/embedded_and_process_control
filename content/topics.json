@@ -1,10 +1,56 @@
 {
   "site": {
-    "title": "Practical Programming",
+    "title": "Embedded Systems",
     "author": "Dr. Tal Alon",
     "home": "home.md",
     "views": "polarisol-embedded-and-process-control",
-    "footer": "Practical Programming · Dr. Tal Alon"
+    "footer": "Embedded Systems · Dr. Tal Alon"
   },
-  "topics": []
+  "topics": [
+    {
+      "id": "binary-representation",
+      "title": "Binary Representation",
+      "icon": "01"
+    },
+    {
+      "id": "c-language",
+      "title": "The C Language",
+      "icon": "C"
+    },
+    {
+      "id": "tcp-ip",
+      "title": "TCP/IP",
+      "icon": "🌐"
+    },
+    {
+      "id": "microcontrollers",
+      "title": "Microcontrollers",
+      "icon": "▣"
+    },
+    {
+      "id": "serial-communication",
+      "title": "Serial Communication",
+      "icon": "⇄"
+    },
+    {
+      "id": "electronics",
+      "title": "Electronics",
+      "icon": "⚡"
+    },
+    {
+      "id": "sensors",
+      "title": "Sensors",
+      "icon": "📡"
+    },
+    {
+      "id": "motors",
+      "title": "Motors",
+      "icon": "⚙"
+    },
+    {
+      "id": "process-control",
+      "title": "Process Control",
+      "icon": "🎛"
+    }
+  ]
 }
