@@ -24,7 +24,7 @@
   let w = 0, h = 0, gap = 24, cols = 0, rows = 0, radius = 160;
   let colors = ['110,231,183', '247,163,92'];
   let time = 0, lastFrame = 0, rafId = 0;
-  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? 0.16 : 1);
+  const dimTarget = () => (canvas.dataset.intensity === 'dim' ? 0.14 : 1);
   let dimFactor = dimTarget();  // eases toward dimTarget() so intensity changes fade
   const pointer = { x: -1e4, y: -1e4, strength: 0, target: 0, spin: 1 };
   const pulses = [];
@@ -115,7 +115,7 @@
         }
 
         const b = Math.min(1, energy * 0.7 + infl * 0.9 + kick);
-        const restAlpha = 0.18 * dimFactor;
+        const restAlpha = 0.18;
         if (b < 0.05) {
           dots[Math.min(ALPHA_STEPS - 1, Math.floor(restAlpha * ALPHA_STEPS))].push(x, y);
           continue;
@@ -124,7 +124,7 @@
         const len = half * (0.35 + b * 0.85);
         const ux = Math.cos(angle) * len;
         const uy = Math.sin(angle) * len;
-        const alpha = (0.12 + b * 0.78) * dimFactor;
+        const alpha = 0.12 + b * 0.78;
         const step = Math.min(ALPHA_STEPS - 1, Math.floor(alpha * ALPHA_STEPS));
         const hot = infl + kick > 0.35 ? 1 : 0;
         lines[hot][step].push(x - ux, y - uy, x + ux, y + uy);
@@ -132,6 +132,8 @@
     }
 
     ctx.clearRect(0, 0, w, h);
+    // Dim the whole frame at once so faint needles aren't rounded up to the lowest alpha step.
+    ctx.globalAlpha = dimFactor;
 
     for (let s = 0; s < ALPHA_STEPS; s++) {
       const list = dots[s];
