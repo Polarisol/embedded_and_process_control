@@ -28,6 +28,11 @@
       "icon": "▣"
     },
     {
+      "id": "serial-communication",
+      "title": "Serial Communication",
+      "icon": "⇄"
+    },
+    {
       "id": "electronics",
       "title": "Electronics",
       "icon": "⚡"
