@@ -1,4 +1,4 @@
-# Embedded System and Process Control by Dr. Tal Alon
+# Embedded Systems by Dr. Tal Alon
 
 A free, static website for students. It has topic pages with embedded YouTube videos, your written notes, links to your practice bots and an animated ASCII background. It works on laptops and phones.
 
@@ -74,7 +74,7 @@ Then add it to a topic in `topics.json`: `"quizzes": ["quizzes/my-quiz.md"]`. To
 
 The text on the Main page comes from `content/home.md`. Edit it like any other Markdown notes file (to use a different file, set `"home"` in the `site` block).
 
-To change the site name (`title` + `author`, shown as "Embedded System and Process Control by Dr. Tal Alon"), subtitle or footer, edit the `site` block at the top of `topics.json`.
+To change the site name (`title` + `author`, shown as "Embedded Systems by Dr. Tal Alon"), subtitle or footer, edit the `site` block at the top of `topics.json`.
 
 > Tip: if the home page shows an error after an edit, the JSON probably has a missing comma or quote. Paste it into <https://jsonlint.com> to find the error.
 

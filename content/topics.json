@@ -1,10 +1,10 @@
 {
   "site": {
-    "title": "Embedded System and Process Control",
+    "title": "Embedded Systems",
     "author": "Dr. Tal Alon",
     "home": "home.md",
     "views": "polarisol-embedded-and-process-control",
-    "footer": "Embedded System and Process Control · Dr. Tal Alon"
+    "footer": "Embedded Systems · Dr. Tal Alon"
   },
   "topics": []
 }
