@@ -37,13 +37,6 @@
              autocomplete="off" spellcheck="false" enterkeyhint="search">
     </div>
     <div class="topbar-actions">
-      <button class="py-toggle" type="button" aria-expanded="false" aria-controls="playground" title="Practice Python">
-        <span class="py-toggle-icon" aria-hidden="true">&gt;_</span><span class="py-toggle-label">Python</span>
-      </button>
-      <a class="py-toggle colab-link" href="https://colab.research.google.com/#create=true" target="_blank"
-         rel="noopener noreferrer" title="Open a new Google Colab notebook">
-        <span class="py-toggle-icon" aria-hidden="true">co</span><span class="py-toggle-label">Colab</span>
-      </a>
       <button class="view-toggle" type="button" aria-label="Switch to card view"></button>
       <button class="icons-toggle" type="button" aria-label="Hide unit icons" aria-pressed="true"></button>
       <button class="theme-toggle" type="button" aria-label="Colour scheme"></button>
@@ -58,41 +51,6 @@
 
   <footer class="footer" data-site-footer></footer>
 
-  <!-- Python practice area: code runs inside the browser, in a sandboxed worker. -->
-  <aside id="playground" class="playground" aria-label="Python practice" hidden>
-    <div class="pg-head">
-      <h2 class="pg-title">Python practice</h2>
-      <button class="pg-close" type="button" aria-label="Close Python practice">✕</button>
-    </div>
-    <div class="pg-toolbar">
-      <button class="pg-run" type="button" title="Run (Ctrl+Enter)">▶ Run</button>
-      <button class="pg-stop" type="button" disabled>■ Stop</button>
-      <select class="pg-examples" aria-label="Load an example">
-        <option value="">Examples…</option>
-        <option value="hello">Hello</option>
-        <option value="variables">Variables</option>
-        <option value="input">Input</option>
-        <option value="loops">Loops</option>
-        <option value="functions">Functions</option>
-      </select>
-    </div>
-    <div class="pg-editor">
-      <pre class="pg-gutter" aria-hidden="true"></pre>
-      <textarea class="pg-code" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off"
-                aria-label="Python code"></textarea>
-    </div>
-    <p class="pg-hint">Tab indents · Ctrl+Enter runs · Esc closes · your code is saved in this browser</p>
-    <details class="pg-input">
-      <summary>Input <span class="muted">(values for input(), one per line)</span></summary>
-      <textarea class="pg-stdin" rows="3" spellcheck="false" aria-label="Input values, one per line"></textarea>
-    </details>
-    <div class="pg-out-head">
-      <span>Output</span>
-      <span class="pg-status" role="status"></span>
-      <button class="pg-clear" type="button">clear</button>
-    </div>
-    <pre class="pg-output" aria-live="polite"></pre>
-  </aside>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"
           integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi"
@@ -103,6 +61,5 @@
   <script src="js/ascii-bg.js"></script>
   <script src="js/grid-sim.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/playground.js"></script>
 </body>
 </html>
