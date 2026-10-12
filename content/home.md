@@ -1,12 +1,8 @@
-Everyone can create great software solutions today, it is easier than ever with AI.
+Our devices... they are not just matter, they have a soul, a mind of their own. They can sense the world around them, manipulate the physical world and control it, and comunicated with us.
 
-**Knowing how to harness the full power of a computer makes you so much more powerful!** (buhaha!)
+We give them these abilities by **embedding** computer into them, connecting these with **sensors** and **motors** using **electronics**, and **programming** them according to our needs.
 
-But when it comes to **science** and **engineering**, it still requires understanding, careful thought and guidance.
-
-In this site you'll find a lot of material to help you understand the things we learn in class.
-
-> Remember: Programming is learned by doing. Write code, run it, and see what happens.
+This site holds a lot of material that will help you understand the course's material and succeed in your projects.
 
 Don't worry... you'll be fine, as long as you never ever **g̷̈́ͅ█i̶̛͜v̴̧͝■**!
 
