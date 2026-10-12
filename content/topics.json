@@ -9,7 +9,7 @@
   "topics": [
     {
       "id": "binary-representation",
-      "title": "Binary Representation",
+      "title": "Binary Rep.",
       "icon": "01"
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "id": "serial-communication",
-      "title": "Serial Communication",
+      "title": "Serial Com.",
       "icon": "⇄",
       "material": "topics/serial-frame.md"
     },
