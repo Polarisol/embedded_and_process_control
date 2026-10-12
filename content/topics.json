@@ -6,5 +6,41 @@
     "views": "polarisol-embedded-and-process-control",
     "footer": "Embedded Systems · Dr. Tal Alon"
   },
-  "topics": []
+  "topics": [
+    {
+      "id": "binary-representation",
+      "title": "Binary Representation",
+      "icon": "01"
+    },
+    {
+      "id": "c-language",
+      "title": "The C Language",
+      "icon": "C"
+    },
+    {
+      "id": "tcp-ip",
+      "title": "TCP/IP",
+      "icon": "🌐"
+    },
+    {
+      "id": "microcontrollers",
+      "title": "Microcontrollers",
+      "icon": "▣"
+    },
+    {
+      "id": "electronics",
+      "title": "Electronics",
+      "icon": "⚡"
+    },
+    {
+      "id": "sensors",
+      "title": "Sensors",
+      "icon": "📡"
+    },
+    {
+      "id": "engines",
+      "title": "Engines",
+      "icon": "⚙"
+    }
+  ]
 }
