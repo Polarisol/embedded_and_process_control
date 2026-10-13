@@ -1660,10 +1660,19 @@
       window.scrollBy({ top: step * by, behavior: reducedMotion ? 'auto' : 'smooth' });
       return true;
     };
+    // While the arrow keys are in use, the hover mark stays off the unit or item under the
+    // resting mouse pointer, so only the selection is marked; moving the mouse brings it back.
+    let pointer = null;
+    document.addEventListener('mousemove', (e) => {
+      const moved = !pointer || pointer.x !== e.screenX || pointer.y !== e.screenY;
+      pointer = { x: e.screenX, y: e.screenY };
+      if (moved) delete root.dataset.keys;
+    });
     document.addEventListener('keydown', (e) => {
       if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) return;
       if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || entryOpen()) return;
       if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], [role="menu"]')) return;
+      root.dataset.keys = '';
       const items = pageItems();
       const active = document.activeElement;
       const at = items.findIndex((i) => (i.closest('.line-item') || i).contains(active));
