@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 470" width="768" height="470" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="470" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Where does the load go?</text>
+<text x="192" y="58" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">✓ Load on the drain side</text>
+<text x="190" y="84" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">+12 V</text>
+<line x1="100" y1="200" x2="160" y2="200" stroke="#111827" stroke-width="2.5"/>
+<text x="96" y="205" font-size="13" font-weight="bold" text-anchor="end" fill="#1d4ed8">3.3 V</text>
+<line x1="160" y1="170" x2="160" y2="230" stroke="#111827" stroke-width="3"/>
+<line x1="172" y1="167" x2="172" y2="183" stroke="#111827" stroke-width="3"/>
+<line x1="172" y1="192" x2="172" y2="208" stroke="#111827" stroke-width="3"/>
+<line x1="172" y1="217" x2="172" y2="233" stroke="#111827" stroke-width="3"/>
+<polyline points="172,175 190,175 190,155" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="172,225 190,225 190,245" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="172,200 190,200 190,225" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="173,200 184,194 184,206" fill="#111827"/>
+<text x="198" y="170" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">D</text>
+<text x="198" y="240" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">S</text>
+<text x="152" y="190" font-size="14" font-weight="bold" text-anchor="end" fill="#1d4ed8">G</text>
+<line x1="190" y1="90" x2="190" y2="100" stroke="#111827" stroke-width="2.5"/>
+<rect x="155" y="100" width="70" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+<text x="190" y="125" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">LOAD</text>
+<line x1="190" y1="140" x2="190" y2="155" stroke="#111827" stroke-width="2.5"/>
+<line x1="190" y1="245" x2="190" y2="300" stroke="#111827" stroke-width="2.5"/>
+<line x1="190" y1="300" x2="190" y2="310" stroke="#111827" stroke-width="2.5"/>
+<line x1="176" y1="310" x2="204" y2="310" stroke="#111827" stroke-width="2.5"/>
+<line x1="181" y1="316" x2="199" y2="316" stroke="#111827" stroke-width="2.5"/>
+<line x1="186" y1="322" x2="194" y2="322" stroke="#111827" stroke-width="2.5"/>
+<text x="230" y="264" font-size="13" font-weight="bold" text-anchor="start" fill="#111827">S = 0 V</text>
+<text x="50" y="362" font-size="13" font-weight="bold" text-anchor="start" fill="#111827">V_GS = 3.3 − 0 = 3.3 V</text>
+<text x="50" y="380" font-size="13" text-anchor="start" fill="#15803d">→ the MOSFET is fully ON</text>
+<text x="50" y="398" font-size="13" text-anchor="start" fill="#15803d">The load gets almost the</text>
+<text x="50" y="416" font-size="13" text-anchor="start" fill="#15803d">whole 12 V.</text>
+<text x="576" y="58" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">✗ Load on the source side</text>
+<text x="574" y="84" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">+12 V</text>
+<line x1="484" y1="200" x2="544" y2="200" stroke="#111827" stroke-width="2.5"/>
+<text x="480" y="205" font-size="13" font-weight="bold" text-anchor="end" fill="#1d4ed8">3.3 V</text>
+<line x1="544" y1="170" x2="544" y2="230" stroke="#111827" stroke-width="3"/>
+<line x1="556" y1="167" x2="556" y2="183" stroke="#111827" stroke-width="3"/>
+<line x1="556" y1="192" x2="556" y2="208" stroke="#111827" stroke-width="3"/>
+<line x1="556" y1="217" x2="556" y2="233" stroke="#111827" stroke-width="3"/>
+<polyline points="556,175 574,175 574,155" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="556,225 574,225 574,245" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="556,200 574,200 574,225" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="557,200 568,194 568,206" fill="#111827"/>
+<text x="582" y="170" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">D</text>
+<text x="582" y="240" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">S</text>
+<text x="536" y="190" font-size="14" font-weight="bold" text-anchor="end" fill="#1d4ed8">G</text>
+<line x1="574" y1="90" x2="574" y2="155" stroke="#111827" stroke-width="2.5"/>
+<line x1="574" y1="245" x2="574" y2="258" stroke="#111827" stroke-width="2.5"/>
+<rect x="539" y="258" width="70" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+<text x="574" y="283" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">LOAD</text>
+<line x1="574" y1="298" x2="574" y2="310" stroke="#111827" stroke-width="2.5"/>
+<line x1="574" y1="310" x2="574" y2="320" stroke="#111827" stroke-width="2.5"/>
+<line x1="560" y1="320" x2="588" y2="320" stroke="#111827" stroke-width="2.5"/>
+<line x1="565" y1="326" x2="583" y2="326" stroke="#111827" stroke-width="2.5"/>
+<line x1="570" y1="332" x2="578" y2="332" stroke="#111827" stroke-width="2.5"/>
+<text x="614" y="264" font-size="13" font-weight="bold" text-anchor="start" fill="#b42318">S ≈ 1.5 V</text>
+<text x="434" y="362" font-size="13" text-anchor="start" fill="#111827">The source rises with the load,</text>
+<text x="434" y="380" font-size="13" font-weight="bold" text-anchor="start" fill="#111827">so V_GS = 3.3 − 1.5 ≈ 1.8 V</text>
+<text x="434" y="398" font-size="13" text-anchor="start" fill="#b42318">→ the MOSFET is barely ON.</text>
+<text x="434" y="416" font-size="13" text-anchor="start" fill="#b42318">The load gets ≈ 1.5 V, and the</text>
+<text x="434" y="434" font-size="13" text-anchor="start" fill="#b42318">MOSFET wastes the rest as heat.</text>
+<line x1="384" y1="48" x2="384" y2="440" stroke="#e5e7eb" stroke-width="2"/>
+<text x="384" y="458" font-size="12" text-anchor="middle" fill="#374151">The gate only "sees" the voltage between gate and source (V_GS), not the voltage to ground.</text>
+</svg>
