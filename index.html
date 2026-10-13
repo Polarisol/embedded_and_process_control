@@ -10,7 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.dataset.view = 'list'; try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; if (localStorage.getItem('view') === 'cards') delete document.documentElement.dataset.view; if (localStorage.getItem('icons') === 'off') document.documentElement.dataset.icons = 'off'; } catch (e) {}
+  <script>document.documentElement.dataset.view = 'list'; try {
+      // Settings are saved under 'embedded:' because other course sites share this origin.
+      // On the first visit after the rename, copy over any choices saved under the old shared keys.
+      if (!localStorage.getItem('embedded:migrated')) {
+        ['theme', 'view', 'icons'].forEach(function (k) { var v = localStorage.getItem(k); if (v !== null && localStorage.getItem('embedded:' + k) === null) localStorage.setItem('embedded:' + k, v); });
+        localStorage.setItem('embedded:migrated', '1');
+      }
+      var t = localStorage.getItem('embedded:theme'); if (t) document.documentElement.dataset.theme = t; if (localStorage.getItem('embedded:view') === 'cards') delete document.documentElement.dataset.view; if (localStorage.getItem('embedded:icons') === 'off') document.documentElement.dataset.icons = 'off'; } catch (e) {}
     // Opening the main address shows the entry screen first (a refresh after ENTER stays on the page you were on).
     if (!new URLSearchParams(location.search).get('id') && !(history.state && history.state.main)) document.documentElement.dataset.entry = '';</script>
 </head>

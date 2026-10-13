@@ -200,7 +200,7 @@
 
   function setTheme(id) {
     root.dataset.theme = id;
-    try { localStorage.setItem('theme', id); } catch { /* storage unavailable */ }
+    try { localStorage.setItem('embedded:theme', id); } catch { /* storage unavailable */ }
     updateToggle();
   }
 
@@ -282,7 +282,7 @@
       const list = root.dataset.view !== 'list';
       if (list) root.dataset.view = 'list';
       else delete root.dataset.view;
-      try { localStorage.setItem('view', list ? 'list' : 'cards'); } catch { /* storage unavailable */ }
+      try { localStorage.setItem('embedded:view', list ? 'list' : 'cards'); } catch { /* storage unavailable */ }
       updateViewToggle();
       viewListeners.forEach((fn) => fn());
     });
@@ -309,7 +309,7 @@
       const shown = root.dataset.icons === 'off';
       if (shown) delete root.dataset.icons;
       else root.dataset.icons = 'off';
-      try { localStorage.setItem('icons', shown ? 'on' : 'off'); } catch { /* storage unavailable */ }
+      try { localStorage.setItem('embedded:icons', shown ? 'on' : 'off'); } catch { /* storage unavailable */ }
       updateIconsToggle();
       // The sidebar marker sits over the selected unit, whose size just changed.
       window.dispatchEvent(new Event('resize'));
