@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 330" width="768" height="330" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker></defs>
+<rect width="768" height="330" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">The motors in this lesson</text>
+<!-- panels -->
+<g fill="#f6f7f9" stroke="#d1d5db" stroke-width="1.5">
+<rect x="12" y="46" width="180" height="270" rx="10"/>
+<rect x="200" y="46" width="180" height="270" rx="10"/>
+<rect x="388" y="46" width="180" height="270" rx="10"/>
+<rect x="576" y="46" width="180" height="270" rx="10"/>
+</g>
+<!-- DC motor -->
+<rect x="52" y="100" width="90" height="70" rx="8" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+<rect x="44" y="104" width="12" height="62" rx="4" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<rect x="142" y="122" width="26" height="8" rx="2" fill="#6b7280"/>
+<rect x="30" y="112" width="14" height="5" fill="#c2410c"/><rect x="30" y="153" width="14" height="5" fill="#c2410c"/>
+<path d="M30,114 C14,114 14,190 40,196" fill="none" stroke="#b42318" stroke-width="2.5"/>
+<path d="M30,156 C22,160 22,196 50,204" fill="none" stroke="#111827" stroke-width="2.5"/>
+<path d="M176,104 A24,24 0 1 1 176,150" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="102" y="236" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">DC motor</text>
+<text x="102" y="258" font-size="12" text-anchor="middle" fill="#374151">Spins round and round</text>
+<text x="102" y="275" font-size="12" text-anchor="middle" fill="#374151">while it gets power.</text>
+<text x="102" y="296" font-size="12" text-anchor="middle" fill="#374151">Fans, wheels, pumps</text>
+<!-- positional servo -->
+<g transform="translate(290,0)">
+<rect x="-50" y="110" width="100" height="56" rx="5" fill="#1d4ed8"/>
+<rect x="-66" y="126" width="16" height="8" fill="#1d4ed8"/><rect x="50" y="126" width="16" height="8" fill="#1d4ed8"/>
+<circle cx="-22" cy="110" r="16" fill="#1d4ed8"/>
+<circle cx="-22" cy="104" r="6" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<rect x="-26" y="66" width="8" height="40" rx="4" fill="#f8fafc" stroke="#111827" stroke-width="1.5" transform="rotate(35 -22 104)"/>
+<path d="M-62,78 A44,44 0 0 1 18,78" fill="none" stroke="#a16207" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="-70" y="80" font-size="11" text-anchor="end" fill="#a16207">180°</text>
+<text x="26" y="80" font-size="11" fill="#a16207">0°</text>
+<path d="M50,150 C70,150 70,190 40,196" fill="none" stroke="#7c4a1e" stroke-width="2.5"/>
+<path d="M50,155 C66,158 66,196 46,202" fill="none" stroke="#b42318" stroke-width="2.5"/>
+<path d="M50,160 C62,166 62,202 52,208" fill="none" stroke="#ea8a0c" stroke-width="2.5"/>
+</g>
+<text x="290" y="236" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Servo (positional)</text>
+<text x="290" y="258" font-size="12" text-anchor="middle" fill="#374151">Turns to an angle</text>
+<text x="290" y="275" font-size="12" text-anchor="middle" fill="#374151">between 0° and 180°</text>
+<text x="290" y="296" font-size="12" text-anchor="middle" fill="#374151">Robot arms, flaps, locks</text>
+<!-- continuous servo -->
+<g transform="translate(478,0)">
+<rect x="-50" y="110" width="100" height="56" rx="5" fill="#1d4ed8"/>
+<rect x="-66" y="126" width="16" height="8" fill="#1d4ed8"/><rect x="50" y="126" width="16" height="8" fill="#1d4ed8"/>
+<circle cx="-22" cy="110" r="16" fill="#1d4ed8"/>
+<circle cx="-22" cy="98" r="18" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<circle cx="-22" cy="98" r="4" fill="#111827"/>
+<path d="M-50,70 A40,40 0 1 1 -60,108" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#ar)"/>
+<path d="M50,150 C70,150 70,190 40,196" fill="none" stroke="#7c4a1e" stroke-width="2.5"/>
+<path d="M50,155 C66,158 66,196 46,202" fill="none" stroke="#b42318" stroke-width="2.5"/>
+<path d="M50,160 C62,166 62,202 52,208" fill="none" stroke="#ea8a0c" stroke-width="2.5"/>
+</g>
+<text x="478" y="236" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Servo (continuous)</text>
+<text x="478" y="258" font-size="12" text-anchor="middle" fill="#374151">Spins all the way round;</text>
+<text x="478" y="275" font-size="12" text-anchor="middle" fill="#374151">you set speed and direction</text>
+<text x="478" y="296" font-size="12" text-anchor="middle" fill="#374151">Small robot wheels</text>
+<!-- stepper 28BYJ-48 -->
+<circle cx="666" cy="128" r="46" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+<rect x="608" y="122" width="116" height="12" rx="6" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<circle cx="666" cy="128" r="46" fill="#cbd5e1" stroke="#475569" stroke-width="2" fill-opacity="0.85"/>
+<circle cx="666" cy="110" r="10" fill="#e5e7eb" stroke="#475569" stroke-width="2"/>
+<rect x="663" y="96" width="6" height="16" rx="1" fill="#6b7280"/>
+<rect x="644" y="168" width="44" height="14" fill="#1d4ed8"/>
+<g stroke-width="2.5" fill="none">
+<path d="M650,182 L650,206" stroke="#1d4ed8"/><path d="M658,182 L658,206" stroke="#db2777"/><path d="M666,182 L666,206" stroke="#eab308"/><path d="M674,182 L674,206" stroke="#ea8a0c"/><path d="M682,182 L682,206" stroke="#b42318"/>
+</g>
+<rect x="644" y="204" width="44" height="10" rx="2" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<text x="666" y="236" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Stepper motor</text>
+<text x="666" y="258" font-size="12" text-anchor="middle" fill="#374151">Moves in small, exact</text>
+<text x="666" y="275" font-size="12" text-anchor="middle" fill="#374151">steps you can count</text>
+<text x="666" y="296" font-size="12" text-anchor="middle" fill="#374151">3D printers, scanners</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 360" width="768" height="360" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker></defs>
+<rect width="768" height="360" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Connecting a 28BYJ-48 stepper through a ULN2003 driver board</text>
+<rect x="20" y="56" width="170" height="280" rx="10" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="95.0" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Arduino</text>
+<text x="95.0" y="102" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Nano ESP32</text>
+<rect x="182" y="82" width="16" height="16" fill="#15803d"/>
+<text x="176" y="95" font-size="13" font-weight="bold" text-anchor="end" fill="#15803d">D2</text>
+<rect x="182" y="122" width="16" height="16" fill="#a16207"/>
+<text x="176" y="135" font-size="13" font-weight="bold" text-anchor="end" fill="#a16207">D3</text>
+<rect x="182" y="162" width="16" height="16" fill="#0e7490"/>
+<text x="176" y="175" font-size="13" font-weight="bold" text-anchor="end" fill="#0e7490">D4</text>
+<rect x="182" y="202" width="16" height="16" fill="#6d28d9"/>
+<text x="176" y="215" font-size="13" font-weight="bold" text-anchor="end" fill="#6d28d9">D5</text>
+<rect x="182" y="252" width="16" height="16" fill="#b42318"/>
+<text x="176" y="265" font-size="13" font-weight="bold" text-anchor="end" fill="#b42318">VBUS (5 V)</text>
+<rect x="182" y="302" width="16" height="16" fill="#111827"/>
+<text x="176" y="315" font-size="13" font-weight="bold" text-anchor="end" fill="#111827">GND</text>
+<rect x="300" y="56" width="160" height="280" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<rect x="350" y="110" width="60" height="110" rx="3" fill="#111827"/>
+<text x="380" y="170" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffffff">ULN2003</text>
+<circle cx="436" cy="115" r="7" fill="#fca5a5" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="436" cy="145" r="7" fill="#fca5a5" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="436" cy="175" r="7" fill="#fca5a5" stroke="#b42318" stroke-width="1.5"/>
+<circle cx="436" cy="205" r="7" fill="#fca5a5" stroke="#b42318" stroke-width="1.5"/>
+<text x="380" y="250" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">driver board</text>
+<circle cx="300" cy="90" r="5" fill="#15803d"/>
+<text x="310" y="94" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">IN1</text>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round"  points="198,90 300,90"/>
+<circle cx="300" cy="130" r="5" fill="#15803d"/>
+<text x="310" y="134" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">IN2</text>
+<polyline fill="none" stroke="#a16207" stroke-width="2.5" stroke-linejoin="round"  points="198,130 300,130"/>
+<circle cx="300" cy="170" r="5" fill="#15803d"/>
+<text x="310" y="174" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">IN3</text>
+<polyline fill="none" stroke="#0e7490" stroke-width="2.5" stroke-linejoin="round"  points="198,170 300,170"/>
+<circle cx="300" cy="210" r="5" fill="#15803d"/>
+<text x="310" y="214" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">IN4</text>
+<polyline fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linejoin="round"  points="198,210 300,210"/>
+<circle cx="300" cy="260" r="5" fill="#15803d"/>
+<text x="310" y="264" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">+</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round"  points="198,260 300,260"/>
+<circle cx="300" cy="310" r="5" fill="#15803d"/>
+<text x="310" y="314" font-size="12" font-weight="bold" text-anchor="start" fill="#14532d">−</text>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"  points="198,310 300,310"/>
+<rect x="454" y="270" width="20" height="56" rx="2" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<path d="M474,276 C560,276 560,240 610,230" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<path d="M474,287 C560,287 560,248 610,238" fill="none" stroke="#db2777" stroke-width="3"/>
+<path d="M474,298 C560,298 560,256 610,246" fill="none" stroke="#eab308" stroke-width="3"/>
+<path d="M474,309 C560,309 560,264 610,254" fill="none" stroke="#ea8a0c" stroke-width="3"/>
+<path d="M474,320 C560,320 560,272 610,262" fill="none" stroke="#b42318" stroke-width="3"/>
+<rect x="608" y="182" width="124" height="16" rx="8" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
+<circle cx="670" cy="190" r="52" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+<circle cx="670" cy="170" r="11" fill="#e5e7eb" stroke="#475569" stroke-width="2"/><rect x="667" y="154" width="6" height="18" rx="1" fill="#6b7280"/>
+<rect x="610" y="220" width="40" height="22" fill="#1d4ed8"/>
+<text x="670" y="270" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">28BYJ-48</text>
+<text x="670" y="288" font-size="12" text-anchor="middle" fill="#374151">5 V stepper motor</text>
+<text x="384" y="352" font-size="12" text-anchor="middle" fill="#374151">The board switches the four coils through D2 to D5. The motor current comes from VBUS (5 V), through the driver.</text>
+</svg>

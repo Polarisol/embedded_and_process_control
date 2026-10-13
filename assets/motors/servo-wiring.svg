@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 320" width="768" height="320" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker></defs>
+<rect width="768" height="320" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Connecting a servo to the Nano ESP32</text>
+<rect x="20" y="56" width="170" height="220" rx="10" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="95.0" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Arduino</text>
+<text x="95.0" y="102" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Nano ESP32</text>
+<rect x="182" y="122" width="16" height="16" fill="#b42318"/>
+<text x="176" y="135" font-size="13" font-weight="bold" text-anchor="end" fill="#b42318">VBUS (5 V)</text>
+<rect x="182" y="172" width="16" height="16" fill="#ea8a0c"/>
+<text x="176" y="185" font-size="13" font-weight="bold" text-anchor="end" fill="#ea8a0c">D9</text>
+<rect x="182" y="222" width="16" height="16" fill="#111827"/>
+<text x="176" y="235" font-size="13" font-weight="bold" text-anchor="end" fill="#111827">GND</text>
+<polyline fill="none" stroke="#b42318" stroke-width="3" stroke-linejoin="round"  points="198,130 420,130 420,170 470,170"/>
+<polyline fill="none" stroke="#ea8a0c" stroke-width="3" stroke-linejoin="round"  points="198,180 470,180"/>
+<polyline fill="none" stroke="#7c4a1e" stroke-width="3" stroke-linejoin="round"  points="198,230 420,230 420,190 470,190"/>
+<rect x="470" y="160" width="26" height="40" rx="3" fill="#111827"/>
+<polyline fill="none" stroke="#b42318" stroke-width="4" stroke-linejoin="round"  points="496,170 560,170"/>
+<polyline fill="none" stroke="#ea8a0c" stroke-width="4" stroke-linejoin="round"  points="496,180 560,180"/>
+<polyline fill="none" stroke="#7c4a1e" stroke-width="4" stroke-linejoin="round"  points="496,190 560,190"/>
+<rect x="560" y="140" width="130" height="80" rx="6" fill="#1d4ed8"/>
+<rect x="546" y="168" width="14" height="10" fill="#1d4ed8"/><rect x="690" y="168" width="14" height="10" fill="#1d4ed8"/>
+<circle cx="655" cy="140" r="20" fill="#1d4ed8"/><circle cx="655" cy="132" r="7" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<rect x="651" y="86" width="8" height="50" rx="4" fill="#f8fafc" stroke="#111827" stroke-width="1.5"/>
+<text x="610" y="195" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">SG90</text>
+<text x="300" y="122" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">red: power (+5 V)</text>
+<text x="300" y="172" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">orange / yellow: signal</text>
+<text x="300" y="222" font-size="12" font-weight="bold" text-anchor="middle" fill="#7c4a1e">brown / black: GND</text>
+<text x="384" y="302" font-size="12" text-anchor="middle" fill="#374151">VBUS gives 5 V straight from the USB cable. The 3.3 V signal from D9 is enough for the servo to understand.</text>
+</svg>
