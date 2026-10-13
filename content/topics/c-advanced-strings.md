@@ -5,7 +5,7 @@ In C Language Basics you used `printf` to write text on the screen and `scanf` t
 | Function | What it does | Python equivalent |
 |----------|--------------|-------------------|
 | `printf` | Writes formatted text to the **screen** | `print(f"...")` |
-| `snprintf` | Writes formatted text **into a string** | `s = f"..."` |
+| `sprintf` | Writes formatted text **into a string** | `s = f"..."` |
 | `scanf` | Reads values from the **keyboard** | `int(input())` |
 | `sscanf` | Reads values **out of a string** you already have | `line.split()`, then `int()` and `float()` |
 
@@ -13,30 +13,28 @@ These two functions are how a C program **builds** a text message to send and **
 
 Both live in `stdio.h`, and both use the format codes you already know (`%d`, `%f`, `%c`, `%s`).
 
-## `snprintf`: formatted text into a string
+## `sprintf`: formatted text into a string
 
-`snprintf` is `printf` with two extra arguments at the front: the string to write into, and its size.
+`sprintf` is `printf` with one extra argument at the front: the string to write into.
 
 ```c
-snprintf(string, size, "format text", values...);
+sprintf(string, "format text", values...);
 ```
 
-Everything after the first two arguments works as in `printf`. Nothing appears on the screen. The text goes into the string, ready for you to use:
+Everything after the first argument works as in `printf`. Nothing appears on the screen. The text goes into the string, ready for you to use:
 
 ```c
 char message[32];
 int speed = 150;
 
-snprintf(message, 32, "Speed: %d rpm", speed);
+sprintf(message, "Speed: %d rpm", speed);
 
 printf("%s\n", message);     // prints: Speed: 150 rpm
 ```
 
-The `32` is the size of the array. `snprintf` never writes past it, and it always puts the closing `'\0'` at the end of the text.
+`sprintf` puts the closing `'\0'` at the end of the text for you.
 
-> **Watch out:** if the text does not fit, `snprintf` cuts it short. An array of 32 holds at most 31 characters and the `'\0'`. Make the array large enough for the longest message you expect.
-
-> **Watch out:** you will meet an older function, `sprintf`, that has no size argument. It keeps writing past the end of the array when the text is too long, and it damages whatever is stored there. Use `snprintf`.
+> **Watch out:** `sprintf` does not know the size of the array. If the text is too long, it keeps writing past the end and damages whatever is stored there. An array of 32 holds at most 31 characters and the `'\0'`. Make the array large enough for the longest message you expect, with the largest numbers.
 
 ### Controlling the format
 
@@ -55,7 +53,7 @@ A device that reads your message expects an exact layout, so these `printf` opti
 
 ### Joining strings
 
-`%s` puts one string inside another, so `snprintf` is also the safe way to join strings and numbers into one:
+`%s` puts one string inside another, so `sprintf` is also a simple way to join strings and numbers into one:
 
 ```c
 char name[] = "TEMP";
@@ -63,7 +61,7 @@ char unit[] = "C";
 float value = 23.5;
 char text[32];
 
-snprintf(text, 32, "%s = %.1f %s", name, value, unit);    // text = "TEMP = 23.5 C"
+sprintf(text, "%s = %.1f %s", name, value, unit);    // text = "TEMP = 23.5 C"
 ```
 
 ## `sscanf`: reading values out of a string
@@ -161,7 +159,7 @@ Each line is a string. Each side then needs two skills, and they are the two fun
 
 | Job | Function |
 |-----|----------|
-| Turn numbers into a text message, ready to send | `snprintf` |
+| Turn numbers into a text message, ready to send | `sprintf` |
 | Turn a received text message back into numbers | `sscanf` |
 
 How the string travels over the wire depends on your board and is covered elsewhere. This page deals with the string itself.
@@ -174,14 +172,14 @@ How the string travels over the wire depends on your board and is covered elsewh
 
 The price is size. The number `23.5` is 4 characters, and with the 8N1 frame each character costs 10 bits on the wire. At 9600 baud that is about 960 characters per second, so a 20 character message can be sent at most 48 times per second. For fast control loops, engineers switch to binary messages.
 
-### Sending: build the message with `snprintf`
+### Sending: build the message with `sprintf`
 
 ```c
 char message[32];
 float temp = 23.5;
 int hum = 40;
 
-snprintf(message, 32, "TEMP %.1f HUM %d\n", temp, hum);    // message = "TEMP 23.5 HUM 40\n"
+sprintf(message, "TEMP %.1f HUM %d\n", temp, hum);    // message = "TEMP 23.5 HUM 40\n"
 ```
 
 The string `message` is now complete, and you hand it to whatever send function your board has.
@@ -206,7 +204,7 @@ Never run `sscanf` on half a message. The `'\n'` at the end is what tells the re
 
 ### A complete example
 
-This program is the controller side of the protocol above. The function `handle` gets one command as a string, takes it apart with `sscanf` and builds the answer with `snprintf`. Here `main` feeds it a few test commands and prints each answer, so you can run it on any computer. On a real device, the commands come from the serial link and the answers go back to it, and `handle` stays the same.
+This program is the controller side of the protocol above. The function `handle` gets one command as a string, takes it apart with `sscanf` and builds the answer with `sprintf`. Here `main` feeds it a few test commands and prints each answer, so you can run it on any computer. On a real device, the commands come from the serial link and the answers go back to it, and `handle` stays the same.
 
 ```c
 #include <stdio.h>
@@ -226,11 +224,11 @@ void handle(char line[])
 
     if (n == 2 && strcmp(command, "SPEED") == 0) {
         speed = value;
-        snprintf(reply, 40, "OK %d\n", speed);
+        sprintf(reply, "OK %d\n", speed);
     } else if (n >= 1 && strcmp(command, "READ") == 0) {
-        snprintf(reply, 40, "TEMP %.1f HUM %d SPEED %d\n", temp, hum, speed);
+        sprintf(reply, "TEMP %.1f HUM %d SPEED %d\n", temp, hum, speed);
     } else {
-        snprintf(reply, 40, "ERR\n");
+        sprintf(reply, "ERR\n");
     }
 
     printf("%s", reply);
@@ -271,10 +269,10 @@ Notice the third command. `fast` is not a number, so `sscanf` returns 1, the che
 
 | Task | Code |
 |------|------|
-| Build a message in a string | `snprintf(msg, 32, "SPEED %d\n", speed);` |
-| Fixed number of decimals | `snprintf(msg, 32, "TEMP %.1f\n", temp);` |
-| Pad with zeros | `snprintf(msg, 32, "%05d", count);` |
-| Join strings and numbers | `snprintf(msg, 32, "%s = %d", name, value);` |
+| Build a message in a string | `sprintf(msg, "SPEED %d\n", speed);` |
+| Fixed number of decimals | `sprintf(msg, "TEMP %.1f\n", temp);` |
+| Pad with zeros | `sprintf(msg, "%05d", count);` |
+| Join strings and numbers | `sprintf(msg, "%s = %d", name, value);` |
 | Take a message apart | `n = sscanf(line, "TEMP %f HUM %d", &temp, &hum);` |
 | Check it worked | `if (n == 2) { ... }` |
 | Read a word and a number | `n = sscanf(line, "%9s %d", command, &value);` |
