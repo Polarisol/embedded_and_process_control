@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" width="520" height="260" font-family="Helvetica, Arial, sans-serif">
+<rect width="520" height="260" rx="10" fill="#ffffff"/>
+<rect x="20" y="16" width="480" height="228" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+<path d="M20,26 a10,10 0 0 1 10,-10 h460 a10,10 0 0 1 10,10 v18 h-480 z" fill="#e5e7eb"/>
+<circle cx="38" cy="30" r="5" fill="#f87171"/><circle cx="54" cy="30" r="5" fill="#fbbf24"/><circle cx="70" cy="30" r="5" fill="#34d399"/>
+<text x="260" y="35" font-size="13" text-anchor="middle" fill="#374151">Serial in PySide6</text>
+<rect x="32" y="54" width="456" height="136" rx="4" fill="#ffffff" stroke="#d1d5db"/>
+<g font-family="Menlo, Consolas, monospace" font-size="14">
+<text x="44" y="78" fill="#15803d">◀ Arduino ready</text>
+<text x="44" y="100" fill="#1d4ed8">▶ LED ON</text>
+<text x="44" y="122" fill="#15803d">◀ got: LED ON</text>
+<text x="44" y="144" fill="#1d4ed8">▶ LED OFF</text>
+<text x="44" y="166" fill="#15803d">◀ got: LED OFF</text>
+</g>
+<rect x="32" y="200" width="456" height="32" rx="4" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="44" y="221" font-size="14" fill="#9ca3af">Type and press Enter…</text>
+</svg>

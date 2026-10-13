@@ -32,7 +32,7 @@
       "id": "serial-communication",
       "title": "Serial Com.",
       "icon": "⇄",
-      "material": "topics/serial-frame.md"
+      "material": ["topics/serial-frame.md", "topics/serial-pyside.md"]
     },
     {
       "id": "electronics",
