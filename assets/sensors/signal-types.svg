@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 250" width="768" height="250" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="250" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Four ways a sensor talks to the board</text>
+<!-- Digital -->
+<rect x="16" y="44" width="176" height="190" rx="8" fill="#e0ecfb"/>
+<text x="104" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1. Digital</text>
+<text x="34" y="100" font-size="11" fill="#6b7280">HIGH</text>
+<text x="34" y="152" font-size="11" fill="#6b7280">LOW</text>
+<polyline fill="none" stroke="#111827" stroke-width="3" stroke-linejoin="round" points="66,148 86,148 86,96 126,96 126,148 146,148 146,96 176,96"/>
+<text x="104" y="186" font-size="13" text-anchor="middle" fill="#374151">Only two values:</text>
+<text x="104" y="204" font-size="13" text-anchor="middle" fill="#374151">ON or OFF, 1 or 0</text>
+<text x="104" y="224" font-size="12" font-style="italic" text-anchor="middle" fill="#1d4ed8">digitalRead()</text>
+<!-- Analog -->
+<rect x="204" y="44" width="176" height="190" rx="8" fill="#dff3e4"/>
+<text x="292" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">2. Analog</text>
+<text x="222" y="100" font-size="11" fill="#6b7280">5 V</text>
+<text x="222" y="152" font-size="11" fill="#6b7280">0 V</text>
+<path fill="none" stroke="#111827" stroke-width="3" d="M250,140 C270,140 280,100 300,104 S330,150 345,126 S360,108 366,110"/>
+<text x="292" y="186" font-size="13" text-anchor="middle" fill="#374151">Any voltage in a range,</text>
+<text x="292" y="204" font-size="13" text-anchor="middle" fill="#374151">turned into a number</text>
+<text x="292" y="224" font-size="12" font-style="italic" text-anchor="middle" fill="#15803d">analogRead()</text>
+<!-- Pulse -->
+<rect x="392" y="44" width="176" height="190" rx="8" fill="#fff1cc"/>
+<text x="480" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#a16207">3. Pulse length</text>
+<polyline fill="none" stroke="#111827" stroke-width="3" stroke-linejoin="round" points="410,148 440,148 440,100 520,100 520,148 552,148"/>
+<line x1="444" y1="124" x2="516" y2="124" stroke="#a16207" stroke-width="2"/>
+<polygon points="444,124 452,119 452,129" fill="#a16207"/>
+<polygon points="516,124 508,119 508,129" fill="#a16207"/>
+<text x="480" y="140" font-size="12" text-anchor="middle" fill="#a16207">time = value</text>
+<text x="480" y="186" font-size="13" text-anchor="middle" fill="#374151">How LONG the pin stays</text>
+<text x="480" y="204" font-size="13" text-anchor="middle" fill="#374151">HIGH carries the reading</text>
+<text x="480" y="224" font-size="12" font-style="italic" text-anchor="middle" fill="#a16207">pulseIn()</text>
+<!-- Data -->
+<rect x="580" y="44" width="172" height="190" rx="8" fill="#fde2e1"/>
+<text x="666" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">4. Digital data</text>
+<polyline fill="none" stroke="#111827" stroke-width="3" stroke-linejoin="round" points="596,100 608,100 608,148 620,148 620,100 644,100 644,148 668,148 668,100 680,100 680,148 692,148 692,100 716,100 716,148 736,148"/>
+<text x="666" y="170" font-size="11" text-anchor="middle" fill="#6b7280">0 1 1 0 0 1 0 1 1 0 …</text>
+<text x="666" y="190" font-size="13" text-anchor="middle" fill="#374151">The sensor sends the</text>
+<text x="666" y="207" font-size="13" text-anchor="middle" fill="#374151">number as bits</text>
+<text x="666" y="226" font-size="12" font-style="italic" text-anchor="middle" fill="#b42318">a library reads it</text>
+</svg>
