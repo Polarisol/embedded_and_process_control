@@ -17,6 +17,7 @@
       "title": "The C Language",
       "icon": "C",
       "material": [
+        "topics/c-why-c.md",
         "topics/c-language-basics.md",
         "topics/c-advanced-strings.md"
       ]
