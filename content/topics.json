@@ -25,7 +25,8 @@
     {
       "id": "microcontrollers",
       "title": "Microcontrollers",
-      "icon": "▣"
+      "icon": "▣",
+      "material": "topics/microcontrollers-intro.md"
     },
     {
       "id": "serial-communication",
