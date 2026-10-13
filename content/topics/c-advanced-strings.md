@@ -64,6 +64,7 @@ char text[32];
 sprintf(text, "%s = %.1f %s", name, value, unit);    // text = "TEMP = 23.5 C"
 ```
 
+
 ## `sscanf`: reading values out of a string
 
 `sscanf` is `scanf` with one extra argument at the front: the string to read from. It does not wait for the keyboard.
