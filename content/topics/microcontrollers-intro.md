@@ -1,6 +1,6 @@
 # Introduction
 
-A **microcontroller** (MCU) is a whole tiny computer on one chip: a processor, memory, and input/output pins, all in a package smaller than your fingernail. You will find them hiding in washing machines, car keys, toys, drones, thermostats and smartwatches. A modern home has dozens of them, and billions are made every year.
+A **microcontroller** (MCU) is a whole tiny computer on one chip: a processor, memory, a built-in clock and input/output pins. Some come in a package smaller than your fingernail. You will find them hiding in washing machines, car keys, toys, drones, thermostats and smartwatches. A modern home has dozens of them, and billions are made every year.
 
 ## A very short history
 
@@ -25,7 +25,7 @@ All this on a battery that can last months, or even years.
 
 ## Development boards: the game changer
 
-A bare chip is hard to use. You need a circuit board, a power supply, a clock crystal and a special programmer just to say "hello". For decades this kept microcontrollers in the hands of engineers.
+A bare chip is hard to use. You need a circuit board, a power supply, a special programmer and, in some cases, an external clock crystal (when the built-in clock isn't accurate enough) just to say "hello". For decades this kept microcontrollers in the hands of engineers.
 
 A **development board** puts all of that on one small, ready-to-use board. Plug in a USB cable, write a few lines of code, press **Upload**, and an LED blinks. That simple idea opened embedded systems to students, artists, hobbyists and makers everywhere, and gave birth to the **maker movement**.
 
