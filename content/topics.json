@@ -32,7 +32,7 @@
       "id": "microcontrollers",
       "title": "Microcontrollers",
       "icon": "▣",
-      "material": "topics/microcontrollers-intro.md"
+      "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md"]
     },
     {
       "id": "serial-communication",
