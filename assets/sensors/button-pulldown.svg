@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 330" width="768" height="330" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="330" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Why the pin needs a pull-down resistor</text>
+<!-- left: floating -->
+<rect x="20" y="46" width="350" height="270" rx="10" fill="#fde2e1"/>
+<text x="195" y="70" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">Without a resistor</text>
+<text x="80" y="102" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">3.3V</text>
+<line x1="80" y1="108" x2="80" y2="136" stroke="#111827" stroke-width="2.5"/>
+<circle cx="80" cy="140" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<circle cx="80" cy="176" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<line x1="64" y1="132" x2="64" y2="184" stroke="#111827" stroke-width="3"/>
+<line x1="64" y1="158" x2="44" y2="158" stroke="#111827" stroke-width="2.5"/>
+<line x1="44" y1="148" x2="44" y2="168" stroke="#111827" stroke-width="2.5"/>
+<line x1="80" y1="180" x2="80" y2="214" stroke="#111827" stroke-width="2.5"/>
+<line x1="80" y1="214" x2="170" y2="214" stroke="#111827" stroke-width="2.5"/>
+<rect x="170" y="206" width="16" height="16" fill="#15803d"/>
+<text x="178" y="242" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">D2</text>
+<text x="80" y="236" font-size="12" text-anchor="middle" fill="#374151">connected</text>
+<text x="80" y="250" font-size="12" text-anchor="middle" fill="#374151">to nothing!</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2" points="220,150 230,130 238,165 246,120 256,170 264,135 272,158 282,118 290,166 300,140 310,155 320,125 330,160 342,138"/>
+<text x="282" y="196" font-size="13" text-anchor="middle" fill="#374151">Released, the pin "floats"</text>
+<text x="282" y="214" font-size="13" text-anchor="middle" fill="#374151">and picks up noise:</text>
+<text x="282" y="238" font-size="14" font-weight="bold" text-anchor="middle" fill="#b42318">random HIGH / LOW</text>
+<text x="195" y="290" font-size="13" text-anchor="middle" fill="#374151">Pressed: HIGH. Released: anything.</text>
+<!-- right: pull-down -->
+<rect x="398" y="46" width="350" height="270" rx="10" fill="#dff3e4"/>
+<text x="573" y="70" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">With a 10 kΩ pull-down resistor</text>
+<text x="458" y="102" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">3.3V</text>
+<line x1="458" y1="108" x2="458" y2="136" stroke="#111827" stroke-width="2.5"/>
+<circle cx="458" cy="140" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<circle cx="458" cy="176" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<line x1="442" y1="132" x2="442" y2="184" stroke="#111827" stroke-width="3"/>
+<line x1="442" y1="158" x2="422" y2="158" stroke="#111827" stroke-width="2.5"/>
+<line x1="422" y1="148" x2="422" y2="168" stroke="#111827" stroke-width="2.5"/>
+<line x1="458" y1="180" x2="458" y2="200" stroke="#111827" stroke-width="2.5"/>
+<line x1="458" y1="200" x2="548" y2="200" stroke="#111827" stroke-width="2.5"/>
+<circle cx="458" cy="200" r="3.5" fill="#111827"/>
+<rect x="548" y="192" width="16" height="16" fill="#15803d"/>
+<text x="556" y="186" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">D2</text>
+<line x1="458" y1="200" x2="458" y2="212" stroke="#111827" stroke-width="2.5"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="458,212 466,216 450,222 466,228 450,234 466,240 450,246 458,250"/>
+<text x="472" y="236" font-size="12" fill="#374151">10 kΩ</text>
+<line x1="458" y1="250" x2="458" y2="266" stroke="#111827" stroke-width="2.5"/>
+<line x1="444" y1="266" x2="472" y2="266" stroke="#111827" stroke-width="2.5"/>
+<line x1="449" y1="272" x2="467" y2="272" stroke="#111827" stroke-width="2.5"/>
+<line x1="454" y1="278" x2="462" y2="278" stroke="#111827" stroke-width="2.5"/>
+<text x="458" y="298" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<rect x="590" y="96" width="148" height="70" rx="8" fill="#ffffff"/>
+<text x="664" y="118" font-size="14" font-weight="bold" text-anchor="middle" fill="#15803d">Released</text>
+<text x="664" y="136" font-size="12" text-anchor="middle" fill="#374151">resistor pulls pin to GND</text>
+<text x="664" y="156" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">LOW (0)</text>
+<rect x="590" y="182" width="148" height="70" rx="8" fill="#ffffff"/>
+<text x="664" y="204" font-size="14" font-weight="bold" text-anchor="middle" fill="#b42318">Pressed</text>
+<text x="664" y="222" font-size="12" text-anchor="middle" fill="#374151">button connects pin to 3.3V</text>
+<text x="664" y="242" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">HIGH (1)</text>
+</svg>

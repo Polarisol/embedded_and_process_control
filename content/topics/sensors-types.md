@@ -62,7 +62,7 @@ void loop() {
 }
 ```
 
-**Fun fact: buttons bounce.** When the metal contacts hit each other they bounce a few times in the first few milliseconds, so one press can look like five presses to a fast microcontroller. Waiting about 20–50 ms after a change before believing it is called **debouncing**.
+**Fun fact: buttons bounce.** When the metal contacts hit each other they bounce a few times in the first few milliseconds, so one press can look like five presses to a fast microcontroller. Waiting a few milliseconds after a change before believing it is called **debouncing**. The **Buttons Advanced** item explains bouncing and how to fix it.
 
 ## 2. Potentiometer
 

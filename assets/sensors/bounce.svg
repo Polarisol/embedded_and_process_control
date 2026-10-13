@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 300" width="768" height="300" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="300" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Contact bounce: one press, many edges</text>
+<text x="205.0" y="66" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">What you expect</text>
+<line x1="60" y1="220" x2="350" y2="220" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="60" y1="80" x2="60" y2="220" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="54" y="94" font-size="12" text-anchor="end" fill="#374151">HIGH</text>
+<text x="54" y="214" font-size="12" text-anchor="end" fill="#374151">LOW</text>
+<polyline fill="none" stroke="#15803d" stroke-width="3" points="60,210 170,210 170,90 350,90"/>
+<text x="170" y="240" font-size="12" text-anchor="middle" fill="#374151">press</text>
+<text x="595.0" y="66" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">What really happens</text>
+<line x1="450" y1="220" x2="740" y2="220" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="450" y1="80" x2="450" y2="220" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="444" y="94" font-size="12" text-anchor="end" fill="#374151">HIGH</text>
+<text x="444" y="214" font-size="12" text-anchor="end" fill="#374151">LOW</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" points="450,210 530,210 530,90 540,90 540,210 546,210 546,90 560,90 560,210 564,210 564,90 584,90 584,210 587,210 587,90 612,90 612,210 614,210 614,90 740,90"/>
+<polyline fill="none" stroke="#374151" stroke-width="1.5" points="530,232 530,238 614,238 614,232"/>
+<text x="572" y="256" font-size="12" text-anchor="middle" fill="#374151">bouncing: about 1–5 ms</text>
+<text x="384" y="286" font-size="14" text-anchor="middle" fill="#111827">The microcontroller reads the pin millions of times a second, so it sees <tspan font-weight="bold">every</tspan> bounce.</text>
+</svg>
