@@ -17,7 +17,7 @@ There are many kinds of motors. In this lesson we meet the three you will use mo
 
 Before we look at each motor, here is the most important rule of this lesson:
 
-> **Rule:** never power a motor from a signal pin. A pin of the Nano ESP32 can give a few tens of milliamps at most. Even a small motor needs hundreds of milliamps, and much more for a moment when it starts. The pin only sends the **control signal**. The power comes from a separate source, through a **driver** (or, in a servo, through its own built-in electronics).
+> **Rule:** never power a motor from a signal pin. A pin of the Nano ESP32 can give a few tens of milliamps at most. Even a small motor needs hundreds of milliamps, and much more for a moment when it starts. The pin only sends the **control signal**. The power comes from a separate source, through a **driver**: a driver chip, or a MOSFET for a motor that only turns one way. A servo has its driver built in.
 
 Motors are also electrically "noisy": when they start, stop or change direction they cause voltage spikes. A driver protects your board from those spikes too.
 
@@ -52,7 +52,46 @@ A pin of the Nano ESP32 is digital: it is either 3.3 V or 0 V. To get "half spee
 
 The motor is heavy and slow compared to the switching, so it doesn't feel each pulse. It feels the **average**: 25 % on is slow, 50 % on is medium, 100 % on is full speed. In Arduino C, `analogWrite(pin, value)` makes a PWM signal, where `value` goes from **0** (always off) to **255** (always on).
 
-### Controlling the direction: the H-bridge
+### Without a driver chip: one MOSFET
+
+If your motor only ever needs to turn **one way** (a fan, a pump, a propeller), you don't need a driver module at all. A single **MOSFET** can switch the motor on and off, and with PWM it controls the speed too. This is the same **low-side switch** from the [MOSFETs](topic.html?id=electronics) item in the Electronics unit, with the motor as the load:
+
+![The motor and a diode between +6 V and the drain of an IRLZ44N; the source to GND; D5 drives the gate through 100 ohm with a 10 kilohm pull-down; the board's GND joined to the battery's minus](assets/motors/dc-mosfet.svg)
+
+| Part | Where |
+|------|-------|
+| **Motor** | Between the battery's **+** and the MOSFET's **drain** (never on the source side; the MOSFETs item explains why) |
+| **MOSFET** (IRLZ44N) | **Source** to GND, **gate** to D5 through **100 Ω**, with a **10 kΩ** pull-down from gate to GND |
+| **Diode** (1N5819 or 1N4007) | **Across the motor**, with its **stripe towards +** |
+| **Battery** (4 × AA = 6 V) | **+** to the motor, **−** to GND, joined to the Nano's **GND** |
+
+**Why the diode?** The motor is full of coils. Every time the MOSFET switches off (and with PWM that's thousands of times a second), the coils try to keep the current flowing and make a high voltage spike. Without the diode, that spike hits the MOSFET and can destroy it. The diode gives the current a safe loop back through the motor. A driver chip like the TB6612FNG has these diodes built in, which is one reason it is so convenient.
+
+The code is just PWM on the gate pin:
+
+```c
+const int MOTOR_PIN = D5;   // the pin that drives the MOSFET's gate
+
+void setup() {
+  pinMode(MOTOR_PIN, OUTPUT);
+  analogWrite(MOTOR_PIN, 0);        // start with the motor stopped
+}
+
+void loop() {
+  analogWrite(MOTOR_PIN, 255);      // full speed
+  delay(2000);
+  analogWrite(MOTOR_PIN, 120);      // slower
+  delay(2000);
+  analogWrite(MOTOR_PIN, 0);        // stop
+  delay(2000);
+}
+```
+
+What you **can't** do with one MOSFET is reverse the motor. The MOSFET can only connect the motor to GND or disconnect it, so the current always flows the same way through the motor. For that you need an H-bridge.
+
+> **Good to know:** the IRLZ44N is not fully on with only 3.3 V on its gate. For a small hobby motor (well under 1 A) that's fine. For a bigger motor, check how warm the MOSFET gets, or pick one that is fully on at 3.3 V (see "V<sub>GS</sub> threshold and logic level" in the MOSFETs item).
+
+### Both directions: the H-bridge
 
 To reverse the motor we need to swap its wires, and a program can't move wires. Instead, we use four electronic switches arranged in the shape of the letter **H**, called an **H-bridge**:
 
@@ -64,7 +103,7 @@ To reverse the motor we need to swap its wires, and a program can't move wires. 
 
 You don't build the H-bridge yourself. It comes ready-made inside a **motor driver** chip, and the board just tells the driver which way to go and how fast.
 
-### Connecting a DC motor to the Arduino Nano ESP32
+### Connecting a DC motor through a driver
 
 We use the **TB6612FNG** driver module. It is small, efficient, works well with 3.3 V logic, and can drive two motors (channels A and B). Here we use channel A:
 
@@ -89,7 +128,7 @@ The two direction pins work like this:
 | LOW | LOW | Stops (coasts to a stop) |
 | HIGH | HIGH | Brakes (stops quickly) |
 
-> **Good to know:** you'll also find the bigger, older **L298N** driver in many kits. It has the same idea (IN1, IN2 and ENA instead of AIN1, AIN2 and PWMA), but it wastes about 2 V as heat, so a small motor gets less power. If a motor only ever needs to spin **one way**, you can switch it with a single **MOSFET** instead of an H-bridge (see the MOSFETs item in the Electronics unit).
+> **Good to know:** you'll also find the bigger, older **L298N** driver in many kits. It has the same idea (IN1, IN2 and ENA instead of AIN1, AIN2 and PWMA), but it wastes about 2 V as heat, so a small motor gets less power.
 
 ### The code
 
@@ -311,7 +350,8 @@ Two things to notice:
 
 | I want to… | Use |
 |------------|-----|
-| Spin something fast (a fan, a propeller, wheels) | **DC motor** + driver |
+| Spin something one way (a fan, a pump, a propeller) | **DC motor** + MOSFET |
+| Drive wheels forwards and backwards | **DC motor** + H-bridge driver |
 | Move an arm or a flap to a certain angle | **Positional servo** |
 | Drive the wheels of a small, simple robot | **Continuous servo** (or DC motors + driver) |
 | Move to an exact position, or turn an exact amount | **Stepper motor** + driver |
@@ -319,7 +359,7 @@ Two things to notice:
 ## Summary
 
 - **Never** power a motor from a signal pin. The pin sends the control signal; the power comes through a **driver**. Always connect all the **GNDs** together.
-- A **DC motor** spins while it has power. **PWM** (`analogWrite`) sets its speed, and an **H-bridge** driver like the TB6612FNG sets its direction.
+- A **DC motor** spins while it has power. **PWM** (`analogWrite`) sets its speed. For **one direction**, a single **MOSFET** with a **diode across the motor** is enough. For **both directions** you need an **H-bridge** driver like the TB6612FNG.
 - A **servo** has a motor, gears, a potentiometer and a control chip inside. A **pulse** every 20 ms sets it: about 0.5 ms for 0°, 1.5 ms for 90° and 2.4 ms for 180°.
 - A **continuous servo** has no position feedback: the same pulse sets its **speed and direction**, and 1.5 ms means stop.
 - A **stepper motor** turns in exact **steps** by switching its coils on one after another. The 28BYJ-48 needs about 2048 steps per turn and a ULN2003 driver.
