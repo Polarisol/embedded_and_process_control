@@ -1629,12 +1629,35 @@
 
     // Arrow keys: up and down move through the unit list; right steps over to the unit's
     // items (lines in the list view, panels in the cards view), where up and down move
-    // between items instead; left steps back to the unit list.
+    // between items instead; left steps back to the unit list. When the focused item runs
+    // past the edge of the screen (an opened item, a long panel), up and down first scroll
+    // through it a third of a screen at a time, and only move on once its end is in view.
     const pageItems = () => [...main.querySelectorAll(root.dataset.view === 'list' ? '.line' : '.panel')];
-    const focusItem = (item) => {
+    // Stepping up into an item shows its end, so an opened item is read back from the bottom.
+    const focusItem = (item, step = 1) => {
       if (!item.matches('a, button')) item.tabIndex = -1;
       item.focus({ preventScroll: true });
-      item.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
+      const shown = step < 0 ? item.closest('.line-item') || item : item;
+      shown.scrollIntoView({ block: step < 0 ? 'end' : 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
+    };
+    // The top of the visible page: below the topic bar when it sits across the top (phones).
+    const pageTop = () => {
+      const bar = document.querySelector('.topic-nav');
+      const rect = bar && bar.getBoundingClientRect();
+      return rect && rect.width > window.innerWidth / 2 ? Math.max(0, rect.bottom) : 0;
+    };
+    // Scrolls part of the way through the item if it runs past the screen; false if it fits.
+    const scrollThrough = (item, step) => {
+      const rect = (item.closest('.line-item') || item).getBoundingClientRect();
+      const margin = 16;
+      const hidden = step > 0 ? rect.bottom + margin - window.innerHeight : pageTop() + margin - rect.top;
+      const end = step > 0
+        ? window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1
+        : window.scrollY <= 0;
+      if (hidden <= 1 || end) return false;
+      const by = Math.min(hidden, window.innerHeight / 3);
+      window.scrollBy({ top: step * by, behavior: reducedMotion ? 'auto' : 'smooth' });
+      return true;
     };
     document.addEventListener('keydown', (e) => {
       if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) return;
@@ -1648,9 +1671,10 @@
         // In the item list.
         if (e.key === 'ArrowLeft') { e.preventDefault(); active.blur(); return; }
         if (e.key === 'ArrowRight') return;
-        const next = items[at + step];
         e.preventDefault();
-        if (next) focusItem(next);
+        if (scrollThrough(items[at], step)) return;
+        const next = items[at + step];
+        if (next) focusItem(next, step);
         return;
       }
       // In the unit list.
