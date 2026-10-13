@@ -40,6 +40,7 @@ In Python you write `age = 20`. In C you say the type first:
 ```c
 int age = 20;           // whole number
 float temperature = 36.6;  // number with a decimal point
+double pi = 3.14159265358979;  // decimal number with more precision
 char grade = 'A';       // one single character, in single quotes
 int counter;            // declared now, given a value later
 counter = 0;
@@ -48,9 +49,12 @@ counter = 0;
 | Type | Holds | `printf` / `scanf` code |
 |------|-------|-------------------------|
 | `int` | Whole numbers | `%d` |
-| `float` | Decimal numbers | `%f` |
+| `float` | Decimal numbers, about 7 significant digits | `%f` |
+| `double` | Decimal numbers, about 15 significant digits | `%f` in `printf`, `%lf` in `scanf` |
 | `char` | One character | `%c` |
 | a string | Text (see below) | `%s` |
+
+Python's `float` is really C's `double`. A `float` takes half the memory (4 bytes, not 8), which matters on a small microcontroller, but it is less precise.
 
 To print a variable, put its code in the text and the variable after it:
 
@@ -81,12 +85,44 @@ The comparisons `==`, `!=`, `<`, `>`, `<=`, `>=` are the same as in Python.
 
 An array is like a Python list, but stricter: **all items have the same type** and **the size is fixed** when you create it.
 
+To declare an array, give the type, a name and the size in square brackets:
+
+```c
+int scores[5];      // room for 5 ints: scores[0] to scores[4]
+```
+
+You put values in and read them back with an index, starting at 0 as in Python:
+
+```c
+scores[0] = 90;
+scores[1] = 75;
+scores[4] = 100;
+
+printf("%d\n", scores[1]);            // prints 75
+int total = scores[0] + scores[4];    // 190
+```
+
+> **Watch out:** declaring an array does not clear it. `scores[2]` and `scores[3]` were never given a value, so they hold **garbage**: whatever happened to be in that memory.
+
+To avoid garbage, you can give the starting values in braces when you declare the array:
+
 ```c
 int scores[5] = {90, 75, 82, 60, 100};
-
-scores[0] = 95;                 // indexes start at 0, as in Python
-printf("%d\n", scores[4]);      // the last item
 ```
+
+You do not have to list them all. If you give fewer values than the size, the rest are set to **zero**:
+
+```c
+int scores[5] = {90, 75};     // 90, 75, 0, 0, 0
+```
+
+This gives a quick way to start with an array full of zeros:
+
+```c
+int scores[5] = {0};          // 0, 0, 0, 0, 0
+```
+
+The braces only work in the declaration. After that, you change the items one at a time.
 
 Things you cannot do in C:
 
