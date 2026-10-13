@@ -42,7 +42,8 @@
     {
       "id": "electronics",
       "title": "Electronics",
-      "icon": "⚡"
+      "icon": "⚡",
+      "material": "topics/electronics-breadboard.md"
     },
     {
       "id": "sensors",
