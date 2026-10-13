@@ -10,7 +10,8 @@
     {
       "id": "binary-representation",
       "title": "Binary Rep.",
-      "icon": "01"
+      "icon": "01",
+      "material": "topics/binary-representation.md"
     },
     {
       "id": "c-language",
