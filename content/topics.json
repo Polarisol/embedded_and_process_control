@@ -16,7 +16,10 @@
       "id": "c-language",
       "title": "The C Language",
       "icon": "C",
-      "material": "topics/c-language-basics.md"
+      "material": [
+        "topics/c-language-basics.md",
+        "topics/c-advanced-strings.md"
+      ]
     },
     {
       "id": "tcp-ip",
