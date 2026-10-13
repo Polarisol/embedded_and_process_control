@@ -1,4 +1,4 @@
-Our devices... they are not just matter, they have a soul, a mind of their own. They can sense the world around them, manipulate the physical world... control it, and comunicated with us.
+Our mechatronic devices... they are not just matter, they have a soul, a mind of their own. They can sense the world around them, manipulate the physical world... control it, and comunicated with us.
 
 We give them these abilities by **embedding** computers into them, connecting these with **sensors** and **motors** using **electronics**. Carefully **programming** them and using **communication protocols**.
 
