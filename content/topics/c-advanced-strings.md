@@ -1,83 +1,42 @@
 # Advanced Strings
 
-In C Language Basics you used `printf` to write text on the screen and `scanf` to read what the user types. Each has a relative that does the same job with a different source or destination:
+In C Language Basics you used `printf` to write text on the screen and `scanf` to read what the user types. Each has a relative that does the same job with a **string** in place of the screen or the keyboard:
 
 | Function | What it does | Python equivalent |
 |----------|--------------|-------------------|
 | `printf` | Writes formatted text to the **screen** | `print(f"...")` |
-| `fprintf` | Writes formatted text to **any stream**: the screen, a file or a serial port | `print(f"...", file=f)` |
+| `snprintf` | Writes formatted text **into a string** | `s = f"..."` |
 | `scanf` | Reads values from the **keyboard** | `int(input())` |
-| `sscanf` | Reads values out of a **string** you already have | `line.split()`, then `int()` and `float()` |
+| `sscanf` | Reads values **out of a string** you already have | `line.split()`, then `int()` and `float()` |
 
 These two functions are how a C program **builds** a text message to send and **takes apart** a text message it received. That is most of what a mechatronic device does when it talks to a computer.
 
 Both live in `stdio.h`, and both use the format codes you already know (`%d`, `%f`, `%c`, `%s`).
 
-## `fprintf`: formatted text to a stream
+## `snprintf`: formatted text into a string
 
-A **stream** is any place that text can flow to or from. `fprintf` is `printf` with one extra argument at the front that says which stream to write to:
-
-```c
-fprintf(stream, "format text", values...);
-```
-
-Everything after the first argument works as in `printf`.
-
-### The screen is a stream too
-
-C opens two output streams for you before `main` starts:
-
-| Stream | Goes to | Used for |
-|--------|---------|----------|
-| `stdout` | The screen | Normal output |
-| `stderr` | The screen | Error messages |
-
-So these two lines do the same thing:
+`snprintf` is `printf` with two extra arguments at the front: the string to write into, and its size.
 
 ```c
-printf("Speed: %d rpm\n", speed);
-fprintf(stdout, "Speed: %d rpm\n", speed);
+snprintf(string, size, "format text", values...);
 ```
 
-### Writing to a file
-
-To write to a file, open it with `fopen`, write with `fprintf` and close it with `fclose`:
+Everything after the first two arguments works as in `printf`. Nothing appears on the screen. The text goes into the string, ready for you to use:
 
 ```c
-#include <stdio.h>
+char message[32];
+int speed = 150;
 
-int main(void)
-{
-    float temperature[3] = {23.5, 23.9, 24.6};
+snprintf(message, 32, "Speed: %d rpm", speed);
 
-    FILE *log = fopen("log.csv", "w");      // "w" = write, "a" = add to the end
-    if (log == NULL) {
-        fprintf(stderr, "Could not open the file\n");
-        return 1;
-    }
-
-    fprintf(log, "sample,temperature\n");
-    for (int i = 0; i < 3; i++) {
-        fprintf(log, "%d,%.1f\n", i, temperature[i]);
-    }
-
-    fclose(log);
-    return 0;
-}
+printf("%s\n", message);     // prints: Speed: 150 rpm
 ```
 
-`FILE *` is the type of the variable that stands for the open stream. Write it as shown, with the `*`. The file `log.csv` now holds:
+The `32` is the size of the array. `snprintf` never writes past it, and it always puts the closing `'\0'` at the end of the text.
 
-```
-sample,temperature
-0,23.5
-1,23.9
-2,24.6
-```
+> **Watch out:** if the text does not fit, `snprintf` cuts it short. An array of 32 holds at most 31 characters and the `'\0'`. Make the array large enough for the longest message you expect.
 
-This is a data logger: a spreadsheet or a Python script can open the file and plot it.
-
-> **Watch out:** `fopen` returns `NULL` when it fails, for example when the folder does not exist. Always check before you write, as the example does.
+> **Watch out:** you will meet an older function, `sprintf`, that has no size argument. It keeps writing past the end of the array when the text is too long, and it damages whatever is stored there. Use `snprintf`.
 
 ### Controlling the format
 
@@ -93,6 +52,19 @@ A device that reads your message expects an exact layout, so these `printf` opti
 | `%X` | Whole number in hexadecimal | `255` | `FF` |
 | `%02X` | Hexadecimal, 2 characters, padded with zeros | `10` | `0A` |
 | `%%` | A real percent sign | | `%` |
+
+### Joining strings
+
+`%s` puts one string inside another, so `snprintf` is also the safe way to join strings and numbers into one:
+
+```c
+char name[] = "TEMP";
+char unit[] = "C";
+float value = 23.5;
+char text[32];
+
+snprintf(text, 32, "%s = %.1f %s", name, value, unit);    // text = "TEMP = 23.5 C"
+```
 
 ## `sscanf`: reading values out of a string
 
@@ -167,6 +139,8 @@ if (sscanf(line, "%9s %d", command, &value) == 2) {
 }
 ```
 
+The `9` in `%9s` is the size of `command` minus one, which leaves room for the `'\0'`.
+
 > **Watch out:** `%s` reads until the next space, and a comma is not a space. In `"SPEED,150"` the `%s` takes the whole of `SPEED,150` and nothing is left for `%d`. The simple cure is to separate the parts of a message with **spaces**. Commas between numbers are fine: `"%d,%d"` reads `"10,20"` correctly.
 
 ## Use in mechatronics communication
@@ -183,12 +157,14 @@ PC          ->  controller :   READ\n
 controller  ->  PC         :   TEMP 23.5 HUM 40\n
 ```
 
-Each side then needs two skills, and they are the two functions on this page:
+Each line is a string. Each side then needs two skills, and they are the two functions on this page:
 
 | Job | Function |
 |-----|----------|
-| Turn numbers into a text message and send it | `fprintf` |
+| Turn numbers into a text message, ready to send | `snprintf` |
 | Turn a received text message back into numbers | `sscanf` |
+
+How the string travels over the wire depends on your board and is covered elsewhere. This page deals with the string itself.
 
 ### Why text?
 
@@ -198,99 +174,85 @@ Each side then needs two skills, and they are the two functions on this page:
 
 The price is size. The number `23.5` is 4 characters, and with the 8N1 frame each character costs 10 bits on the wire. At 9600 baud that is about 960 characters per second, so a 20 character message can be sent at most 48 times per second. For fast control loops, engineers switch to binary messages.
 
-### Sending: `fprintf` to the port
-
-On a PC, a serial port can be opened as a stream, just like a file. From then on, sending a command is one `fprintf`:
-
-```c
-FILE *port = fopen("COM3", "w");         // on Linux: "/dev/ttyUSB0"
-
-int speed = 150;
-fprintf(port, "SPEED %d\n", speed);      // sends: SPEED 150
-fflush(port);                            // send it now
-```
-
-The baud rate and frame format are set separately, before the port is opened, and they must match the device.
-
-> **Watch out:** `fprintf` collects text in a buffer and sends it later, when the buffer is full. A command that waits in a buffer is a motor that does not move. Call `fflush(port)` after each message to push it out at once.
-
-On a microcontroller there are no files, but the idea is the same. Many C compilers for microcontrollers let you connect a stream to the UART, and then `fprintf` (or plain `printf`) sends its text out of the TX pin.
-
-When there is no stream at all, use the sister function `snprintf`. It writes the formatted text **into a string**, and you hand that string to whatever send function your board has:
+### Sending: build the message with `snprintf`
 
 ```c
 char message[32];
+float temp = 23.5;
+int hum = 40;
 
-snprintf(message, 32, "TEMP %.1f HUM %d\n", temp, hum);
-uart_send(message);          // the name of this function depends on your board
+snprintf(message, 32, "TEMP %.1f HUM %d\n", temp, hum);    // message = "TEMP 23.5 HUM 40\n"
 ```
 
-The `32` is the size of the array, and `snprintf` never writes past it.
+The string `message` is now complete, and you hand it to whatever send function your board has.
 
 > **Watch out:** on small microcontrollers, `%f` is often switched off to save memory, and it prints `?` or nothing. A common trick is to send a whole number in smaller units: send `235` and agree that it means tenths of a degree.
 
-### Receiving: one line, then `sscanf`
+### Receiving: take the message apart with `sscanf`
 
-Receiving is done in two steps:
-
-1. Collect characters until the end-of-line `'\n'` arrives. Now you have one complete message in a string.
-2. Take it apart with `sscanf` and check the return value.
-
-The function `fgets` does step 1 for a stream: it reads one whole line into a string.
+Once a complete line has arrived and sits in a string, take it apart with `sscanf` and check the return value:
 
 ```c
-char line[50];
+char line[] = "TEMP 23.5 HUM 40\n";
+float temp;
+int hum;
 
-fgets(line, 50, port);       // read up to 49 characters, stop after '\n'
+if (sscanf(line, "TEMP %f HUM %d", &temp, &hum) == 2) {
+    // temp and hum are safe to use
+}
 ```
 
-Never run `sscanf` on half a message. The `'\n'` at the end is what tells you the message is complete, and that is why every message in the protocol ends with one.
+Never run `sscanf` on half a message. The `'\n'` at the end is what tells the receiver that the message is complete, and that is why every message in the protocol ends with one.
 
 ### A complete example
 
-This program is the controller side of the protocol above. It reads commands, one line at a time, and answers each one. Here it reads from the keyboard (`stdin`) and answers on the screen (`stdout`), so you can run it on any computer and play the part of the PC. Replace the two streams with a serial port, and the same code runs a real device.
+This program is the controller side of the protocol above. The function `handle` gets one command as a string, takes it apart with `sscanf` and builds the answer with `snprintf`. Here `main` feeds it a few test commands and prints each answer, so you can run it on any computer. On a real device, the commands come from the serial link and the answers go back to it, and `handle` stays the same.
 
 ```c
 #include <stdio.h>
 #include <string.h>
 
+int speed = 0;
+float temp = 23.5;
+int hum = 40;
+
+void handle(char line[])
+{
+    char command[10];
+    char reply[40];
+    int value;
+
+    int n = sscanf(line, "%9s %d", command, &value);
+
+    if (n == 2 && strcmp(command, "SPEED") == 0) {
+        speed = value;
+        snprintf(reply, 40, "OK %d\n", speed);
+    } else if (n >= 1 && strcmp(command, "READ") == 0) {
+        snprintf(reply, 40, "TEMP %.1f HUM %d SPEED %d\n", temp, hum, speed);
+    } else {
+        snprintf(reply, 40, "ERR\n");
+    }
+
+    printf("%s", reply);
+}
+
 int main(void)
 {
-    char line[50];
-    char command[10];
-    int value;
-    int speed = 0;
-    float temp = 23.5;
-    int hum = 40;
-
-    while (fgets(line, 50, stdin) != NULL) {
-        int n = sscanf(line, "%9s %d", command, &value);
-
-        if (n == 2 && strcmp(command, "SPEED") == 0) {
-            speed = value;
-            fprintf(stdout, "OK %d\n", speed);
-        } else if (n >= 1 && strcmp(command, "READ") == 0) {
-            fprintf(stdout, "TEMP %.1f HUM %d SPEED %d\n", temp, hum, speed);
-        } else {
-            fprintf(stdout, "ERR\n");
-        }
-        fflush(stdout);
-    }
+    handle("SPEED 150\n");
+    handle("READ\n");
+    handle("SPEED fast\n");
+    handle("JUMP 5\n");
 
     return 0;
 }
 ```
 
-A session looks like this (the lines you type, each followed by the answer):
+The program prints one answer for each command:
 
 ```
-SPEED 150
 OK 150
-READ
 TEMP 23.5 HUM 40 SPEED 150
-SPEED fast
 ERR
-JUMP 5
 ERR
 ```
 
@@ -309,14 +271,11 @@ Notice the third command. `fast` is not a number, so `sscanf` returns 1, the che
 
 | Task | Code |
 |------|------|
-| Print to the screen | `fprintf(stdout, "x = %d\n", x);` |
-| Print an error | `fprintf(stderr, "Sensor failed\n");` |
-| Open a file for writing | `FILE *f = fopen("log.csv", "w");` |
-| Write a line to a file | `fprintf(f, "%d,%.1f\n", i, temp);` |
-| Close the file | `fclose(f);` |
-| Send a command | `fprintf(port, "SPEED %d\n", speed);` |
-| Send it now | `fflush(port);` |
-| Build a message in a string | `snprintf(msg, 32, "TEMP %.1f\n", temp);` |
-| Read one line | `fgets(line, 50, port);` |
+| Build a message in a string | `snprintf(msg, 32, "SPEED %d\n", speed);` |
+| Fixed number of decimals | `snprintf(msg, 32, "TEMP %.1f\n", temp);` |
+| Pad with zeros | `snprintf(msg, 32, "%05d", count);` |
+| Join strings and numbers | `snprintf(msg, 32, "%s = %d", name, value);` |
 | Take a message apart | `n = sscanf(line, "TEMP %f HUM %d", &temp, &hum);` |
 | Check it worked | `if (n == 2) { ... }` |
+| Read a word and a number | `n = sscanf(line, "%9s %d", command, &value);` |
+| Compare the word | `if (strcmp(command, "SPEED") == 0) { ... }` |
