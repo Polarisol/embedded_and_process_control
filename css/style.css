@@ -601,6 +601,8 @@ a { color: var(--accent); }
 
 .nav-item[aria-current="page"] { color: var(--text); font-weight: 600; }
 .nav-item[aria-current="page"]:hover { background: transparent; }
+/* Arrow keys in use: no hover mark under the resting mouse pointer. */
+:root[data-keys] .nav-item:not([aria-current="page"]):hover { color: var(--muted); background: transparent; }
 .nav-item[aria-current="page"] .nav-title::after {
   content: "_";
   margin-left: 2px;
@@ -772,6 +774,8 @@ a { color: var(--accent); }
 .line[aria-expanded="true"] { background: rgba(var(--t), 0.08); }
 .line[aria-expanded="true"] .line-label { color: rgb(var(--t)); }
 .line[aria-expanded] .line-end { font-size: 1.15rem; }
+:root[data-keys] .line:not([aria-expanded="true"]):hover { background: transparent; }
+:root[data-keys] .line:not([aria-expanded="true"]):hover .line-end { color: var(--muted); }
 .line[aria-expanded="true"] .line-end { transform: rotate(90deg); }
 
 .line-bot { --bot: rgb(var(--type-bot)); }
