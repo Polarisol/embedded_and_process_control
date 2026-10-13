@@ -234,6 +234,14 @@
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
+/* No font ligatures anywhere: JetBrains Mono would otherwise draw != as a
+   slashed equals sign, and == <= >= -> as single glyphs, which misleads in code.
+   Set on every element, and !important, because each `font:` shorthand
+   (body, buttons, labels...) would otherwise switch them back on. */
+*, *::before, *::after {
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0, "calt" 0 !important;
+}
 /* The page scrolls, but without a visible scrollbar */
 html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
