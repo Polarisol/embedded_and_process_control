@@ -146,7 +146,40 @@ C marks the end of the text with a hidden character `'\0'`, so `"Dana"` needs 5 
 
 Single and double quotes are **not** interchangeable as they are in Python: `'A'` is one `char`, `"A"` is a string.
 
-The Python string operators do not work. Use the functions in `#include <string.h>` instead:
+### Changing a string later
+
+The `= "..."` form works **only in the declaration**. Once the string exists, you cannot give it new text with `=`:
+
+```c
+char name[20] = "Dana";    // fine: this is the declaration
+
+name = "Noa";              // ERROR: the compiler refuses this
+```
+
+To change the text, use a function. They live in `string.h`, so add `#include <string.h>` at the top of the file. `strcpy` ("string copy") copies new text into the string:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char name[20] = "Dana";
+    printf("%s\n", name);       // Dana
+
+    strcpy(name, "Noa");        // name now holds "Noa"
+    printf("%s\n", name);       // Noa
+
+    strcat(name, " Levi");      // add text to the end
+    printf("%s\n", name);       // Noa Levi
+
+    return 0;
+}
+```
+
+The destination comes first: `strcpy(name, "Noa")` reads like `name = "Noa"`. Make sure the new text fits in the array, because `strcpy` and `strcat` do not check.
+
+The same goes for the other Python string operators. Each has a function:
 
 | Python | C |
 |--------|---|
@@ -194,7 +227,56 @@ if (temperature > 38.0) {
 }
 ```
 
+### Combining conditions
+
+Python's words `and`, `or` and `not` are written as symbols in C:
+
+| Python | C | True when |
+|--------|---|-----------|
+| `a and b` | `a && b` | **both** are true |
+| `a or b` | `a \|\| b` | **at least one** is true |
+| `not a` | `!a` | `a` is false |
+| `a != b` | `a != b` | `a` and `b` are different (same as Python) |
+
+```c
+int age = 20;
+int has_ticket = 1;      // 1 = true, 0 = false
+char grade = 'B';
+
+// && : both must be true
+if (age >= 18 && has_ticket) {
+    printf("You may enter\n");
+}
+
+// || : one is enough
+if (grade == 'A' || grade == 'B') {
+    printf("Well done\n");
+}
+
+// != : not equal
+if (grade != 'F') {
+    printf("You passed\n");
+}
+
+// ! : flips true and false
+if (!has_ticket) {
+    printf("Please buy a ticket\n");
+}
+```
+
+When you mix them, use extra parentheses to make the order clear:
+
+```c
+if ((age < 6 || age > 65) && !has_ticket) {
+    printf("You get a free ticket\n");
+}
+```
+
+Python lets you write `0 < x < 10`. In C you must split it into two comparisons: `x > 0 && x < 10`.
+
 > **Watch out:** `=` assigns and `==` compares. `if (x = 5)` is legal C, but it puts 5 in `x` and is always true.
+>
+> In the same way, write `&&` and `||` with **two** symbols. A single `&` or `|` is a different operator that works on bits.
 
 ## Loops
 
@@ -248,6 +330,21 @@ switch (grade) {
 - It works with `int` and `char` values only, not with strings or `float`
 
 > **Watch out:** every case needs a `break`. Without it, the program keeps running into the next case.
+
+> **Watch out:** never declare variables inside a case, or anywhere inside the `switch`. It causes confusing compiler errors, and the variable can be skipped over and left holding garbage. Declare what you need **above** the `switch` and only use it inside:
+>
+> ```c
+> int bonus = 0;          // declared before the switch
+>
+> switch (grade) {
+>     case 'A':
+>         bonus = 10;     // only used here
+>         break;
+>     case 'B':
+>         bonus = 5;
+>         break;
+> }
+> ```
 
 ## Functions
 
