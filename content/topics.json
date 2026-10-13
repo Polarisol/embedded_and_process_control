@@ -47,7 +47,8 @@
     {
       "id": "sensors",
       "title": "Sensors",
-      "icon": "📡"
+      "icon": "📡",
+      "material": "topics/sensors-types.md"
     },
     {
       "id": "motors",

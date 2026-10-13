@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 290" width="768" height="290" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="290" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">A push button with the built-in pull-up resistor</text>
+<!-- board -->
+<rect x="20" y="50" width="220" height="210" rx="10" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="130" y="74" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Arduino / ESP</text>
+<rect x="40" y="88" width="140" height="110" rx="6" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="110" y="104" font-size="11" text-anchor="middle" fill="#6b7280">inside the chip</text>
+<text x="100" y="124" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">VCC</text>
+<line x1="100" y1="128" x2="100" y2="136" stroke="#111827" stroke-width="2.5"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="100,136 108,140 92,146 108,152 92,158 108,164 100,168"/>
+<text x="116" y="156" font-size="11" fill="#374151">pull-up</text>
+<line x1="100" y1="168" x2="100" y2="180" stroke="#111827" stroke-width="2.5"/>
+<line x1="100" y1="180" x2="240" y2="180" stroke="#111827" stroke-width="2.5"/>
+<circle cx="100" cy="180" r="3.5" fill="#111827"/>
+<rect x="226" y="172" width="16" height="16" fill="#1d4ed8"/>
+<text x="218" y="170" font-size="13" font-weight="bold" text-anchor="end" fill="#1d4ed8">D2</text>
+<rect x="226" y="230" width="16" height="16" fill="#111827"/>
+<text x="218" y="243" font-size="13" font-weight="bold" text-anchor="end" fill="#111827">GND</text>
+<!-- wires and button -->
+<line x1="242" y1="180" x2="330" y2="180" stroke="#111827" stroke-width="2.5"/>
+<circle cx="334" cy="180" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<circle cx="406" cy="180" r="4" fill="#ffffff" stroke="#111827" stroke-width="2.5"/>
+<line x1="326" y1="160" x2="414" y2="160" stroke="#111827" stroke-width="3"/>
+<line x1="370" y1="160" x2="370" y2="138" stroke="#111827" stroke-width="2.5"/>
+<rect x="354" y="128" width="32" height="10" rx="3" fill="#b42318"/>
+<text x="370" y="118" font-size="12" text-anchor="middle" fill="#374151">push here</text>
+<line x1="410" y1="180" x2="460" y2="180" stroke="#111827" stroke-width="2.5"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" points="460,180 460,238 242,238"/>
+<!-- states -->
+<rect x="500" y="62" width="250" height="88" rx="8" fill="#dff3e4"/>
+<text x="625" y="88" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">Released</text>
+<text x="625" y="110" font-size="13" text-anchor="middle" fill="#374151">The resistor pulls the pin up</text>
+<text x="625" y="134" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">digitalRead → HIGH (1)</text>
+<rect x="500" y="166" width="250" height="88" rx="8" fill="#fde2e1"/>
+<text x="625" y="192" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">Pressed</text>
+<text x="625" y="214" font-size="13" text-anchor="middle" fill="#374151">The button connects the pin to GND</text>
+<text x="625" y="238" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">digitalRead → LOW (0)</text>
+</svg>
