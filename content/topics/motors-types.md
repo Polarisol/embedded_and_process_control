@@ -354,7 +354,54 @@ Two things to notice:
 | Drive wheels forwards and backwards | **DC motor** + H-bridge driver |
 | Move an arm or a flap to a certain angle | **Positional servo** |
 | Drive the wheels of a small, simple robot | **Continuous servo** (or DC motors + driver) |
-| Move to an exact position, or turn an exact amount | **Stepper motor** + driver |
+| Turn an exact amount, or more than half a turn | **Stepper motor** + driver |
+
+### Servo or stepper?
+
+Both a servo and a stepper can turn to a **chosen position** and stay there, so choosing between them is the hardest choice in this lesson. The difference is in **how each one knows where it is**:
+
+![Left: a servo moves within a half circle and its potentiometer tells it the angle. Right: a stepper can turn all the way round and keeps track of its position by counting steps](assets/motors/servo-vs-stepper.svg)
+
+- A **servo measures** its position. Its potentiometer tells it the angle all the time, so it goes straight to the right place, even right after power-up, and pushes back if something moves it. This is a **closed loop**.
+- A **stepper counts** its steps. It doesn't measure anything: it simply trusts that every step happened. This is an **open loop**. It works very well, as long as nothing stops the motor.
+
+Here is how they compare (for the SG90 servo and the 28BYJ-48 stepper from this lesson):
+
+| | Servo (SG90) | Stepper (28BYJ-48) |
+|---|---|---|
+| **How far it can turn** | About 180°, no more | As far as you like, many turns, both ways |
+| **Knows where it is at power-up?** | Yes, it goes straight to the angle you ask for | No. It needs a **home** position first (see below) |
+| **If something blocks it** | Keeps pushing, and gets there when it's free | **Skips steps** and never finds out; the count is now wrong |
+| **Precision** | About 1° to 2°, and it may jitter slightly | About 0.18° per step, and the same move gives the same result every time |
+| **Speed** | Fast: 0° to 180° in about half a second | Slow: about 4 seconds for one turn |
+| **Holding still** | Uses current only when it has to correct itself | The coils stay on, so it uses current all the time and gets warm |
+| **Wiring and code** | 3 wires, no driver, a pulse | A driver board, 4 pins and a library |
+
+### What is "homing"?
+
+When a stepper project switches on, the board has no idea where the shaft is. So at start-up it turns the motor slowly until it presses a small **limit switch** (a button placed at a known position), and calls that point **step 0**. From then on, it counts. Every 3D printer does this when it starts: that's the clicking you hear as each axis moves to its corner. A servo never needs this, because it always knows its angle.
+
+### How to choose
+
+Ask these questions about your project, in this order:
+
+1. **Does it need to turn more than about 180°, or all the way round?** Then it's a **stepper**. A servo simply can't.
+2. **Must it be in the right place the moment it switches on, with no homing?** Then it's a **servo**.
+3. **Can something push against it or block it** (a door, a gripper, a joint that carries weight)? Prefer a **servo**: it corrects itself, while a blocked stepper loses count.
+4. **Do you need very fine, exactly repeatable moves**, or to turn an exact amount again and again? Then it's a **stepper**.
+5. **Does it run on batteries and stand still most of the time?** Prefer a **servo**: a stepper uses current even when it isn't moving.
+6. **Still not sure?** For a beginner project, start with a **servo**. It needs no driver and no homing, and the code is shorter.
+
+Some examples:
+
+| Project | Choice | Why |
+|---------|--------|-----|
+| A joint of a small robot arm | **Servo** | Less than 180°, knows its angle at start-up, holds against the weight |
+| A door lock or a pet-feeder flap | **Servo** | Just two positions (open and closed), fast, simple |
+| A solar panel that follows the sun across the sky | **Servo** | Half a circle is enough, and it must hold against the wind |
+| A turntable that photographs an object from all sides | **Stepper** | Full turns, in exact equal steps |
+| A clock hand or a dial that turns round and round | **Stepper** | Unlimited turns, and the hand moves in exact steps |
+| A pen plotter or a 3D printer axis | **Stepper** (with homing) | Many turns of a screw or a belt, and very accurate, repeatable moves |
 
 ## Summary
 
@@ -363,6 +410,7 @@ Two things to notice:
 - A **servo** has a motor, gears, a potentiometer and a control chip inside. A **pulse** every 20 ms sets it: about 0.5 ms for 0°, 1.5 ms for 90° and 2.4 ms for 180°.
 - A **continuous servo** has no position feedback: the same pulse sets its **speed and direction**, and 1.5 ms means stop.
 - A **stepper motor** turns in exact **steps** by switching its coils on one after another. The 28BYJ-48 needs about 2048 steps per turn and a ULN2003 driver.
+- **Servo or stepper?** A servo **measures** its angle, so it knows where it is at once but only turns about 180°. A stepper **counts** its steps, so it can turn without limit and very precisely, but needs **homing** at start-up and loses count if it is blocked.
 
 ## Challenges
 
@@ -371,3 +419,4 @@ Two things to notice:
 3. **Motor ramp:** make the DC motor speed up slowly from 0 to 255 over 3 seconds, then slow down again, then do the same in reverse. What is the smallest value that makes your motor turn?
 4. **Clock hand:** tape a paper arrow to the stepper shaft and make it move like the second hand of a clock: one step of 6° (2048 / 60 ≈ 34 steps) every second.
 5. **Button control:** use two buttons (see "Buttons Advanced") to turn the stepper a little to the left or to the right with every press.
+6. **Servo or stepper?** For each project, choose a servo or a stepper and give two reasons: a camera that turns to face whoever is talking; a toy car steering wheel; an automatic window blind that rolls up and down; a "weather dial" that points to sunny, cloudy or rainy.
