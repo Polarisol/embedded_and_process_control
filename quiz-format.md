@@ -1,6 +1,8 @@
 # Quiz file format: instructions for writing quizzes
 
-These are instructions for writing a quiz for the Practical Programming course website. The site reads the quiz from a Markdown file and turns it into an interactive multiple-choice quiz. Students answer every question and press **Submit answers**. They then see their score, which options were right or wrong, the feedback for each option, and an explanation for each question.
+These are instructions for writing a quiz for the Embedded Systems course website. The site reads the quiz from a Markdown file and turns it into an interactive multiple-choice quiz. Students answer every question and press **Submit answers**. They then see their score, which options were right or wrong, the feedback for each option, and an explanation for each question.
+
+Students write Python with PySide6 on the PC and C on the Arduino, so a quiz's code can be in either language.
 
 Follow the format below **exactly**. The site uses a simple line-by-line reader, not a full Markdown parser. A line in the wrong place is silently ignored or attached to the wrong part of the quiz.
 
@@ -46,13 +48,13 @@ Extra question text or a code block (optional)
 
 ### Questions
 - Each question starts with `## ` followed by the question text **on one line**.
-- The `## ` line supports inline Markdown only: `` `code` ``, `**bold**`, `*italic*`. Put any Python code in backticks.
+- The `## ` line supports inline Markdown only: `` `code` ``, `**bold**`, `*italic*`. Put any code in backticks.
 - Don't number the questions. The site numbers them automatically.
 - Don't use `###` or deeper headings anywhere.
 
 ### Question body (optional)
 - Any lines after the `## ` line and before the first option are part of the question. Use them for extra context or a code snippet.
-- **Code blocks are only allowed here.** Use fenced blocks with a language tag:
+- **Code blocks are only allowed here.** Use fenced blocks with a language tag (`python` for PC code, `c` for Arduino code):
   ````
   ```python
   x = 5
@@ -150,6 +152,26 @@ print(x)
   > Invalid: `-` is the minus operator, not part of a name.
 ````
 
+### Example: an Arduino C question
+
+C questions use the same format. Only the code block's language tag changes:
+
+````markdown
+## What does this code print to the Serial Monitor?
+```c
+int x = 7;
+int y = 2;
+Serial.println(x / y);
+```
+- [ ] 3.5
+  > Both `x` and `y` are `int`, so C does integer division and drops the fraction.
+- [x] 3
+  > Right! Dividing two `int` values keeps only the whole part, so `7 / 2` is 3.
+- [ ] 4
+  > Integer division doesn't round. It cuts off the fraction, so 3.5 becomes 3, not 4.
+> Dividing two `int` values gives an `int`. To keep the fraction, use a `float`, for example `7.0 / 2`.
+````
+
 ---
 
 ## 5. Writing good questions
@@ -160,7 +182,7 @@ print(x)
 - Avoid "all of the above" and "none of the above". Use a multiple-answer question instead.
 - Avoid trick questions and ambiguous wording. Each question must have one indisputable correct set of answers.
 - Mix single-answer and multiple-answer questions. About 1 in 4 multiple-answer questions works well.
-- Make sure all code is valid Python 3 and that the stated output is exactly what it prints.
+- Make sure all code is valid (Python 3 for PC code, Arduino C for Arduino code) and that the stated output is exactly what it prints.
 - 5–10 questions per quiz is a good length.
 
 ---
