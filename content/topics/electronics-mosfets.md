@@ -76,6 +76,17 @@ It is called a **low-side** switch because the MOSFET sits on the low (GND) side
 
 > **Motors, relays, solenoid valves and pumps need a diode too.** These loads contain a coil. When the MOSFET switches off, the coil produces a short, high voltage spike that can destroy the MOSFET. Put a diode (1N4007, or better a fast 1N5819) **across the load**, with its **stripe (cathode) towards the +** of the supply. It does nothing while the load runs, and gives the spike a safe path when it switches off. LED strips and heaters don't need it.
 
+### On a breadboard
+
+Here is the same circuit built on a breadboard, switching a short 12 V LED strip. The MOSFET stands upright with its three legs in row c, and its legs share their columns with the parts they connect to:
+
+![The MOSFET switch on a breadboard: Nano ESP32 pin D5 to column 3, a 100 ohm resistor from column 3 to the gate in column 9, a 10 kilohm resistor from column 9 to the minus rail, the source in column 11 wired to the minus rail, the drain in column 10 wired to the LED strip's minus, the strip's plus to the 12 V plus rail, and the 12 V supply and the Nano's GND on the rails](assets/mosfets/breadboard.svg)
+
+Two things to check before you plug in the 12 V supply:
+
+- **The top + rail now carries 12 V.** Nothing from the Nano goes to it. The Nano gets its power from USB as usual.
+- **Both grounds meet on the − rail:** the supply's −, the Nano's GND, the MOSFET's source and the 10 kΩ pull-down.
+
 ### The code
 
 Switching the load is just `digitalWrite()`:
