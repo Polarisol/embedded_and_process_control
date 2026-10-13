@@ -44,7 +44,7 @@
       "id": "electronics",
       "title": "Electronics",
       "icon": "⚡",
-      "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md"]
+      "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"]
     },
     {
       "id": "sensors",

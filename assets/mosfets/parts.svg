@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 360" width="768" height="360" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="360" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">What a MOSFET looks like, and how it is drawn in a circuit</text>
+<text x="190" y="58" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">The real part (TO-220 package)</text>
+<rect x="130" y="70" width="120" height="62" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+<circle cx="190" cy="98" r="13" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+<rect x="126" y="132" width="128" height="108" rx="4" fill="#1f2937"/>
+<text x="190" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#f9fafb">IRLZ44N</text>
+<text x="190" y="200" font-size="11" text-anchor="middle" fill="#cbd5e1">(example)</text>
+<rect x="151" y="240" width="8" height="70" fill="#9ca3af"/>
+<text x="155" y="330" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">G</text>
+<text x="155" y="347" font-size="11" text-anchor="middle" fill="#374151">gate</text>
+<rect x="186" y="240" width="8" height="70" fill="#9ca3af"/>
+<text x="190" y="330" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">D</text>
+<text x="190" y="347" font-size="11" text-anchor="middle" fill="#374151">drain</text>
+<rect x="221" y="240" width="8" height="70" fill="#9ca3af"/>
+<text x="225" y="330" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">S</text>
+<text x="225" y="347" font-size="11" text-anchor="middle" fill="#374151">source</text>
+<line x1="300" y1="92" x2="254" y2="92" stroke="#111827" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="306" y="88" font-size="12" text-anchor="start" fill="#374151">metal tab: it is</text>
+<text x="306" y="103" font-size="12" text-anchor="start" fill="#374151">connected to the drain</text>
+<line x1="300" y1="290" x2="236" y2="290" stroke="#111827" stroke-width="1.5" marker-end="url(#ar)"/>
+<text x="306" y="286" font-size="12" text-anchor="start" fill="#374151">most TO-220 MOSFETs:</text>
+<text x="306" y="301" font-size="12" text-anchor="start" fill="#374151">G D S, left to right,</text>
+<text x="306" y="316" font-size="12" text-anchor="start" fill="#374151">text facing you</text>
+<line x1="454" y1="50" x2="454" y2="340" stroke="#e5e7eb" stroke-width="2"/>
+<text x="610" y="58" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">The circuit symbol (N-channel)</text>
+<line x1="486" y1="190" x2="590" y2="190" stroke="#111827" stroke-width="2.5"/>
+<line x1="590" y1="160" x2="590" y2="220" stroke="#111827" stroke-width="3"/>
+<line x1="602" y1="157" x2="602" y2="173" stroke="#111827" stroke-width="3"/>
+<line x1="602" y1="182" x2="602" y2="198" stroke="#111827" stroke-width="3"/>
+<line x1="602" y1="207" x2="602" y2="223" stroke="#111827" stroke-width="3"/>
+<polyline points="602,165 620,165 620,145" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="602,215 620,215 620,235" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polyline points="602,190 620,190 620,215" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="603,190 614,184 614,196" fill="#111827"/>
+<polyline points="620,155 652,155 652,180" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="642,198 662,198 652,182" fill="#ffffff" stroke="#111827" stroke-width="2"/>
+<line x1="642" y1="181" x2="662" y2="181" stroke="#111827" stroke-width="2.5"/>
+<polyline points="652,198 652,225 620,225" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<circle cx="620" cy="155" r="4" fill="#111827"/>
+<circle cx="620" cy="225" r="4" fill="#111827"/>
+<line x1="620" y1="145" x2="620" y2="95" stroke="#111827" stroke-width="2.5"/>
+<line x1="620" y1="235" x2="620" y2="285" stroke="#111827" stroke-width="2.5"/>
+<text x="630" y="108" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">D  drain</text>
+<text x="630" y="124" font-size="12" text-anchor="start" fill="#374151">goes to the load</text>
+<text x="630" y="272" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">S  source</text>
+<text x="630" y="288" font-size="12" text-anchor="start" fill="#374151">goes to GND</text>
+<text x="480" y="156" font-size="14" font-weight="bold" text-anchor="start" fill="#1d4ed8">G  gate</text>
+<text x="480" y="174" font-size="12" text-anchor="start" fill="#374151">the control input</text>
+<text x="672" y="194" font-size="11" text-anchor="start" fill="#374151">built-in</text>
+<text x="672" y="208" font-size="11" text-anchor="start" fill="#374151">body diode</text>
+</svg>
