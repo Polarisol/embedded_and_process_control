@@ -54,7 +54,8 @@
     {
       "id": "motors",
       "title": "Motors",
-      "icon": "⚙"
+      "icon": "⚙",
+      "material": "topics/motors-types.md"
     },
     {
       "id": "process-control",

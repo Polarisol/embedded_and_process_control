@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker></defs>
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Connecting a DC motor through a TB6612FNG driver</text>
+<rect x="20" y="56" width="170" height="290" rx="10" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="95.0" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Arduino</text>
+<text x="95.0" y="102" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Nano ESP32</text>
+<rect x="182" y="82" width="16" height="16" fill="#b42318"/>
+<text x="176" y="95" font-size="13" font-weight="bold" text-anchor="end" fill="#b42318">3.3V</text>
+<rect x="182" y="132" width="16" height="16" fill="#15803d"/>
+<text x="176" y="145" font-size="13" font-weight="bold" text-anchor="end" fill="#15803d">D5</text>
+<rect x="182" y="172" width="16" height="16" fill="#a16207"/>
+<text x="176" y="185" font-size="13" font-weight="bold" text-anchor="end" fill="#a16207">D6</text>
+<rect x="182" y="212" width="16" height="16" fill="#0e7490"/>
+<text x="176" y="225" font-size="13" font-weight="bold" text-anchor="end" fill="#0e7490">D7</text>
+<rect x="182" y="302" width="16" height="16" fill="#111827"/>
+<text x="176" y="315" font-size="13" font-weight="bold" text-anchor="end" fill="#111827">GND</text>
+<rect x="300" y="56" width="170" height="290" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="385.0" y="210" font-size="15" font-weight="bold" text-anchor="middle" fill="#6d28d9">TB6612FNG</text>
+<text x="385.0" y="228" font-size="12" text-anchor="middle" fill="#6d28d9">motor driver</text>
+<circle cx="300" cy="90" r="5" fill="#6d28d9"/>
+<text x="310" y="94" font-size="12" text-anchor="start" fill="#4c1d95">VCC</text>
+<circle cx="300" cy="115" r="5" fill="#6d28d9"/>
+<text x="310" y="119" font-size="12" text-anchor="start" fill="#4c1d95">STBY</text>
+<circle cx="300" cy="140" r="5" fill="#6d28d9"/>
+<text x="310" y="144" font-size="12" text-anchor="start" fill="#4c1d95">PWMA</text>
+<circle cx="300" cy="180" r="5" fill="#6d28d9"/>
+<text x="310" y="184" font-size="12" text-anchor="start" fill="#4c1d95">AIN1</text>
+<circle cx="300" cy="220" r="5" fill="#6d28d9"/>
+<text x="310" y="224" font-size="12" text-anchor="start" fill="#4c1d95">AIN2</text>
+<circle cx="300" cy="310" r="5" fill="#6d28d9"/>
+<text x="310" y="314" font-size="12" text-anchor="start" fill="#4c1d95">GND</text>
+<circle cx="470" cy="90" r="5" fill="#6d28d9"/>
+<text x="460" y="94" font-size="12" text-anchor="end" fill="#4c1d95">VM</text>
+<circle cx="470" cy="150" r="5" fill="#6d28d9"/>
+<text x="460" y="154" font-size="12" text-anchor="end" fill="#4c1d95">AO1</text>
+<circle cx="470" cy="190" r="5" fill="#6d28d9"/>
+<text x="460" y="194" font-size="12" text-anchor="end" fill="#4c1d95">AO2</text>
+<circle cx="470" cy="310" r="5" fill="#6d28d9"/>
+<text x="460" y="314" font-size="12" text-anchor="end" fill="#4c1d95">GND</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round"  points="198,90 300,90"/>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round"  points="260,90 260,115 300,115"/>
+<circle cx="260" cy="90" r="4" fill="#b42318"/>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round"  points="198,140 300,140"/>
+<polyline fill="none" stroke="#a16207" stroke-width="2.5" stroke-linejoin="round"  points="198,180 300,180"/>
+<polyline fill="none" stroke="#0e7490" stroke-width="2.5" stroke-linejoin="round"  points="198,220 300,220"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"  points="198,310 300,310"/>
+<text x="245" y="132" font-size="11" text-anchor="middle" fill="#15803d">speed</text>
+<text x="245" y="172" font-size="11" text-anchor="middle" fill="#a16207">direction</text>
+<text x="245" y="212" font-size="11" text-anchor="middle" fill="#0e7490">direction</text>
+<rect x="605" y="135" width="90" height="70" rx="8" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+<rect x="695" y="166" width="24" height="8" rx="2" fill="#6b7280"/>
+<text x="650" y="175" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">DC motor</text>
+<polyline fill="none" stroke="#c2410c" stroke-width="2.5" stroke-linejoin="round"  points="470,150 560,150 560,155 605,155"/>
+<polyline fill="none" stroke="#c2410c" stroke-width="2.5" stroke-linejoin="round"  points="470,190 560,190 560,185 605,185"/>
+<rect x="560" y="262" width="180" height="56" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+<rect x="572" y="276" width="36" height="28" rx="4" fill="#fde68a" stroke="#a16207" stroke-width="1.5"/>
+<rect x="614" y="276" width="36" height="28" rx="4" fill="#fde68a" stroke="#a16207" stroke-width="1.5"/>
+<rect x="656" y="276" width="36" height="28" rx="4" fill="#fde68a" stroke="#a16207" stroke-width="1.5"/>
+<rect x="698" y="276" width="36" height="28" rx="4" fill="#fde68a" stroke="#a16207" stroke-width="1.5"/>
+<text x="650" y="338" font-size="12" font-weight="bold" text-anchor="middle" fill="#374151">4 × AA batteries = 6 V</text>
+<text x="554" y="276" font-size="15" font-weight="bold" text-anchor="end" fill="#b42318">+</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round"  points="560,284 520,284 520,90 470,90"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"  points="560,306 530,306 530,310 470,310"/>
+<text x="384" y="372" font-size="12" text-anchor="middle" fill="#374151">The motor gets its power from the batteries (VM), never from the board. The board only sends the control signals.</text>
+<text x="384" y="390" font-size="12" font-weight="bold" text-anchor="middle" fill="#374151">All the GND pins are connected together: board, driver and battery.</text>
+</svg>
