@@ -149,8 +149,6 @@ A very common way to give those bytes meaning is to send **lines of text**:
 
 ```
 PC          ->  controller :   SPEED 150\n
-controller  ->  PC         :   OK 150\n
-
 PC          ->  controller :   READ\n
 controller  ->  PC         :   TEMP 23.5 HUM 40\n
 ```
@@ -204,7 +202,7 @@ Never run `sscanf` on half a message. The `'\n'` at the end is what tells the re
 
 ### A complete example
 
-This program is the controller side of the protocol above. The function `handle` gets one command as a string, takes it apart with `sscanf` and builds the answer with `sprintf`. Here `main` feeds it a few test commands and prints each answer, so you can run it on any computer. On a real device, the commands come from the serial link and the answers go back to it, and `handle` stays the same.
+This program is the controller side of the protocol above. The function `handle` gets one command as a string and takes it apart with `sscanf`. `SPEED` sets the speed, and `READ` builds an answer with `sprintf`. Here `main` feeds it a few test commands and prints the answer, so you can run it on any computer. On a real device, the commands come from the serial link and the answer goes back to it, and `handle` stays the same.
 
 ```c
 #include <stdio.h>
@@ -224,37 +222,30 @@ void handle(char line[])
 
     if (n == 2 && strcmp(command, "SPEED") == 0) {
         speed = value;
-        sprintf(reply, "OK %d\n", speed);
     } else if (n >= 1 && strcmp(command, "READ") == 0) {
         sprintf(reply, "TEMP %.1f HUM %d SPEED %d\n", temp, hum, speed);
-    } else {
-        sprintf(reply, "ERR\n");
+        printf("%s", reply);
     }
-
-    printf("%s", reply);
 }
 
 int main(void)
 {
     handle("SPEED 150\n");
-    handle("READ\n");
     handle("SPEED fast\n");
     handle("JUMP 5\n");
+    handle("READ\n");
 
     return 0;
 }
 ```
 
-The program prints one answer for each command:
+Only `READ` sends an answer, so the program prints one line:
 
 ```
-OK 150
 TEMP 23.5 HUM 40 SPEED 150
-ERR
-ERR
 ```
 
-Notice the third command. `fast` is not a number, so `sscanf` returns 1, the check `n == 2` fails and the controller answers `ERR`. The speed is left alone.
+Notice the second command. `fast` is not a number, so `sscanf` returns 1, the check `n == 2` fails and the command is ignored. The speed stays 150. `JUMP` is not a known command, so it is ignored too.
 
 ### Designing your own messages
 
@@ -262,7 +253,6 @@ Notice the third command. `fast` is not a number, so `sscanf` returns 1, the che
 - **Start with a name** (`SPEED`, `TEMP`), so the receiver knows what kind of message it is
 - **Separate the parts with spaces**, which `sscanf` handles well
 - **Fix the units** and write them down: is `150` in rpm or in percent?
-- **Answer every command**, with `OK` or `ERR`, so the sender knows it arrived
 - **Check the return value of `sscanf`** and ignore any message that does not fit
 
 ## Cheat sheet
