@@ -15,7 +15,8 @@
     {
       "id": "c-language",
       "title": "The C Language",
-      "icon": "C"
+      "icon": "C",
+      "material": "topics/c-language-basics.md"
     },
     {
       "id": "tcp-ip",
