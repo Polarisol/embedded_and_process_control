@@ -1629,9 +1629,10 @@
 
     // Arrow keys: up and down move through the unit list; right steps over to the unit's
     // items (lines in the list view, panels in the cards view), where up and down move
-    // between items instead; left steps back to the unit list. When the focused item runs
-    // past the edge of the screen (an opened item, a long panel), up and down first scroll
-    // through it a third of a screen at a time, and only move on once its end is in view.
+    // between items instead; left steps back to the unit list. While the focused item is
+    // opened, up and down only scroll the page, a third of a screen at a time; closing it
+    // (Enter) lets them move between items again. A long panel is scrolled through first,
+    // and they move on once its end is in view.
     const pageItems = () => [...main.querySelectorAll(root.dataset.view === 'list' ? '.line' : '.panel')];
     // Stepping up into an item shows its end, so an opened item is read back from the bottom.
     const focusItem = (item, step = 1) => {
@@ -1672,6 +1673,10 @@
         if (e.key === 'ArrowLeft') { e.preventDefault(); active.blur(); return; }
         if (e.key === 'ArrowRight') return;
         e.preventDefault();
+        if (items[at].getAttribute('aria-expanded') === 'true') {
+          window.scrollBy({ top: step * window.innerHeight / 3, behavior: reducedMotion ? 'auto' : 'smooth' });
+          return;
+        }
         if (scrollThrough(items[at], step)) return;
         const next = items[at + step];
         if (next) focusItem(next, step);
