@@ -44,10 +44,10 @@ When a byte is not enough, the computer uses 2, 4 or 8 bytes together:
 
 | Bits | Bytes | Number of combinations |
 |------|-------|------------------------|
-| 8 | 1 | 256 |
-| 16 | 2 | 65,536 |
-| 32 | 4 | about 4.3 billion |
-| 64 | 8 | about 18 billion billion |
+| 8 | 1 | 2<sup>8</sup> = 256 |
+| 16 | 2 | 2<sup>16</sup> = 65,536 |
+| 32 | 4 | 2<sup>32</sup> ≈ 4.3 billion |
+| 64 | 8 | 2<sup>64</sup> ≈ 18 billion billion |
 
 Every extra bit **doubles** the number of combinations.
 
