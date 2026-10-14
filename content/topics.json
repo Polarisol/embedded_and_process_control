@@ -11,7 +11,11 @@
       "id": "binary-representation",
       "title": "Binary Rep.",
       "icon": "01",
-      "material": "topics/binary-representation.md"
+      "material": "topics/binary-representation.md",
+      "videos": [
+        { "title": "Binary Representation, Part 1", "youtube": "1GSjbWt0c9M", "start": 102 },
+        { "title": "Binary Representation, Part 2", "youtube": "LpuPe81bc2w" }
+      ]
     },
     {
       "id": "c-language",
