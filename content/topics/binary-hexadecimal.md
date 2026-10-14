@@ -109,21 +109,3 @@ unsigned char a = 214;          // decimal
 unsigned char b = 0b11010110;   // binary
 unsigned char c = 0xD6;         // hexadecimal
 ```
-
-On the Nano ESP32 you can print a number in hex or binary with `Serial.println`:
-
-```c
-void setup() {
-  Serial.begin(115200);
-  delay(1000);
-
-  unsigned char value = 0xD6;
-  Serial.println(value);         // 214
-  Serial.println(value, HEX);    // D6
-  Serial.println(value, BIN);    // 11010110
-}
-
-void loop() {}
-```
-
-`Serial.println` does not print the `0x` or leading 0s, so `0x0A` is printed as `A` in hex and `1010` in binary.
