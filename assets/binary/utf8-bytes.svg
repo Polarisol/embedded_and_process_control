@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">UTF-8 uses 1 to 4 bytes per character</text>
+<text x="40" y="58" font-size="12" font-weight="bold" fill="#6b7280">CHARACTER</text>
+<text x="250" y="58" font-size="12" font-weight="bold" fill="#6b7280">BYTES STORED IN MEMORY</text>
+<rect x="30" y="72" width="44" height="44" rx="8" fill="#f9fafb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="52" y="103" font-size="24" font-weight="bold" text-anchor="middle" fill="#111827">A</text>
+<text x="86" y="91" font-size="14" font-weight="bold" fill="#111827">English letter</text>
+<text x="86" y="109" font-size="13" fill="#374151" font-family="Menlo, Consolas, monospace">U+0041</text>
+<rect x="250" y="72" width="104" height="44" rx="5" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="302" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">01000001</text>
+<text x="366" y="100" font-size="13" font-weight="bold" fill="#374151">1 byte</text>
+<rect x="30" y="130" width="44" height="44" rx="8" fill="#f9fafb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="52" y="161" font-size="24" font-weight="bold" text-anchor="middle" fill="#111827">é</text>
+<text x="86" y="149" font-size="14" font-weight="bold" fill="#111827">French letter</text>
+<text x="86" y="167" font-size="13" fill="#374151" font-family="Menlo, Consolas, monospace">U+00E9</text>
+<rect x="250" y="130" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="302" y="158" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">11000011</text>
+<rect x="362" y="130" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="414" y="158" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10101001</text>
+<text x="478" y="158" font-size="13" font-weight="bold" fill="#374151">2 bytes</text>
+<rect x="30" y="188" width="44" height="44" rx="8" fill="#f9fafb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="52" y="219" font-size="24" font-weight="bold" text-anchor="middle" fill="#111827">א</text>
+<text x="86" y="207" font-size="14" font-weight="bold" fill="#111827">Hebrew letter</text>
+<text x="86" y="225" font-size="13" fill="#374151" font-family="Menlo, Consolas, monospace">U+05D0</text>
+<rect x="250" y="188" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="302" y="216" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">11010111</text>
+<rect x="362" y="188" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="414" y="216" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10010000</text>
+<text x="478" y="216" font-size="13" font-weight="bold" fill="#374151">2 bytes</text>
+<rect x="30" y="246" width="44" height="44" rx="8" fill="#f9fafb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="52" y="277" font-size="24" font-weight="bold" text-anchor="middle" fill="#111827">€</text>
+<text x="86" y="265" font-size="14" font-weight="bold" fill="#111827">Euro sign</text>
+<text x="86" y="283" font-size="13" fill="#374151" font-family="Menlo, Consolas, monospace">U+20AC</text>
+<rect x="250" y="246" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="302" y="274" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">11100010</text>
+<rect x="362" y="246" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="414" y="274" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10000010</text>
+<rect x="474" y="246" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="526" y="274" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10101100</text>
+<text x="590" y="274" font-size="13" font-weight="bold" fill="#374151">3 bytes</text>
+<rect x="30" y="304" width="44" height="44" rx="8" fill="#f9fafb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="52" y="335" font-size="24" font-weight="bold" text-anchor="middle" fill="#111827">😀</text>
+<text x="86" y="323" font-size="14" font-weight="bold" fill="#111827">Emoji</text>
+<text x="86" y="341" font-size="13" fill="#374151" font-family="Menlo, Consolas, monospace">U+1F600</text>
+<rect x="250" y="304" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="302" y="332" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">11110000</text>
+<rect x="362" y="304" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="414" y="332" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10011111</text>
+<rect x="474" y="304" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="526" y="332" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10011000</text>
+<rect x="586" y="304" width="104" height="44" rx="5" fill="#fef3c7" stroke="#15803d" stroke-width="1.5"/>
+<text x="638" y="332" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">10000000</text>
+<text x="702" y="332" font-size="13" font-weight="bold" fill="#374151">4 bytes</text>
+<text x="384" y="382" font-size="13" text-anchor="middle" fill="#374151">Green: plain ASCII, exactly the same byte as before. Yellow: characters outside ASCII need more bytes.</text>
+</svg>
