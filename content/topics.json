@@ -15,7 +15,8 @@
       "videos": [
         { "title": "Binary in Computers", "youtube": "1GSjbWt0c9M" },
         { "title": "Binary and Different Bases", "youtube": "LpuPe81bc2w" }
-      ]
+      ],
+      "quizzes": ["quizzes/binary-quiz.md"]
 
     },
     {
