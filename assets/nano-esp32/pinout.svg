@@ -10,140 +10,140 @@
 <circle cx="320" cy="144.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="144.0" r="3.5" fill="#115e59"/>
 <line x1="320" y1="144.0" x2="292" y2="144.0" stroke="#c2410c" stroke-width="1.5"/>
 <rect x="222" y="134.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D12</text>
+<text x="257.0" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D13</text>
+<text x="212" y="148.5" font-size="12" text-anchor="end" fill="#374151">LED “L”</text>
 <circle cx="320" cy="169.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="169.4" r="3.5" fill="#115e59"/>
-<line x1="320" y1="169.4" x2="292" y2="169.4" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="159.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D11</text>
+<line x1="320" y1="169.4" x2="292" y2="169.4" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="159.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257.0" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">3V3</text>
+<text x="212" y="173.9" font-size="12" text-anchor="end" fill="#374151">3.3 V out</text>
 <circle cx="320" cy="194.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="194.8" r="3.5" fill="#115e59"/>
-<line x1="320" y1="194.8" x2="292" y2="194.8" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="184.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D10</text>
+<line x1="320" y1="194.8" x2="292" y2="194.8" stroke="#6b7280" stroke-width="1.5"/>
+<rect x="222" y="184.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="257.0" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B0</text>
+<text x="212" y="199.3" font-size="12" text-anchor="end" fill="#374151">leave free</text>
 <circle cx="320" cy="220.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="220.2" r="3.5" fill="#115e59"/>
-<line x1="320" y1="220.2" x2="292" y2="220.2" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="210.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D9</text>
+<line x1="320" y1="220.2" x2="292" y2="220.2" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="210.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A0</text>
 <circle cx="320" cy="245.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="245.6" r="3.5" fill="#115e59"/>
-<line x1="320" y1="245.6" x2="292" y2="245.6" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="235.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D8</text>
+<line x1="320" y1="245.6" x2="292" y2="245.6" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="235.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A1</text>
 <circle cx="320" cy="271.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="271.0" r="3.5" fill="#115e59"/>
-<line x1="320" y1="271.0" x2="292" y2="271.0" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="261.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D7</text>
+<line x1="320" y1="271.0" x2="292" y2="271.0" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="261.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A2</text>
 <circle cx="320" cy="296.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="296.4" r="3.5" fill="#115e59"/>
-<line x1="320" y1="296.4" x2="292" y2="296.4" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="286.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D6</text>
+<line x1="320" y1="296.4" x2="292" y2="296.4" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="286.4" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A3</text>
 <circle cx="320" cy="321.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="321.8" r="3.5" fill="#115e59"/>
-<line x1="320" y1="321.8" x2="292" y2="321.8" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="311.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D5</text>
+<line x1="320" y1="321.8" x2="292" y2="321.8" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="311.8" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A4</text>
 <circle cx="320" cy="347.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="347.2" r="3.5" fill="#115e59"/>
-<line x1="320" y1="347.2" x2="292" y2="347.2" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="337.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D4</text>
+<line x1="320" y1="347.2" x2="292" y2="347.2" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="337.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A5</text>
 <circle cx="320" cy="372.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="372.6" r="3.5" fill="#115e59"/>
-<line x1="320" y1="372.6" x2="292" y2="372.6" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="362.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D3</text>
+<line x1="320" y1="372.6" x2="292" y2="372.6" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="362.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A6</text>
 <circle cx="320" cy="398.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="398.0" r="3.5" fill="#115e59"/>
-<line x1="320" y1="398.0" x2="292" y2="398.0" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="388.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D2</text>
+<line x1="320" y1="398.0" x2="292" y2="398.0" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="388.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257.0" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A7</text>
 <circle cx="320" cy="423.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="423.4" r="3.5" fill="#115e59"/>
-<line x1="320" y1="423.4" x2="292" y2="423.4" stroke="#111827" stroke-width="1.5"/>
-<rect x="222" y="413.4" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
-<text x="257.0" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
-<text x="212" y="427.9" font-size="12" text-anchor="end" fill="#374151">ground</text>
+<line x1="320" y1="423.4" x2="292" y2="423.4" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="413.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257.0" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VBUS</text>
+<text x="212" y="427.9" font-size="12" text-anchor="end" fill="#374151">5 V from USB</text>
 <circle cx="320" cy="448.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="448.8" r="3.5" fill="#115e59"/>
 <line x1="320" y1="448.8" x2="292" y2="448.8" stroke="#6b7280" stroke-width="1.5"/>
 <rect x="222" y="438.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-<text x="257.0" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">RST</text>
-<text x="212" y="453.3" font-size="12" text-anchor="end" fill="#374151">reset</text>
+<text x="257.0" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B1</text>
+<text x="212" y="453.3" font-size="12" text-anchor="end" fill="#374151">leave free</text>
 <circle cx="320" cy="474.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="474.2" r="3.5" fill="#115e59"/>
-<line x1="320" y1="474.2" x2="292" y2="474.2" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="464.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D0 / RX</text>
-<text x="212" y="478.7" font-size="12" text-anchor="end" fill="#374151">serial in</text>
+<line x1="320" y1="474.2" x2="292" y2="474.2" stroke="#111827" stroke-width="1.5"/>
+<rect x="222" y="464.2" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="257.0" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<text x="212" y="478.7" font-size="12" text-anchor="end" fill="#374151">ground</text>
 <circle cx="320" cy="499.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="499.6" r="3.5" fill="#115e59"/>
-<line x1="320" y1="499.6" x2="292" y2="499.6" stroke="#c2410c" stroke-width="1.5"/>
-<rect x="222" y="489.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="257.0" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D1 / TX</text>
-<text x="212" y="504.1" font-size="12" text-anchor="end" fill="#374151">serial out</text>
+<line x1="320" y1="499.6" x2="292" y2="499.6" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="489.6" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257.0" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VIN</text>
+<text x="212" y="504.1" font-size="12" text-anchor="end" fill="#374151">6–21 V in</text>
 <circle cx="448" cy="144.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="144.0" r="3.5" fill="#115e59"/>
 <line x1="448" y1="144.0" x2="476" y2="144.0" stroke="#c2410c" stroke-width="1.5"/>
 <rect x="476" y="134.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
-<text x="511.0" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D13</text>
-<text x="556" y="148.5" font-size="12" text-anchor="start" fill="#374151">LED “L”</text>
+<text x="511.0" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D12</text>
 <circle cx="448" cy="169.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="169.4" r="3.5" fill="#115e59"/>
-<line x1="448" y1="169.4" x2="476" y2="169.4" stroke="#b42318" stroke-width="1.5"/>
-<rect x="476" y="159.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
-<text x="511.0" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">3V3</text>
-<text x="556" y="173.9" font-size="12" text-anchor="start" fill="#374151">3.3 V out</text>
+<line x1="448" y1="169.4" x2="476" y2="169.4" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="159.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D11</text>
 <circle cx="448" cy="194.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="194.8" r="3.5" fill="#115e59"/>
-<line x1="448" y1="194.8" x2="476" y2="194.8" stroke="#6b7280" stroke-width="1.5"/>
-<rect x="476" y="184.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-<text x="511.0" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B0</text>
-<text x="556" y="199.3" font-size="12" text-anchor="start" fill="#374151">leave free</text>
+<line x1="448" y1="194.8" x2="476" y2="194.8" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="184.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D10</text>
 <circle cx="448" cy="220.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="220.2" r="3.5" fill="#115e59"/>
-<line x1="448" y1="220.2" x2="476" y2="220.2" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="210.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A0</text>
+<line x1="448" y1="220.2" x2="476" y2="220.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="210.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D9</text>
 <circle cx="448" cy="245.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="245.6" r="3.5" fill="#115e59"/>
-<line x1="448" y1="245.6" x2="476" y2="245.6" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="235.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A1</text>
+<line x1="448" y1="245.6" x2="476" y2="245.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="235.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D8</text>
 <circle cx="448" cy="271.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="271.0" r="3.5" fill="#115e59"/>
-<line x1="448" y1="271.0" x2="476" y2="271.0" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="261.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A2</text>
+<line x1="448" y1="271.0" x2="476" y2="271.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="261.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D7</text>
 <circle cx="448" cy="296.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="296.4" r="3.5" fill="#115e59"/>
-<line x1="448" y1="296.4" x2="476" y2="296.4" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="286.4" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A3</text>
+<line x1="448" y1="296.4" x2="476" y2="296.4" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="286.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D6</text>
 <circle cx="448" cy="321.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="321.8" r="3.5" fill="#115e59"/>
-<line x1="448" y1="321.8" x2="476" y2="321.8" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="311.8" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A4</text>
+<line x1="448" y1="321.8" x2="476" y2="321.8" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="311.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D5</text>
 <circle cx="448" cy="347.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="347.2" r="3.5" fill="#115e59"/>
-<line x1="448" y1="347.2" x2="476" y2="347.2" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="337.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A5</text>
+<line x1="448" y1="347.2" x2="476" y2="347.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="337.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D4</text>
 <circle cx="448" cy="372.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="372.6" r="3.5" fill="#115e59"/>
-<line x1="448" y1="372.6" x2="476" y2="372.6" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="362.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A6</text>
+<line x1="448" y1="372.6" x2="476" y2="372.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="362.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D3</text>
 <circle cx="448" cy="398.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="398.0" r="3.5" fill="#115e59"/>
-<line x1="448" y1="398.0" x2="476" y2="398.0" stroke="#15803d" stroke-width="1.5"/>
-<rect x="476" y="388.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
-<text x="511.0" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A7</text>
+<line x1="448" y1="398.0" x2="476" y2="398.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="388.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D2</text>
 <circle cx="448" cy="423.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="423.4" r="3.5" fill="#115e59"/>
-<line x1="448" y1="423.4" x2="476" y2="423.4" stroke="#b42318" stroke-width="1.5"/>
-<rect x="476" y="413.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
-<text x="511.0" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VBUS</text>
-<text x="556" y="427.9" font-size="12" text-anchor="start" fill="#374151">5 V from USB</text>
+<line x1="448" y1="423.4" x2="476" y2="423.4" stroke="#111827" stroke-width="1.5"/>
+<rect x="476" y="413.4" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="511.0" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<text x="556" y="427.9" font-size="12" text-anchor="start" fill="#374151">ground</text>
 <circle cx="448" cy="448.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="448.8" r="3.5" fill="#115e59"/>
 <line x1="448" y1="448.8" x2="476" y2="448.8" stroke="#6b7280" stroke-width="1.5"/>
 <rect x="476" y="438.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
-<text x="511.0" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B1</text>
-<text x="556" y="453.3" font-size="12" text-anchor="start" fill="#374151">leave free</text>
+<text x="511.0" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">RST</text>
+<text x="556" y="453.3" font-size="12" text-anchor="start" fill="#374151">reset</text>
 <circle cx="448" cy="474.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="474.2" r="3.5" fill="#115e59"/>
-<line x1="448" y1="474.2" x2="476" y2="474.2" stroke="#111827" stroke-width="1.5"/>
-<rect x="476" y="464.2" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
-<text x="511.0" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
-<text x="556" y="478.7" font-size="12" text-anchor="start" fill="#374151">ground</text>
+<line x1="448" y1="474.2" x2="476" y2="474.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="464.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D0 / RX</text>
+<text x="556" y="478.7" font-size="12" text-anchor="start" fill="#374151">serial in</text>
 <circle cx="448" cy="499.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="499.6" r="3.5" fill="#115e59"/>
-<line x1="448" y1="499.6" x2="476" y2="499.6" stroke="#b42318" stroke-width="1.5"/>
-<rect x="476" y="489.6" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
-<text x="511.0" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VIN</text>
-<text x="556" y="504.1" font-size="12" text-anchor="start" fill="#374151">6–21 V in</text>
-<path d="M210,134 q-12,0 -12,10 V263.0 q0,8 -12,8 q12,0 12,8 V398.0 q0,10 12,10" fill="none" stroke="#c2410c" stroke-width="2"/>
-<text x="180" y="269.0" font-size="13" font-weight="bold" text-anchor="end" fill="#c2410c">Digital pins</text>
-<text x="180" y="286.0" font-size="12" text-anchor="end" fill="#374151">on / off, PWM</text>
-<path d="M558,210.2 q12,0 12,10 V301.1 q0,8 12,8 q-12,0 -12,8 V398.0 q0,10 -12,10" fill="none" stroke="#15803d" stroke-width="2"/>
-<text x="588" y="307.1" font-size="13" font-weight="bold" text-anchor="start" fill="#15803d">Analog inputs</text>
-<text x="588" y="324.1" font-size="12" text-anchor="start" fill="#374151">read a voltage</text>
+<line x1="448" y1="499.6" x2="476" y2="499.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="489.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511.0" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D1 / TX</text>
+<text x="556" y="504.1" font-size="12" text-anchor="start" fill="#374151">serial out</text>
+<path d="M558,134 q12,0 12,10 V263.0 q0,8 12,8 q-12,0 -12,8 V398.0 q0,10 -12,10" fill="none" stroke="#c2410c" stroke-width="2"/>
+<text x="588" y="269.0" font-size="13" font-weight="bold" text-anchor="start" fill="#c2410c">Digital pins</text>
+<text x="588" y="286.0" font-size="12" text-anchor="start" fill="#374151">on / off, PWM</text>
+<path d="M210,210.2 q-12,0 -12,10 V301.1 q0,8 -12,8 q12,0 12,8 V398.0 q0,10 12,10" fill="none" stroke="#15803d" stroke-width="2"/>
+<text x="180" y="307.1" font-size="13" font-weight="bold" text-anchor="end" fill="#15803d">Analog inputs</text>
+<text x="180" y="324.1" font-size="12" text-anchor="end" fill="#374151">read a voltage</text>
 <rect x="150" y="535" width="30" height="18" rx="9" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
 <text x="188" y="549" font-size="13" font-weight="bold" text-anchor="start" fill="#c2410c">Digital</text>
 <rect x="250" y="535" width="30" height="18" rx="9" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
