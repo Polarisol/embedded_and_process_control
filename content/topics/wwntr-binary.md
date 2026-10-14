@@ -1,6 +1,6 @@
 # * What We Need to Remember
 
-1. You must be able to read a simple positive binary number. what is 10010?
+1. You must be able to read a simple positive binary number. (for example: what is 10010?)
 
 2. Understand that all data, movies, music, solidworks files, and any other types of data are represented in binary form within a computer.
 
@@ -16,5 +16,7 @@
 
 7. Understand the difference between float and double so you can choose the appropriate type for representing decimal numbers in your programs.
 
-8. You need to be able to read a simple hexadecimal number. what is 0x1A?
+8. You need to be able to read a simple hexadecimal number. (for example: what is 0x1A?)
+
+9. You need to be able to switch from hexadecimal to binary and vice versa. (for example: convert 0x1A to binary and 11010 to hexadecimal)
 
