@@ -1,6 +1,6 @@
 # * What We Need to Remember
 
-1. Understanding how to read a simple positive binary number.
+1. You must be able to read a simple positive binary number. what is 10010?
 
 2. Understand that all data, movies, music, solidworks files, and any other types of data are represented in binary form within a computer.
 
@@ -15,4 +15,6 @@
 6. We need to be able to calculate the amount of Bytes (1, 2, 4, or 8) required for a given integer variable you need and decide which integer type to use.
 
 7. Understand the difference between float and double so you can choose the appropriate type for representing decimal numbers in your programs.
+
+8. You need to be able to read a simple hexadecimal number. what is 0x1A?
 
