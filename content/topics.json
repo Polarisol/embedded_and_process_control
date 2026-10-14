@@ -39,6 +39,7 @@
       "id": "microcontrollers",
       "title": "Microcontrollers",
       "icon": "▣",
+      "videos": [{ "title": "Introduction to Arduino", "youtube": "BLrHTHUjPuw" }],
       "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md"]
     },
     {
