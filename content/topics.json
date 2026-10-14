@@ -11,11 +11,12 @@
       "id": "binary-representation",
       "title": "Binary Rep.",
       "icon": "01",
-      "material": "topics/binary-representation.md",
+      "material": ["topics/binary-representation.md", "topics/wwntr-binary.md"],
       "videos": [
         { "title": "Binary in Computers", "youtube": "1GSjbWt0c9M" },
         { "title": "Binary and Different Bases", "youtube": "LpuPe81bc2w" }
       ]
+
     },
     {
       "id": "c-language",
