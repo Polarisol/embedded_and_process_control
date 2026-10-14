@@ -1,4 +1,4 @@
-# ASCII & UNI
+# ASCII & Unicode
 
 A computer can only store bits, so how does it store text? The trick is simple: **give every character a number**, and store the number. Everyone just has to agree on which number means which character. That agreement is called a **character encoding**.
 
