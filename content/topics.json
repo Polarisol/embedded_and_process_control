@@ -20,6 +20,11 @@
 
     },
     {
+      "id": "tcp-ip",
+      "title": "TCP/IP",
+      "icon": "🌐"
+    },
+    {
       "id": "c-language",
       "title": "The C Language",
       "icon": "C",
@@ -31,11 +36,6 @@
       "videos": [
         { "title": "Introduction to C", "youtube": "dTp0c41XnrQ" }
       ]
-    },
-    {
-      "id": "tcp-ip",
-      "title": "TCP/IP",
-      "icon": "🌐"
     },
     {
       "id": "microcontrollers",
