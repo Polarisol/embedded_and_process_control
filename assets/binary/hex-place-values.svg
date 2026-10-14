@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">Hexadecimal has 16 digits</text>
+<rect x="34.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="54.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<text x="54.0" y="114" font-size="13" text-anchor="middle" fill="#374151">0</text>
+<rect x="78.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="98.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="98.0" y="114" font-size="13" text-anchor="middle" fill="#374151">1</text>
+<rect x="122.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="142.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">2</text>
+<text x="142.0" y="114" font-size="13" text-anchor="middle" fill="#374151">2</text>
+<rect x="166.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="186.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">3</text>
+<text x="186.0" y="114" font-size="13" text-anchor="middle" fill="#374151">3</text>
+<rect x="210.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="230.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">4</text>
+<text x="230.0" y="114" font-size="13" text-anchor="middle" fill="#374151">4</text>
+<rect x="254.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="274.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">5</text>
+<text x="274.0" y="114" font-size="13" text-anchor="middle" fill="#374151">5</text>
+<rect x="298.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="318.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">6</text>
+<text x="318.0" y="114" font-size="13" text-anchor="middle" fill="#374151">6</text>
+<rect x="342.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="362.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">7</text>
+<text x="362.0" y="114" font-size="13" text-anchor="middle" fill="#374151">7</text>
+<rect x="386.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="406.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">8</text>
+<text x="406.0" y="114" font-size="13" text-anchor="middle" fill="#374151">8</text>
+<rect x="430.0" y="50" width="40" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="450.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">9</text>
+<text x="450.0" y="114" font-size="13" text-anchor="middle" fill="#374151">9</text>
+<rect x="474.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="494.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">A</text>
+<text x="494.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">10</text>
+<rect x="518.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="538.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">B</text>
+<text x="538.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">11</text>
+<rect x="562.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="582.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">C</text>
+<text x="582.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">12</text>
+<rect x="606.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="626.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">D</text>
+<text x="626.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">13</text>
+<rect x="650.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="670.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">E</text>
+<text x="670.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">14</text>
+<rect x="694.0" y="50" width="40" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="714.0" y="80" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">F</text>
+<text x="714.0" y="114" font-size="13" text-anchor="middle" fill="#b45309" font-weight="bold">15</text>
+<text x="384" y="140" font-size="13" text-anchor="middle" fill="#374151">After 9 we run out of digits, so the letters A to F stand for 10 to 15.</text>
+<line x1="40" y1="160" x2="728" y2="160" stroke="#e5e7eb" stroke-width="2"/>
+<text x="40" y="192" font-size="14" text-anchor="start" fill="#b45309" font-weight="bold">Reading 0x2F</text>
+<text x="40" y="214" font-size="12" text-anchor="start" fill="#374151">each place is worth</text>
+<text x="40" y="230" font-size="12" text-anchor="start" fill="#374151">16 times the one</text>
+<text x="40" y="246" font-size="12" text-anchor="start" fill="#374151">to its right</text>
+<text x="250" y="236" font-size="28" text-anchor="middle" fill="#9ca3af" font-weight="bold" font-family="Menlo, Consolas, monospace">0x</text>
+<rect x="290" y="196" width="70" height="56" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="325.0" y="234" font-size="28" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">2</text>
+<text x="325" y="274" font-size="13" text-anchor="middle" fill="#374151">× 16</text>
+<text x="325" y="292" font-size="12" text-anchor="middle" fill="#b45309"></text>
+<rect x="374" y="196" width="70" height="56" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="409.0" y="234" font-size="28" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">F</text>
+<text x="409" y="274" font-size="13" text-anchor="middle" fill="#374151">× 1</text>
+<text x="409" y="292" font-size="12" text-anchor="middle" fill="#b45309">(= 15)</text>
+<text x="560" y="222" font-size="13" text-anchor="middle" fill="#6b7280">0x only says</text>
+<text x="560" y="240" font-size="13" text-anchor="middle" fill="#6b7280">“this is hex”.</text>
+<text x="560" y="258" font-size="13" text-anchor="middle" fill="#6b7280">It is not a digit.</text>
+<text x="384" y="336" font-size="15" text-anchor="middle" fill="#111827">2×16 + 15×1 = 32 + 15 = <tspan font-weight="bold">47</tspan></text>
+<text x="384" y="372" font-size="12" text-anchor="middle" fill="#374151">Place values in hex: 1, 16, 256, 4096 … (each one is 16 times bigger)</text>
+</svg>

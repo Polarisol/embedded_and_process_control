@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" text-anchor="middle" fill="#111827" font-weight="bold">One hex digit = 4 bits</text>
+<text x="40" y="74" font-size="14" text-anchor="start" fill="#15803d" font-weight="bold">Binary</text>
+<rect x="162.0" y="50" width="56" height="50" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="190.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="190.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 8</text>
+<rect x="224.0" y="50" width="56" height="50" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="252.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="252.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 4</text>
+<rect x="286.0" y="50" width="56" height="50" rx="6" fill="#f3f4f6" stroke="#15803d" stroke-width="2"/>
+<text x="314.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<text x="314.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 2</text>
+<rect x="348.0" y="50" width="56" height="50" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="376.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="376.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 1</text>
+<rect x="444.0" y="50" width="56" height="50" rx="6" fill="#f3f4f6" stroke="#15803d" stroke-width="2"/>
+<text x="472.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<text x="472.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 8</text>
+<rect x="506.0" y="50" width="56" height="50" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="534.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="534.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 4</text>
+<rect x="568.0" y="50" width="56" height="50" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="596.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<text x="596.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 2</text>
+<rect x="630.0" y="50" width="56" height="50" rx="6" fill="#f3f4f6" stroke="#15803d" stroke-width="2"/>
+<text x="658.0" y="84" font-size="26" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<text x="658.0" y="120" font-size="13" text-anchor="middle" fill="#374151">× 1</text>
+<path d="M162.0 132 L162.0 142 L404.0 142 L404.0 132" fill="none" stroke="#6b7280" stroke-width="2"/>
+<text x="283.0" y="166" font-size="14" text-anchor="middle" fill="#111827">8+4+1 = 13</text>
+<line x1="283.0" y1="178" x2="283.0" y2="218" stroke="#6b7280" stroke-width="2"/>
+<polygon points="276.0,212 290.0,212 283.0,224" fill="#6b7280"/>
+<polygon points="276.0,184 290.0,184 283.0,172" fill="#6b7280"/>
+<rect x="248.0" y="230" width="70" height="56" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="283.0" y="268" font-size="28" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">D</text>
+<path d="M444.0 132 L444.0 142 L686.0 142 L686.0 132" fill="none" stroke="#6b7280" stroke-width="2"/>
+<text x="565.0" y="166" font-size="14" text-anchor="middle" fill="#111827">4+2 = 6</text>
+<line x1="565.0" y1="178" x2="565.0" y2="218" stroke="#6b7280" stroke-width="2"/>
+<polygon points="558.0,212 572.0,212 565.0,224" fill="#6b7280"/>
+<polygon points="558.0,184 572.0,184 565.0,172" fill="#6b7280"/>
+<rect x="530.0" y="230" width="70" height="56" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="565.0" y="268" font-size="28" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">6</text>
+<text x="40" y="264" font-size="14" text-anchor="start" fill="#b45309" font-weight="bold">Hex</text>
+<text x="213.0" y="268" font-size="28" text-anchor="middle" fill="#9ca3af" font-weight="bold" font-family="Menlo, Consolas, monospace">0x</text>
+<text x="40" y="166" font-size="12" text-anchor="start" fill="#374151">4 bits = 1 nibble</text>
+<text x="384" y="326" font-size="15" text-anchor="middle" fill="#111827"><tspan font-family="Menlo, Consolas, monospace">0b1101 0110</tspan> = <tspan font-weight="bold" font-family="Menlo, Consolas, monospace">0xD6</tspan> = 214</text>
+<text x="384" y="356" font-size="12" text-anchor="middle" fill="#374151">Binary to hex: split into groups of 4 from the right and turn each group into one hex digit.</text>
+<text x="384" y="376" font-size="12" text-anchor="middle" fill="#374151">Hex to binary: turn each hex digit back into its 4 bits.</text>
+</svg>
