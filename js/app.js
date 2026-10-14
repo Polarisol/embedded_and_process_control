@@ -1585,6 +1585,7 @@
           return;
         }
         setQuery(q);
+        unitKeys = false;
         if (currentId() === SEARCH) {
           history.replaceState(history.state, '', searchHref(q));
           results.show(main, q);
@@ -1600,6 +1601,15 @@
           input.blur();
         }
         if (e.key === 'Enter') input.blur(); // closes the keyboard on phones
+        // Down from the box goes straight to the first search result.
+        if (e.key === 'ArrowDown' && currentId() === SEARCH && !e.shiftKey && !e.altKey && !e.ctrlKey && !e.metaKey) {
+          const first = pageItems()[0];
+          if (!first) return;
+          e.preventDefault();
+          unitKeys = false;
+          root.dataset.keys = '';
+          focusItem(first);
+        }
       });
       // Typing anywhere on the page goes into the search box ("/" just jumps there).
       // Space is left alone so it still scrolls the page and presses buttons.
@@ -1633,6 +1643,9 @@
     // opened, up and down only scroll the page, a third of a screen at a time; closing it
     // (Enter) lets them move between items again. A long panel is scrolled through first,
     // and they move on once its end is in view.
+    // On Search Results, up and down go through the results rather than the units, until
+    // left steps back to the unit list.
+    let unitKeys = false;
     const pageItems = () => [...main.querySelectorAll(root.dataset.view === 'list' ? '.line' : '.panel')];
     // Stepping up into an item shows its end, so an opened item is read back from the bottom.
     const focusItem = (item, step = 1) => {
@@ -1679,7 +1692,7 @@
       const step = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : -1;
       if (at >= 0) {
         // In the item list.
-        if (e.key === 'ArrowLeft') { e.preventDefault(); active.blur(); return; }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); unitKeys = true; active.blur(); return; }
         if (e.key === 'ArrowRight') return;
         e.preventDefault();
         if (items[at].getAttribute('aria-expanded') === 'true') {
@@ -1689,10 +1702,18 @@
         if (scrollThrough(items[at], step)) return;
         const next = items[at + step];
         if (next) focusItem(next, step);
+        // Up from the first search result goes back to the search box.
+        else if (step < 0 && currentId() === SEARCH && input) { input.focus(); window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }); }
         return;
       }
       // In the unit list.
       if (e.key === 'ArrowLeft') return;
+      if (currentId() === SEARCH && !unitKeys && items.length && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+        e.preventDefault();
+        const open = items.find((i) => i.getAttribute('aria-expanded') === 'true');
+        focusItem(open || items[0]);
+        return;
+      }
       if (e.key === 'ArrowRight') {
         if (!items.length) return;
         e.preventDefault();
