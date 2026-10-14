@@ -1,0 +1,506 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 842 894" width="842" height="894" font-family="Helvetica, Arial, sans-serif">
+<rect width="842" height="894" rx="10" fill="#ffffff"/>
+<text x="421.0" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827">The ASCII table: printable characters 32 to 126</text>
+<text x="147.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Space, punctuation &amp; digits (32–63)</text>
+<rect x="18" y="72" width="258" height="40" fill="#1d4ed8" rx="4"/>
+<text x="26" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Binary</text>
+<text x="130" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Hex</text>
+<text x="178" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Dec</text>
+<text x="266" y="99" font-size="13" font-weight="bold" text-anchor="end" fill="#ffffff">Symbol</text>
+<rect x="18" y="112" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100000</text>
+<text x="130" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">20</text>
+<text x="178" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">32</text>
+<text x="266" y="128" font-size="12" font-style="italic" text-anchor="end" fill="#6b7280">space</text>
+<rect x="18" y="135" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100001</text>
+<text x="130" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">21</text>
+<text x="178" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">33</text>
+<text x="266" y="152" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">!</text>
+<rect x="18" y="158" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100010</text>
+<text x="130" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">22</text>
+<text x="178" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">34</text>
+<text x="266" y="175" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">"</text>
+<rect x="18" y="181" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100011</text>
+<text x="130" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">23</text>
+<text x="178" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">35</text>
+<text x="266" y="198" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">#</text>
+<rect x="18" y="204" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100100</text>
+<text x="130" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">24</text>
+<text x="178" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">36</text>
+<text x="266" y="221" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">$</text>
+<rect x="18" y="227" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100101</text>
+<text x="130" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">25</text>
+<text x="178" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">37</text>
+<text x="266" y="244" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">%</text>
+<rect x="18" y="250" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100110</text>
+<text x="130" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">26</text>
+<text x="178" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">38</text>
+<text x="266" y="267" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">&amp;</text>
+<rect x="18" y="273" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00100111</text>
+<text x="130" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">27</text>
+<text x="178" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">39</text>
+<text x="266" y="290" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">'</text>
+<rect x="18" y="296" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101000</text>
+<text x="130" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">28</text>
+<text x="178" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">40</text>
+<text x="266" y="313" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">(</text>
+<rect x="18" y="319" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101001</text>
+<text x="130" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">29</text>
+<text x="178" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">41</text>
+<text x="266" y="336" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">)</text>
+<rect x="18" y="342" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101010</text>
+<text x="130" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2A</text>
+<text x="178" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">42</text>
+<text x="266" y="359" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">*</text>
+<rect x="18" y="365" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101011</text>
+<text x="130" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2B</text>
+<text x="178" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">43</text>
+<text x="266" y="382" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">+</text>
+<rect x="18" y="388" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101100</text>
+<text x="130" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2C</text>
+<text x="178" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">44</text>
+<text x="266" y="405" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">,</text>
+<rect x="18" y="411" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101101</text>
+<text x="130" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2D</text>
+<text x="178" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">45</text>
+<text x="266" y="428" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">-</text>
+<rect x="18" y="434" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101110</text>
+<text x="130" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2E</text>
+<text x="178" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">46</text>
+<text x="266" y="451" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">.</text>
+<rect x="18" y="457" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00101111</text>
+<text x="130" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">2F</text>
+<text x="178" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">47</text>
+<text x="266" y="474" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">/</text>
+<rect x="18" y="480" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110000</text>
+<text x="130" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">30</text>
+<text x="178" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">48</text>
+<text x="266" y="497" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">0</text>
+<rect x="18" y="503" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110001</text>
+<text x="130" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">31</text>
+<text x="178" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">49</text>
+<text x="266" y="520" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">1</text>
+<rect x="18" y="526" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110010</text>
+<text x="130" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">32</text>
+<text x="178" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">50</text>
+<text x="266" y="543" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">2</text>
+<rect x="18" y="549" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110011</text>
+<text x="130" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">33</text>
+<text x="178" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">51</text>
+<text x="266" y="566" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">3</text>
+<rect x="18" y="572" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110100</text>
+<text x="130" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">34</text>
+<text x="178" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">52</text>
+<text x="266" y="589" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">4</text>
+<rect x="18" y="595" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110101</text>
+<text x="130" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">35</text>
+<text x="178" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">53</text>
+<text x="266" y="612" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">5</text>
+<rect x="18" y="618" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110110</text>
+<text x="130" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">36</text>
+<text x="178" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">54</text>
+<text x="266" y="635" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">6</text>
+<rect x="18" y="641" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00110111</text>
+<text x="130" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">37</text>
+<text x="178" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">55</text>
+<text x="266" y="658" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">7</text>
+<rect x="18" y="664" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111000</text>
+<text x="130" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">38</text>
+<text x="178" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">56</text>
+<text x="266" y="681" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">8</text>
+<rect x="18" y="687" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111001</text>
+<text x="130" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">39</text>
+<text x="178" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">57</text>
+<text x="266" y="704" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">9</text>
+<rect x="18" y="710" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111010</text>
+<text x="130" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3A</text>
+<text x="178" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">58</text>
+<text x="266" y="727" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">:</text>
+<rect x="18" y="733" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111011</text>
+<text x="130" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3B</text>
+<text x="178" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">59</text>
+<text x="266" y="750" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">;</text>
+<rect x="18" y="756" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111100</text>
+<text x="130" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3C</text>
+<text x="178" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">60</text>
+<text x="266" y="773" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">&lt;</text>
+<rect x="18" y="779" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111101</text>
+<text x="130" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3D</text>
+<text x="178" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">61</text>
+<text x="266" y="796" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">=</text>
+<rect x="18" y="802" width="258" height="23" fill="#ffffff"/>
+<text x="26" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111110</text>
+<text x="130" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3E</text>
+<text x="178" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">62</text>
+<text x="266" y="819" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">&gt;</text>
+<rect x="18" y="825" width="258" height="23" fill="#f3f4f6"/>
+<text x="26" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">00111111</text>
+<text x="130" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">3F</text>
+<text x="178" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">63</text>
+<text x="266" y="842" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">?</text>
+<rect x="18" y="72" width="258" height="776" fill="none" stroke="#d1d5db" rx="4"/>
+<text x="421.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Capital letters (64–95)</text>
+<rect x="292" y="72" width="258" height="40" fill="#1d4ed8" rx="4"/>
+<text x="300" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Binary</text>
+<text x="404" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Hex</text>
+<text x="452" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Dec</text>
+<text x="540" y="99" font-size="13" font-weight="bold" text-anchor="end" fill="#ffffff">Symbol</text>
+<rect x="292" y="112" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000000</text>
+<text x="404" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">40</text>
+<text x="452" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">64</text>
+<text x="540" y="129" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">@</text>
+<rect x="292" y="135" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000001</text>
+<text x="404" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">41</text>
+<text x="452" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">65</text>
+<text x="540" y="152" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">A</text>
+<rect x="292" y="158" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000010</text>
+<text x="404" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">42</text>
+<text x="452" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">66</text>
+<text x="540" y="175" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">B</text>
+<rect x="292" y="181" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000011</text>
+<text x="404" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">43</text>
+<text x="452" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">67</text>
+<text x="540" y="198" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">C</text>
+<rect x="292" y="204" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000100</text>
+<text x="404" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">44</text>
+<text x="452" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">68</text>
+<text x="540" y="221" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">D</text>
+<rect x="292" y="227" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000101</text>
+<text x="404" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">45</text>
+<text x="452" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">69</text>
+<text x="540" y="244" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">E</text>
+<rect x="292" y="250" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000110</text>
+<text x="404" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">46</text>
+<text x="452" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">70</text>
+<text x="540" y="267" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">F</text>
+<rect x="292" y="273" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01000111</text>
+<text x="404" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">47</text>
+<text x="452" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">71</text>
+<text x="540" y="290" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">G</text>
+<rect x="292" y="296" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001000</text>
+<text x="404" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">48</text>
+<text x="452" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">72</text>
+<text x="540" y="313" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">H</text>
+<rect x="292" y="319" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001001</text>
+<text x="404" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">49</text>
+<text x="452" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">73</text>
+<text x="540" y="336" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">I</text>
+<rect x="292" y="342" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001010</text>
+<text x="404" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4A</text>
+<text x="452" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">74</text>
+<text x="540" y="359" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">J</text>
+<rect x="292" y="365" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001011</text>
+<text x="404" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4B</text>
+<text x="452" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">75</text>
+<text x="540" y="382" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">K</text>
+<rect x="292" y="388" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001100</text>
+<text x="404" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4C</text>
+<text x="452" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">76</text>
+<text x="540" y="405" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">L</text>
+<rect x="292" y="411" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001101</text>
+<text x="404" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4D</text>
+<text x="452" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">77</text>
+<text x="540" y="428" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">M</text>
+<rect x="292" y="434" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001110</text>
+<text x="404" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4E</text>
+<text x="452" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">78</text>
+<text x="540" y="451" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">N</text>
+<rect x="292" y="457" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01001111</text>
+<text x="404" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">4F</text>
+<text x="452" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">79</text>
+<text x="540" y="474" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">O</text>
+<rect x="292" y="480" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010000</text>
+<text x="404" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">50</text>
+<text x="452" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">80</text>
+<text x="540" y="497" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">P</text>
+<rect x="292" y="503" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010001</text>
+<text x="404" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">51</text>
+<text x="452" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">81</text>
+<text x="540" y="520" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">Q</text>
+<rect x="292" y="526" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010010</text>
+<text x="404" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">52</text>
+<text x="452" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">82</text>
+<text x="540" y="543" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">R</text>
+<rect x="292" y="549" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010011</text>
+<text x="404" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">53</text>
+<text x="452" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">83</text>
+<text x="540" y="566" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">S</text>
+<rect x="292" y="572" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010100</text>
+<text x="404" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">54</text>
+<text x="452" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">84</text>
+<text x="540" y="589" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">T</text>
+<rect x="292" y="595" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010101</text>
+<text x="404" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">55</text>
+<text x="452" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">85</text>
+<text x="540" y="612" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">U</text>
+<rect x="292" y="618" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010110</text>
+<text x="404" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">56</text>
+<text x="452" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">86</text>
+<text x="540" y="635" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">V</text>
+<rect x="292" y="641" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01010111</text>
+<text x="404" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">57</text>
+<text x="452" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">87</text>
+<text x="540" y="658" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">W</text>
+<rect x="292" y="664" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011000</text>
+<text x="404" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">58</text>
+<text x="452" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">88</text>
+<text x="540" y="681" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">X</text>
+<rect x="292" y="687" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011001</text>
+<text x="404" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">59</text>
+<text x="452" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">89</text>
+<text x="540" y="704" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">Y</text>
+<rect x="292" y="710" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011010</text>
+<text x="404" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5A</text>
+<text x="452" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">90</text>
+<text x="540" y="727" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">Z</text>
+<rect x="292" y="733" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011011</text>
+<text x="404" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5B</text>
+<text x="452" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">91</text>
+<text x="540" y="750" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">[</text>
+<rect x="292" y="756" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011100</text>
+<text x="404" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5C</text>
+<text x="452" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">92</text>
+<text x="540" y="773" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">\</text>
+<rect x="292" y="779" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011101</text>
+<text x="404" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5D</text>
+<text x="452" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">93</text>
+<text x="540" y="796" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">]</text>
+<rect x="292" y="802" width="258" height="23" fill="#ffffff"/>
+<text x="300" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011110</text>
+<text x="404" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5E</text>
+<text x="452" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">94</text>
+<text x="540" y="819" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">^</text>
+<rect x="292" y="825" width="258" height="23" fill="#f3f4f6"/>
+<text x="300" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01011111</text>
+<text x="404" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">5F</text>
+<text x="452" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">95</text>
+<text x="540" y="842" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">_</text>
+<rect x="292" y="72" width="258" height="776" fill="none" stroke="#d1d5db" rx="4"/>
+<text x="695.0" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Small letters (96–127)</text>
+<rect x="566" y="72" width="258" height="40" fill="#1d4ed8" rx="4"/>
+<text x="574" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Binary</text>
+<text x="678" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Hex</text>
+<text x="726" y="99" font-size="13" font-weight="bold" text-anchor="start" fill="#ffffff">Dec</text>
+<text x="814" y="99" font-size="13" font-weight="bold" text-anchor="end" fill="#ffffff">Symbol</text>
+<rect x="566" y="112" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100000</text>
+<text x="678" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">60</text>
+<text x="726" y="128" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">96</text>
+<text x="814" y="129" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">`</text>
+<rect x="566" y="135" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100001</text>
+<text x="678" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">61</text>
+<text x="726" y="151" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">97</text>
+<text x="814" y="152" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">a</text>
+<rect x="566" y="158" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100010</text>
+<text x="678" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">62</text>
+<text x="726" y="174" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">98</text>
+<text x="814" y="175" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">b</text>
+<rect x="566" y="181" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100011</text>
+<text x="678" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">63</text>
+<text x="726" y="197" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">99</text>
+<text x="814" y="198" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">c</text>
+<rect x="566" y="204" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100100</text>
+<text x="678" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">64</text>
+<text x="726" y="220" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">100</text>
+<text x="814" y="221" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">d</text>
+<rect x="566" y="227" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100101</text>
+<text x="678" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">65</text>
+<text x="726" y="243" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">101</text>
+<text x="814" y="244" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">e</text>
+<rect x="566" y="250" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100110</text>
+<text x="678" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">66</text>
+<text x="726" y="266" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">102</text>
+<text x="814" y="267" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">f</text>
+<rect x="566" y="273" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01100111</text>
+<text x="678" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">67</text>
+<text x="726" y="289" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">103</text>
+<text x="814" y="290" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">g</text>
+<rect x="566" y="296" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101000</text>
+<text x="678" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">68</text>
+<text x="726" y="312" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">104</text>
+<text x="814" y="313" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">h</text>
+<rect x="566" y="319" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101001</text>
+<text x="678" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">69</text>
+<text x="726" y="335" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">105</text>
+<text x="814" y="336" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">i</text>
+<rect x="566" y="342" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101010</text>
+<text x="678" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6A</text>
+<text x="726" y="358" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">106</text>
+<text x="814" y="359" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">j</text>
+<rect x="566" y="365" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101011</text>
+<text x="678" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6B</text>
+<text x="726" y="381" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">107</text>
+<text x="814" y="382" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">k</text>
+<rect x="566" y="388" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101100</text>
+<text x="678" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6C</text>
+<text x="726" y="404" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">108</text>
+<text x="814" y="405" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">l</text>
+<rect x="566" y="411" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101101</text>
+<text x="678" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6D</text>
+<text x="726" y="427" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">109</text>
+<text x="814" y="428" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">m</text>
+<rect x="566" y="434" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101110</text>
+<text x="678" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6E</text>
+<text x="726" y="450" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">110</text>
+<text x="814" y="451" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">n</text>
+<rect x="566" y="457" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01101111</text>
+<text x="678" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">6F</text>
+<text x="726" y="473" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">111</text>
+<text x="814" y="474" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">o</text>
+<rect x="566" y="480" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110000</text>
+<text x="678" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">70</text>
+<text x="726" y="496" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">112</text>
+<text x="814" y="497" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">p</text>
+<rect x="566" y="503" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110001</text>
+<text x="678" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">71</text>
+<text x="726" y="519" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">113</text>
+<text x="814" y="520" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">q</text>
+<rect x="566" y="526" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110010</text>
+<text x="678" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">72</text>
+<text x="726" y="542" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">114</text>
+<text x="814" y="543" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">r</text>
+<rect x="566" y="549" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110011</text>
+<text x="678" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">73</text>
+<text x="726" y="565" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">115</text>
+<text x="814" y="566" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">s</text>
+<rect x="566" y="572" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110100</text>
+<text x="678" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">74</text>
+<text x="726" y="588" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">116</text>
+<text x="814" y="589" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">t</text>
+<rect x="566" y="595" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110101</text>
+<text x="678" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">75</text>
+<text x="726" y="611" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">117</text>
+<text x="814" y="612" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">u</text>
+<rect x="566" y="618" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110110</text>
+<text x="678" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">76</text>
+<text x="726" y="634" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">118</text>
+<text x="814" y="635" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">v</text>
+<rect x="566" y="641" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01110111</text>
+<text x="678" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">77</text>
+<text x="726" y="657" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">119</text>
+<text x="814" y="658" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">w</text>
+<rect x="566" y="664" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111000</text>
+<text x="678" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">78</text>
+<text x="726" y="680" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">120</text>
+<text x="814" y="681" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">x</text>
+<rect x="566" y="687" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111001</text>
+<text x="678" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">79</text>
+<text x="726" y="703" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">121</text>
+<text x="814" y="704" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">y</text>
+<rect x="566" y="710" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111010</text>
+<text x="678" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7A</text>
+<text x="726" y="726" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">122</text>
+<text x="814" y="727" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">z</text>
+<rect x="566" y="733" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111011</text>
+<text x="678" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7B</text>
+<text x="726" y="749" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">123</text>
+<text x="814" y="750" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">{</text>
+<rect x="566" y="756" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111100</text>
+<text x="678" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7C</text>
+<text x="726" y="772" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">124</text>
+<text x="814" y="773" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">|</text>
+<rect x="566" y="779" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111101</text>
+<text x="678" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7D</text>
+<text x="726" y="795" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">125</text>
+<text x="814" y="796" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">}</text>
+<rect x="566" y="802" width="258" height="23" fill="#ffffff"/>
+<text x="574" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111110</text>
+<text x="678" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7E</text>
+<text x="726" y="818" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">126</text>
+<text x="814" y="819" font-size="17" font-weight="bold" text-anchor="end" font-family="Menlo, Consolas, monospace" fill="#b42318">~</text>
+<rect x="566" y="825" width="258" height="23" fill="#f3f4f6"/>
+<text x="574" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">01111111</text>
+<text x="678" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#6b7280">7F</text>
+<text x="726" y="841" font-size="14" font-family="Menlo, Consolas, monospace" fill="#111827">127</text>
+<text x="814" y="841" font-size="12" font-style="italic" text-anchor="end" fill="#6b7280">DEL</text>
+<rect x="566" y="72" width="258" height="776" fill="none" stroke="#d1d5db" rx="4"/>
+<text x="421.0" y="878" font-size="13" text-anchor="middle" fill="#374151">Hex is shown without the 0x. Code 127 (DEL) is a control code, not a symbol you can see.</text>
+</svg>
