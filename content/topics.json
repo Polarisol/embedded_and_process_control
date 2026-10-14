@@ -52,7 +52,11 @@
       "id": "electronics",
       "title": "Electronics",
       "icon": "⚡",
-      "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"]
+      "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"],
+      "links": [
+        { "label": "4project: buy electronics in Israel", "url": "https://www.4project.co.il/" },
+        { "label": "DigiKey Israel", "url": "https://www.digikey.co.il/" }
+      ]
     },
     {
       "id": "sensors",
