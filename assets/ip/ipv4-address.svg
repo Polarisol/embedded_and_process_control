@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 322" width="768" height="322" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="322" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">An IPv4 address: 4 bytes, 32 bits</text>
+<rect x="40" y="50" width="150" height="70" rx="8" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="115" y="98" font-size="34" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">192</text>
+<text x="115" y="148" font-size="17" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">11000000</text>
+<text x="115" y="168" font-size="12" text-anchor="middle" fill="#6b7280">8 bits: 0 to 255</text>
+<text x="205" y="106" font-size="40" font-weight="bold" text-anchor="middle" fill="#111827">.</text>
+<rect x="220" y="50" width="150" height="70" rx="8" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="295" y="98" font-size="34" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">168</text>
+<text x="295" y="148" font-size="17" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">10101000</text>
+<text x="295" y="168" font-size="12" text-anchor="middle" fill="#6b7280">8 bits: 0 to 255</text>
+<text x="385" y="106" font-size="40" font-weight="bold" text-anchor="middle" fill="#111827">.</text>
+<rect x="400" y="50" width="150" height="70" rx="8" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="475" y="98" font-size="34" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">1</text>
+<text x="475" y="148" font-size="17" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">00000001</text>
+<text x="475" y="168" font-size="12" text-anchor="middle" fill="#6b7280">8 bits: 0 to 255</text>
+<text x="565" y="106" font-size="40" font-weight="bold" text-anchor="middle" fill="#111827">.</text>
+<rect x="580" y="50" width="150" height="70" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="655" y="98" font-size="34" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">20</text>
+<text x="655" y="148" font-size="17" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">00010100</text>
+<text x="655" y="168" font-size="12" text-anchor="middle" fill="#6b7280">8 bits: 0 to 255</text>
+<path d="M40,184 v8 H550 v-8" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M580,184 v8 H730 v-8" fill="none" stroke="#15803d" stroke-width="2"/>
+<text x="295" y="216" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Network part</text>
+<text x="295" y="234" font-size="12" text-anchor="middle" fill="#374151">Which network. Like the street name, it is the same</text>
+<text x="295" y="250" font-size="12" text-anchor="middle" fill="#374151">for every device on the same LAN.</text>
+<text x="655" y="216" font-size="14" font-weight="bold" text-anchor="middle" fill="#15803d">Host part</text>
+<text x="655" y="234" font-size="12" text-anchor="middle" fill="#374151">Which device. Like</text>
+<text x="655" y="250" font-size="12" text-anchor="middle" fill="#374151">the house number.</text>
+<rect x="40" y="272" width="690" height="36" rx="6" fill="#f3f4f6"/>
+<text x="385" y="295" font-size="15" text-anchor="middle" fill="#111827">4 bytes × 8 bits = 32 bits  →  2³² = 4,294,967,296 possible addresses</text>
+</svg>
