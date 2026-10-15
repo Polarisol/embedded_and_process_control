@@ -11,7 +11,7 @@
       "id": "binary-representation",
       "title": "Binary Rep.",
       "icon": "01",
-      "blurb": "Learn how computers represent data using binary numbers - in short, it's all ones and zeros.",
+      "blurb": "01001000 01101001 00100001.... What? You don't understand binary yet? Let's take care of that.",
       "material": ["topics/binary-representation.md", "topics/binary-hexadecimal.md", "topics/binary-ascii-unicode.md", "topics/wwntr-binary.md"],
       "videos": [
         { "title": "Binary in Computers", "youtube": "1GSjbWt0c9M" },
@@ -31,13 +31,13 @@
       "id": "tcp-ip",
       "title": "TCP/IP",
       "icon": "🌐",
-      "blurb": "Learn the basics of the network communication - how most things talk to each otherthese days."
+      "blurb": "When I was a kid we used to meet each other face to face. But this is how the cool kids talk to one another these days."
     },
     {
       "id": "c-language",
       "title": "The C Language",
       "icon": "C",
-      "blurb": "Learn the basics of one of the most powerful and widely used programming languages - C.",
+      "blurb": "Learning C is easier than learning English. There is no past-perfect, conjugations and shit like that.",
       "material": [
         "topics/c-why-c.md",
         "topics/c-language-basics.md",
@@ -51,7 +51,7 @@
       "id": "microcontrollers",
       "title": "Microcontrollers",
       "icon": "▣",
-      "blurb": "Learn the basics of microcontrollers - maybe later you'll be ready for macrocontrollers.",
+      "blurb": "Learn the basics of microcontrollers - maybe later you'll graduate and upgrade to macrocontrollers.",
       "videos": [{ "title": "Introduction to Arduino", "youtube": "BLrHTHUjPuw" }],
       "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md"]
     },
@@ -59,14 +59,14 @@
       "id": "serial-communication",
       "title": "Serial Com.",
       "icon": "⇄",
-      "blurb": "Learn how serial communication works and how to implement it.",
+      "blurb": "There are many things that are serial, and this were we talk about the communication thing.",
       "material": ["topics/serial-frame.md", "topics/serial-pyside.md"]
     },
     {
       "id": "electronics",
       "title": "Electronics",
       "icon": "⚡",
-      "blurb": "Learn the basics of electronics. the way we need to connect our components in circuits.",
+      "blurb": "Bringing some electricity juice to your circuits",
       "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"],
       "links": [
         { "label": "4project: buy electronics in Israel", "url": "https://www.4project.co.il/" },
@@ -77,21 +77,21 @@
       "id": "sensors",
       "title": "Sensors",
       "icon": "📡",
-      "blurb": "Learn about different types of sensors - so your creations can feel the world around them.",
+      "blurb": "I'm sensing that we're going to talk about sensors.",
       "material": ["topics/sensors-types.md", "topics/sensors-buttons-advanced.md"]
     },
     {
       "id": "motors",
       "title": "Motors",
       "icon": "⚙",
-      "blurb": "Learn about different types of motors so you can get things moving. We like to move it.",
+      "blurb": "We like to move it move it.",
       "material": "topics/motors-types.md"
     },
     {
       "id": "process-control",
       "title": "Process Control",
       "icon": "🎛",
-      "blurb": "Learn the basics of process control - the first step in your way to control the world."
+      "blurb": "Join me! and together we'll control the world!"
     }
   ]
 }
