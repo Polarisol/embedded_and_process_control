@@ -59,7 +59,7 @@
       "id": "serial-communication",
       "title": "Serial Com.",
       "icon": "⇄",
-      "blurb": "There are many things that are serial, and this were we talk about the communication thing.",
+      "blurb": "There are many things that are serial, and this is where we talk about the communication thing.",
       "material": ["topics/serial-frame.md", "topics/serial-pyside.md"]
     },
     {
