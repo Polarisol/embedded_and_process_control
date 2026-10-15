@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 334" width="768" height="334" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="334" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">An IPv6 address: 128 bits, written as 8 groups of 4 hex digits</text>
+<rect x="16" y="50" width="84" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="58" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">2001</text>
+<text x="105" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="110" y="50" width="84" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="152" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0db8</text>
+<text x="199" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="204" y="50" width="84" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+<text x="246" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#6b7280">0000</text>
+<text x="293" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="298" y="50" width="84" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+<text x="340" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#6b7280">0000</text>
+<text x="387" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="392" y="50" width="84" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+<text x="434" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#6b7280">0000</text>
+<text x="481" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="486" y="50" width="84" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="528" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">ff00</text>
+<text x="575" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="580" y="50" width="84" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="622" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">0042</text>
+<text x="669" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">:</text>
+<rect x="674" y="50" width="84" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="716" y="80" font-size="20" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">8329</text>
+<path d="M16,106 v6 H758 v-6" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+<text x="384" y="130" font-size="13" text-anchor="middle" fill="#6b7280">8 groups × 16 bits = 128 bits</text>
+<text x="16" y="166" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">Rule 1: drop the zeros at the start of each group</text>
+<text x="16" y="194" font-size="20" font-family="Menlo, Consolas, monospace" text-anchor="start" fill="#111827">2001:db8:0:0:0:ff00:42:8329</text>
+<text x="16" y="232" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">Rule 2: replace one run of all-zero groups with  ::  (only once per address)</text>
+<text x="16" y="260" font-size="20" font-family="Menlo, Consolas, monospace" fill="#111827">2001:db8<tspan fill="#b42318" font-weight="bold">::</tspan>ff00:42:8329</text>
+<rect x="16" y="280" width="736" height="40" rx="6" fill="#f3f4f6"/>
+<text x="384" y="305" font-size="13" text-anchor="middle" fill="#111827">2¹²⁸ = 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses</text>
+</svg>
