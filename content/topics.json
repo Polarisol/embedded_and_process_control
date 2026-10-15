@@ -1,27 +1,34 @@
 {
   "site": {
     "title": "Embedded Systems",
+    "title_he": "מערכות משובצות",
     "author": "Dr. Tal Alon",
+    "author_he": "ד״ר טל אלון",
     "home": "home.md",
     "views": "polarisol-embedded-and-process-control",
-    "footer": "Embedded Systems · Dr. Tal Alon"
+    "footer": "Embedded Systems · Dr. Tal Alon",
+    "footer_he": "מערכות משובצות · ד״ר טל אלון"
   },
   "topics": [
     {
       "id": "binary-representation",
       "title": "Binary Rep.",
+      "title_he": "ייצוג בינארי",
       "icon": "01",
       "blurb": "01001000 01101001 00100001.... What? You don't understand binary yet? Let's take care of that.",
+      "blurb_he": "01001000 01101001 00100001.... מה? אתם עוד לא מבינים בינארית? בואו נטפל בזה.",
       "material": ["topics/binary-representation.md", "topics/binary-hexadecimal.md", "topics/binary-ascii-unicode.md", "topics/wwntr-binary.md"],
       "videos": [
-        { "title": "Binary in Computers", "youtube": "1GSjbWt0c9M" },
-        { "title": "Binary and Different Bases", "youtube": "LpuPe81bc2w" }
+        { "title": "Binary in Computers", "title_he": "בינארי במחשבים", "youtube": "1GSjbWt0c9M" },
+        { "title": "Binary and Different Bases", "title_he": "בינארי ובסיסים שונים", "youtube": "LpuPe81bc2w" }
       ],
       "quizzes": ["quizzes/binary-quiz.md"],
       "bots": [
         {
           "label": "Study Bot",
+          "label_he": "בוט לימוד",
           "description": "It's zeroes and ones. I'll walk you through it. In Hebrew!",
+          "description_he": "זה אפסים ואחדים. אני אעבור איתכם על זה. בעברית!",
           "url": "https://share.gemini.google/w9scqeewPggn"
         }
       ]
@@ -30,68 +37,84 @@
     {
       "id": "tcp-ip",
       "title": "TCP/IP",
+      "title_he": "TCP/IP",
       "icon": "🌐",
-      "blurb": "When I was a kid we used to meet each other face to face. But this is how the cool kids talk to one another these days."
+      "blurb": "When I was a kid we used to meet each other face to face. But this is how the cool kids talk to one another these days.",
+      "blurb_he": "כשהייתי ילד היינו נפגשים פנים אל פנים. אבל ככה הילדים המגניבים מדברים זה עם זה בימינו."
     },
     {
       "id": "c-language",
       "title": "The C Language",
+      "title_he": "שפת C",
       "icon": "C",
       "blurb": "Learning C is easier than learning English. There is no past-perfect, conjugations and shit like that.",
+      "blurb_he": "ללמוד C יותר קל מללמוד אנגלית. אין פה past perfect, הטיות וכל השטויות האלה.",
       "material": [
         "topics/c-why-c.md",
         "topics/c-language-basics.md",
         "topics/c-advanced-strings.md"
       ],
       "videos": [
-        { "title": "Introduction to C", "youtube": "dTp0c41XnrQ" }
+        { "title": "Introduction to C", "title_he": "מבוא ל-C", "youtube": "dTp0c41XnrQ" }
       ]
     },
     {
       "id": "microcontrollers",
       "title": "Microcontrollers",
+      "title_he": "מיקרו-בקרים",
       "icon": "▣",
       "blurb": "Learn the basics of microcontrollers - maybe later you'll graduate and upgrade to macrocontrollers.",
-      "videos": [{ "title": "Introduction to Arduino", "youtube": "BLrHTHUjPuw" }],
+      "blurb_he": "למדו את היסודות של מיקרו-בקרים - אולי בהמשך תסיימו את התואר ותשדרגו למאקרו-בקרים.",
+      "videos": [{ "title": "Introduction to Arduino", "title_he": "מבוא לארדואינו", "youtube": "BLrHTHUjPuw" }],
       "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md"]
     },
     {
       "id": "serial-communication",
       "title": "Serial Com.",
+      "title_he": "תקשורת טורית",
       "icon": "⇄",
       "blurb": "There are many things that are serial, and this is where we talk about the communication thing.",
+      "blurb_he": "יש הרבה דברים טוריים, וכאן אנחנו מדברים על עניין התקשורת.",
       "material": ["topics/serial-frame.md", "topics/serial-pyside.md"]
     },
     {
       "id": "electronics",
       "title": "Electronics",
+      "title_he": "אלקטרוניקה",
       "icon": "⚡",
       "blurb": "Bringing some electricity juice to your circuits",
+      "blurb_he": "מביאים קצת מיץ חשמל למעגלים שלכם",
       "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"],
       "links": [
-        { "label": "4project: buy electronics in Israel", "url": "https://www.4project.co.il/" },
-        { "label": "DigiKey Israel", "url": "https://www.digikey.co.il/" }
+        { "label": "4project: buy electronics in Israel", "label_he": "4project: רכישת רכיבי אלקטרוניקה בישראל", "url": "https://www.4project.co.il/" },
+        { "label": "DigiKey Israel", "label_he": "DigiKey ישראל", "url": "https://www.digikey.co.il/" }
       ]
     },
     {
       "id": "sensors",
       "title": "Sensors",
+      "title_he": "חיישנים",
       "icon": "📡",
       "blurb": "I'm sensing that we're going to talk about sensors.",
+      "blurb_he": "אני חש שאנחנו הולכים לדבר על חיישנים.",
       "material": ["topics/sensors-types.md", "topics/sensors-buttons-advanced.md"]
     },
     {
       "id": "motors",
       "title": "Motors",
+      "title_he": "מנועים",
       "icon": "⚙",
       "blurb": "We like to move it move it.",
+      "blurb_he": "We like to move it move it.",
       "material": "topics/motors-types.md"
     },
     {
       "id": "process-control",
       "title": "Process Control",
+      "title_he": "בקרת תהליכים",
       "icon": "🎛",
-      "blurb": "Join me! and together we'll control the world!"
+      "blurb": "Join me! and together we'll control the world!",
+      "blurb_he": "הצטרפו אליי! ויחד נשלוט בעולם!"
     }
   ]
 }

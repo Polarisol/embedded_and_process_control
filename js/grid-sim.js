@@ -11,6 +11,7 @@
   const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]]; // up, down, left, right
   const SPEEDS = [700, 400, 200, 90, 30];         // ms between steps, slow to fast
   const SHOW_WAITING = 24;                        // how many waiting squares are listed
+  const { t, plural } = window.I18N || { t: (s) => s, plural: (n, one, many, vars) => (n === 1 ? one : many).replace(/\{(\w+)\}/g, (m, k) => ({ n, ...vars })[k] ?? m) };
 
   const rowOf = (i) => Math.floor(i / SIZE);
   const colOf = (i) => i % SIZE;
@@ -124,16 +125,16 @@
   }
 
   const ALGORITHMS = {
-    bfs: { label: 'BFS', search: bfs, list: 'Queue (front → back)', about: 'Takes the square that has waited longest: it spreads out in rings.' },
-    dfs: { label: 'DFS', search: dfs, list: 'Stack (top → bottom)', about: 'Takes the square added last: it dives deep, then backtracks.' },
-    astar: { label: 'A*', search: astar, list: 'Priority queue (smallest f = g + h first)', about: 'Takes the square with the smallest f = steps so far (g) + guess to the goal (h).' },
+    bfs: { label: 'BFS', search: bfs, list: t('Queue (front → back)'), about: t('Takes the square that has waited longest: it spreads out in rings.') },
+    dfs: { label: 'DFS', search: dfs, list: t('Stack (top → bottom)'), about: t('Takes the square added last: it dives deep, then backtracks.') },
+    astar: { label: 'A*', search: astar, list: t('Priority queue (smallest f = g + h first)'), about: t('Takes the square with the smallest f = steps so far (g) + guess to the goal (h).') },
   };
 
   const TOOLS = {
-    start: { label: 'Start', mark: 'S' },
-    goal: { label: 'Goal', mark: 'G' },
-    wall: { label: 'Wall', mark: '■' },
-    erase: { label: 'Erase', mark: '□' },
+    start: { label: t('Start'), mark: 'S' },
+    goal: { label: t('Goal'), mark: 'G' },
+    wall: { label: t('Wall'), mark: '■' },
+    erase: { label: t('Erase'), mark: '□' },
   };
 
   function segmented(label, options, selected, onPick) {
@@ -164,7 +165,7 @@
     let timer = null;
 
     const cells = [];
-    const grid = el('div', { class: 'sim-grid', role: 'group', 'aria-label': 'Grid, 10 by 10' });
+    const grid = el('div', { class: 'sim-grid', role: 'group', 'aria-label': t('Grid, 10 by 10') });
     for (let i = 0; i < SIZE * SIZE; i++) {
       const cell = el('button', { type: 'button', class: 'sim-cell', 'data-i': String(i) });
       cells.push(cell);
@@ -172,11 +173,11 @@
     }
 
     const playBtn = el('button', { type: 'button', class: 'btn sim-play' });
-    const stepBtn = el('button', { type: 'button', class: 'sim-btn', text: 'Step' });
-    const resetBtn = el('button', { type: 'button', class: 'sim-btn', text: 'Reset' });
-    const clearBtn = el('button', { type: 'button', class: 'sim-btn', text: 'Clear walls' });
-    const randomBtn = el('button', { type: 'button', class: 'sim-btn', text: 'Random walls' });
-    const speedInput = el('input', { type: 'range', min: '0', max: String(SPEEDS.length - 1), step: '1', value: String(speed), 'aria-label': 'Speed' });
+    const stepBtn = el('button', { type: 'button', class: 'sim-btn', text: t('Step') });
+    const resetBtn = el('button', { type: 'button', class: 'sim-btn', text: t('Reset') });
+    const clearBtn = el('button', { type: 'button', class: 'sim-btn', text: t('Clear walls') });
+    const randomBtn = el('button', { type: 'button', class: 'sim-btn', text: t('Random walls') });
+    const speedInput = el('input', { type: 'range', min: '0', max: String(SPEEDS.length - 1), step: '1', value: String(speed), 'aria-label': t('Speed') });
     const about = el('p', { class: 'sim-about' });
     const status = el('p', { class: 'sim-status', role: 'status' });
     const listTitle = el('span', { class: 'sim-list-title' });
@@ -184,24 +185,24 @@
 
     const node = el('div', { class: 'sim' },
       el('div', { class: 'sim-controls' },
-        el('div', { class: 'sim-row' }, el('span', { class: 'sim-label', text: 'Algorithm' }),
-          segmented('Algorithm', ALGORITHMS, algo, (id) => { algo = id; resetSearch(); })),
-        el('div', { class: 'sim-row' }, el('span', { class: 'sim-label', text: 'Place' }),
-          segmented('Place on the grid', TOOLS, tool, (id) => { tool = id; })),
+        el('div', { class: 'sim-row' }, el('span', { class: 'sim-label', text: t('Algorithm') }),
+          segmented(t('Algorithm'), ALGORITHMS, algo, (id) => { algo = id; resetSearch(); })),
+        el('div', { class: 'sim-row' }, el('span', { class: 'sim-label', text: t('Place') }),
+          segmented(t('Place on the grid'), TOOLS, tool, (id) => { tool = id; })),
       ),
       about,
       el('div', { class: 'sim-stage' },
         grid,
         el('div', { class: 'sim-side' },
           el('div', { class: 'sim-actions' }, playBtn, stepBtn, resetBtn),
-          el('label', { class: 'sim-speed' }, el('span', { text: 'Slow' }), speedInput, el('span', { text: 'Fast' })),
+          el('label', { class: 'sim-speed' }, el('span', { text: t('Slow') }), speedInput, el('span', { text: t('Fast') })),
           status,
           el('p', { class: 'sim-list' }, listTitle, listBody),
           el('ul', { class: 'sim-legend' },
-            el('li', {}, el('span', { class: 'sim-key is-explored', text: '3' }), 'explored (the number is the order)'),
-            el('li', {}, el('span', { class: 'sim-key is-waiting' }), 'waiting in the list'),
-            el('li', {}, el('span', { class: 'sim-key is-current' }), 'being explored now'),
-            el('li', {}, el('span', { class: 'sim-key is-path' }), 'the path found')),
+            el('li', {}, el('span', { class: 'sim-key is-explored', text: '3' }), t('explored (the number is the order)')),
+            el('li', {}, el('span', { class: 'sim-key is-waiting' }), t('waiting in the list')),
+            el('li', {}, el('span', { class: 'sim-key is-current' }), t('being explored now')),
+            el('li', {}, el('span', { class: 'sim-key is-path' }), t('the path found'))),
           el('div', { class: 'sim-actions' }, clearBtn, randomBtn),
         ),
       ),
@@ -218,17 +219,17 @@
         const c = colOf(i);
         let kind = '';
         let text = '';
-        let what = 'empty';
-        if (walls.has(i)) { kind = 'is-wall'; what = 'wall'; }
-        else if (explored.has(i)) { kind = 'is-explored'; text = String(explored.get(i)); what = `explored ${text}`; }
-        else if (waiting.has(i)) { kind = 'is-waiting'; text = algo === 'astar' ? String(waiting.get(i).f) : ''; what = 'waiting'; }
+        let what = t('empty');
+        if (walls.has(i)) { kind = 'is-wall'; what = t('wall'); }
+        else if (explored.has(i)) { kind = 'is-explored'; text = String(explored.get(i)); what = t('explored {n}', { n: text }); }
+        else if (waiting.has(i)) { kind = 'is-waiting'; text = algo === 'astar' ? String(waiting.get(i).f) : ''; what = t('waiting'); }
         cell.className = `sim-cell ${kind}`;
-        if (path.has(i)) { cell.classList.add('is-path'); what += ', on the path'; }
+        if (path.has(i)) { cell.classList.add('is-path'); what += t(', on the path'); }
         if (state && state.current === i && !run.finished) cell.classList.add('is-current');
-        if (i === start) { cell.classList.add('is-start'); text = 'S'; what = `start, ${what}`; }
-        if (i === goal) { cell.classList.add('is-goal'); text = 'G'; what = `goal, ${what}`; }
+        if (i === start) { cell.classList.add('is-start'); text = 'S'; what = t('start, {what}', { what }); }
+        if (i === goal) { cell.classList.add('is-goal'); text = 'G'; what = t('goal, {what}', { what }); }
         cell.textContent = text;
-        cell.setAttribute('aria-label', `Row ${r}, column ${c}: ${what}`);
+        cell.setAttribute('aria-label', t('Row {r}, column {c}: {what}', { r, c, what }));
       });
 
       const info = ALGORITHMS[algo];
@@ -238,20 +239,20 @@
         const h = Math.abs(rowOf(start) - rowOf(goal)) + Math.abs(colOf(start) - colOf(goal));
         listBody.textContent = algo === 'astar' ? `${name(start)} f=0+${h}=${h}` : name(start);
       } else if (!state.waiting.length) {
-        listBody.textContent = 'empty';
+        listBody.textContent = t('empty');
       } else {
         const shown = state.waiting.slice(0, SHOW_WAITING)
           .map((w) => (w.note ? `${name(w.cell)} f=${w.note}` : name(w.cell)));
         const more = state.waiting.length - shown.length;
-        listBody.textContent = shown.join('  ') + (more > 0 ? `  … ${more} more` : '');
+        listBody.textContent = shown.join('  ') + (more > 0 ? t('  … {n} more', { n: more }) : '');
       }
 
-      if (!state) status.textContent = 'Press Play or Step to start the search.';
-      else if (!run.finished) status.textContent = `Exploring ${name(state.current)} · ${state.explored.length} square${state.explored.length === 1 ? '' : 's'} explored`;
-      else if (state.path) status.textContent = `Found the goal! Path: ${state.path.length - 1} steps · ${state.explored.length} squares explored`;
-      else status.textContent = `No path: walls block the goal · ${state.explored.length} squares explored`;
+      if (!state) status.textContent = t('Press Play or Step to start the search.');
+      else if (!run.finished) status.textContent = plural(state.explored.length, 'Exploring {cell} · {n} square explored', 'Exploring {cell} · {n} squares explored', { cell: name(state.current) });
+      else if (state.path) status.textContent = t('Found the goal! Path: {steps} steps · {n} squares explored', { steps: state.path.length - 1, n: state.explored.length });
+      else status.textContent = t('No path: walls block the goal · {n} squares explored', { n: state.explored.length });
 
-      playBtn.textContent = timer ? '❚❚ Pause' : run && run.finished ? '↻ Run again' : '▶ Play';
+      playBtn.textContent = t(timer ? '❚❚ Pause' : run && run.finished ? '↻ Run again' : '▶ Play');
       stepBtn.disabled = Boolean(run && run.finished);
     }
 
