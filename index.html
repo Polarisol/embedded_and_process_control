@@ -8,7 +8,7 @@
   <meta name="description" content="Embedded Systems by Dr. Tal Alon: topics, videos, notes and practice bots.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.dataset.view = 'list'; try {
       // Settings are saved under 'embedded:' because other course sites share this origin.
@@ -17,7 +17,7 @@
         ['theme', 'view', 'icons'].forEach(function (k) { var v = localStorage.getItem(k); if (v !== null && localStorage.getItem('embedded:' + k) === null) localStorage.setItem('embedded:' + k, v); });
         localStorage.setItem('embedded:migrated', '1');
       }
-      var t = localStorage.getItem('embedded:theme'); if (t) document.documentElement.dataset.theme = t; if (localStorage.getItem('embedded:view') === 'cards') delete document.documentElement.dataset.view; if (localStorage.getItem('embedded:icons') === 'off') document.documentElement.dataset.icons = 'off'; } catch (e) {}
+      if (localStorage.getItem('embedded:lang') === 'he') { document.documentElement.lang = 'he'; document.documentElement.dir = 'rtl'; } var t = localStorage.getItem('embedded:theme'); if (t) document.documentElement.dataset.theme = t; if (localStorage.getItem('embedded:icons') === 'off') document.documentElement.dataset.icons = 'off'; } catch (e) {}
     // Opening the main address shows the entry screen first (a refresh after ENTER stays on the page you were on).
     if (!new URLSearchParams(location.search).get('id') && !(history.state && history.state.main)) document.documentElement.dataset.entry = '';</script>
 </head>
@@ -26,13 +26,13 @@
   <!-- The background field is vivid on the entry screen and faint everywhere else. -->
   <script>if (!('entry' in document.documentElement.dataset)) document.getElementById('ascii-bg').dataset.intensity = 'dim';</script>
 
-  <section class="entry" aria-label="Welcome">
+  <section class="entry" aria-label="Welcome" data-i18n-attr="aria-label">
     <button class="theme-toggle entry-theme" type="button" aria-label="Colour scheme"></button>
     <div class="entry-inner">
       <p class="prompt">$ ./start</p>
-      <h1 class="entry-title">Embedded Systems</h1>
-      <p class="entry-author">Dr. Tal Alon</p>
-      <button class="entry-btn" type="button">ENTER <span aria-hidden="true">&rarr;</span></button>
+      <h1 class="entry-title" data-i18n>Embedded Systems</h1>
+      <p class="entry-author" data-i18n>Dr. Tal Alon</p>
+      <button class="entry-btn" type="button"><span data-i18n>ENTER</span> <span class="entry-arrow" aria-hidden="true">&rarr;</span></button>
     </div>
   </section>
 
@@ -40,19 +40,19 @@
     <a class="brand" href="./" data-site-name>Embedded Systems by Dr. Tal Alon</a>
     <div class="search" role="search">
       <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-      <input class="search-input" type="search" placeholder="Search…  ( / )" aria-label="Search all topics"
+      <input class="search-input" type="search" placeholder="Search…  ( / )" aria-label="Search all topics" data-i18n-attr="placeholder aria-label"
              autocomplete="off" spellcheck="false" enterkeyhint="search">
     </div>
     <div class="topbar-actions">
       <a class="site-link" href="https://polarisol.github.io/practical-programming/" target="_blank"
-         rel="noopener" title="Open the Practical Programming site">
+         rel="noopener" title="Open the Practical Programming site" data-i18n-attr="title">
         <svg class="site-link-logo" viewBox="0 0 64 64" aria-hidden="true">
           <rect class="logo-tile" x="2" y="2" width="60" height="60" rx="13"/>
           <path class="logo-chevron" d="M16 20 L30 32 L16 44"/>
           <rect class="logo-cursor" x="34" y="41" width="16" height="6" rx="3"/>
-        </svg><span class="site-link-label">Practical Programming</span>
+        </svg><span class="site-link-label" data-i18n>Practical Programming</span>
       </a>
-      <button class="view-toggle" type="button" aria-label="Switch to card view"></button>
+      <button class="lang-toggle" type="button" aria-label="Language"></button>
       <button class="icons-toggle" type="button" aria-label="Hide unit icons" aria-pressed="true"></button>
       <button class="theme-toggle" type="button" aria-label="Colour scheme"></button>
     </div>
@@ -73,6 +73,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
           integrity="sha384-+VfUPEb0PdtChMwmBcBmykRMDd+v6D/oFmB3rZM/puCMDYcIvF968OimRh4KQY9a"
           crossorigin="anonymous"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/ascii-bg.js"></script>
   <script src="js/grid-sim.js"></script>
   <script src="js/app.js"></script>

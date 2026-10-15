@@ -78,6 +78,18 @@ To change the site name (`title` + `author`, shown as "Embedded Systems by Dr. T
 
 > Tip: if the home page shows an error after an edit, the JSON probably has a missing comma or quote. Paste it into <https://jsonlint.com> to find the error.
 
+## Hebrew version
+
+The language button in the top bar (עב / EN) switches the whole site between English and Hebrew. In Hebrew the page reads right to left, while code, program output and formulas stay in English and left to right. The choice is remembered in the browser.
+
+Where the Hebrew text lives:
+
+- **Notes, quizzes and the Main page:** a file with the same path under `content/he/`. For example the Hebrew of `content/topics/c-why-c.md` is `content/he/topics/c-why-c.md`. Quizzes use the same format as the English ones.
+- **Text in `topics.json`:** a field with `_he` added to its name, next to the English one, e.g. `"title_he"`, `"blurb_he"`, a video's `"title_he"`, a bot's `"label_he"` and `"description_he"`, a link's or file's `"label_he"`. The `site` block takes `"title_he"`, `"author_he"`, `"subtitle_he"` and `"footer_he"`.
+- **Buttons and messages of the site itself:** `js/i18n.js`.
+
+Anything without a Hebrew version is shown in English, so a new topic works in both languages right away. When you change an English note, remember to update its Hebrew file too.
+
 ## View counts
 
 Each topic shows a faint `👁 12` next to its title, and each item (bot, video, written material, quiz, simulation, file, link) shows one too. A topic counts when its page is opened. An item counts when it is opened in list view or scrolled into sight in card view; bots, files and links count when clicked. Each counts at most once per page load, and nothing is counted while you test on `localhost`.
@@ -107,11 +119,13 @@ topic.html            redirect for old topic.html?id=... links
 css/style.css         colours, layout, colour schemes
 js/ascii-bg.js        interactive field-lines background
 js/app.js             reads topics.json and builds the pages
+js/i18n.js            the language button and the site's Hebrew interface text
 js/grid-sim.js        the grid path-finding simulation (BFS, DFS, A*)
 content/topics.json   your topics  ← edit this
 content/home.md       Main page text ← and this
 content/topics/*.md   your notes   ← and these
 content/quizzes/*.md  your quizzes ← and these
+content/he/           the Hebrew notes and quizzes (same file names)
 content/files/        downloads (zip files) ← and these
 assets/               images, PDFs, worksheets
 ```
