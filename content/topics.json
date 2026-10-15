@@ -17,7 +17,14 @@
         { "title": "Binary in Computers", "youtube": "1GSjbWt0c9M" },
         { "title": "Binary and Different Bases", "youtube": "LpuPe81bc2w" }
       ],
-      "quizzes": ["quizzes/binary-quiz.md"]
+      "quizzes": ["quizzes/binary-quiz.md"],
+      "bots": [
+        {
+          "label": "Study Bot",
+          "description": "It's zeroes and ones. I'll walk you through it. In Hebrew!",
+          "url": "https://share.gemini.google/w9scqeewPggn"
+        }
+      ]
 
     },
     {
