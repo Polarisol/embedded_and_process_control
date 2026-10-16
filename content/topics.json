@@ -58,7 +58,8 @@
       ],
       "videos": [
         { "title": "Introduction to C", "title_he": "מבוא ל-C", "youtube": "dTp0c41XnrQ" }
-      ]
+      ],
+      "quizzes": ["quizzes/c-quiz.md"]
     },
     {
       "id": "microcontrollers",
