@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 360" width="768" height="360" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="agr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect width="768" height="360" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Ports: the IP address finds the device, the port finds the program</text>
+<rect x="20" y="150" width="200" height="70" rx="6" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5"/>
+<rect x="20" y="150" width="8" height="70" rx="3" fill="#1d4ed8"/>
+<text x="36" y="176" font-size="13" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="start" fill="#111827">To: 192.168.1.20</text>
+<text x="36" y="202" font-size="13" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="start" fill="#111827">Port: <tspan fill="#b42318" font-weight="bold">443</tspan></text>
+<line x1="224" y1="186" x2="308" y2="186" stroke="#15803d" stroke-width="2.5" marker-end="url(#ag)"/>
+<rect x="296" y="54" width="300" height="280" rx="10" fill="#f6f7f9" stroke="#475569" stroke-width="2"/>
+<text x="446" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">Computer 192.168.1.20</text>
+<text x="446" y="98" font-size="12" text-anchor="middle" fill="#6b7280">(one building, many apartments)</text>
+<rect x="312" y="112" width="268" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="320" y="120" width="60" height="28" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="350" y="139" font-size="14" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#111827">80</text>
+<text x="392" y="139" font-size="13" text-anchor="start" fill="#374151">Web server (HTTP)</text>
+<rect x="312" y="164" width="268" height="44" rx="6" fill="#fde2e1" stroke="#b42318" stroke-width="2"/>
+<rect x="320" y="172" width="60" height="28" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="350" y="191" font-size="14" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#b42318">443</text>
+<text x="392" y="191" font-size="13" text-anchor="start" fill="#374151">Web server (HTTPS)</text>
+<rect x="312" y="216" width="268" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="320" y="224" width="60" height="28" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="350" y="243" font-size="14" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#111827">22</text>
+<text x="392" y="243" font-size="13" text-anchor="start" fill="#374151">Remote login (SSH)</text>
+<rect x="312" y="268" width="268" height="44" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="320" y="276" width="60" height="28" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="350" y="295" font-size="14" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#111827">5000</text>
+<text x="392" y="295" font-size="13" text-anchor="start" fill="#374151">Your Python server</text>
+<text x="682" y="130" font-size="12" text-anchor="middle" fill="#374151">A port is just</text>
+<text x="682" y="146" font-size="12" text-anchor="middle" fill="#374151">a 16-bit number:</text>
+<text x="682" y="166" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">0 to 65,535</text>
+<text x="682" y="210" font-size="12" text-anchor="middle" fill="#374151">Written after</text>
+<text x="682" y="226" font-size="12" text-anchor="middle" fill="#374151">the address:</text>
+<text x="682" y="248" font-size="11" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#111827">192.168.1.20:443</text>
+<text x="118" y="254" font-size="12" text-anchor="middle" fill="#374151">The same address with</text>
+<text x="118" y="270" font-size="12" text-anchor="middle" fill="#374151">port 22 would go to the</text>
+<text x="118" y="286" font-size="12" text-anchor="middle" fill="#374151">SSH program instead.</text>
+</svg>
