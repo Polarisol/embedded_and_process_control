@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="agr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Opening a connection: the three-way handshake</text>
+<text x="150" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Client (ESP32)</text>
+<text x="618" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#b42318">Server</text>
+<line x1="150" y1="72" x2="150" y2="300" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="618" y1="72" x2="618" y2="300" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="150" y1="100" x2="618" y2="150" stroke="#15803d" stroke-width="2.5" marker-end="url(#ag)"/>
+<rect x="364.7" y="99.0" width="38.599999999999994" height="22" rx="4" fill="#ffffff"/>
+<text x="384.0" y="115.0" font-size="13" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#15803d">SYN</text>
+<text x="384" y="160" font-size="12" text-anchor="middle" fill="#374151">"Hi, I want to talk. I'll number my bytes from 1."</text>
+<line x1="618" y1="180" x2="150" y2="230" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#ab)"/>
+<rect x="340.1" y="179.0" width="87.8" height="22" rx="4" fill="#ffffff"/>
+<text x="384.0" y="195.0" font-size="13" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#1d4ed8">SYN + ACK</text>
+<text x="384" y="240" font-size="12" text-anchor="middle" fill="#374151">"Got it, I'm listening. I'll number mine from 1."</text>
+<line x1="150" y1="260" x2="618" y2="300" stroke="#15803d" stroke-width="2.5" marker-end="url(#ag)"/>
+<rect x="364.7" y="254.0" width="38.599999999999994" height="22" rx="4" fill="#ffffff"/>
+<text x="384.0" y="270.0" font-size="13" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" text-anchor="middle" fill="#15803d">ACK</text>
+<text x="384" y="310" font-size="12" text-anchor="middle" fill="#374151">"Great, got yours."</text>
+<rect x="40" y="330" width="688" height="56" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="384" y="354" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">Now both sides know the other one is there and listening.</text>
+<text x="384" y="374" font-size="13" text-anchor="middle" fill="#374151">Only then does any data flow. Like a phone call: "Hello?" "Hello!" "Hi, listen..."</text>
+<text x="80" y="100" font-size="11" text-anchor="middle" fill="#6b7280">SYN = synchronize</text>
+<text x="80" y="116" font-size="11" text-anchor="middle" fill="#6b7280">ACK = acknowledge</text>
+</svg>

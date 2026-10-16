@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="agr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker><marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">TCP/IP: four layers, each with one job</text>
+<rect x="40" y="52" width="470" height="68" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<rect x="40" y="52" width="10" height="68" rx="4" fill="#7c3aed"/>
+<text x="66" y="78" font-size="16" font-weight="bold" text-anchor="start" fill="#7c3aed">Application</text>
+<text x="66" y="99" font-size="13" text-anchor="start" fill="#374151">Your program: a browser, a chat app, your ESP32 sketch</text>
+<text x="66" y="114" font-size="11" text-anchor="start" fill="#6b7280">HTTP, MQTT, your own messages</text>
+<rect x="40" y="130" width="470" height="68" rx="8" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<rect x="40" y="130" width="10" height="68" rx="4" fill="#1d4ed8"/>
+<text x="66" y="156" font-size="16" font-weight="bold" text-anchor="start" fill="#1d4ed8">Transport: TCP</text>
+<text x="66" y="177" font-size="13" text-anchor="start" fill="#374151">Which program? Did it all arrive, in order, unharmed?</text>
+<text x="66" y="192" font-size="11" text-anchor="start" fill="#6b7280">ports, sequence numbers, ACKs</text>
+<rect x="40" y="208" width="470" height="68" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<rect x="40" y="208" width="10" height="68" rx="4" fill="#15803d"/>
+<text x="66" y="234" font-size="16" font-weight="bold" text-anchor="start" fill="#15803d">Internet: IP</text>
+<text x="66" y="255" font-size="13" text-anchor="start" fill="#374151">Which device? Move each packet one step closer</text>
+<text x="66" y="270" font-size="11" text-anchor="start" fill="#6b7280">IP addresses, routers</text>
+<rect x="40" y="286" width="470" height="68" rx="8" fill="#fef3c7" stroke="#a16207" stroke-width="2"/>
+<rect x="40" y="286" width="10" height="68" rx="4" fill="#a16207"/>
+<text x="66" y="312" font-size="16" font-weight="bold" text-anchor="start" fill="#a16207">Link</text>
+<text x="66" y="333" font-size="13" text-anchor="start" fill="#374151">Get the bits across one wire or one Wi-Fi hop</text>
+<text x="66" y="348" font-size="11" text-anchor="start" fill="#6b7280">Wi-Fi, Ethernet cable</text>
+<text x="640" y="66" font-size="13" font-weight="bold" text-anchor="middle" fill="#374151">Sending:</text>
+<text x="640" y="84" font-size="12" text-anchor="middle" fill="#374151">each layer hands</text>
+<text x="640" y="100" font-size="12" text-anchor="middle" fill="#374151">its work to the</text>
+<text x="640" y="116" font-size="12" text-anchor="middle" fill="#374151">layer below</text>
+<line x1="560" y1="90" x2="560" y2="330" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#agr)"/>
+<text x="640" y="300" font-size="13" font-weight="bold" text-anchor="middle" fill="#374151">Receiving:</text>
+<text x="640" y="318" font-size="12" text-anchor="middle" fill="#374151">the other side</text>
+<text x="640" y="334" font-size="12" text-anchor="middle" fill="#374151">goes back up</text>
+<line x1="720" y1="330" x2="720" y2="90" stroke="#9ca3af" stroke-width="2.5" marker-end="url(#agr)"/>
+<text x="384" y="384" font-size="13" text-anchor="middle" fill="#374151">Each layer trusts the one below it to do its job, and adds only what is missing.</text>
+</svg>
