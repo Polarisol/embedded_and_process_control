@@ -20,3 +20,5 @@
 
 9. You need to be able to switch from hexadecimal to binary and vice versa. (for example: convert 0x1A to binary and 11010 to hexadecimal)
 
+10. You have to understand how ASCII encoding works, and be able to decipher a short ascii message using an ASCII table.
+
