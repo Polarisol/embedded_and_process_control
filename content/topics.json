@@ -53,7 +53,8 @@
       "material": [
         "topics/c-why-c.md",
         "topics/c-language-basics.md",
-        "topics/c-advanced-strings.md"
+        "topics/c-advanced-strings.md",
+        "topics/wwntr-c.md"
       ],
       "videos": [
         { "title": "Introduction to C", "title_he": "מבוא ל-C", "youtube": "dTp0c41XnrQ" }
