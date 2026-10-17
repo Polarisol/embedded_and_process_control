@@ -41,7 +41,7 @@
       "icon": "🌐",
       "blurb": "When I was a kid we used to meet each other face to face. But this is how the cool kids talk to one another these days.",
       "blurb_he": "כשהייתי ילד היינו נפגשים פנים אל פנים. אבל ככה הילדים המגניבים מדברים זה עם זה בימינו.",
-      "material": ["topics/tcpip-internet-protocol.md", "topics/tcpip-tcp.md"]
+      "material": ["topics/tcpip-internet-protocol.md", "topics/tcpip-tcp.md", "topics/tcpip-pyside-client.md", "topics/tcpip-pyside-server.md"]
     },
     {
       "id": "c-language",
