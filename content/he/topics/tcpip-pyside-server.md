@@ -59,12 +59,13 @@ class ServerWindow(QWidget):
         while self.server.hasPendingConnections():
             client = self.server.nextPendingConnection()
             self.clients.append(client)
-            client.readyRead.connect(lambda c=client: self.receive(c))
-            client.disconnected.connect(lambda c=client: self.on_disconnected(c))
+            client.readyRead.connect(self.receive)
+            client.disconnected.connect(self.on_disconnected)
             self.log.appendPlainText(f"{self.name(client)} connected")
 
-    def receive(self, client):
-        # 5. Read every complete line from this client, and answer it
+    def receive(self):
+        # 5. Read every complete line from the client that sent it, and answer it
+        client = self.sender()   # the socket whose readyRead called us
         while client.canReadLine():
             line = client.readLine().data().decode(errors="replace").strip()
             self.log.appendPlainText(f"◀ {self.name(client)}: {line}")
@@ -77,8 +78,9 @@ class ServerWindow(QWidget):
         self.log.appendPlainText(f"▶ all ({len(self.clients)}): {text}")
         self.entry.clear()
 
-    def on_disconnected(self, client):
-        # 6. Forget the client and free its socket
+    def on_disconnected(self):
+        # 6. Forget the client that left, and free its socket
+        client = self.sender()   # the socket whose disconnected called us
         self.log.appendPlainText(f"{self.name(client)} disconnected")
         self.clients.remove(client)
         client.deleteLater()
@@ -98,7 +100,7 @@ window.show()
 sys.exit(app.exec())   # the event loop starts here
 ```
 
-למה `lambda c=client:`? האותות `readyRead` של כל הלקוחות קוראים לאותה פונקציה, אז ה-lambda מעביר **איזה** לקוח זה היה. החלק `c=client` מקבע את הלקוח הנוכחי בתוך כל lambda. בלעדיו, כל ה-lambdaות היו משתמשים בלקוח האחרון.
+איזה לקוח זה היה? האותות `readyRead` של כל הלקוחות מחוברים לאותה מתודה `receive`, וכל האותות `disconnected` שלהם לאותה `on_disconnected`. בתוך מתודה שאות קרא לה, **`self.sender()`** מחזיר את האובייקט ששלח את האות, וכך הוא אומר לנו של איזה לקוח ה-socket הזה.
 
 ## משהו לדבר איתו
 
