@@ -15,25 +15,6 @@ If IP is like dropping **postcards** in a mailbox, TCP is like a **phone call**:
 
 TCP does this using IP's postcards, without changing IP at all. The programs on both sides get a **reliable stream of bytes**: everything arrives, **exactly once**, **in order**, **unharmed**, or the program is told that the connection broke.
 
-## Where TCP sits: the layers
-
-Networking is split into **layers**. Each layer does one job and relies on the layer below it for everything else. TCP/IP has four:
-
-![The four layers of TCP/IP: Application, Transport (TCP), Internet (IP) and Link. Sending goes down the layers, receiving goes back up](assets/tcp/tcp-layers.svg)
-
-| Layer | Its job | Examples |
-|-------|---------|----------|
-| **Application** | What the program actually wants to say | HTTP (web pages), MQTT (IoT), your own messages |
-| **Transport** | Which program, and did it all arrive in order | **TCP** (and its simple sibling UDP) |
-| **Internet** | Which device, and the way there | **IP**, routers |
-| **Link** | Bits over one wire or one radio hop | Wi-Fi, Ethernet |
-
-When your ESP32 sends a message, the message goes **down** the layers: TCP wraps it with its own header, IP wraps that with its header, and Wi-Fi sends it over the air. On the other side it goes back **up**, and each layer takes off its own wrapping. The piece TCP makes is called a **segment**, and it rides **inside** an IP packet:
-
-![A TCP segment inside an IP packet. The IP header has the From and To devices. The TCP header has the From port, To port, Seq, Ack, Flags, Window and Checksum, followed by the data](assets/tcp/tcp-segment.svg)
-
-Don't worry about all the fields yet. Each one solves one of IP's problems, and we'll meet them one at a time below.
-
 ## Client and server
 
 Every TCP connection has two sides with two different roles:
@@ -153,7 +134,6 @@ When your ESP32 connects to a server, the Wi-Fi library does all of the above fo
 ## Summary
 
 - **TCP** turns IP's best-effort packets into a **reliable stream of bytes**: everything arrives, exactly once, in order, unharmed.
-- TCP/IP has **four layers**: Application, Transport (**TCP**), Internet (**IP**) and Link (Wi-Fi, Ethernet). A TCP **segment** rides inside an IP packet.
 - The **server** listens on a known port and waits. The **client** knows its address and port, and starts the connection.
 - A **port** (0 to 65,535) says which **program** gets the data: the IP address is the building, the port is the apartment. Web servers use 80 and 443.
 - A connection opens with the **three-way handshake**: SYN, SYN + ACK, ACK.

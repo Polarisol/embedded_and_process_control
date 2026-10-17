@@ -32,23 +32,6 @@ An IPv4 address is just **32 bits**. Since a long row of 32 ones and zeros is ha
 
 Because each part is one byte, it can only be a number from **0 to 255** (that's `00000000` to `11111111`, see the Binary Representation unit). So `192.168.1.20` is a valid address, but `192.168.1.300` is not.
 
-An address has two parts, just like a postal address has a street and a house number:
-
-| Part | What it says | Like |
-|------|--------------|------|
-| **Network part** (the first bytes) | Which network the device is on. Every device on the same local network has the same network part | The street name |
-| **Host part** (the last bytes) | Which device on that network | The house number |
-
-How many bytes belong to the network is set by the **subnet mask**. In most homes the mask is `255.255.255.0`, which means "the first 3 bytes are the network". The short way to write it is `/24`, because the first 24 bits are the network part. So on a home network, `192.168.1.20` and `192.168.1.21` are neighbours on the same street, and there is room for about 254 devices (`.1` to `.254`).
-
-A few addresses are worth knowing:
-
-| Address | Meaning |
-|---------|---------|
-| `127.0.0.1` | "Myself". Every device calls itself by this address, also known as `localhost` |
-| `192.168.x.x`, `10.x.x.x` | Private addresses, used inside homes, schools and offices (more about them below) |
-| `x.x.x.255` (on a /24 network) | Broadcast: a packet for **every** device on the street at once |
-
 ## The problem: not enough addresses
 
 32 bits can make **2³² = 4,294,967,296** different addresses. In 1981 that looked like more than anyone would ever need. Computers were huge and expensive, and mostly universities, armies and big companies had them.
@@ -79,6 +62,23 @@ Inside a LAN we use **private addresses**. Three ranges were set aside for this,
 Private addresses are **never used on the internet**. That's why your home and your neighbour's home can both use `192.168.1.20` without any clash: those addresses never leave the house.
 
 ![A home LAN with a laptop, a phone and an ESP32 using private 192.168.1.x addresses, a router with a private LAN-side address and a public WAN-side address, and the internet with a server](assets/ip/lan-wan.svg)
+
+An address has two parts, just like a postal address has a street and a house number:
+
+| Part | What it says | Like |
+|------|--------------|------|
+| **Network part** (the first bytes) | Which network the device is on. Every device on the same local network has the same network part | The street name |
+| **Host part** (the last bytes) | Which device on that network | The house number |
+
+How many bytes belong to the network is set by the **subnet mask**. In most homes the mask is `255.255.255.0`, which means "the first 3 bytes are the network". The short way to write it is `/24`, because the first 24 bits are the network part. So on a home network, `192.168.1.20` and `192.168.1.21` are neighbours on the same street, and there is room for about 254 devices (`.1` to `.254`).
+
+A few addresses are worth knowing:
+
+| Address | Meaning |
+|---------|---------|
+| `127.0.0.1` | "Myself". Every device calls itself by this address, also known as `localhost` |
+| `192.168.x.x`, `10.x.x.x` | Private addresses, used inside homes, schools and offices (more about them below) |
+| `x.x.x.255` (on a /24 network) | Broadcast: a packet for **every** device on the street at once |
 
 The **router** stands with one foot in each world:
 
