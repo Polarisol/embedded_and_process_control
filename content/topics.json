@@ -131,7 +131,7 @@
       "icon": "⚙",
       "blurb": "We like to move it move it.",
       "blurb_he": "We like to move it move it.",
-      "material": "topics/motors-types.md"
+      "material": ["topics/motors-types.md", "topics/motors-dc.md", "topics/motors-servo.md", "topics/motors-stepper.md"]
     },
     {
       "id": "process-control",
