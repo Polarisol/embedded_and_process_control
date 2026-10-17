@@ -100,7 +100,7 @@
       "icon": "📡",
       "blurb": "I'm sensing that we're going to talk about sensors.",
       "blurb_he": "אני חש שאנחנו הולכים לדבר על חיישנים.",
-      "material": ["topics/sensors-types.md", "topics/sensors-buttons-advanced.md"]
+      "material": ["topics/sensors-types.md", "topics/sensors-button.md", "topics/sensors-buttons-advanced.md", "topics/sensors-potentiometer.md", "topics/sensors-ldr.md", "topics/sensors-thermistor.md", "topics/sensors-tilt-switch.md", "topics/sensors-pir.md", "topics/sensors-ultrasonic.md", "topics/sensors-dht.md"]
     },
     {
       "id": "motors",

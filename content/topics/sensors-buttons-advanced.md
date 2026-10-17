@@ -1,6 +1,6 @@
 # Buttons Advanced
 
-In **Types of Sensors** we wired a button in one line and read it with `INPUT_PULLUP`. Now we open the button up, wire it properly on a breadboard, learn why every button needs a resistor, and solve the problem that trips up almost every beginner: **bouncing**.
+In **Push button** we wired a button in one line and read it with `INPUT_PULLUP`. Now we open the button up, wire it properly on a breadboard, learn why every button needs a resistor, and solve the problem that trips up almost every beginner: **bouncing**.
 
 Everything here uses the course board, the **Arduino Nano ESP32**. Its pins work at **3.3 V**, so we power the button from the **3.3V** pin, never from 5 V.
 
