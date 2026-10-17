@@ -69,7 +69,16 @@
       "videos": [
         { "title": "Introduction to C", "title_he": "מבוא ל-C", "youtube": "dTp0c41XnrQ" }
       ],
-      "quizzes": ["quizzes/c-quiz.md"]
+      "quizzes": ["quizzes/c-quiz.md"],
+      "bots": [
+        {
+          "label": "Study Bot",
+          "label_he": "בוט לימוד",
+          "description": "Let's learn C together!",
+          "description_he": "בואו נלמד C יחד!",
+          "url": "https://share.gemini.google/MspjMiRUpDwx"
+        }
+      ]
     },
     {
       "id": "microcontrollers",
