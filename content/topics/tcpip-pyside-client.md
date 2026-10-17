@@ -62,18 +62,15 @@ class ClientWindow(QWidget):
 
     def send(self):
         # 4. Write a line of text
-        if self.socket.state() != QAbstractSocket.SocketState.ConnectedState:
-            self.log.appendPlainText("Not connected")
-            return
         text = self.entry.text()
-        self.socket.write((text + "\n").encode())
+        self.socket.write((text + "\n").encode()) # Note the added '\n' and the encoding
         self.log.appendPlainText("▶ " + text)
         self.entry.clear()
 
     def receive(self):
         # 5. Read every complete line that has arrived
-        while self.socket.canReadLine():
-            line = self.socket.readLine().data().decode(errors="replace").strip()
+        while self.socket.canReadLine(): # only line that ends with '\n'
+            line = self.socket.readLine().data().decode(errors="replace").strip() # Note the decoding
             self.log.appendPlainText("◀ " + line)
 
     def closeEvent(self, event):
