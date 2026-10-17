@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 330" width="768" height="330" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="330" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">OUTPUT: the pin switches between 3.3 V and 0 V</text>
+<rect x="16" y="44" width="360" height="236" rx="8" fill="#fff7ed"/>
+<text x="196" y="70" font-size="14" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">digitalWrite(D2, HIGH);</text>
+<rect x="32" y="90" width="92" height="150" rx="8" fill="#0f766e" stroke="#115e59" stroke-width="2"/>
+<text x="78" y="178" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">Nano</text>
+<text x="78" y="194" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">ESP32</text>
+<rect x="84" y="110" width="34" height="18" rx="9" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="101" y="123" font-size="11" font-weight="bold" text-anchor="middle" fill="#c2410c">D2</text>
+<rect x="84" y="222" width="34" height="18" rx="9" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="101" y="235" font-size="11" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<text x="146" y="108" font-size="13" font-weight="bold" fill="#b42318">3.3 V</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round" points="118,119 186,119"/>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round" points="186,119 191.0,111 201.0,127 211.0,111 221.0,127 231.0,111 241.0,127 246,119"/>
+<text x="216" y="146" font-size="12" text-anchor="middle" fill="#374151">220 Ω</text>
+<polyline fill="none" stroke="#b42318" stroke-width="2.5" stroke-linejoin="round" points="246,119 306,119 306,160"/>
+<circle cx="306" cy="172" r="26" fill="#fde68a" opacity="0.6"/>
+<line x1="322" y1="166.7" x2="336" y2="154" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/>
+<line x1="322" y1="172.0" x2="340" y2="170" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/>
+<line x1="322" y1="177.3" x2="334" y2="186" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/>
+<polygon points="293,160 319,160 306,184" fill="#facc15" stroke="#111827" stroke-width="2"/>
+<line x1="293" y1="184" x2="319" y2="184" stroke="#111827" stroke-width="2.5"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="306,184 306,231 118,231"/>
+<text x="306" y="210" font-size="12" text-anchor="start" dx="10" fill="#374151">LED</text>
+<text x="196" y="266" font-size="13" text-anchor="middle" fill="#374151">current flows, the LED is on</text>
+<polygon points="166,113 166,125 176,119" fill="#b42318"/>
+<rect x="392" y="44" width="360" height="236" rx="8" fill="#f3f4f6"/>
+<text x="572" y="70" font-size="14" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">digitalWrite(D2, LOW);</text>
+<rect x="408" y="90" width="92" height="150" rx="8" fill="#0f766e" stroke="#115e59" stroke-width="2"/>
+<text x="454" y="178" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">Nano</text>
+<text x="454" y="194" font-size="12" font-weight="bold" text-anchor="middle" fill="#ffffff">ESP32</text>
+<rect x="460" y="110" width="34" height="18" rx="9" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="477" y="123" font-size="11" font-weight="bold" text-anchor="middle" fill="#c2410c">D2</text>
+<rect x="460" y="222" width="34" height="18" rx="9" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="477" y="235" font-size="11" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<text x="522" y="108" font-size="13" font-weight="bold" fill="#6b7280">0 V</text>
+<polyline fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linejoin="round" points="494,119 562,119"/>
+<polyline fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linejoin="round" points="562,119 567.0,111 577.0,127 587.0,111 597.0,127 607.0,111 617.0,127 622,119"/>
+<text x="592" y="146" font-size="12" text-anchor="middle" fill="#374151">220 Ω</text>
+<polyline fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linejoin="round" points="622,119 682,119 682,160"/>
+<polygon points="669,160 695,160 682,184" fill="#e5e7eb" stroke="#111827" stroke-width="2"/>
+<line x1="669" y1="184" x2="695" y2="184" stroke="#111827" stroke-width="2.5"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="682,184 682,231 494,231"/>
+<text x="682" y="210" font-size="12" text-anchor="start" dx="10" fill="#374151">LED</text>
+<text x="572" y="266" font-size="13" text-anchor="middle" fill="#374151">no current, the LED is off</text>
+<text x="384" y="310" font-size="12" text-anchor="middle" fill="#374151">A pin can safely give about 20 mA: enough for an LED, never enough for a motor.</text>
+</svg>
