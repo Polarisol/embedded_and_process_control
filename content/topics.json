@@ -51,6 +51,9 @@
           "description_he": "בואו נלמד TCP/IP יחד!",
           "url": "https://share.gemini.google/5ksfwDbtYhi3"
         }
+      ],
+      "videos": [
+        { "title": "Router Configuration to TCP Server", "title_he": "תצורת נתב לשרת TCP", "youtube": "tzcgtYknniQ" }
       ]
     },
     {
