@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 320" width="768" height="320" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="320" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Reading a 5 V signal safely with a voltage divider</text>
+<rect x="24" y="80" width="140" height="150" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+<text x="94" y="140" font-size="14" font-weight="bold" text-anchor="middle" fill="#6d28d9">5 V sensor</text>
+<text x="94" y="160" font-size="12" text-anchor="middle" fill="#374151">output: 0 – 5 V</text>
+<text x="156" y="114" font-size="12" font-weight="bold" text-anchor="end" fill="#6d28d9">OUT</text>
+<polyline fill="none" stroke="#6d28d9" stroke-width="2.5" stroke-linejoin="round" points="164,110 300,110 300,120"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,120 292,124.2 308,132.5 292,140.8 308,149.2 292,157.5 308,165.8 300,170"/>
+<text x="316" y="150" font-size="13" fill="#374151">R1 = 10 kΩ</text>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,170 300,196"/>
+<circle cx="300" cy="196" r="4.5" fill="#15803d"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,196 300,210"/>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,210 292,214.2 308,222.5 292,230.8 308,239.2 292,247.5 308,255.8 300,260"/>
+<text x="316" y="240" font-size="13" fill="#374151">R2 = 15 kΩ</text>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,260 300,284 140,284 140,230"/>
+<text x="140" y="222" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round" points="300,196 520,196"/>
+<text x="420" y="188" font-size="12" text-anchor="middle" fill="#15803d">at most 3.0 V</text>
+<polyline fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round" points="300,284 520,284"/>
+<rect x="520" y="160" width="220" height="140" rx="10" fill="#0f766e" stroke="#115e59" stroke-width="2"/>
+<rect x="526" y="186" width="50" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="551" y="200" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A0</text>
+<rect x="526" y="274" width="50" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="551" y="288" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+<text x="660" y="236" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">Nano ESP32</text>
+<rect x="420" y="52" width="320" height="86" rx="8" fill="#f8fafc"/>
+<text x="580" y="76" font-size="13" text-anchor="middle" fill="#374151">V<tspan font-size="10" dy="3">A0</tspan><tspan dy="-3"> = V</tspan><tspan font-size="10" dy="3">OUT</tspan><tspan dy="-3"> × R2 ÷ (R1 + R2)</tspan></text>
+<text x="580" y="100" font-size="13" text-anchor="middle" fill="#374151">= 5 V × 15 ÷ 25 = <tspan font-weight="bold" fill="#15803d">3.0 V</tspan></text>
+<text x="580" y="124" font-size="12" text-anchor="middle" fill="#374151">safely below the 3.3 V limit</text>
+</svg>

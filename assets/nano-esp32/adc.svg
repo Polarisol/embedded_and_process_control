@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 370" width="768" height="370" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="370" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">analogRead() turns a voltage into a number</text>
+<text x="80" y="66" font-size="13" font-weight="bold" fill="#15803d">Voltage on the pin</text>
+<defs><linearGradient id="v" x1="0" x2="1"><stop offset="0" stop-color="#f0fdf4"/><stop offset="1" stop-color="#15803d"/></linearGradient></defs>
+<rect x="80" y="76" width="608" height="24" rx="4" fill="url(#v)" stroke="#15803d" stroke-width="1.5"/>
+<text x="80" y="272" font-size="13" font-weight="bold" fill="#1d4ed8">What analogRead() gives back</text>
+<rect x="80" y="206" width="608" height="24" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="80" y="118" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">0 V</text>
+<line x1="80" y1="124" x2="80" y2="200" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="75,194 85,194 80,203" fill="#9ca3af"/>
+<text x="80" y="248" font-size="13" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">0</text>
+<text x="232.0" y="118" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">0.825 V</text>
+<line x1="232.0" y1="124" x2="232.0" y2="200" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="227.0,194 237.0,194 232.0,203" fill="#9ca3af"/>
+<text x="232.0" y="248" font-size="13" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">1024</text>
+<text x="384.0" y="118" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">1.65 V</text>
+<line x1="384.0" y1="124" x2="384.0" y2="200" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="379.0,194 389.0,194 384.0,203" fill="#9ca3af"/>
+<text x="384.0" y="248" font-size="13" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">2048</text>
+<text x="536.0" y="118" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">2.475 V</text>
+<line x1="536.0" y1="124" x2="536.0" y2="200" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="531.0,194 541.0,194 536.0,203" fill="#9ca3af"/>
+<text x="536.0" y="248" font-size="13" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">3071</text>
+<text x="688" y="118" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">3.3 V</text>
+<line x1="688" y1="124" x2="688" y2="200" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>
+<polygon points="683,194 693,194 688,203" fill="#9ca3af"/>
+<text x="688" y="248" font-size="13" font-weight="bold" text-anchor="middle" font-family="Courier New, monospace" fill="#1d4ed8">4095</text>
+<rect x="344.0" y="150" width="80" height="22" rx="11" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+<text x="384.0" y="165" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">ADC</text>
+<rect x="64" y="286" width="640" height="70" rx="8" fill="#f8fafc"/>
+<text x="384" y="308" font-size="13" text-anchor="middle" fill="#374151">The <tspan font-weight="bold">ADC</tspan> (analog-to-digital converter) has 12 bits: 2¹² = 4096 steps, 0 to 4095.</text>
+<text x="384" y="326" font-size="13" text-anchor="middle" fill="#374151">One step is 3.3 V ÷ 4095 ≈ 0.8 mV.</text>
+<text x="384" y="344" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">volts = value × 3.3 ÷ 4095</text>
+</svg>

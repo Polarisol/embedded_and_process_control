@@ -91,7 +91,7 @@
       "blurb": "Learn the basics of microcontrollers - maybe later you'll graduate and upgrade to macrocontrollers.",
       "blurb_he": "למדו את היסודות של מיקרו-בקרים - אולי בהמשך תסיימו את התואר ותשדרגו למאקרו-בקרים.",
       "videos": [{ "title": "Introduction to Arduino", "title_he": "מבוא לארדואינו", "youtube": "BLrHTHUjPuw" }],
-      "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md"]
+      "material": ["topics/microcontrollers-intro.md", "topics/microcontrollers-nano-esp32.md", "topics/microcontrollers-nano-esp32-digital.md", "topics/microcontrollers-nano-esp32-analog.md"]
     },
     {
       "id": "serial-communication",

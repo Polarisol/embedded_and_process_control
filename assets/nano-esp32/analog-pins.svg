@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 600" width="768" height="600" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="600" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">The analog pins of the Nano ESP32</text>
+<rect x="304" y="92" width="160" height="420" rx="8" fill="#0f766e" stroke="#115e59" stroke-width="2"/>
+<rect x="354" y="70" width="60" height="50" rx="10" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
+<rect x="372" y="76" width="24" height="36" rx="8" fill="#4b5563"/>
+<text x="384" y="62" font-size="12" font-weight="bold" text-anchor="middle" fill="#374151">USB-C</text>
+<rect x="334" y="300" width="100" height="150" rx="4" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+<text x="384" y="372" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">ESP32-S3</text>
+<g opacity="0.3">
+<circle cx="320" cy="144.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="144.0" r="3.5" fill="#115e59"/>
+<line x1="320" y1="144.0" x2="292" y2="144.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="222" y="134.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="257" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D13</text>
+</g>
+<g>
+<circle cx="320" cy="169.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="169.4" r="3.5" fill="#115e59"/>
+<line x1="320" y1="169.4" x2="292" y2="169.4" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="159.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">3V3</text>
+</g>
+<text x="212" y="173.9" font-size="12" text-anchor="end" fill="#374151">3.3 V out</text>
+<g opacity="0.3">
+<circle cx="320" cy="194.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="194.8" r="3.5" fill="#115e59"/>
+<line x1="320" y1="194.8" x2="292" y2="194.8" stroke="#6b7280" stroke-width="1.5"/>
+<rect x="222" y="184.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="257" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B0</text>
+</g>
+<g>
+<circle cx="320" cy="220.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="220.2" r="3.5" fill="#115e59"/>
+<line x1="320" y1="220.2" x2="292" y2="220.2" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="210.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A0</text>
+</g>
+<g>
+<circle cx="320" cy="245.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="245.6" r="3.5" fill="#115e59"/>
+<line x1="320" y1="245.6" x2="292" y2="245.6" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="235.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A1</text>
+</g>
+<g>
+<circle cx="320" cy="271.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="271.0" r="3.5" fill="#115e59"/>
+<line x1="320" y1="271.0" x2="292" y2="271.0" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="261.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A2</text>
+</g>
+<g>
+<circle cx="320" cy="296.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="296.4" r="3.5" fill="#115e59"/>
+<line x1="320" y1="296.4" x2="292" y2="296.4" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="286.4" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A3</text>
+</g>
+<g>
+<circle cx="320" cy="321.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="321.8" r="3.5" fill="#115e59"/>
+<line x1="320" y1="321.8" x2="292" y2="321.8" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="311.8" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A4</text>
+</g>
+<text x="212" y="326.3" font-size="12" text-anchor="end" fill="#374151">I2C SDA</text>
+<g>
+<circle cx="320" cy="347.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="347.2" r="3.5" fill="#115e59"/>
+<line x1="320" y1="347.2" x2="292" y2="347.2" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="337.2" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A5</text>
+</g>
+<text x="212" y="351.7" font-size="12" text-anchor="end" fill="#374151">I2C SCL</text>
+<g>
+<circle cx="320" cy="372.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="372.6" r="3.5" fill="#115e59"/>
+<line x1="320" y1="372.6" x2="292" y2="372.6" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="362.6" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A6</text>
+</g>
+<g>
+<circle cx="320" cy="398.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="398.0" r="3.5" fill="#115e59"/>
+<line x1="320" y1="398.0" x2="292" y2="398.0" stroke="#15803d" stroke-width="1.5"/>
+<rect x="222" y="388.0" width="70" height="20" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+<text x="257" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#15803d">A7</text>
+</g>
+<g opacity="0.3">
+<circle cx="320" cy="423.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="423.4" r="3.5" fill="#115e59"/>
+<line x1="320" y1="423.4" x2="292" y2="423.4" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="413.4" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VBUS</text>
+</g>
+<g opacity="0.3">
+<circle cx="320" cy="448.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="448.8" r="3.5" fill="#115e59"/>
+<line x1="320" y1="448.8" x2="292" y2="448.8" stroke="#6b7280" stroke-width="1.5"/>
+<rect x="222" y="438.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="257" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">B1</text>
+</g>
+<g>
+<circle cx="320" cy="474.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="474.2" r="3.5" fill="#115e59"/>
+<line x1="320" y1="474.2" x2="292" y2="474.2" stroke="#111827" stroke-width="1.5"/>
+<rect x="222" y="464.2" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="257" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+</g>
+<text x="212" y="478.7" font-size="12" text-anchor="end" fill="#374151">ground</text>
+<g opacity="0.3">
+<circle cx="320" cy="499.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="320" cy="499.6" r="3.5" fill="#115e59"/>
+<line x1="320" y1="499.6" x2="292" y2="499.6" stroke="#b42318" stroke-width="1.5"/>
+<rect x="222" y="489.6" width="70" height="20" rx="10" fill="#fee2e2" stroke="#b42318" stroke-width="1.5"/>
+<text x="257" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#b42318">VIN</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="144.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="144.0" r="3.5" fill="#115e59"/>
+<line x1="448" y1="144.0" x2="476" y2="144.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="134.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="148.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D12</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="169.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="169.4" r="3.5" fill="#115e59"/>
+<line x1="448" y1="169.4" x2="476" y2="169.4" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="159.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="173.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D11</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="194.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="194.8" r="3.5" fill="#115e59"/>
+<line x1="448" y1="194.8" x2="476" y2="194.8" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="184.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="199.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D10</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="220.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="220.2" r="3.5" fill="#115e59"/>
+<line x1="448" y1="220.2" x2="476" y2="220.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="210.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="224.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D9</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="245.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="245.6" r="3.5" fill="#115e59"/>
+<line x1="448" y1="245.6" x2="476" y2="245.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="235.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="250.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D8</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="271.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="271.0" r="3.5" fill="#115e59"/>
+<line x1="448" y1="271.0" x2="476" y2="271.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="261.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="275.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D7</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="296.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="296.4" r="3.5" fill="#115e59"/>
+<line x1="448" y1="296.4" x2="476" y2="296.4" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="286.4" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="300.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D6</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="321.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="321.8" r="3.5" fill="#115e59"/>
+<line x1="448" y1="321.8" x2="476" y2="321.8" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="311.8" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="326.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D5</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="347.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="347.2" r="3.5" fill="#115e59"/>
+<line x1="448" y1="347.2" x2="476" y2="347.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="337.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="351.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D4</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="372.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="372.6" r="3.5" fill="#115e59"/>
+<line x1="448" y1="372.6" x2="476" y2="372.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="362.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="377.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D3</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="398.0" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="398.0" r="3.5" fill="#115e59"/>
+<line x1="448" y1="398.0" x2="476" y2="398.0" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="388.0" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="402.5" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D2</text>
+</g>
+<g>
+<circle cx="448" cy="423.4" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="423.4" r="3.5" fill="#115e59"/>
+<line x1="448" y1="423.4" x2="476" y2="423.4" stroke="#111827" stroke-width="1.5"/>
+<rect x="476" y="413.4" width="70" height="20" rx="10" fill="#e5e7eb" stroke="#111827" stroke-width="1.5"/>
+<text x="511" y="427.9" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">GND</text>
+</g>
+<text x="556" y="427.9" font-size="12" text-anchor="start" fill="#374151">ground</text>
+<g opacity="0.3">
+<circle cx="448" cy="448.8" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="448.8" r="3.5" fill="#115e59"/>
+<line x1="448" y1="448.8" x2="476" y2="448.8" stroke="#6b7280" stroke-width="1.5"/>
+<rect x="476" y="438.8" width="70" height="20" rx="10" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="511" y="453.3" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b7280">RST</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="474.2" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="474.2" r="3.5" fill="#115e59"/>
+<line x1="448" y1="474.2" x2="476" y2="474.2" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="464.2" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="478.7" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D0 / RX</text>
+</g>
+<g opacity="0.3">
+<circle cx="448" cy="499.6" r="8" fill="#d4a017" stroke="#92400e" stroke-width="1.5"/><circle cx="448" cy="499.6" r="3.5" fill="#115e59"/>
+<line x1="448" y1="499.6" x2="476" y2="499.6" stroke="#c2410c" stroke-width="1.5"/>
+<rect x="476" y="489.6" width="70" height="20" rx="10" fill="#ffedd5" stroke="#c2410c" stroke-width="1.5"/>
+<text x="511" y="504.1" font-size="12" font-weight="bold" text-anchor="middle" fill="#c2410c">D1 / TX</text>
+</g>
+<path d="M150,210.2 q-12,0 -12,10 V250.29999999999995 q0,8 -12,8 q12,0 12,8 V296.4 q0,10 12,10" fill="none" stroke="#15803d" stroke-width="2"/>
+<text x="120" y="255.8" font-size="13" font-weight="bold" text-anchor="end" fill="#15803d">A0 – A3</text>
+<text x="120" y="272.8" font-size="12" text-anchor="end" fill="#374151">always work</text>
+<path d="M150,311.79999999999995 q-12,0 -12,10 V351.9 q0,8 -12,8 q12,0 12,8 V398.0 q0,10 12,10" fill="none" stroke="#a16207" stroke-width="2"/>
+<text x="120" y="348.9" font-size="13" font-weight="bold" text-anchor="end" fill="#a16207">A4 – A7</text>
+<text x="120" y="365.9" font-size="12" text-anchor="end" fill="#374151">not while</text>
+<text x="120" y="382.9" font-size="12" text-anchor="end" fill="#374151">Wi‑Fi is on</text>
+<path d="M560,134.0 q12,0 12,10 V263.0 q0,8 12,8 q-12,0 -12,8 V398.0 q0,10 -12,10" fill="none" stroke="#c2410c" stroke-width="2"/>
+<text x="590" y="260.0" font-size="13" font-weight="bold" text-anchor="start" fill="#c2410c">D pins</text>
+<text x="590" y="277.0" font-size="12" text-anchor="start" fill="#374151">digital only:</text>
+<text x="590" y="294.0" font-size="12" text-anchor="start" fill="#374151">no analogRead()</text>
+<rect x="64" y="535" width="640" height="46" rx="8" fill="#f0fdf4"/>
+<text x="384" y="554" font-size="13" text-anchor="middle" fill="#374151"><tspan font-weight="bold" fill="#15803d">analogRead(A0)</tspan> measures the voltage on the pin, from 0 V to 3.3 V,</text>
+<text x="384" y="572" font-size="13" text-anchor="middle" fill="#374151">and gives back a number from 0 to 4095.</text>
+</svg>
