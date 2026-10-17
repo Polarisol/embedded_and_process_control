@@ -59,12 +59,13 @@ class ServerWindow(QWidget):
         while self.server.hasPendingConnections():
             client = self.server.nextPendingConnection()
             self.clients.append(client)
-            client.readyRead.connect(lambda c=client: self.receive(c))
-            client.disconnected.connect(lambda c=client: self.on_disconnected(c))
+            client.readyRead.connect(self.receive)
+            client.disconnected.connect(self.on_disconnected)
             self.log.appendPlainText(f"{self.name(client)} connected")
 
-    def receive(self, client):
-        # 5. Read every complete line from this client, and answer it
+    def receive(self):
+        # 5. Read every complete line from the client that sent it, and answer it
+        client = self.sender()   # the socket whose readyRead called us
         while client.canReadLine():
             line = client.readLine().data().decode(errors="replace").strip()
             self.log.appendPlainText(f"◀ {self.name(client)}: {line}")
@@ -77,8 +78,9 @@ class ServerWindow(QWidget):
         self.log.appendPlainText(f"▶ all ({len(self.clients)}): {text}")
         self.entry.clear()
 
-    def on_disconnected(self, client):
-        # 6. Forget the client and free its socket
+    def on_disconnected(self):
+        # 6. Forget the client that left, and free its socket
+        client = self.sender()   # the socket whose disconnected called us
         self.log.appendPlainText(f"{self.name(client)} disconnected")
         self.clients.remove(client)
         client.deleteLater()
@@ -98,7 +100,7 @@ window.show()
 sys.exit(app.exec())   # the event loop starts here
 ```
 
-Why `lambda c=client:`? All the clients' `readyRead` signals call the same function, so the lambda passes along **which** client it was. The `c=client` part freezes the current client into each lambda; without it, every lambda would use the last client.
+Which client was it? All the clients' `readyRead` signals are connected to the same `receive` method, and all their `disconnected` signals to the same `on_disconnected`. Inside a method called by a signal, **`self.sender()`** returns the object that sent the signal, so it tells us which client's socket it was.
 
 ## Something to talk to
 
