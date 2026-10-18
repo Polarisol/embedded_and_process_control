@@ -1,6 +1,13 @@
 # Sending non-string data
 
-In the client and server items every message was a line of **text** ending in `\n`. Text is easy to read and easy to debug, but TCP does not know about letters at all. It moves **bytes**, and each byte is just a number from 0 to 255. You can put any value you like in those bytes.
+In the client and server items every message was a line of **text** ending in `\n`. Text is easy to read, but TCP does not know about letters at all. It moves **bytes**, and each byte is just a number from 0 to 255. You can put any value you like in those bytes.
+
+This item covers two things, each in both directions:
+
+1. Sending and receiving **a single byte**, or **one variable that is several bytes long** (like a `float`).
+2. Sending and receiving **an array of bytes**, where every byte is a value of its own.
+
+In the examples the ESP32 is a small **TCP server**, and the app from the **TCP/IP Client in PySide6** item connects to it (set `HOST` to the ESP32's address).
 
 ## Text or a byte?
 
@@ -20,162 +27,35 @@ In Python it is the same difference: `"200".encode()` is 3 bytes, `bytes([200])`
 | | Text | Bytes |
 |--|------|-------|
 | **The value 200** | `0x32 0x30 0x30` (3 bytes) | `0xC8` (1 byte) |
-| **The value 60000** | 5 bytes | 2 bytes |
 | **Readable in `nc` or a text log** | Yes | No |
-| **End of a message** | `\n` | A length sent in front of the data |
-| **Receiver must** | Parse the text back into a number | Know how many bytes each value takes |
+| **Receiver must** | Turn the text back into a number | Know how many bytes are coming |
 
-Bytes are smaller and there is nothing to parse. The price is that both sides must agree exactly on the **format**: which byte means what.
+Bytes are smaller and there is nothing to parse. The price is that both sides must agree on **what is sent**: how many bytes, and what each one means.
 
 ## Hexadecimal: the language of bytes
 
-When we work with raw bytes we write them in **hexadecimal** (see the Hexadecimal item in the [Binary Rep.](topic.html?id=binary-representation) unit). Every byte is exactly **two hex digits**, from `0x00` to `0xFF`, and each digit is 4 bits, so it is easy to see the bits inside:
+When we work with raw bytes we write them in **hexadecimal** (see the Hexadecimal item in the [Binary Rep.](topic.html?id=binary-representation) unit). Every byte is exactly **two hex digits**, from `0x00` to `0xFF`:
 
 | Decimal | Hex | Binary |
 |---------|-----|--------|
 | 0 | `0x00` | `0000 0000` |
-| 4 | `0x04` | `0000 0100` |
 | 65 | `0x41` | `0100 0001` (also the letter `'A'`) |
+| 128 | `0x80` | `1000 0000` |
 | 200 | `0xC8` | `1100 1000` |
-| 235 | `0xEB` | `1110 1011` |
 | 255 | `0xFF` | `1111 1111` |
 
 Both C and Python understand the `0x` prefix, so `client.write(0xC8)` and `client.write(200)` are the same thing.
 
-### Seeing the bytes
+`nc` and the text log in our PySide apps show everything as text. A byte like `0xFF` or `0x00` is not a printable letter, so it shows up as a strange symbol or nothing at all. To see what really arrived, print the bytes in **hex**:
 
-`nc` and the text log in our PySide apps show everything as text. A byte like `0xEB` or `0x04` is not a printable letter, so it shows up as a strange symbol, a question mark or nothing at all. To check what really arrived you need a **hex view**:
+![The bytes FF 80 00 shown in a text view as strange symbols, and in a hex view as FF 80 00](assets/tcp/binary-hex-view.svg)
 
-![The same 6 bytes shown in a text log as strange symbols, and in a hex view as 00 04 00 EB 02 58](assets/tcp/binary-hex-view.svg)
+- In **Python**, `data.hex(" ")` turns bytes into `"ff 80 00"`.
+- On the **ESP32**, `Serial.print(b, HEX)` prints a byte in hex.
 
-- In **Python**, `data.hex(" ")` turns bytes into `"00 04 00 eb 02 58"`, and `bytes.fromhex("00 04 00 EB")` goes the other way.
-- On the **ESP32**, `Serial.print(b, HEX)` prints a byte in hex. It does not add a leading zero, so add it yourself: `if (b < 0x10) Serial.print('0');`.
-- On Linux or Mac, `nc -l 5000 | xxd` shows everything a client sends, in hex.
-- **Wireshark** shows the bytes of every TCP segment in hex, too.
+## The ESP32 server
 
-## Values bigger than one byte: network byte order
-
-One byte only holds 0 to 255. A sensor reading of 1000 needs **two bytes**. We split it into a **high byte** and a **low byte**, send both, and the receiver joins them again.
-
-Which byte goes first? The Internet protocols themselves (the addresses in an IP header, the ports in a TCP header) always send the **high byte first**. This is called **big-endian**, or **network byte order**, and it is the usual choice for your own messages over TCP too:
-
-![1000 is 0x03E8. Its high byte is 0x03 and its low byte is 0xE8. The sender sends 0x03 first and then 0xE8. The receiver computes (hi << 8) | lo = 0x03E8 = 1000](assets/tcp/binary-network-order.svg)
-
-On the ESP32:
-
-```c
-uint16_t light = 1000;           // 0x03E8
-client.write(highByte(light));   // 0x03
-client.write(lowByte(light));    // 0xE8
-```
-
-On the other side:
-
-```c
-uint16_t light = (hi << 8) | lo; // 0x03 << 8 = 0x0300, | 0xE8 = 0x03E8 = 1000
-```
-
-In Python, the **`struct`** module does the splitting and joining for you. The `!` at the start of the format means network byte order:
-
-| Format letter | Type | Bytes |
-|---------------|------|-------|
-| `B` | unsigned 8-bit, 0 to 255 | 1 |
-| `h` / `H` | signed / unsigned 16-bit | 2 |
-| `i` / `I` | signed / unsigned 32-bit | 4 |
-| `f` | `float` | 4 |
-
-```python
-import struct
-struct.pack("!H", 1000)             # b'\x03\xe8'
-struct.unpack("!H", b"\x03\xe8")    # (1000,)
-```
-
-Both sides must also agree on the **size** of each value. On the ESP32 an `int` is **4 bytes**, but on an Arduino Uno it is 2. Use types with the size in their name: `uint8_t` (1 byte), `int16_t` / `uint16_t` (2 bytes), `int32_t` / `uint32_t` (4 bytes). A temperature is easiest to send as an integer: 23.5 °C becomes `235`, and the receiver divides by 10.
-
-> The ESP32 and your PC keep numbers in memory **little-endian** (low byte first). That is why you should not just send the memory of an `int` or a `float` as it is: build the bytes yourself with `highByte()` / `lowByte()`, or with `struct` in Python.
-
-## Where does a message end?
-
-Remember from the client item that TCP is a **stream**: what you write as one message can arrive in several pieces, and two messages can arrive together. With text, the `\n` marks the end. With raw bytes **any** value can appear in the data, even `0x0A`, the code of `\n`, so we need another way.
-
-The usual answer is a **length prefix**: before the data, send its length in 2 bytes. The receiver first reads the length, then waits until that many bytes have arrived.
-
-![A message is 00 04 (length 4), then 00 EB (temp 235 = 23.5 °C) and 02 58 (light 600). Two such messages are written one after the other, but readyRead hands them over in three pieces of different sizes. The length tells the receiver where each message ends](assets/tcp/binary-stream.svg)
-
-On a serial line we also needed a start byte and a checksum, because bytes can get lost or damaged on the wire. TCP already takes care of that (see the TCP item): every byte arrives, in order, and checked. All we need to add is the length.
-
-### ESP32 client: sending a message
-
-```c
-#include <WiFi.h>
-
-WiFiClient client;
-
-void sendMessage(int16_t temp10, uint16_t light) {
-  uint8_t msg[6] = {
-    0x00, 0x04,                          // length of the data = 4 bytes
-    highByte(temp10), lowByte(temp10),   // temperature × 10
-    highByte(light),  lowByte(light)     // light level
-  };
-  client.write(msg, sizeof(msg));        // the whole message in one write
-}
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin("MyWiFi", "password");
-  while (WiFi.status() != WL_CONNECTED) delay(200);
-}
-
-void loop() {
-  if (!client.connected()) {               // (re)connect to the PySide6 server
-    client.connect("192.168.1.20", 5000);  // your computer's address
-    delay(1000);
-    return;
-  }
-  sendMessage(235, 600);                   // 23.5 °C, light 600
-  delay(1000);
-}
-```
-
-Every second the board sends `00 04 00 EB 02 58`.
-
-### PySide6 server: receiving the messages
-
-These changes go into the app from the **TCP/IP Server in PySide6** item. Each client gets its own buffer, because each client's bytes arrive separately. `receive()` adds the new bytes to that client's buffer and takes out every message that is complete:
-
-```python
-import struct
-
-# in __init__:           self.buffers = {}            # one bytearray per client
-# in on_new_connection:  self.buffers[client] = bytearray()
-# in on_disconnected:    del self.buffers[client]
-
-def receive(self):
-    client = self.sender()
-    buffer = self.buffers[client]
-    buffer += client.readAll().data()
-    while len(buffer) >= 2:
-        (size,) = struct.unpack("!H", buffer[:2])   # the 2-byte length
-        if len(buffer) < 2 + size:
-            break                                   # wait for the rest
-        data = bytes(buffer[2:2 + size])
-        del buffer[:2 + size]                       # remove the message from the buffer
-        temp10, light = struct.unpack("!hH", data)
-        self.log.appendPlainText(f"◀ {self.name(client)}: {data.hex(' ')}  →  temp={temp10 / 10} °C  light={light}")
-```
-
-The log shows `00 eb 02 58  →  temp=23.5 °C  light=600`. `"!hH"` means network byte order (`!`), a signed 16-bit value (`h`) and an unsigned 16-bit value (`H`).
-
-## The other direction: PC to ESP32
-
-Sending bytes from Python is just as easy. `struct.pack()` builds the data, and we put its length in front:
-
-```python
-data = struct.pack("!B", 200)                        # brightness 200, 1 byte
-self.socket.write(struct.pack("!H", len(data)) + data)   # 00 01 C8
-```
-
-On the ESP32, `client.read()` returns the next byte as a number from 0 to 255 (or `-1` if nothing is waiting), and `client.read(buffer, n)` reads `n` bytes into an array. This sketch is a small ESP32 **server** that sets the brightness of an LED from such a 3-byte command:
+All the ESP32 examples below use this sketch. Only the part at the end of `loop()` changes:
 
 ```c
 #include <WiFi.h>
@@ -184,33 +64,164 @@ WiFiServer server(5000);
 WiFiClient client;
 
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(115200);
   WiFi.begin("MyWiFi", "password");
   while (WiFi.status() != WL_CONNECTED) delay(200);
+  Serial.println(WiFi.localIP());      // the address to put in the client's HOST
   server.begin();
 }
 
 void loop() {
   if (!client.connected()) {
-    client = server.available();         // a new client, if one is waiting
+    client = server.available();       // a new client, if one is waiting
     return;
   }
-  if (client.available() >= 3) {         // wait until the whole command is here
-    uint8_t msg[3];
-    client.read(msg, 3);
-    uint16_t size = (msg[0] << 8) | msg[1];
-    if (size == 1) analogWrite(LED_BUILTIN, msg[2]);
-  }
+  // ... send and receive bytes here ...
 }
 ```
 
-Point the client app from the **TCP/IP Client in PySide6** item at the ESP32's address, connect a `QSlider` with range 0 to 255 to the two lines above, and the LED follows the slider over Wi-Fi.
+## 1. A single byte, or one variable of several bytes
+
+### A single byte
+
+One byte holds a value from 0 to 255: a brightness, a speed in percent, a button state, a command number.
+
+| | Send | Receive |
+|--|------|---------|
+| **ESP32** | `client.write(200);` | `int b = client.read();` |
+| **Python** | `self.socket.write(bytes([200]))` | `b = self.socket.read(1).data()[0]` |
+
+`client.read()` returns the byte as a number from 0 to 255, or `-1` if nothing has arrived, so check `client.available()` first. In Python, `bytes([200])` builds one byte from a list with one number, and `[0]` takes the first byte out of what was read, as a number.
+
+This part of `loop()` sets the brightness of an LED from one byte that the computer sends (add `pinMode(LED_BUILTIN, OUTPUT);` to `setup()`):
+
+```c
+  if (client.available() >= 1) {
+    int brightness = client.read();        // 0..255
+    analogWrite(LED_BUILTIN, brightness);
+  }
+```
+
+In the client app, connect a `QSlider` with range 0 to 255 to `self.socket.write(bytes([value]))`, and the LED follows the slider over Wi-Fi.
+
+### One variable of several bytes
+
+A `float` is 4 bytes, a `uint16_t` is 2. You don't need to take the variable apart: send **all of its bytes** exactly as they sit in memory, and the receiver puts them back into the same type.
+
+![float temperature = 23.5 is the 4 bytes 00 00 BC 41, and uint16_t light = 1000 is the 2 bytes E8 03. The bytes are sent as they are, and the receiver turns them back into 23.5 and 1000](assets/tcp/binary-variable.svg)
+
+On the ESP32:
+
+```c
+float temperature = 23.5;
+client.write((uint8_t*)&temperature, sizeof(temperature));   // send its 4 bytes
+```
+
+- `&temperature` is the **address** of the variable in memory, and `(uint8_t*)` says "look at it as bytes".
+- `sizeof(temperature)` is the number of bytes: 4 for a `float`.
+
+Receiving into a variable works the same way, once all its bytes have arrived:
+
+```c
+float temperature;
+if (client.available() >= sizeof(temperature)) {
+  client.read((uint8_t*)&temperature, sizeof(temperature));
+}
+```
+
+In Python, the **`struct`** module turns bytes into a number and back. The letter says which type it is:
+
+| Letter | C type | Bytes |
+|--------|--------|-------|
+| `B` | `uint8_t` | 1 |
+| `h` / `H` | `int16_t` / `uint16_t` | 2 |
+| `i` / `I` | `int32_t` / `uint32_t` | 4 |
+| `f` | `float` | 4 |
+
+```python
+import struct
+(temperature,) = struct.unpack("<f", self.socket.read(4).data())   # receive: 4 bytes → 23.5
+self.socket.write(struct.pack("<f", 23.5))                         # send: 23.5 → 4 bytes
+```
+
+The `<` at the start tells Python to use the same byte order as the ESP32 (and your PC). `unpack()` always returns a tuple, which is why we write `(temperature,) =`.
+
+> Use types with the size in their name, like `uint16_t` or `int32_t`. A plain `int` is 4 bytes on the ESP32 but 2 bytes on an Arduino Uno, and both sides must agree on the size.
+
+A complete pair: the ESP32 sends the temperature every second, and the client app shows it.
+
+```c
+  float temperature = 23.5;     // in a real project: read it from a sensor
+  client.write((uint8_t*)&temperature, sizeof(temperature));
+  delay(1000);
+```
+
+```python
+def receive(self):
+    while self.socket.bytesAvailable() >= 4:     # wait until all 4 bytes are here
+        (temperature,) = struct.unpack("<f", self.socket.read(4).data())
+        self.log.appendPlainText(f"temperature = {temperature:.1f}")
+```
+
+TCP is a **stream**: `readyRead` can fire when only some of the bytes have arrived, or when several messages arrived together. That is why we read only once `bytesAvailable()` says all 4 are there, and use `while` to handle every complete value that is waiting.
+
+## 2. An array of bytes
+
+Often you have several small values, each fitting in one byte: the red, green and blue of a colour, or a few sensor readings scaled to 0–255. Put them in an array of `uint8_t` and send them together. Every byte is a value of its own, so there is nothing to split or join.
+
+![uint8_t rgb[3] = {255, 128, 0} is sent with client.write(rgb, 3) as the bytes FF 80 00. The receiver reads 3 bytes and gets r = 255, g = 128, b = 0](assets/tcp/binary-array.svg)
+
+| | Send | Receive |
+|--|------|---------|
+| **ESP32** | `client.write(rgb, 3);` | `client.read(rgb, 3);` |
+| **Python** | `self.socket.write(bytes([255, 128, 0]))` | `r, g, b = self.socket.read(3).data()` |
+
+In Python, reading 3 bytes and unpacking them into 3 names gives 3 numbers from 0 to 255.
+
+### ESP32 to computer: three readings
+
+```c
+  uint8_t readings[3];
+  readings[0] = map(analogRead(A0), 0, 4095, 0, 255);   // potentiometer
+  readings[1] = map(analogRead(A1), 0, 4095, 0, 255);   // light sensor (LDR)
+  readings[2] = digitalRead(2);                         // button: 0 or 1
+  client.write(readings, 3);
+  delay(200);
+```
+
+```python
+def receive(self):
+    while self.socket.bytesAvailable() >= 3:
+        pot, light, button = self.socket.read(3).data()
+        self.log.appendPlainText(f"pot={pot}  light={light}  button={button}")
+```
+
+### Computer to ESP32: a colour
+
+```python
+self.socket.write(bytes([255, 128, 0]))   # orange: red 255, green 128, blue 0
+```
+
+```c
+  if (client.available() >= 3) {        // wait until all 3 bytes are here
+    uint8_t rgb[3];
+    client.read(rgb, 3);
+    analogWrite(RED_PIN, rgb[0]);       // RED_PIN, GREEN_PIN, BLUE_PIN: the 3 pins of an RGB LED
+    analogWrite(GREEN_PIN, rgb[1]);
+    analogWrite(BLUE_PIN, rgb[2]);
+  }
+```
+
+Three `QSlider`s in the client app, each sending `bytes([red, green, blue])` when it moves, make a colour mixer over Wi-Fi.
+
+> In every example one side always sends the **same number of bytes**, so the other side knows how many to wait for. If the two sides disagree, for example the sender sends 4 bytes and the receiver reads 3, every value after that is wrong.
 
 ## Summary
 
 - TCP moves **bytes**, values from 0 to 255. Text is only one way to use them.
 - `client.print(200)` sends the text `"200"` (3 bytes). `client.write(200)` sends one byte, `0xC8`.
-- Write bytes in **hex**: one byte is always 2 hex digits. Use a hex view (`data.hex(" ")`, `xxd`, Wireshark) to see what really arrived.
-- Bigger values are split into bytes. Over the network, send the **high byte first** (network byte order, `!` in `struct`) and use sized types like `uint16_t`.
-- TCP is a stream, so put a **length prefix** in front of each message. TCP already makes sure every byte arrives, in order, so no start byte or checksum is needed.
-- In Python, `struct.pack()` / `struct.unpack()` and `.hex(" ")` do the work.
+- Write bytes in **hex**: one byte is always 2 hex digits.
+- **A single byte:** `client.write(b)` / `client.read()` on the ESP32, `bytes([b])` / `read(1).data()[0]` in Python.
+- **One variable of several bytes:** send its bytes with `client.write((uint8_t*)&x, sizeof(x))`, read them with `client.read((uint8_t*)&x, sizeof(x))`. In Python use `struct.pack()` / `struct.unpack()`.
+- **An array of bytes:** `client.write(arr, n)` / `client.read(arr, n)` on the ESP32, `bytes([...])` / `read(n).data()` in Python.
+- TCP is a stream, so read only when **all** the bytes are there: `client.available() >= n`, `bytesAvailable() >= n`.
