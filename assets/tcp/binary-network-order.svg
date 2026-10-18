@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 420" width="768" height="420" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="420" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">A 16-bit number in network byte order</text>
+<text x="384" y="64" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">uint16_t light = 1000;   // 1000 = 0x03E8</text>
+<rect x="104" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="119.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="138" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="153.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="172" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="187.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="206" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="221.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="240" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="255.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="274" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="289.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="308" y="84" width="30" height="34" rx="6" fill="#fde2e1" stroke="#b42318" stroke-width="2"/>
+<text x="323.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="342" y="84" width="30" height="34" rx="6" fill="#fde2e1" stroke="#b42318" stroke-width="2"/>
+<text x="357.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="398" y="84" width="30" height="34" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="413.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="432" y="84" width="30" height="34" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="447.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="466" y="84" width="30" height="34" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="481.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="500" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="515.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="534" y="84" width="30" height="34" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="549.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">1</text>
+<rect x="568" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="583.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="602" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="617.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<rect x="636" y="84" width="30" height="34" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+<text x="651.0" y="106.76" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0</text>
+<text x="238" y="142" font-size="14" font-weight="bold" text-anchor="middle" fill="#b42318">high byte = 0x03</text>
+<text x="532" y="142" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">low byte = 0xE8</text>
+<text x="24" y="192" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">Sender</text>
+<text x="24" y="212" font-size="13" text-anchor="start" fill="#6b7280" font-family="Menlo, Consolas, monospace">highByte(light)</text>
+<text x="24" y="230" font-size="13" text-anchor="start" fill="#6b7280" font-family="Menlo, Consolas, monospace">lowByte(light)</text>
+<rect x="220" y="176" width="86" height="60" rx="6" fill="#fde2e1" stroke="#b42318" stroke-width="2"/>
+<text x="263.0" y="208.0" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0x03</text>
+<text x="263.0" y="228.0" font-size="12" text-anchor="middle" fill="#b42318">1st byte</text>
+<rect x="318" y="176" width="86" height="60" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="361.0" y="208.0" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0xE8</text>
+<text x="361.0" y="228.0" font-size="12" text-anchor="middle" fill="#1d4ed8">2nd byte</text>
+<line x1="414" y1="206" x2="520" y2="206" stroke="#111827" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="467" y="196" font-size="12" text-anchor="middle" fill="#6b7280">network</text>
+<rect x="530" y="176" width="86" height="60" rx="6" fill="#fde2e1" stroke="#b42318" stroke-width="2"/>
+<text x="573.0" y="208.0" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0x03</text>
+<text x="573.0" y="228.0" font-size="12" text-anchor="middle" fill="#b42318">hi</text>
+<rect x="628" y="176" width="86" height="60" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="671.0" y="208.0" font-size="22" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">0xE8</text>
+<text x="671.0" y="228.0" font-size="12" text-anchor="middle" fill="#1d4ed8">lo</text>
+<text x="24" y="278" font-size="13" text-anchor="start" fill="#6b7280">High byte first (big-endian), the order Internet protocols use: network byte order</text>
+<line x1="24" y1="300" x2="744" y2="300" stroke="#e5e7eb" stroke-width="2"/>
+<text x="24" y="334" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">Receiver puts them back together:</text>
+<text x="384" y="372" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">(hi &lt;&lt; 8) | lo  =  0x0300 | 0xE8  =  0x03E8  =  1000</text>
+<text x="384" y="400" font-size="13" text-anchor="middle" fill="#6b7280">Shift the high byte 8 places left, then OR in the low byte</text>
+</svg>
