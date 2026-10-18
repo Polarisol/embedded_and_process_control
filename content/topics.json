@@ -100,7 +100,7 @@
       "icon": "⇄",
       "blurb": "There are many things that are serial, and this is where we talk about the communication thing.",
       "blurb_he": "יש הרבה דברים טוריים, וכאן אנחנו מדברים על עניין התקשורת.",
-      "material": ["topics/serial-intro.md", "topics/serial-frame.md", "topics/serial-pyside.md", "topics/serial-binary-data.md"]
+      "material": ["topics/serial-intro.md", "topics/serial-frame.md", "topics/serial-arduino.md", "topics/serial-pyside.md", "topics/serial-binary-data.md"]
     },
     {
       "id": "electronics",

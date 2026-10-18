@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 344" width="768" height="344" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="344" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">The Nano ESP32 has two serial ports you will use</text>
+<rect x="300" y="70" width="168" height="230" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="384" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Nano ESP32</text>
+<rect x="316" y="124" width="136" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="384" y="145" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">Serial</text>
+<text x="384" y="162" font-size="12" text-anchor="middle" fill="#1d4ed8">USB</text>
+<path d="M452,147 L566,147" fill="none" stroke="#1d4ed8" stroke-width="3" marker-end="url(#ah)" marker-start="url(#ah)"/>
+<text x="509" y="137" font-size="12" font-weight="bold" text-anchor="middle" fill="#1d4ed8">USB cable</text>
+<rect x="572" y="70" width="172" height="154" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="658" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Computer</text>
+<text x="658" y="128" font-size="13" text-anchor="middle" fill="#111827">Serial Monitor</text>
+<text x="658" y="150" font-size="13" text-anchor="middle" fill="#111827">Serial Plotter</text>
+<text x="658" y="172" font-size="13" text-anchor="middle" fill="#111827">your PySide app</text>
+<text x="658" y="206" font-size="12" text-anchor="middle" fill="#6b7280" font-family="Menlo, Consolas, monospace">COM3 / /dev/ttyACM0</text>
+<rect x="316" y="206" width="136" height="80" rx="6" fill="#dff3e4" stroke="#15803d" stroke-width="2"/>
+<text x="384" y="228" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">Serial0</text>
+<text x="384" y="256" font-size="12" text-anchor="middle" fill="#15803d" font-family="Menlo, Consolas, monospace">D1 = TX</text>
+<text x="384" y="278" font-size="12" text-anchor="middle" fill="#15803d" font-family="Menlo, Consolas, monospace">D0 = RX</text>
+<rect x="24" y="206" width="172" height="80" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="92" y="238" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">GPS module</text>
+<text x="92" y="256" font-size="12" text-anchor="middle" fill="#6b7280">or another board</text>
+<text x="186" y="256" font-size="12" font-weight="bold" text-anchor="end" fill="#6b7280">TX</text>
+<text x="186" y="278" font-size="12" font-weight="bold" text-anchor="end" fill="#6b7280">RX</text>
+<path d="M196,252 L230,252 L282,274 L316,274" fill="none" stroke="#15803d" stroke-width="3" marker-end="url(#ah)"/>
+<path d="M316,252 L282,252 L230,274 L196,274" fill="none" stroke="#15803d" stroke-width="3" marker-end="url(#ah)"/>
+<text x="256" y="240" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">the wires cross</text>
+<text x="24" y="96" font-size="13" text-anchor="start" fill="#111827" font-family="Menlo, Consolas, monospace">Serial.begin(9600);</text>
+<text x="24" y="116" font-size="13" text-anchor="start" fill="#111827" font-family="Menlo, Consolas, monospace">Serial.println("hi");</text>
+<text x="24" y="140" font-size="12" text-anchor="start" fill="#6b7280">talks to the computer</text>
+<text x="384" y="320" font-size="13" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">Serial0.begin(9600);   Serial0.println("hi");   talks on pins D0 and D1</text>
+</svg>
