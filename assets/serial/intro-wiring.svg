@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 570" width="768" height="570" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="570" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">How UART, I²C and SPI are wired</text>
+<text x="24" y="62" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">UART: TX goes to RX (the wires cross)</text>
+<rect x="60" y="80" width="150" height="110" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="135.0" y="140.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Arduino</text>
+<rect x="558" y="80" width="150" height="110" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="633.0" y="140.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">GPS</text>
+<text x="200" y="109" font-size="12" font-weight="bold" text-anchor="end" fill="#6b7280">TX</text>
+<text x="568" y="109" font-size="12" font-weight="bold" text-anchor="start" fill="#6b7280">TX</text>
+<text x="200" y="141" font-size="12" font-weight="bold" text-anchor="end" fill="#6b7280">RX</text>
+<text x="568" y="141" font-size="12" font-weight="bold" text-anchor="start" fill="#6b7280">RX</text>
+<text x="200" y="173" font-size="12" font-weight="bold" text-anchor="end" fill="#6b7280">GND</text>
+<text x="568" y="173" font-size="12" font-weight="bold" text-anchor="start" fill="#6b7280">GND</text>
+<path d="M210,104 L330,104 L438,136 L558,136" fill="none" stroke="#1d4ed8" stroke-width="3" marker-end="url(#ah)"/>
+<path d="M558,104 L438,104 L330,136 L210,136" fill="none" stroke="#15803d" stroke-width="3" marker-end="url(#ah)"/>
+<line x1="210" y1="168" x2="558" y2="168" stroke="#111827" stroke-width="3"/>
+<line x1="24" y1="214" x2="744" y2="214" stroke="#e5e7eb" stroke-width="2"/>
+<text x="24" y="244" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">I²C: two shared wires, every device has an address</text>
+<rect x="24" y="262" width="130" height="70" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="89.0" y="294.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Arduino</text>
+<text x="89.0" y="312.0" font-size="12" text-anchor="middle" fill="#6b7280">controller</text>
+<line x1="154" y1="280" x2="744" y2="280" stroke="#1d4ed8" stroke-width="3"/>
+<line x1="154" y1="314" x2="744" y2="314" stroke="#a16207" stroke-width="3"/>
+<text x="730" y="274" font-size="12" font-weight="bold" text-anchor="end" fill="#1d4ed8">SDA (data)</text>
+<text x="730" y="330" font-size="12" font-weight="bold" text-anchor="end" fill="#a16207">SCL (clock)</text>
+<circle cx="250" cy="280" r="4" fill="#1d4ed8"/><circle cx="280" cy="314" r="4" fill="#a16207"/>
+<line x1="250" y1="280" x2="250" y2="352" stroke="#1d4ed8" stroke-width="2"/>
+<line x1="280" y1="314" x2="280" y2="352" stroke="#a16207" stroke-width="2"/>
+<rect x="220" y="352" width="130" height="50" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="285.0" y="374.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Temp. sensor</text>
+<text x="285.0" y="392.0" font-size="12" text-anchor="middle" fill="#6b7280">address 0x48</text>
+<circle cx="420" cy="280" r="4" fill="#1d4ed8"/><circle cx="450" cy="314" r="4" fill="#a16207"/>
+<line x1="420" y1="280" x2="420" y2="352" stroke="#1d4ed8" stroke-width="2"/>
+<line x1="450" y1="314" x2="450" y2="352" stroke="#a16207" stroke-width="2"/>
+<rect x="390" y="352" width="130" height="50" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="455.0" y="374.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Screen</text>
+<text x="455.0" y="392.0" font-size="12" text-anchor="middle" fill="#6b7280">address 0x3C</text>
+<circle cx="590" cy="280" r="4" fill="#1d4ed8"/><circle cx="620" cy="314" r="4" fill="#a16207"/>
+<line x1="590" y1="280" x2="590" y2="352" stroke="#1d4ed8" stroke-width="2"/>
+<line x1="620" y1="314" x2="620" y2="352" stroke="#a16207" stroke-width="2"/>
+<rect x="560" y="352" width="130" height="50" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="625.0" y="374.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Clock chip</text>
+<text x="625.0" y="392.0" font-size="12" text-anchor="middle" fill="#6b7280">address 0x68</text>
+<line x1="24" y1="424" x2="744" y2="424" stroke="#e5e7eb" stroke-width="2"/>
+<text x="24" y="454" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">SPI: separate data wires each way, a clock, and a chip select</text>
+<rect x="60" y="466" width="150" height="84" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="135.0" y="513.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Arduino</text>
+<rect x="558" y="466" width="150" height="84" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="633.0" y="513.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">SD card</text>
+<line x1="210" y1="478" x2="552" y2="478" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="384" y="475" font-size="11" font-weight="bold" text-anchor="middle" fill="#1d4ed8">MOSI</text>
+<line x1="210" y1="498" x2="558" y2="498" stroke="#15803d" stroke-width="2.5" marker-start="url(#ah)"/>
+<text x="384" y="495" font-size="11" font-weight="bold" text-anchor="middle" fill="#15803d">MISO</text>
+<line x1="210" y1="518" x2="552" y2="518" stroke="#a16207" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="384" y="515" font-size="11" font-weight="bold" text-anchor="middle" fill="#a16207">SCK</text>
+<line x1="210" y1="538" x2="552" y2="538" stroke="#b42318" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="384" y="535" font-size="11" font-weight="bold" text-anchor="middle" fill="#b42318">CS</text>
+</svg>

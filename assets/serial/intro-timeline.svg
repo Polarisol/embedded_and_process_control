@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 250" width="768" height="250" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="250" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Serial communication through time</text>
+<line x1="36" y1="130" x2="740" y2="130" stroke="#111827" stroke-width="3" marker-end="url(#ah)"/>
+<circle cx="60.0" cy="130" r="8" fill="#ffffff" stroke="#b42318" stroke-width="3"/>
+<text x="60.0" y="108" font-size="15" font-weight="bold" text-anchor="middle" fill="#b42318">1840s</text>
+<text x="60.0" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">Telegraph</text>
+<text x="60.0" y="90" font-size="12" text-anchor="middle" fill="#6b7280">Morse code</text>
+<circle cx="168.0" cy="130" r="8" fill="#ffffff" stroke="#a16207" stroke-width="3"/>
+<text x="168.0" y="164" font-size="15" font-weight="bold" text-anchor="middle" fill="#a16207">1870s</text>
+<text x="168.0" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">Baudot code</text>
+<text x="168.0" y="218" font-size="12" text-anchor="middle" fill="#6b7280">"baud"</text>
+<circle cx="276.0" cy="130" r="8" fill="#ffffff" stroke="#a16207" stroke-width="3"/>
+<text x="276.0" y="108" font-size="15" font-weight="bold" text-anchor="middle" fill="#a16207">1900s</text>
+<text x="276.0" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">Teleprinters</text>
+<text x="276.0" y="90" font-size="12" text-anchor="middle" fill="#6b7280">start + stop bits</text>
+<circle cx="384.0" cy="130" r="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="384.0" y="164" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1960</text>
+<text x="384.0" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">RS-232</text>
+<text x="384.0" y="218" font-size="12" text-anchor="middle" fill="#6b7280">serial cable</text>
+<circle cx="492.0" cy="130" r="8" fill="#ffffff" stroke="#1d4ed8" stroke-width="3"/>
+<text x="492.0" y="108" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1971</text>
+<text x="492.0" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">UART chip</text>
+<text x="492.0" y="90" font-size="12" text-anchor="middle" fill="#6b7280">one chip</text>
+<circle cx="600.0" cy="130" r="8" fill="#ffffff" stroke="#15803d" stroke-width="3"/>
+<text x="600.0" y="164" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">1980s</text>
+<text x="600.0" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">I²C, SPI, CAN</text>
+<text x="600.0" y="218" font-size="12" text-anchor="middle" fill="#6b7280">chips talk</text>
+<circle cx="708.0" cy="130" r="8" fill="#ffffff" stroke="#15803d" stroke-width="3"/>
+<text x="708.0" y="108" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">1996</text>
+<text x="708.0" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">USB</text>
+<text x="708.0" y="90" font-size="12" text-anchor="middle" fill="#6b7280">replaces old ports</text>
+</svg>

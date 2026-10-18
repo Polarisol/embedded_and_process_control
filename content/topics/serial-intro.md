@@ -4,6 +4,8 @@
 
 Parallel sounds faster, and at first it was. But many wires cost money, take up space, and at high speeds the bits on different wires drift apart and arrive at slightly different times. A serial link needs only a few wires and can run very fast over long distances. That is why almost everything today is serial: USB, Ethernet, HDMI, SATA disks, PCI Express, and the link between your Arduino and your computer.
 
+![Serial sends the byte 01001101 one bit after another over one wire; parallel sends all 8 bits at once over 8 wires](assets/serial/intro-serial-vs-parallel.svg)
+
 | | Serial | Parallel |
 |--|--------|----------|
 | **Bits at a time** | One | Several (8, 16, 32…) |
@@ -18,6 +20,8 @@ Parallel sounds faster, and at first it was. But many wires cost money, take up 
 - **Synchronous:** a **clock wire** travels with the data and tells the receiver exactly when to read each bit. Examples: **SPI**, **I²C**.
 - **Asynchronous:** there is **no clock wire**. Both sides agree in advance on the speed (the **baud rate**), and every character is wrapped in a **frame** with a start bit and a stop bit so the receiver can find it. Example: **UART** (Arduino `Serial`).
 
+![Synchronous: a clock wire runs beside the data and each rising edge marks when to read a bit. Asynchronous: no clock, and the byte is wrapped between a start bit and a stop bit](assets/serial/intro-sync-async.svg)
+
 ### Who talks, and when
 
 | Mode | Meaning | Everyday example |
@@ -25,6 +29,8 @@ Parallel sounds faster, and at first it was. But many wires cost money, take up 
 | **Simplex** | One direction only | A GPS module that only sends |
 | **Half duplex** | Both directions, but one at a time | A walkie-talkie, RS-485, I²C |
 | **Full duplex** | Both directions at the same time | A phone call, UART (TX and RX wires), SPI |
+
+![Simplex: arrow from device A to B only. Half duplex: one shared wire used in both directions, taking turns. Full duplex: two wires, one in each direction at the same time](assets/serial/intro-duplex.svg)
 
 ### Common serial interfaces
 
@@ -37,7 +43,11 @@ Parallel sounds faster, and at first it was. But many wires cost money, take up 
 | **CAN** | CAN-H, CAN-L | No | Cars and industrial control |
 | **USB** | D+, D− | No (clock hidden in the data) | Almost everything that plugs into a computer |
 
+![UART: Arduino TX goes to the GPS RX and GPS TX to the Arduino RX, plus GND. I²C: an Arduino and three devices with different addresses share SDA and SCL. SPI: Arduino and SD card joined by MOSI, MISO, SCK and CS](assets/serial/intro-wiring.svg)
+
 ## A bit of history
+
+![Timeline: telegraph 1840s, Baudot code 1870s, teleprinters 1900s, RS-232 1960, UART chip 1971, I²C, SPI and CAN in the 1980s, USB 1996](assets/serial/intro-timeline.svg)
 
 | Year | Milestone |
 |------|-----------|

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 480" width="768" height="480" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="480" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Serial vs. parallel</text>
+<text x="24" y="62" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">Serial: one wire, one bit after another</text>
+<rect x="24" y="82" width="110" height="60" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="79.0" y="117.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Sender</text>
+<rect x="634" y="82" width="110" height="60" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="689.0" y="117.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Receiver</text>
+<line x1="134" y1="112" x2="628" y2="112" stroke="#111827" stroke-width="2.5" marker-end="url(#ah)"/>
+<rect x="560" y="99" width="26" height="26" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="573.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<rect x="508" y="99" width="26" height="26" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="521.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<rect x="456" y="99" width="26" height="26" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="469.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<rect x="404" y="99" width="26" height="26" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="417.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<rect x="352" y="99" width="26" height="26" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="365.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<rect x="300" y="99" width="26" height="26" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="313.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<rect x="248" y="99" width="26" height="26" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="261.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<rect x="196" y="99" width="26" height="26" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="209.0" y="117.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<text x="384" y="166" font-size="13" text-anchor="middle" fill="#6b7280">The byte 01001101 (the letter M) travels as 8 bits in a row, over 1 data wire</text>
+<line x1="24" y1="190" x2="744" y2="190" stroke="#e5e7eb" stroke-width="2"/>
+<text x="24" y="222" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">Parallel: 8 wires, all bits at the same time</text>
+<rect x="24" y="238" width="110" height="200" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="79.0" y="343.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Sender</text>
+<rect x="634" y="238" width="110" height="200" rx="8" fill="#eef0f2" stroke="#111827" stroke-width="2"/>
+<text x="689.0" y="343.0" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">Receiver</text>
+<line x1="134" y1="256" x2="628" y2="256" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="246" width="20" height="20" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="380.0" y="261.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<line x1="134" y1="279" x2="628" y2="279" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="269" width="20" height="20" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="380.0" y="284.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<line x1="134" y1="302" x2="628" y2="302" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="292" width="20" height="20" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="380.0" y="307.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<line x1="134" y1="325" x2="628" y2="325" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="315" width="20" height="20" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="380.0" y="330.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<line x1="134" y1="348" x2="628" y2="348" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="338" width="20" height="20" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="380.0" y="353.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<line x1="134" y1="371" x2="628" y2="371" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="361" width="20" height="20" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="380.0" y="376.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<line x1="134" y1="394" x2="628" y2="394" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="384" width="20" height="20" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+<text x="380.0" y="399.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#6b7280">0</text>
+<line x1="134" y1="417" x2="628" y2="417" stroke="#111827" stroke-width="2" marker-end="url(#ah)"/>
+<rect x="370" y="407" width="20" height="20" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="380.0" y="422.0" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8">1</text>
+<text x="384" y="462" font-size="13" text-anchor="middle" fill="#6b7280">Faster per tick, but many wires, and at high speed the bits arrive at slightly different times</text>
+</svg>
