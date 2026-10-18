@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 360" width="768" height="360" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="360" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">The voltage divider</text>
+<line x1="92" y1="182" x2="128" y2="182" stroke="#111827" stroke-width="3"/>
+<line x1="101" y1="190" x2="119" y2="190" stroke="#111827" stroke-width="5"/>
+<line x1="92" y1="198" x2="128" y2="198" stroke="#111827" stroke-width="3"/>
+<line x1="101" y1="206" x2="119" y2="206" stroke="#111827" stroke-width="5"/>
+<text x="86" y="186" font-size="15" font-weight="bold" text-anchor="end" fill="#b42318">+</text>
+<text x="134" y="198" font-size="13" font-weight="bold" text-anchor="start" fill="#111827">5 V</text>
+<line x1="110" y1="70" x2="110" y2="182" stroke="#111827" stroke-width="2.5"/>
+<line x1="110" y1="206" x2="110" y2="320" stroke="#111827" stroke-width="2.5"/>
+<line x1="110" y1="70" x2="300" y2="70" stroke="#111827" stroke-width="2.5"/>
+<polyline points="300,70 300.0,74.0 292.0,77.42 308.0,84.25 292.0,91.08 308.0,97.92 292.0,104.75 308.0,111.58 292.0,118.42 308.0,125.25 292.0,132.08 308.0,138.92 292.0,145.75 308.0,152.58 300.0,156.0 300,160" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="316" y="112" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">R1 = 10 kΩ</text>
+<text x="316" y="130" font-size="12" text-anchor="start" fill="#b42318">gets 1.67 V</text>
+<line x1="300" y1="160" x2="300" y2="200" stroke="#111827" stroke-width="2.5"/>
+<circle cx="300" cy="180" r="4" fill="#111827"/>
+<line x1="300" y1="180" x2="450" y2="180" stroke="#111827" stroke-width="2.5"/>
+<circle cx="450" cy="180" r="5" fill="#1d4ed8"/>
+<text x="462" y="176" font-size="15" font-weight="bold" text-anchor="start" fill="#1d4ed8">V_out = 3.33 V</text>
+<text x="462" y="194" font-size="12" text-anchor="start" fill="#374151">safe for a 3.3 V pin</text>
+<polyline points="300,200 300.0,204.0 292.0,207.42 308.0,214.25 292.0,221.08 308.0,227.92 292.0,234.75 308.0,241.58 292.0,248.42 308.0,255.25 292.0,262.08 308.0,268.92 292.0,275.75 308.0,282.58 300.0,286.0 300,290" fill="none" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<text x="316" y="242" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">R2 = 20 kΩ</text>
+<text x="316" y="260" font-size="12" text-anchor="start" fill="#b42318">gets 3.33 V</text>
+<line x1="300" y1="290" x2="300" y2="320" stroke="#111827" stroke-width="2.5"/>
+<line x1="110" y1="320" x2="300" y2="320" stroke="#111827" stroke-width="2.5"/>
+<line x1="205" y1="320" x2="205" y2="330" stroke="#111827" stroke-width="2.5"/>
+<line x1="191" y1="330" x2="219" y2="330" stroke="#111827" stroke-width="2.5"/>
+<line x1="196" y1="336" x2="214" y2="336" stroke="#111827" stroke-width="2.5"/>
+<line x1="201" y1="342" x2="209" y2="342" stroke="#111827" stroke-width="2.5"/>
+<rect x="470" y="236" width="270" height="90" rx="8" fill="#dff3e4" stroke="none" stroke-width="2"/>
+<text x="605" y="262" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">V_out = V_in × R2 / (R1 + R2)</text>
+<text x="605" y="286" font-size="14" text-anchor="middle" fill="#111827">= 5 × 20 / (10 + 20)</text>
+<text x="605" y="310" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">= 3.33 V</text>
+</svg>

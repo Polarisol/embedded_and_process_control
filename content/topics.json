@@ -109,7 +109,7 @@
       "icon": "⚡",
       "blurb": "Bringing some electricity juice to your circuits",
       "blurb_he": "מביאים קצת מיץ חשמל למעגלים שלכם",
-      "material": ["topics/electronics-breadboard.md", "topics/electronics-leds.md", "topics/electronics-mosfets.md"],
+      "material": ["topics/electronics-breadboard.md", "topics/electronics-resistors.md", "topics/electronics-leds.md", "topics/electronics-diodes.md", "topics/electronics-capacitors.md", "topics/electronics-mosfets.md"],
       "links": [
         { "label": "4project: buy electronics in Israel", "label_he": "4project: רכישת רכיבי אלקטרוניקה בישראל", "url": "https://www.4project.co.il/" },
         { "label": "DigiKey Israel", "label_he": "DigiKey ישראל", "url": "https://www.digikey.co.il/" }

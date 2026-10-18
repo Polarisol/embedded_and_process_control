@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 440" width="768" height="440" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="440" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">The flyback diode: stripe towards +</text>
+<text x="192" y="62" font-size="15" font-weight="bold" text-anchor="middle" fill="#15803d">MOSFET on: motor runs</text>
+<text x="150" y="92" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">+6 V</text>
+<line x1="150" y1="100" x2="150" y2="120" stroke="#111827" stroke-width="2.5"/>
+<circle cx="150" cy="120" r="4" fill="#111827"/>
+<line x1="150" y1="120" x2="150" y2="154" stroke="#111827" stroke-width="2.5"/>
+<circle cx="150" cy="180" r="26" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+<text x="150" y="186" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">M</text>
+<line x1="150" y1="206" x2="150" y2="240" stroke="#111827" stroke-width="2.5"/>
+<circle cx="150" cy="240" r="4" fill="#111827"/>
+<line x1="150" y1="120" x2="240" y2="120" stroke="#111827" stroke-width="2.5"/>
+<line x1="150" y1="240" x2="240" y2="240" stroke="#111827" stroke-width="2.5"/>
+<line x1="240" y1="240" x2="240.0" y2="198.0" stroke="#111827" stroke-width="2.5"/>
+<line x1="240.0" y1="162.0" x2="240" y2="120" stroke="#111827" stroke-width="2.5"/>
+<polygon points="258.0,198.0 222.0,198.0 240.0,162.0" fill="#fecaca" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="258.0" y1="162.0" x2="222.0" y2="162.0" stroke="#111827" stroke-width="3"/>
+<text x="268" y="184" font-size="12" font-weight="bold" text-anchor="start" fill="#111827">diode</text>
+<text x="268" y="200" font-size="12" text-anchor="start" fill="#374151">stripe up</text>
+<line x1="150" y1="240" x2="150" y2="280" stroke="#111827" stroke-width="2.5"/>
+<rect x="110" y="280" width="80" height="46" rx="6" fill="#dff3e4" stroke="#111827" stroke-width="2"/>
+<text x="150" y="299" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">MOSFET</text>
+<text x="150" y="316" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">ON</text>
+<line x1="150" y1="326" x2="150" y2="350" stroke="#111827" stroke-width="2.5"/>
+<line x1="150" y1="350" x2="150" y2="360" stroke="#111827" stroke-width="2.5"/>
+<line x1="136" y1="360" x2="164" y2="360" stroke="#111827" stroke-width="2.5"/>
+<line x1="141" y1="366" x2="159" y2="366" stroke="#111827" stroke-width="2.5"/>
+<line x1="146" y1="372" x2="154" y2="372" stroke="#111827" stroke-width="2.5"/>
+<line x1="90" y1="110" x2="90" y2="330" stroke="#15803d" stroke-width="2.5" marker-end="url(#ag)"/>
+<text x="82" y="222" font-size="12" font-weight="bold" text-anchor="end" fill="#15803d">current</text>
+<text x="192" y="418" font-size="13" text-anchor="middle" fill="#374151">The diode is reversed and does nothing.</text>
+<text x="576" y="62" font-size="15" font-weight="bold" text-anchor="middle" fill="#d97706">MOSFET switches off</text>
+<text x="534" y="92" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">+6 V</text>
+<line x1="534" y1="100" x2="534" y2="120" stroke="#111827" stroke-width="2.5"/>
+<circle cx="534" cy="120" r="4" fill="#111827"/>
+<line x1="534" y1="120" x2="534" y2="154" stroke="#111827" stroke-width="2.5"/>
+<circle cx="534" cy="180" r="26" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+<text x="534" y="186" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">M</text>
+<line x1="534" y1="206" x2="534" y2="240" stroke="#111827" stroke-width="2.5"/>
+<circle cx="534" cy="240" r="4" fill="#111827"/>
+<line x1="534" y1="120" x2="624" y2="120" stroke="#111827" stroke-width="2.5"/>
+<line x1="534" y1="240" x2="624" y2="240" stroke="#111827" stroke-width="2.5"/>
+<line x1="624" y1="240" x2="624.0" y2="198.0" stroke="#111827" stroke-width="2.5"/>
+<line x1="624.0" y1="162.0" x2="624" y2="120" stroke="#111827" stroke-width="2.5"/>
+<polygon points="642.0,198.0 606.0,198.0 624.0,162.0" fill="#fecaca" stroke="#111827" stroke-width="2.5" stroke-linejoin="round"/>
+<line x1="642.0" y1="162.0" x2="606.0" y2="162.0" stroke="#111827" stroke-width="3"/>
+<text x="652" y="184" font-size="12" font-weight="bold" text-anchor="start" fill="#111827">diode</text>
+<text x="652" y="200" font-size="12" text-anchor="start" fill="#374151">stripe up</text>
+<line x1="534" y1="240" x2="534" y2="280" stroke="#111827" stroke-width="2.5"/>
+<rect x="494" y="280" width="80" height="46" rx="6" fill="#e5e7eb" stroke="#111827" stroke-width="2"/>
+<text x="534" y="299" font-size="12" font-weight="bold" text-anchor="middle" fill="#111827">MOSFET</text>
+<text x="534" y="316" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">OFF</text>
+<line x1="534" y1="326" x2="534" y2="350" stroke="#111827" stroke-width="2.5"/>
+<line x1="534" y1="350" x2="534" y2="360" stroke="#111827" stroke-width="2.5"/>
+<line x1="520" y1="360" x2="548" y2="360" stroke="#111827" stroke-width="2.5"/>
+<line x1="525" y1="366" x2="543" y2="366" stroke="#111827" stroke-width="2.5"/>
+<line x1="530" y1="372" x2="538" y2="372" stroke="#111827" stroke-width="2.5"/>
+<path d="M500,150 L500,215 Q500,262 554,262 L594,262 Q658,262 658,215 L658,150 Q658,100 594,100 L554,100 Q500,100 500,150" fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="7 5"/>
+<path d="M500,168 l-6,-12 l12,0 z" fill="#d97706"/>
+<path d="M658,160 l-6,12 l12,0 z" fill="#d97706"/>
+<text x="574" y="300" font-size="12" text-anchor="start" fill="#111827"></text>
+<text x="576" y="400" font-size="13" text-anchor="middle" fill="#374151">The coil's current loops through the diode</text>
+<text x="576" y="418" font-size="13" text-anchor="middle" fill="#374151">and fades away. No spike hits the MOSFET.</text>
+<line x1="384" y1="50" x2="384" y2="426" stroke="#e5e7eb" stroke-width="2"/>
+</svg>
