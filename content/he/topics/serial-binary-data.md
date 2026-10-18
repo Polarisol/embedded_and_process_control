@@ -1,6 +1,11 @@
 # שליחת נתונים שאינם מחרוזות
 
-עד עכשיו כל מה ששלחנו בפורט הטורי היה **טקסט**: `"LED ON"`, `"temp=23.5\n"`. טקסט קל לקרוא וקל לדבג, אבל הוא לא האפשרות היחידה. הפורט הטורי בכלל לא יודע מה זה אותיות. הוא מעביר **בתים** (bytes), וכל בית הוא פשוט מספר בין 0 ל-255. אפשר לשים בבתים האלה כל ערך שרוצים.
+עד עכשיו כל מה ששלחנו בפורט הטורי היה **טקסט**: `"LED ON"`, `"temp=23.5\n"`. טקסט קל לקרוא, אבל הוא לא האפשרות היחידה. הפורט הטורי בכלל לא יודע מה זה אותיות. הוא מעביר **בתים** (bytes), וכל בית הוא פשוט מספר בין 0 ל-255. אפשר לשים בבתים האלה כל ערך שרוצים.
+
+הפריט הזה עוסק בשני דברים, כל אחד בשני הכיוונים:
+
+1. שליחה וקבלה של **בית בודד**, או של **משתנה אחד שאורכו כמה בתים** (כמו `float`).
+2. שליחה וקבלה של **מערך של בתים**, שבו כל בית הוא ערך בפני עצמו.
 
 ## טקסט או בית?
 
@@ -18,158 +23,46 @@ Serial.write(200);   // sends one byte with the value 200
 | | טקסט (`print`) | בתים (`write`) |
 |--|----------------|-----------------|
 | **הערך 200** | `0x32 0x30 0x30` (3 בתים) | `0xC8` (בית אחד) |
-| **הערך 60000** | 5 בתים | 2 בתים |
 | **קריא ב-Serial Monitor** | כן | לא |
-| **צריך מפריד** | כן, למשל `\n` או `,` | לא, אם שני הצדדים מכירים את הפורמט |
-| **המקלט צריך** | לפענח את הטקסט בחזרה למספר | לדעת כמה בתים תופס כל ערך |
+| **המקלט צריך** | להפוך את הטקסט בחזרה למספר | לדעת כמה בתים מגיעים |
 
-בתים קטנים ומהירים יותר, ואין מה לפענח. המחיר הוא ששני הצדדים חייבים להסכים בדיוק על ה**פורמט**: איזה בית אומר מה.
+בתים קטנים יותר ואין מה לפענח. המחיר הוא ששני הצדדים חייבים להסכים על **מה נשלח**: כמה בתים, ומה המשמעות של כל אחד.
 
 ## הקסדצימלי: השפה של הבתים
 
-כשעובדים עם בתים גולמיים כותבים אותם ב**הקסדצימלי** (hex, ראו את הפריט הקסדצימלי ביחידה [Binary Rep.](topic.html?id=binary-representation)). כל בית הוא בדיוק **שתי ספרות hex**, מ-`0x00` עד `0xFF`, וכל ספרה היא 4 ביטים, כך שקל לראות את הביטים שבפנים:
+כשעובדים עם בתים גולמיים כותבים אותם ב**הקסדצימלי** (hex, ראו את הפריט הקסדצימלי ביחידה [Binary Rep.](topic.html?id=binary-representation)). כל בית הוא בדיוק **שתי ספרות hex**, מ-`0x00` עד `0xFF`:
 
 | עשרוני | hex | בינארי |
 |---------|-----|--------|
 | 0 | `0x00` | `0000 0000` |
-| 10 | `0x0A` | `0000 1010` |
 | 65 | `0x41` | `0100 0001` (וגם האות `'A'`) |
-| 170 | `0xAA` | `1010 1010` |
+| 128 | `0x80` | `1000 0000` |
 | 200 | `0xC8` | `1100 1000` |
 | 255 | `0xFF` | `1111 1111` |
 
 גם C וגם Python מבינות את הקידומת `0x`, ולכן `Serial.write(0xC8)` ו-`Serial.write(200)` הם אותו דבר.
 
-### לראות את הבתים
+ה-Serial Monitor מציג הכול כטקסט. בית כמו `0xFF` או `0x00` הוא לא אות שאפשר להדפיס, ולכן הוא מופיע כסימן מוזר או בכלל לא. כדי לראות מה באמת הגיע, הדפיסו את הבתים ב-**hex**:
 
-ה-Serial Monitor של סביבת Arduino מציג הכול כטקסט. בית כמו `0xC8` או `0x04` הוא לא אות שאפשר להדפיס, ולכן הוא מופיע כסימן מוזר, כסימן שאלה או בכלל לא. כדי לבדוק מה באמת הגיע צריך **תצוגת hex**:
+![הבתים FF 80 00 מוצגים ב-Serial Monitor כסימנים מוזרים, ובתצוגת hex כ-FF 80 00](assets/serial/nonstring-hex-view.svg)
 
-![אותם 7 בתים מוצגים ב-Serial Monitor כסימנים מוזרים, ובתצוגת hex כ-AA 04 EB 00 58 02 B1](assets/serial/nonstring-hex-view.svg)
+- ב-**Python**, `data.hex(" ")` הופכת בתים ל-`"ff 80 00"`.
+- ב-**Arduino**, `Serial.print(b, HEX)` מדפיסה בית ב-hex.
 
-- ב-**Python**, `data.hex(" ")` הופכת בתים ל-`"aa 04 eb 00 58 02 b1"`, ו-`bytes.fromhex("AA 04 EB")` עושה את ההפך.
-- ב-**Arduino**, `Serial.print(b, HEX)` מדפיסה בית ב-hex. היא לא מוסיפה אפס מוביל, אז הוסיפו אותו בעצמכם: `if (b < 0x10) Serial.print('0');`.
-- גם לתוכנות טרמינל טורי כמו **CoolTerm** יש תצוגת hex.
+## 1. בית בודד, או משתנה אחד של כמה בתים
 
-## ערכים גדולים מבית אחד
+### בית בודד
 
-בית אחד מחזיק רק 0 עד 255. קריאת חיישן של 1000 צריכה **שני בתים**. מפצלים אותה ל**בית גבוה** (high byte) ול**בית נמוך** (low byte), שולחים את שניהם, והמקלט מחבר אותם שוב:
+בית אחד מחזיק ערך בין 0 ל-255: בהירות, מהירות באחוזים, מצב של לחצן, מספר של פקודה.
 
-![1000 הוא 0x03E8. הבית הגבוה שלו הוא 0x03 והבית הנמוך הוא 0xE8. השולח שולח קודם את 0xE8 ואז את 0x03. המקלט מחשב (hi << 8) | lo = 0x03E8 = 1000](assets/serial/nonstring-split-int.svg)
+| | שליחה | קבלה |
+|--|------|---------|
+| **Arduino** | `Serial.write(200);` | `int b = Serial.read();` |
+| **Python** | `self.port.write(bytes([200]))` | `b = self.port.read(1).data()[0]` |
 
-ב-Arduino:
+`Serial.read()` מחזירה את הבית כמספר בין 0 ל-255, או `-1` אם לא הגיע כלום, ולכן בדקו קודם את `Serial.available()`. ב-Python, `bytes([200])` בונה בית אחד מרשימה עם מספר אחד, ו-`[0]` מוציא את הבית הראשון ממה שנקרא, כמספר.
 
-```c
-uint16_t light = 1000;           // 0x03E8
-Serial.write(lowByte(light));    // 0xE8
-Serial.write(highByte(light));   // 0x03
-```
-
-בצד השני:
-
-```c
-uint16_t light = (hi << 8) | lo; // 0x03 << 8 = 0x0300, | 0xE8 = 0x03E8 = 1000
-```
-
-שני דברים שצריך להסכים עליהם:
-
-- **סדר הבתים.** שליחת הבית הנמוך קודם נקראת **little-endian**. ה-ESP32 והמחשב שלכם שומרים מספרים בזיכרון בדיוק כך, ולכן זו הבחירה הטבעית. גם big-endian (הבית הגבוה קודם) עובד, כל עוד שני הצדדים משתמשים באותו סדר.
-- **הגודל של כל ערך.** ב-Nano ESP32 משתנה `int` תופס **4 בתים**, אבל ב-Arduino Uno הוא תופס 2. השתמשו בטיפוסים שהגודל כתוב בשם שלהם: `uint8_t` (בית אחד), `int16_t` / `uint16_t` (2 בתים), `int32_t` / `uint32_t` (4 בתים).
-
-גם `float` תופס 4 בתים. אפשר לשלוח את הבתים שלו כמו שהם בזיכרון עם `Serial.write((uint8_t*)&f, 4);`, ו-Python קוראת אותם בחזרה עם `struct.unpack("<f", data)`. לרוב פשוט יותר לשלוח מספר שלם במקום: 23.5 °C הופך ל-`235`, והמקלט מחלק ב-10.
-
-## חבילות: איפה הודעה מתחילה?
-
-הודעות טקסט נגמרות ב-`\n`, כך שהמקלט תמיד יודע איפה הודעה אחת נגמרת והבאה מתחילה. בבתים גולמיים **כל** ערך יכול להופיע בנתונים, אפילו `0x0A`, הקוד של `\n`. אם המקלט מפספס בית, או מתחיל להאזין באמצע הודעה, כל ערך מאותו רגע יהיה שגוי.
-
-הפתרון הוא לעטוף כל הודעה ב**חבילה** (packet):
-
-![חבילה של 7 בתים: בית התחלה 0xAA, אורך 0x04, ארבעה בתי נתונים EB 00 58 02 שמחזיקים temp = 235 (23.5 °C) ו-light = 600, ו-checksum 0xB1, ה-XOR של בתי הנתונים](assets/serial/nonstring-packet.svg)
-
-| חלק | מטרה |
-|------|---------|
-| **בית התחלה** (start byte) | ערך קבוע (כאן `0xAA`) שאומר למקלט "כאן מתחילה חבילה" |
-| **אורך** (length) | כמה בתי נתונים באים אחריו |
-| **נתונים** (data) | הערכים, בסדר ובגודל שסוכמו |
-| **סכום ביקורת** (checksum) | מחושב מהנתונים. המקלט מחשב אותו שוב, ואם הוא לא מתאים, החבילה נזרקת |
-
-גם הנתונים יכולים להכיל `0xAA`, ולכן המקלט עלול לפעמים להתחיל במקום הלא נכון. סכום הביקורת תופס את זה: לחבילה שמתחילה בבית הלא נכון כמעט אף פעם אין checksum נכון, אז המקלט זורק בית אחד ומחפש את ה-`0xAA` הבא.
-
-> זה אותו רעיון כמו מסגרת ה-UART, רמה אחת למעלה. המסגרת עוטפת כל **בית** בביט התחלה ובביט עצירה; החבילה עוטפת כל **הודעה** בבית התחלה ובסכום ביקורת.
-
-### Arduino: שליחת חבילה
-
-```c
-const uint8_t START = 0xAA;
-
-void sendPacket(int16_t temp10, uint16_t light) {
-  uint8_t data[4] = {
-    lowByte(temp10), highByte(temp10),   // temperature × 10
-    lowByte(light),  highByte(light)     // light level
-  };
-
-  uint8_t checksum = 0;
-  for (int i = 0; i < 4; i++) checksum ^= data[i];   // XOR of the data bytes
-
-  Serial.write(START);
-  Serial.write(sizeof(data));     // length = 4
-  Serial.write(data, sizeof(data));
-  Serial.write(checksum);
-}
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  sendPacket(235, 600);           // 23.5 °C, light 600
-  delay(1000);
-}
-```
-
-כל שנייה הלוח שולח `AA 04 EB 00 58 02 B1`.
-
-### Python: קבלת החבילה
-
-ה-`receive()` הזו מחליפה את זו שבאפליקציה מהפריט **Serial in PySide**. בתים יכולים להגיע כמה בכל פעם, ולכן אוספים אותם במאגר (buffer) ומוציאים ממנו חבילה רק כשכולה כבר שם. המודול `struct` של Python הופך את בתי הנתונים בחזרה למספרים: `"<hH"` פירושו little-endian (`<`), ערך של 16 ביט עם סימן (`h`) וערך של 16 ביט בלי סימן (`H`).
-
-```python
-import struct
-
-# in __init__:  self.buffer = bytearray()
-
-def receive(self):
-    self.buffer += self.port.readAll().data()
-    while len(self.buffer) >= 2:
-        if self.buffer[0] != 0xAA:              # not a start byte: drop it
-            del self.buffer[0]
-            continue
-        size = self.buffer[1]
-        if len(self.buffer) < size + 3:         # start + length + data + checksum
-            break                               # wait for the rest
-        data = self.buffer[2:2 + size]
-        checksum = 0
-        for b in data:
-            checksum ^= b
-        if size != 4 or checksum != self.buffer[2 + size]:
-            del self.buffer[0]                  # bad packet: look for the next 0xAA
-            continue
-        del self.buffer[:size + 3]              # remove the packet from the buffer
-        temp10, light = struct.unpack("<hH", data)
-        self.log.appendPlainText(f"{data.hex(' ')}  →  temp={temp10 / 10} °C  light={light}")
-```
-
-היומן מציג `eb 00 58 02  →  temp=23.5 °C  light=600`.
-
-## הכיוון השני: מהמחשב ל-Arduino
-
-שליחת בתים מ-Python קלה באותה מידה. `bytes([...])` בונה בתים מרשימה של מספרים, ו-`struct.pack()` הופכת מספרים לבתים:
-
-```python
-self.port.write(bytes([0xAA, 200]))            # start byte + brightness 200
-self.port.write(struct.pack("<H", 1000))       # b'\xe8\x03', the 2 bytes of 1000
-```
-
-ב-Arduino, `Serial.read()` מחזירה את הבית הבא כמספר בין 0 ל-255 (או `-1` אם אין כלום שמחכה). הסקיצה הזו קובעת את הבהירות של נורית LED לפי פקודה של 2 בתים:
+הסקיצה הזו קובעת את הבהירות של נורית LED לפי בית אחד שהמחשב שולח:
 
 ```c
 void setup() {
@@ -178,22 +71,154 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available() >= 2) {         // wait until the whole command is here
-    if (Serial.read() == 0xAA) {         // start byte?
-      int brightness = Serial.read();    // 0..255
-      analogWrite(LED_BUILTIN, brightness);
-    }                                    // if not, that byte is dropped and we try again
+  if (Serial.available() >= 1) {
+    int brightness = Serial.read();        // 0..255
+    analogWrite(LED_BUILTIN, brightness);
   }
 }
 ```
 
-חברו `QSlider` עם טווח 0 עד 255 ל-`self.port.write(bytes([0xAA, value]))`, והנורית תעקוב אחרי המחוון. כדי לקרוא הרבה בתים בבת אחת, `Serial.readBytes(buffer, n)` ממלאת מערך ב-`n` בתים.
+באפליקציה מהפריט **Serial in PySide**, חברו `QSlider` עם טווח 0 עד 255 ל-`self.port.write(bytes([value]))`, והנורית תעקוב אחרי המחוון.
+
+### משתנה אחד של כמה בתים
+
+`float` תופס 4 בתים, `uint16_t` תופס 2. לא צריך לפרק את המשתנה: שולחים את **כל הבתים שלו** בדיוק כמו שהם יושבים בזיכרון, והמקלט מחזיר אותם לאותו טיפוס.
+
+![float temperature = 23.5 הוא 4 הבתים 00 00 BC 41, ו-uint16_t light = 1000 הוא 2 הבתים E8 03. הבתים נשלחים כמו שהם, והמקלט הופך אותם בחזרה ל-23.5 ול-1000](assets/serial/nonstring-variable.svg)
+
+ב-Arduino:
+
+```c
+float temperature = 23.5;
+Serial.write((uint8_t*)&temperature, sizeof(temperature));   // send its 4 bytes
+```
+
+- `&temperature` היא **הכתובת** של המשתנה בזיכרון, ו-`(uint8_t*)` אומר "תסתכל עליה כעל בתים".
+- `sizeof(temperature)` הוא מספר הבתים: 4 עבור `float`.
+
+קבלה לתוך משתנה עובדת באותה דרך, ברגע שכל הבתים שלו נמצאים במאגר:
+
+```c
+float temperature;
+if (Serial.available() >= sizeof(temperature)) {
+  Serial.readBytes((uint8_t*)&temperature, sizeof(temperature));
+}
+```
+
+ב-Python, המודול **`struct`** הופך בתים למספר ובחזרה. האות אומרת מה הטיפוס:
+
+| אות | טיפוס ב-C | בתים |
+|--------|--------|-------|
+| `B` | `uint8_t` | 1 |
+| `h` / `H` | `int16_t` / `uint16_t` | 2 |
+| `i` / `I` | `int32_t` / `uint32_t` | 4 |
+| `f` | `float` | 4 |
+
+```python
+import struct
+(temperature,) = struct.unpack("<f", self.port.read(4).data())   # receive: 4 bytes → 23.5
+self.port.write(struct.pack("<f", 23.5))                         # send: 23.5 → 4 bytes
+```
+
+ה-`<` בהתחלה אומר ל-Python להשתמש באותו סדר בתים כמו ה-ESP32 (והמחשב שלכם). `unpack()` תמיד מחזירה tuple, ולכן כותבים `(temperature,) =`.
+
+> השתמשו בטיפוסים שהגודל כתוב בשם שלהם, כמו `uint16_t` או `int32_t`. משתנה `int` רגיל תופס 4 בתים ב-Nano ESP32 אבל 2 בתים ב-Arduino Uno, ושני הצדדים חייבים להסכים על הגודל.
+
+זוג שלם: ה-Arduino שולח את הטמפרטורה כל שנייה, ואפליקציית ה-PySide מציגה אותה.
+
+```c
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  float temperature = 23.5;     // in a real project: read it from a sensor
+  Serial.write((uint8_t*)&temperature, sizeof(temperature));
+  delay(1000);
+}
+```
+
+```python
+def receive(self):
+    while self.port.bytesAvailable() >= 4:       # wait until all 4 bytes are here
+        (temperature,) = struct.unpack("<f", self.port.read(4).data())
+        self.log.appendPlainText(f"temperature = {temperature:.1f}")
+```
+
+`readyRead` יכול להופעל כשרק חלק מהבתים הגיעו, ולכן קוראים רק כש-`bytesAvailable()` אומרת שכל 4 הבתים כבר שם.
+
+## 2. מערך של בתים
+
+לעיתים קרובות יש לכם כמה ערכים קטנים, שכל אחד נכנס בבית אחד: האדום, הירוק והכחול של צבע, או כמה קריאות חיישנים בטווח 0–255. שימו אותם במערך של `uint8_t` ושלחו אותם יחד. כל בית הוא ערך בפני עצמו, אז אין מה לפצל או לחבר.
+
+![uint8_t rgb[3] = {255, 128, 0} נשלח עם Serial.write(rgb, 3) כבתים FF 80 00. המקלט קורא 3 בתים ומקבל r = 255, g = 128, b = 0](assets/serial/nonstring-array.svg)
+
+| | שליחה | קבלה |
+|--|------|---------|
+| **Arduino** | `Serial.write(rgb, 3);` | `Serial.readBytes(rgb, 3);` |
+| **Python** | `self.port.write(bytes([255, 128, 0]))` | `r, g, b = self.port.read(3).data()` |
+
+ב-Python, קריאה של 3 בתים ופריסה שלהם ל-3 שמות נותנת 3 מספרים בין 0 ל-255.
+
+### מה-Arduino למחשב: שלוש קריאות
+
+```c
+void setup() {
+  Serial.begin(9600);
+  pinMode(2, INPUT);
+}
+
+void loop() {
+  uint8_t readings[3];
+  readings[0] = map(analogRead(A0), 0, 4095, 0, 255);   // potentiometer
+  readings[1] = map(analogRead(A1), 0, 4095, 0, 255);   // light sensor (LDR)
+  readings[2] = digitalRead(2);                         // button: 0 or 1
+  Serial.write(readings, 3);
+  delay(200);
+}
+```
+
+```python
+def receive(self):
+    while self.port.bytesAvailable() >= 3:
+        pot, light, button = self.port.read(3).data()
+        self.log.appendPlainText(f"pot={pot}  light={light}  button={button}")
+```
+
+### מהמחשב ל-Arduino: צבע
+
+```python
+self.port.write(bytes([255, 128, 0]))   # orange: red 255, green 128, blue 0
+```
+
+```c
+const int RED_PIN = 9, GREEN_PIN = 10, BLUE_PIN = 11;   // an RGB LED, each colour with its resistor
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available() >= 3) {        // wait until all 3 bytes are here
+    uint8_t rgb[3];
+    Serial.readBytes(rgb, 3);
+    analogWrite(RED_PIN, rgb[0]);
+    analogWrite(GREEN_PIN, rgb[1]);
+    analogWrite(BLUE_PIN, rgb[2]);
+  }
+}
+```
+
+שלושה `QSlider` באפליקציית ה-PySide, שכל אחד מהם שולח `bytes([red, green, blue])` כשהוא זז, יוצרים מערבל צבעים.
+
+> בכל הדוגמאות צד אחד תמיד שולח **אותו מספר בתים**, כך שהצד השני יודע לכמה בתים לחכות. אם שני הצדדים לא מסכימים, למשל השולח שולח 4 בתים והמקלט קורא 3, כל ערך מאותו רגע יהיה שגוי.
 
 ## סיכום
 
 - הפורט הטורי מעביר **בתים**, ערכים מ-0 עד 255. טקסט הוא רק דרך אחת להשתמש בהם.
 - `Serial.print(200)` שולחת את הטקסט `"200"` (3 בתים). `Serial.write(200)` שולחת בית אחד, `0xC8`.
-- כתבו בתים ב-**hex**: בית אחד הוא תמיד 2 ספרות hex. השתמשו בתצוגת hex כדי לראות מה באמת הגיע.
-- ערכים גדולים מפוצלים לבתים. הסכימו על ה**סדר** (הבית הנמוך קודם הוא little-endian) והשתמשו בטיפוסים עם גודל כמו `uint16_t`.
-- עטפו הודעות ב**חבילה** עם בית התחלה, אורך וסכום ביקורת, כדי שהמקלט ימצא כל הודעה וידחה הודעות פגומות.
-- ב-Python, `bytes([...])`, `struct.pack()` / `struct.unpack()` ו-`.hex(" ")` עושים את העבודה.
+- כתבו בתים ב-**hex**: בית אחד הוא תמיד 2 ספרות hex.
+- **בית בודד:** `Serial.write(b)` / `Serial.read()` ב-Arduino, `bytes([b])` / `read(1).data()[0]` ב-Python.
+- **משתנה אחד של כמה בתים:** שולחים את הבתים שלו עם `Serial.write((uint8_t*)&x, sizeof(x))`, וקוראים אותם עם `Serial.readBytes((uint8_t*)&x, sizeof(x))`. ב-Python משתמשים ב-`struct.pack()` / `struct.unpack()`.
+- **מערך של בתים:** `Serial.write(arr, n)` / `Serial.readBytes(arr, n)` ב-Arduino, `bytes([...])` / `read(n).data()` ב-Python.
+- קוראים רק כש**כל** הבתים הגיעו: `Serial.available() >= n`, `bytesAvailable() >= n`.

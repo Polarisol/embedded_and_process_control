@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 410" width="768" height="410" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker></defs>
+<rect width="768" height="410" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">One variable, several bytes, sent and received whole</text>
+<text x="24" y="70" font-size="15" font-weight="bold" text-anchor="start" fill="#111827" font-family="Menlo, Consolas, monospace">float temperature = 23.5;</text>
+<text x="24" y="150" font-size="13" text-anchor="start" fill="#6b7280">sizeof = 4 bytes</text>
+<rect x="24" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="50.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">00</text>
+<rect x="82" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="108.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">00</text>
+<rect x="140" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="166.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">BC</text>
+<rect x="198" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="224.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">41</text>
+<line x1="264" y1="107" x2="400" y2="107" stroke="#111827" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="332" y="98" font-size="12" text-anchor="middle" fill="#6b7280">network</text>
+<rect x="410" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="436.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">00</text>
+<rect x="468" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="494.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">00</text>
+<rect x="526" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="552.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">BC</text>
+<rect x="584" y="84" width="52" height="46" rx="6" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="610.0" y="113.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">41</text>
+<text x="744" y="114" font-size="18" font-weight="bold" text-anchor="end" fill="#111827" font-family="Menlo, Consolas, monospace">= 23.5</text>
+<text x="24" y="182" font-size="15" font-weight="bold" text-anchor="start" fill="#111827" font-family="Menlo, Consolas, monospace">uint16_t light = 1000;</text>
+<text x="24" y="262" font-size="13" text-anchor="start" fill="#6b7280">sizeof = 2 bytes</text>
+<rect x="24" y="196" width="52" height="46" rx="6" fill="#dff3e4" stroke="#15803d" stroke-width="2"/>
+<text x="50.0" y="225.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">E8</text>
+<rect x="82" y="196" width="52" height="46" rx="6" fill="#dff3e4" stroke="#15803d" stroke-width="2"/>
+<text x="108.0" y="225.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">03</text>
+<line x1="264" y1="219" x2="400" y2="219" stroke="#111827" stroke-width="2.5" marker-end="url(#ah)"/>
+<text x="332" y="210" font-size="12" text-anchor="middle" fill="#6b7280">network</text>
+<rect x="410" y="196" width="52" height="46" rx="6" fill="#dff3e4" stroke="#15803d" stroke-width="2"/>
+<text x="436.0" y="225.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">E8</text>
+<rect x="468" y="196" width="52" height="46" rx="6" fill="#dff3e4" stroke="#15803d" stroke-width="2"/>
+<text x="494.0" y="225.48" font-size="18" font-weight="bold" text-anchor="middle" fill="#111827" font-family="Menlo, Consolas, monospace">03</text>
+<text x="744" y="226" font-size="18" font-weight="bold" text-anchor="end" fill="#111827" font-family="Menlo, Consolas, monospace">= 1000</text>
+<line x1="24" y1="302" x2="744" y2="302" stroke="#e5e7eb" stroke-width="2"/>
+<text x="24" y="332" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">Send:</text>
+<text x="100" y="332" font-size="14" text-anchor="start" fill="#374151" font-family="Menlo, Consolas, monospace">client.write((uint8_t*)&amp;temperature, sizeof(temperature));</text>
+<text x="24" y="360" font-size="14" font-weight="bold" text-anchor="start" fill="#111827">Receive:</text>
+<text x="100" y="360" font-size="14" text-anchor="start" fill="#374151" font-family="Menlo, Consolas, monospace">(temperature,) = struct.unpack("&lt;f", self.socket.read(4).data())</text>
+<text x="384" y="394" font-size="12" text-anchor="middle" fill="#6b7280">The bytes travel exactly as they sit in memory. The receiver puts them back into the same type.</text>
+</svg>

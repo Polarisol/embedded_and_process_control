@@ -53,7 +53,7 @@ Serial.printf("temp=%.1f light=%d\n", temp, light);  // like C's printf
 | `Serial.printf(...)` | Formatted text, like `printf` in C (works on the ESP32, not on an Uno) |
 | `Serial.write(b)` | One raw **byte** with the value `b`, not text |
 
-All of these send text except `write()`. `Serial.print(200)` sends the three characters `'2'`, `'0'`, `'0'`. To send raw bytes and whole packets, see the **Sending non-string data** item.
+All of these send text except `write()`. `Serial.print(200)` sends the three characters `'2'`, `'0'`, `'0'`. To send raw bytes, variables and arrays of bytes, see the **Sending non-string data** item.
 
 Sending takes time: at 9600 baud each character takes about 1 ms. The Arduino puts what you print in a **transmit buffer** and sends it in the background, but if you print more than fits, `print()` waits until there is room. Printing a lot at a low baud rate slows down your whole `loop()`.
 
