@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 340" width="768" height="340" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="340" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Reading the colour code: red, red, brown, gold = 220 Ω</text>
+<rect x="164.0" y="107.5" width="440" height="5" rx="2" fill="#9ca3af" stroke="none" stroke-width="2"/>
+<rect x="234.0" y="75.0" width="300" height="70" rx="35.0" fill="#e9d3a8" stroke="#a16207" stroke-width="2"/>
+<rect x="288.0" y="76.0" width="12" height="68" rx="1" fill="#dc2626" stroke="none" stroke-width="1"/>
+<rect x="327.0" y="76.0" width="12" height="68" rx="1" fill="#dc2626" stroke="none" stroke-width="1"/>
+<rect x="366.0" y="76.0" width="12" height="68" rx="1" fill="#7c4a1e" stroke="none" stroke-width="1"/>
+<rect x="468.0" y="76.0" width="12" height="68" rx="1" fill="#c9a227" stroke="#00000033" stroke-width="1"/>
+<line x1="294.0" y1="148" x2="294.0" y2="170" stroke="#111827" stroke-width="1.5"/>
+<polyline points="294.0,170 150,196" fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="150" y="214" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">1st digit</text>
+<text x="150" y="232" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">red = 2</text>
+<line x1="333.0" y1="148" x2="333.0" y2="170" stroke="#111827" stroke-width="1.5"/>
+<polyline points="333.0,170 290,196" fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="290" y="214" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">2nd digit</text>
+<text x="290" y="232" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318">red = 2</text>
+<line x1="372.0" y1="148" x2="372.0" y2="170" stroke="#111827" stroke-width="1.5"/>
+<polyline points="372.0,170 470,196" fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="470" y="214" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">multiplier</text>
+<text x="470" y="232" font-size="13" font-weight="bold" text-anchor="middle" fill="#7c4a1e">brown = × 10</text>
+<line x1="474.0" y1="148" x2="474.0" y2="170" stroke="#111827" stroke-width="1.5"/>
+<polyline points="474.0,170 640,196" fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/>
+<text x="640" y="214" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">tolerance</text>
+<text x="640" y="232" font-size="13" font-weight="bold" text-anchor="middle" fill="#a16207">gold = ±5 %</text>
+<rect x="130" y="256" width="508" height="44" rx="8" fill="#dff3e4" stroke="none" stroke-width="2"/>
+<text x="384" y="284" font-size="17" font-weight="bold" text-anchor="middle" fill="#15803d">2   2   × 10   =   220 Ω   (between 209 Ω and 231 Ω)</text>
+<text x="384" y="324" font-size="13" text-anchor="middle" fill="#374151">Hold it with the gold or silver band on the right, then read from the left.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 340" width="768" height="340" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#111827"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker><marker id="aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker></defs>
+<rect width="768" height="340" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Ohm's law: V = I × R</text>
+<polygon points="200,70 80,290 320,290" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round"/>
+<line x1="122" y1="210" x2="278" y2="210" stroke="#1d4ed8" stroke-width="3"/>
+<line x1="200" y1="210" x2="200" y2="290" stroke="#1d4ed8" stroke-width="3"/>
+<text x="200" y="175" font-size="44" font-weight="bold" text-anchor="middle" fill="#b42318">V</text>
+<text x="160" y="266" font-size="40" font-weight="bold" text-anchor="middle" fill="#15803d">I</text>
+<text x="240" y="266" font-size="40" font-weight="bold" text-anchor="middle" fill="#1d4ed8">R</text>
+<text x="200" y="318" font-size="13" text-anchor="middle" fill="#374151">Cover the one you want to find</text>
+<rect x="380" y="62" width="360" height="50" rx="8" fill="#fde8e8" stroke="none" stroke-width="2"/>
+<text x="396" y="88" font-size="18" font-weight="bold" text-anchor="start" fill="#b42318">V = I × R</text>
+<text x="396" y="105" font-size="12" text-anchor="start" fill="#374151">voltage (V) = current (A) × resistance (Ω)</text>
+<rect x="380" y="124" width="360" height="50" rx="8" fill="#dff3e4" stroke="none" stroke-width="2"/>
+<text x="396" y="150" font-size="18" font-weight="bold" text-anchor="start" fill="#15803d">I = V / R</text>
+<text x="396" y="167" font-size="12" text-anchor="start" fill="#374151">current = voltage ÷ resistance</text>
+<rect x="380" y="186" width="360" height="50" rx="8" fill="#e0ecfb" stroke="none" stroke-width="2"/>
+<text x="396" y="212" font-size="18" font-weight="bold" text-anchor="start" fill="#1d4ed8">R = V / I</text>
+<text x="396" y="229" font-size="12" text-anchor="start" fill="#374151">resistance = voltage ÷ current</text>
+<text x="560" y="300" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">Example: 3.3 V / 1 kΩ = 3.3 mA</text>
+</svg>
