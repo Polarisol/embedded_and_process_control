@@ -125,7 +125,7 @@
       "icon": "⟳",
       "blurb": "One state at a time, and always knowing what comes next.",
       "blurb_he": "מצב אחד בכל פעם, ותמיד לדעת מה בא אחר כך.",
-      "material": ["topics/state-machines-intro.md"]
+      "material": ["topics/state-machines-intro.md", "topics/state-machines-switch.md"]
     },
     {
       "id": "microcontrollers",
