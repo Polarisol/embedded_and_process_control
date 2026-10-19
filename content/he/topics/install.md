@@ -24,6 +24,9 @@
 5. DBBrowser:
    הורידו והתקינו מכאן (הגרסה הרגילה, 64bit): <https://sqlitebrowser.org/dl/>
 
-6. אופציונלי:
+6. Arduino IDE:
+   הורידו והתקינו מכאן: <https://www.arduino.cc/en/software/>
+
+7. אופציונלי:
    1. notepad++ מכאן (הקישור העליון): <https://notepad-plus-plus.org/downloads/>
    2. paint.net מכאן (הקישור הכחול בצד): <https://www.dotpdn.com/downloads/pdn.html>

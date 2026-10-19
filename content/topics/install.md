@@ -24,6 +24,9 @@
 5. DBBrowser:
    download and install from here (standard 64bit): <https://sqlitebrowser.org/dl/>
 
-6. Optional:
+6. Arduino IDE:
+   download and install from here: <https://www.arduino.cc/en/software/>
+
+7. Optional:
    1. notepad++ from here (the top one): <https://notepad-plus-plus.org/downloads/>
    2. paint.net from here (side blue link): <https://www.dotpdn.com/downloads/pdn.html>
