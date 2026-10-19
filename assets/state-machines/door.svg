@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 400" width="768" height="400" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b42318"/></marker>
+</defs>
+<rect width="768" height="400" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">An automatic sliding door</text>
+<!-- start arrow -->
+<circle cx="34" cy="120" r="6" fill="#374151"/>
+<path d="M40,120 L93,120" stroke="#374151" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="62" y="108" font-size="12" text-anchor="middle" fill="#374151">start</text>
+<!-- states -->
+<g fill="#f6f7f9" stroke="#475569" stroke-width="2.5">
+<rect x="95" y="88" width="150" height="64" rx="14"/>
+<rect x="523" y="88" width="150" height="64" rx="14"/>
+<rect x="523" y="268" width="150" height="64" rx="14"/>
+<rect x="95" y="268" width="150" height="64" rx="14"/>
+</g>
+<g font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">
+<text x="170" y="117">CLOSED</text><text x="598" y="117">OPENING</text>
+<text x="598" y="297">OPEN</text><text x="170" y="297">CLOSING</text>
+</g>
+<g font-size="12" text-anchor="middle" fill="#374151">
+<text x="170" y="137">motor off</text><text x="598" y="137">motor forward</text>
+<text x="598" y="317">motor off</text><text x="170" y="317">motor backward</text>
+</g>
+<!-- transitions -->
+<g stroke="#374151" stroke-width="2.5" fill="none">
+<path d="M247,120 L521,120" marker-end="url(#ar)"/>
+<path d="M598,154 L598,266" marker-end="url(#ar)"/>
+<path d="M521,300 L247,300" marker-end="url(#ar)"/>
+<path d="M170,266 L170,154" marker-end="url(#ar)"/>
+</g>
+<text x="384" y="110" font-size="13" text-anchor="middle" fill="#111827">person detected</text>
+<text x="610" y="215" font-size="13" fill="#111827">fully open</text>
+<text x="384" y="320" font-size="13" text-anchor="middle" fill="#111827">nobody there for 5 seconds</text>
+<text x="158" y="215" font-size="13" text-anchor="end" fill="#111827">fully closed</text>
+<!-- the safety transition -->
+<path d="M247,270 L521,154" stroke="#b42318" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+<text x="384" y="200" font-size="13" font-weight="bold" text-anchor="middle" fill="#b42318" transform="rotate(-22.9 384 200)">person detected</text>
+<text x="384" y="376" font-size="13" text-anchor="middle" fill="#374151">The same event, "person detected", means different things in different states.</text>
+</svg>
