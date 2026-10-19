@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 300" width="768" height="300" font-family="Helvetica, Arial, sans-serif">
+<rect width="768" height="300" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">Our 4-byte message: set motor 3 to speed 1500</text>
+<text x="189.0" y="66" font-size="12" text-anchor="middle" fill="#6b7280" xml:space="preserve">byte 0</text>
+<rect x="134" y="76" width="110" height="56" rx="5" fill="#e0ecfb" stroke="#1d4ed8" stroke-width="2"/>
+<text x="189.0" y="112.4" font-size="24" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">01</text>
+<text x="311.0" y="66" font-size="12" text-anchor="middle" fill="#6b7280" xml:space="preserve">byte 1</text>
+<rect x="256" y="76" width="110" height="56" rx="5" fill="#fef3c7" stroke="#a16207" stroke-width="2"/>
+<text x="311.0" y="112.4" font-size="24" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">03</text>
+<text x="433.0" y="66" font-size="12" text-anchor="middle" fill="#6b7280" xml:space="preserve">byte 2</text>
+<rect x="378" y="76" width="110" height="56" rx="5" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="433.0" y="112.4" font-size="24" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">05</text>
+<text x="555.0" y="66" font-size="12" text-anchor="middle" fill="#6b7280" xml:space="preserve">byte 3</text>
+<rect x="500" y="76" width="110" height="56" rx="5" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+<text x="555.0" y="112.4" font-size="24" font-weight="bold" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#111827">DC</text>
+<path d="M134,142 v8 H244 v-8 M189.0,150 v8" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M256,142 v8 H366 v-8 M311.0,150 v8" fill="none" stroke="#a16207" stroke-width="2"/>
+<path d="M378,142 v8 H610 v-8 M494.0,150 v8" fill="none" stroke="#15803d" stroke-width="2"/>
+<text x="189.0" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4ed8" xml:space="preserve">command</text>
+<text x="189.0" y="198" font-size="12" text-anchor="middle" fill="#374151" xml:space="preserve">1 = set speed</text>
+<text x="311.0" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#a16207" xml:space="preserve">motor</text>
+<text x="311.0" y="198" font-size="12" text-anchor="middle" fill="#374151" xml:space="preserve">3</text>
+<text x="494.0" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#15803d" xml:space="preserve">speed (high byte first)</text>
+<text x="494.0" y="198" font-size="12" font-family="Menlo, Consolas, monospace" text-anchor="middle" fill="#374151" xml:space="preserve">05 × 256 + DC (220) = 1500</text>
+<rect x="40" y="226" width="688" height="56" rx="8" fill="#f6f7f9" stroke="#d1d5db" stroke-width="1.5"/>
+<text x="384.0" y="249" font-size="13" text-anchor="middle" fill="#374151" xml:space="preserve">Both sides agree on the layout in advance. The receiver waits for 4 bytes</text>
+<text x="384.0" y="269" font-size="13" text-anchor="middle" fill="#374151" xml:space="preserve">and knows exactly what each one means.</text>
+</svg>

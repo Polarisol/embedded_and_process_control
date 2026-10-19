@@ -41,7 +41,7 @@
       "icon": "🌐",
       "blurb": "When I was a kid we used to meet each other face to face. But this is how the cool kids talk to one another these days.",
       "blurb_he": "כשהייתי ילד היינו נפגשים פנים אל פנים. אבל ככה הילדים המגניבים מדברים זה עם זה בימינו.",
-      "material": ["topics/tcpip-internet-protocol.md", "topics/tcpip-tcp.md", "topics/tcpip-pyside-client.md", "topics/tcpip-pyside-server.md", "topics/tcpip-binary-data.md", "topics/wwntr-tcpip.md"],
+      "material": ["topics/tcpip-internet-protocol.md", "topics/tcpip-tcp.md", "topics/tcpip-pyside-client.md", "topics/tcpip-pyside-server.md", "topics/tcpip-binary-messages.md", "topics/wwntr-tcpip.md"],
       "quizzes": ["quizzes/tcpip-quiz.md"],
       "bots": [
         {
@@ -100,7 +100,7 @@
       "icon": "⇄",
       "blurb": "There are many things that are serial, and this is where we talk about the communication thing.",
       "blurb_he": "יש הרבה דברים טוריים, וכאן אנחנו מדברים על עניין התקשורת.",
-      "material": ["topics/serial-intro.md", "topics/serial-frame.md", "topics/serial-arduino.md", "topics/serial-pyside.md", "topics/serial-binary-data.md"]
+      "material": ["topics/serial-intro.md", "topics/serial-frame.md", "topics/serial-arduino.md", "topics/serial-pyside.md"]
     },
     {
       "id": "electronics",
