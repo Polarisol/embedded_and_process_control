@@ -35,6 +35,7 @@
     'Topics': 'נושאים',
     'Main': 'ראשי',
     'Search Results': 'תוצאות חיפוש',
+    'Lessons': 'שיעורים',
 
     // Pages
     'Class Resources': 'חומרי הקורס',
@@ -56,6 +57,19 @@
     '{n} item matches “{q}”': 'פריט אחד מתאים ל־„{q}”',
     '{n} items match “{q}”': '{n} פריטים מתאימים ל־„{q}”',
     'Nothing matches “{q}”. Try other words.': 'שום דבר לא מתאים ל־„{q}”. נסו מילים אחרות.',
+
+    // Lessons
+    'Lesson': 'שיעור',
+    'Lesson {n}': 'שיעור {n}',
+    'Latest': 'אחרון',
+    '→': '←',
+    '{n} item': 'פריט אחד',
+    '{n} items': '{n} פריטים',
+    'The material of each lesson, gathered from the units. The newest lesson is on top.':
+      'החומר של כל שיעור, אסוף מהיחידות השונות. השיעור האחרון למעלה.',
+    '← All lessons': '→ כל השיעורים',
+    'Lesson not found · {site}': 'השיעור לא נמצא · {site}',
+    'That lesson doesn’t exist (yet). Pick one from the list.': 'השיעור הזה לא קיים (עדיין). בחרו שיעור מהרשימה.',
 
     // Items on a topic page
     'Bot': 'בוט',

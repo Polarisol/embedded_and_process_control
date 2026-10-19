@@ -38,6 +38,33 @@ All content lives in `content/`. You never need to edit the HTML or JavaScript.
 
 Any field can be left out, and its section won't appear on the page.
 
+## Add a lesson
+
+A lesson gathers items from several units onto one page. All lessons are listed under **Lessons** in the side list, the newest on top, and each has its own address (`?lesson=1`, `?lesson=2`, ...).
+
+Add a block to the `lessons` list in `content/topics.json` (lessons are numbered in the order they appear there):
+
+```json
+{
+  "title": "Lesson 1",
+  "title_he": "שיעור 1",
+  "blurb": "One line about the lesson",
+  "items": [
+    "installation",
+    "topics/binary-hexadecimal.md",
+    { "unit": "binary-representation", "only": ["Study Bot", "Binary in Computers", "topics/binary-representation.md"] }
+  ]
+}
+```
+
+Each entry in `items` is one of:
+
+- a unit's `id`, for everything in that unit;
+- a file (written material or a quiz), for just that item;
+- `{ "unit": "...", "only": [...] }`, for some of a unit's items, named by their file or by their English title (a video's or bot's title).
+
+Items appear exactly as on their unit's page, with the unit's name under each one, and the Hebrew version uses the same Hebrew files and titles. If a name doesn't match anything, the browser console (F12) shows a warning that names it.
+
 ## Write a quiz
 
 A quiz is a Markdown file in `content/quizzes/`. Students answer every question and press **Submit answers**. They then see their score, which answers were right or wrong, and your feedback. **Try again** starts over.

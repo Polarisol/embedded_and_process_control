@@ -9,6 +9,20 @@
     "footer": "Embedded Systems · Dr. Tal Alon",
     "footer_he": "מערכות משובצות · ד״ר טל אלון"
   },
+  "lessons": [
+    {
+      "title": "Lesson 1",
+      "title_he": "שיעור 1",
+      "blurb": "Getting ready: installing everything, starting a project, using AI the right way, and binary representation.",
+      "blurb_he": "מתכוננים: מתקינים הכול, מתחילים פרויקט, משתמשים בבינה מלאכותית בצורה נכונה ולומדים ייצוג בינארי.",
+      "items": [
+        "installation",
+        "starting-a-project",
+        "using-ai",
+        "binary-representation"
+      ]
+    }
+  ],
   "topics": [
     {
       "id": "installation",
