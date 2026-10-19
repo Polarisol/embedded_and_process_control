@@ -354,7 +354,8 @@
     scramble(out, text);
   }
 
-  const topicHref = (id) => (id ? `?id=${encodeURIComponent(id)}` : './');
+  // Units are ?id=<unit>; the site's own pages (Lessons, a lesson) are ids starting with "?".
+  const topicHref = (id) => (!id ? './' : id.startsWith('?') ? id : `?id=${encodeURIComponent(id)}`);
 
   // The Main page text comes from a Markdown file (site.home, default "home.md").
   function showHome(main, site) {
@@ -1079,7 +1080,7 @@
   let lineCount = 0;
   const lineItems = new WeakMap(); // line node -> its open/close handle
 
-  const LINE_TYPES = { bot: 'Bot', text: 'Text', video: 'Video', quiz: 'Quiz', sim: 'Sim', file: 'File', link: 'Link' };
+  const LINE_TYPES = { bot: 'Bot', text: 'Text', video: 'Video', quiz: 'Quiz', sim: 'Sim', file: 'File', link: 'Link', lesson: 'Lesson' };
 
   // Every line starts with a coloured type tag: Bot / Text / Video / Quiz / Sim / File / Link.
   function lineParts(type, label, sub, end, icon, views) {
@@ -1241,11 +1242,16 @@
   const MAIN = '';
 
   // Sidebar on wide screens; on phones, a bar showing the current topic that opens the list.
-  function topicNav(topics) {
+  function topicNav(topics, hasLessons) {
     const indicator = el('span', { class: 'nav-indicator', 'aria-hidden': 'true' });
     const items = new Map();
     const list = el('ul', { class: 'nav-list', id: 'nav-list' }, indicator);
-    const entries = [{ id: SEARCH, title: t('Search Results'), icon: '⌕' }, { id: MAIN, title: t('Main'), icon: '~' }, ...topics];
+    const entries = [
+      { id: SEARCH, title: t('Search Results'), icon: '⌕' },
+      { id: MAIN, title: t('Main'), icon: '~' },
+      ...(hasLessons ? [{ id: LESSONS, title: t('Lessons'), icon: LESSONS_ICON }] : []),
+      ...topics,
+    ];
     for (const topic of entries) {
       const text = pick(topic, 'title') || topic.id;
       const title = el('span', { class: 'nav-title', text });
@@ -1500,7 +1506,7 @@
 
   const LINE_BUILDERS = { bot: botLines, video: videoLines, text: materialLines, quiz: quizLines, sim: simLines, file: fileLines, link: linkLines };
 
-  // The item's usual line, plus the topic it comes from and a piece of the matching text.
+  // The item's usual line, plus the topic it comes from and (in a search) a piece of the matching text.
   function resultLine(item, words) {
     const key = (type, ref) => viewKey(item.topic.id, type, ref);
     const node = LINE_BUILDERS[item.type]([item.src], key)[0];
@@ -1513,7 +1519,7 @@
     main.append(label,
       el('span', { class: 'search-topic' },
         el('span', { class: 'search-topic-icon', text: `${item.topic.icon || '>_'} ` }), pick(item.topic, 'title') || item.topic.id));
-    if (item.text) main.append(el('span', { class: 'search-snippet' }, highlight(snippet(item.text, words), words)));
+    if (item.text && words) main.append(el('span', { class: 'search-snippet' }, highlight(snippet(item.text, words), words)));
     return node;
   }
 
@@ -1557,6 +1563,110 @@
     };
   }
 
+  // ---------- Lessons: items gathered from several units, one page per lesson ----------
+  // "lessons" in topics.json. A lesson's "items" names whole units by id ("installation"),
+  // single items by file ("topics/install.md"), or part of a unit:
+  // { "unit": "python-basics", "only": ["Study Bot", "topics/python-basics.md"] },
+  // where "only" names items by file or by their English title.
+  const LESSONS = '?lessons';
+  const LESSONS_ICON = '📅';
+  const lessonId = (n) => `?lesson=${n}`;
+
+  // Every item of a unit, in the order its page shows them.
+  function unitItems(topic) {
+    const of = (type, list) => list.map((src) => ({ topic, type, src }));
+    return [
+      ...of('bot', asList(topic.bots).filter((b) => safeUrl(b.url))),
+      ...of('video', asList(topic.videos).filter((v) => youtubeId(v))),
+      ...of('text', asList(topic.material)),
+      ...of('quiz', quizEntries(topic.quizzes)),
+      ...of('sim', simEntries(topic.simulations)),
+      ...of('file', fileEntries(topic.files)),
+      ...of('link', asList(topic.links).filter((l) => safeUrl(l.url))),
+    ];
+  }
+
+  // The names a lesson can use for an item: its file, or its English title.
+  function itemNames(item) {
+    const s = item.src;
+    if (typeof s === 'string') return [s];
+    return [s.file, s.title, s.label, s.url, s.youtube].filter((n) => typeof n === 'string');
+  }
+
+  function lessonItems(lesson, topics) {
+    const items = [];
+    const same = (a, b) => String(a).trim().toLowerCase() === String(b).trim().toLowerCase();
+    const named = (item, name) => itemNames(item).some((n) => same(n, name));
+    for (const ref of asList(lesson.items)) {
+      const unitId = typeof ref === 'string' ? ref : ref && ref.unit;
+      const topic = topics.find((tp) => tp.id === unitId);
+      if (topic && typeof ref === 'string') {
+        items.push(...unitItems(topic));
+      } else if (topic) {
+        const only = asList(ref.only);
+        const found = unitItems(topic).filter((item) => !only.length || only.some((n) => named(item, n)));
+        only.filter((n) => !found.some((item) => named(item, n)))
+          .forEach((n) => console.warn(`Lesson "${lesson.title}": unit "${unitId}" has no item "${n}"`));
+        items.push(...found);
+      } else {
+        // A single item named by its file, from whichever unit has it.
+        const item = typeof ref === 'string' && topics.flatMap(unitItems).find((i) => named(i, ref));
+        if (item) items.push(item);
+        else console.warn(`Lesson "${lesson.title}": nothing called ${JSON.stringify(ref)}`);
+      }
+    }
+    return items;
+  }
+
+  const lessonTitle = (lesson, n) => pick(lesson, 'title') || t('Lesson {n}', { n });
+
+  function pageHead(icon, title, blurb, ...extra) {
+    const heading = el('h1');
+    scrambleTitle(heading, title);
+    return el('header', { class: 'topic-head' },
+      el('span', { class: 'card-icon', 'aria-hidden': 'true', text: icon }),
+      el('div', { class: 'topic-title' }, heading),
+      blurb ? el('p', { text: blurb }) : null,
+      ...extra);
+  }
+
+  // The Lessons page: one line per lesson, the newest on top.
+  function showLessons(main, lessons, topics, siteTitle) {
+    document.title = `${t('Lessons')} · ${siteTitle}`;
+    const rows = lessons.map((lesson, i) => {
+      const n = i + 1;
+      const items = lessonItems(lesson, topics);
+      const units = [...new Set(items.map((item) => pick(item.topic, 'title') || item.topic.id))];
+      const sub = [plural(items.length, '{n} item', '{n} items'), units.join(', ')].join(' · ');
+      const row = el('a', { class: 'line', 'data-type': 'lesson', href: topicHref(lessonId(n)), 'data-route': lessonId(n) },
+        ...lineParts('lesson', lessonTitle(lesson, n), sub, t('→')));
+      if (n === lessons.length) row.querySelector('.line-label').after(el('span', { class: 'lesson-latest', text: t('Latest') }));
+      return row;
+    }).reverse();
+    main.replaceChildren(
+      pageHead(LESSONS_ICON, t('Lessons'), t('The material of each lesson, gathered from the units. The newest lesson is on top.')),
+      el('div', { class: 'topic-body' }, el('div', { class: 'line-list topic-lines' }, ...rows)),
+    );
+  }
+
+  // One lesson: its items, each as on its own unit's page, with the unit's name under it.
+  function showLesson(main, lessons, n, topics, siteTitle) {
+    const lesson = lessons[n - 1];
+    const back = el('a', { class: 'lesson-back', href: topicHref(LESSONS), 'data-route': LESSONS }, t('← All lessons'));
+    if (!lesson) {
+      document.title = t('Lesson not found · {site}', { site: siteTitle });
+      main.replaceChildren(notice(t('That lesson doesn’t exist (yet). Pick one from the list.')), back);
+      return;
+    }
+    const title = lessonTitle(lesson, n);
+    document.title = `${title} · ${siteTitle}`;
+    const rows = lessonItems(lesson, topics).map((item) => resultLine(item, null));
+    main.replaceChildren(
+      pageHead(LESSONS_ICON, title, pick(lesson, 'blurb'), back),
+      el('div', { class: 'topic-body' }, rows.length ? el('div', { class: 'line-list topic-lines' }, ...rows) : null),
+    );
+  }
+
   // ---------- App: one page, switching between Main and topics in place ----------
   async function renderApp() {
     const main = document.getElementById('app');
@@ -1566,10 +1676,19 @@
     const { fullName } = applySite(data.site);
     if (/^[\w.-]{3,64}$/.test(data.site.views || '')) viewsNs = data.site.views;
     const topics = data.topics.filter((t) => t && t.id);
+    const lessons = (Array.isArray(data.lessons) ? data.lessons : []).filter((l) => l && typeof l === 'object');
     const urlQuery = () => (new URLSearchParams(location.search).get('q') || '').trim();
-    const currentId = () => (urlQuery() ? SEARCH : new URLSearchParams(location.search).get('id') || MAIN);
+    const currentId = () => {
+      const params = new URLSearchParams(location.search);
+      if (urlQuery()) return SEARCH;
+      if (params.has('lesson')) return lessonId(params.get('lesson'));
+      if (params.has('lessons')) return LESSONS;
+      return params.get('id') || MAIN;
+    };
+    // A lesson's page is under "Lessons" in the unit list.
+    const navId = (id) => (id.startsWith('?lesson=') ? LESSONS : id);
 
-    const nav = topicNav(topics);
+    const nav = topicNav(topics, lessons.length > 0);
     document.getElementById('topic-nav-slot').replaceWith(nav.node);
 
     // ----- Search: the box in the top bar runs a temporary "Search Results" unit -----
@@ -1593,10 +1712,12 @@
         document.title = t('Search Results · {site}', { site: fullName });
         results.show(main, query);
       } else if (id === MAIN) showHome(main, data.site);
+      else if (id === LESSONS) showLessons(main, lessons, topics, fullName);
+      else if (id.startsWith('?lesson=')) showLesson(main, lessons, Number(id.slice('?lesson='.length)), topics, fullName);
       else showTopic(main, topics.find((t) => t.id === id), fullName);
       document.body.dataset.page = id === SEARCH ? 'search' : id === MAIN ? 'home' : 'topic';
       if (canvas) canvas.dataset.intensity = entryOpen() ? '' : 'dim';
-      nav.select(id);
+      nav.select(navId(id));
     };
 
     const hrefFor = (id) => (id === SEARCH ? searchHref(query) : topicHref(id));
@@ -1689,7 +1810,7 @@
     // Stepping up into an item shows its end, so an opened item is read back from the bottom.
     const focusItem = (item, step = 1) => {
       if (!item.matches('a, button')) item.tabIndex = -1;
-      item.focus({ preventScroll: true });
+      item.focus({ preventScroll: true, focusVisible: true });
       const shown = step < 0 ? item.closest('.line-item') || item : item;
       shown.scrollIntoView({ block: step < 0 ? 'end' : 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' });
     };
@@ -1762,8 +1883,8 @@
         focusItem(open || items[0]);
         return;
       }
-      const order = [...(query ? [SEARCH] : []), MAIN, ...topics.map((t) => t.id)];
-      const next = order[order.indexOf(currentId()) + step];
+      const order = [...(query ? [SEARCH] : []), MAIN, ...(lessons.length ? [LESSONS] : []), ...topics.map((t) => t.id)];
+      const next = order[order.indexOf(navId(currentId())) + step];
       if (next === undefined) return;
       e.preventDefault();
       go(next);
@@ -1775,6 +1896,11 @@
       if (!a || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
       go(a.dataset.route);
+      // Opening a lesson marks its first item, so up and down go straight through the lesson.
+      if (a.dataset.route.startsWith('?lesson=')) {
+        const first = pageItems()[0];
+        if (first) { unitKeys = false; root.dataset.keys = ''; focusItem(first); }
+      }
     });
     window.addEventListener('popstate', () => {
       if (urlQuery()) setQuery(urlQuery());

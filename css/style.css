@@ -724,6 +724,7 @@ a { color: var(--accent); }
 .line[data-type="quiz"] { --t: var(--type-quiz); }
 .line[data-type="sim"] { --t: var(--type-sim); }
 .line[data-type="file"] { --t: var(--type-file); }
+.line[data-type="lesson"] { --t: var(--glyph); }
 .line:hover { background: rgba(var(--t, var(--glyph)), 0.07); }
 
 .line-type {
@@ -1236,6 +1237,18 @@ a { color: var(--accent); }
 .search-topic { font: 400 0.8rem var(--font-mono); color: var(--muted); }
 .search-snippet { font-size: 0.9rem; color: var(--muted); overflow-wrap: anywhere; }
 .search-snippet mark { padding: 0 1px; border-radius: 3px; background: rgba(var(--t), 0.25); color: inherit; }
+
+/* Lessons: the list of lessons, and a lesson's page */
+.lesson-latest {
+  flex: none;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(var(--t), 0.15);
+  color: rgb(var(--t));
+  font: 600 0.75rem var(--font-mono);
+}
+.lesson-back { display: inline-block; margin-top: 8px; font: 500 0.9rem var(--font-mono); color: var(--accent); text-decoration: none; }
+.lesson-back:hover { text-decoration: underline; }
 
 /* ---------- Language button and Hebrew (right-to-left) layout ---------- */
 .lang-toggle-label { font: 600 0.85rem var(--font-mono); line-height: 1; }

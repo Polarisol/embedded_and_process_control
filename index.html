@@ -19,7 +19,8 @@
       }
       if (localStorage.getItem('embedded:lang') === 'he') { document.documentElement.lang = 'he'; document.documentElement.dir = 'rtl'; } var t = localStorage.getItem('embedded:theme'); if (t) document.documentElement.dataset.theme = t; if (localStorage.getItem('embedded:icons') === 'off') document.documentElement.dataset.icons = 'off'; } catch (e) {}
     // Opening the main address shows the entry screen first (a refresh after ENTER stays on the page you were on).
-    if (!new URLSearchParams(location.search).get('id') && !(history.state && history.state.main)) document.documentElement.dataset.entry = '';</script>
+    var q = new URLSearchParams(location.search);
+    if (!q.get('id') && !q.has('lesson') && !q.has('lessons') && !(history.state && history.state.main)) document.documentElement.dataset.entry = '';</script>
 </head>
 <body data-page="home">
   <canvas id="ascii-bg" aria-hidden="true"></canvas>
