@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 300" width="768" height="300" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker></defs>
+<rect width="768" height="300" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">A lamp with one button: the parts of a state diagram</text>
+<!-- start arrow -->
+<circle cx="124" cy="160" r="6" fill="#374151"/>
+<path d="M130,160 L198,160" stroke="#374151" stroke-width="2.5" marker-end="url(#ar)"/>
+<!-- states -->
+<circle cx="250" cy="160" r="50" fill="#e5e7eb" stroke="#475569" stroke-width="2.5"/>
+<text x="250" y="158" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827">OFF</text>
+<text x="250" y="177" font-size="12" text-anchor="middle" fill="#374151">lamp dark</text>
+<circle cx="518" cy="160" r="50" fill="#fef3c7" stroke="#a16207" stroke-width="2.5"/>
+<text x="518" y="158" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827">ON</text>
+<text x="518" y="177" font-size="12" text-anchor="middle" fill="#374151">lamp lit</text>
+<!-- transitions -->
+<path d="M290,130 Q384,70 476,130" fill="none" stroke="#374151" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="384" y="90" font-size="13" text-anchor="middle" fill="#111827">button pressed</text>
+<path d="M478,190 Q384,250 292,190" fill="none" stroke="#374151" stroke-width="2.5" marker-end="url(#ar)"/>
+<text x="384" y="240" font-size="13" text-anchor="middle" fill="#111827">button pressed</text>
+<!-- callouts -->
+<g stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+<path d="M142,68 L214,124"/>
+<path d="M88,238 L140,166"/>
+<path d="M620,70 L433,106"/>
+<path d="M630,250 L438,238"/>
+</g>
+<text x="30" y="56" font-size="13" font-weight="bold" fill="#1d4ed8">State</text>
+<text x="30" y="72" font-size="12" fill="#1d4ed8">what it is doing now</text>
+<text x="20" y="254" font-size="13" font-weight="bold" fill="#1d4ed8">Start</text>
+<text x="20" y="270" font-size="12" fill="#1d4ed8">the state it begins in</text>
+<text x="604" y="52" font-size="13" font-weight="bold" fill="#1d4ed8">Transition</text>
+<text x="604" y="68" font-size="12" fill="#1d4ed8">a move to another state</text>
+<text x="634" y="248" font-size="13" font-weight="bold" fill="#1d4ed8">Event</text>
+<text x="634" y="264" font-size="12" fill="#1d4ed8">what causes the move</text>
+</svg>
