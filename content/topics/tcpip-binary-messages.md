@@ -43,7 +43,10 @@ Start from the client app in **TCP/IP Client in PySide6**. Only `send()` and `re
 
 ```python
     def send(self):
-        command, motor, speed = map(int, self.entry.text().split())
+        parts = self.entry.text().split()            # "1 3 1500" -> ["1", "3", "1500"]
+        command = int(parts[0])
+        motor = int(parts[1])
+        speed = int(parts[2])
         msg = bytes([command, motor]) + speed.to_bytes(2, "big")
         self.socket.write(msg)                       # no encode(), no '\n'
         self.log.appendPlainText("▶ " + msg.hex(" "))
