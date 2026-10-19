@@ -119,6 +119,15 @@
       ]
     },
     {
+      "id": "state-machines",
+      "title": "State Machines",
+      "title_he": "מכונות מצבים",
+      "icon": "⟳",
+      "blurb": "One state at a time, and always knowing what comes next.",
+      "blurb_he": "מצב אחד בכל פעם, ותמיד לדעת מה בא אחר כך.",
+      "material": ["topics/state-machines-intro.md"]
+    },
+    {
       "id": "microcontrollers",
       "title": "Microcontrollers",
       "title_he": "מיקרו-בקרים",
@@ -167,15 +176,6 @@
       "blurb": "We like to move it move it.",
       "blurb_he": "We like to move it move it.",
       "material": ["topics/motors-types.md", "topics/motors-dc.md", "topics/motors-servo.md", "topics/motors-stepper.md"]
-    },
-    {
-      "id": "state-machines",
-      "title": "State Machines",
-      "title_he": "מכונות מצבים",
-      "icon": "⟳",
-      "blurb": "One state at a time, and always knowing what comes next.",
-      "blurb_he": "מצב אחד בכל פעם, ותמיד לדעת מה בא אחר כך.",
-      "material": ["topics/state-machines-intro.md"]
     },
     {
       "id": "process-control",
