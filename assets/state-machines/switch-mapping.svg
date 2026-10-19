@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 420" width="768" height="420" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<marker id="mstart" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+<marker id="mevent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker>
+<marker id="mstate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/></marker>
+<marker id="moutput" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker>
+<marker id="mtrans" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker>
+</defs>
+<rect width="768" height="420" rx="10" fill="#ffffff"/>
+<text x="384" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">From the state diagram to the switch</text>
+<g fill="#f6f7f9" stroke="#d1d5db" stroke-width="1.5"><rect x="12" y="46" width="280" height="360" rx="10"/><rect x="300" y="46" width="456" height="360" rx="10"/></g>
+<circle cx="80" cy="96" r="6" fill="#a16207"/><path d="M80,102 L80,174" stroke="#a16207" stroke-width="2.5" marker-end="url(#mstart)"/>
+<text x="90" y="128" font-size="12" fill="#a16207">start</text>
+<circle cx="80" cy="220" r="44" fill="#e5e7eb" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="80" y="218" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">OFF</text>
+<text x="80" y="236" font-size="12" text-anchor="middle" fill="#7c3aed">LED off</text>
+<circle cx="222" cy="220" r="44" fill="#fef3c7" stroke="#1d4ed8" stroke-width="2.5"/>
+<text x="222" y="218" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">ON</text>
+<text x="222" y="236" font-size="12" text-anchor="middle" fill="#7c3aed">LED on</text>
+<path d="M112,190 Q151,150 190,190" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#mtrans)"/>
+<text x="151" y="158" font-size="12" text-anchor="middle" fill="#15803d">pressed</text>
+<path d="M190,250 Q151,290 112,250" fill="none" stroke="#15803d" stroke-width="2.5" marker-end="url(#mtrans)"/>
+<text x="151" y="296" font-size="12" text-anchor="middle" fill="#15803d">pressed</text>
+<text x="152" y="340" font-size="12" text-anchor="middle" fill="#374151">Each part of the drawing</text>
+<text x="152" y="357" font-size="12" text-anchor="middle" fill="#374151">becomes a part of the code,</text>
+<text x="152" y="374" font-size="12" text-anchor="middle" fill="#374151">in the same colour.</text>
+<rect x="312" y="60" width="284" height="17" rx="4" fill="#fef3c7" stroke="#a16207" stroke-width="1"/>
+<text x="606" y="72.5" font-size="12" font-weight="bold" fill="#a16207">start state</text>
+<rect x="312" y="117" width="284" height="17" rx="4" fill="#e5e7eb" stroke="#374151" stroke-width="1"/>
+<text x="606" y="129.5" font-size="12" font-weight="bold" fill="#374151">read the events once</text>
+<rect x="312" y="174" width="284" height="17" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+<text x="606" y="186.5" font-size="12" font-weight="bold" fill="#1d4ed8">one case per state</text>
+<rect x="312" y="193" width="284" height="17" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+<text x="606" y="205.5" font-size="12" font-weight="bold" fill="#7c3aed">what the state does</text>
+<rect x="312" y="212" width="284" height="55" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1"/>
+<text x="606" y="243.5" font-size="12" font-weight="bold" fill="#15803d">a transition</text>
+<rect x="312" y="307" width="284" height="17" rx="4" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1"/>
+<text x="606" y="319.5" font-size="12" font-weight="bold" fill="#1d4ed8">one case per state</text>
+<text x="318" y="74" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">LampState state = LAMP_OFF;</text>
+<text x="318" y="112" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">void loop() {</text>
+<text x="318" y="131" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">  bool pressed = buttonPressed();</text>
+<text x="318" y="169" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">  switch (state) {</text>
+<text x="318" y="188" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">    case LAMP_OFF:</text>
+<text x="318" y="207" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">      digitalWrite(LED_PIN, LOW);</text>
+<text x="318" y="226" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">      if (pressed) {</text>
+<text x="318" y="245" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">        state = LAMP_ON;</text>
+<text x="318" y="264" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">      }</text>
+<text x="318" y="283" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">      break;</text>
+<text x="318" y="321" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">    case LAMP_ON:</text>
+<text x="318" y="340" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">      ...</text>
+<text x="318" y="359" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">  }</text>
+<text x="318" y="378" font-size="13" font-family="Menlo, Consolas, monospace" fill="#111827" xml:space="preserve">}</text>
+</svg>
