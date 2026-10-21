@@ -66,10 +66,11 @@
       "icon": "01",
       "blurb": "01001000 01101001 00100001.... What? You don't understand binary yet? Let's take care of that.",
       "blurb_he": "01001000 01101001 00100001.... מה? אתם עוד לא מבינים בינארית? בואו נטפל בזה.",
-      "material": ["topics/binary-representation.md", "topics/binary-hexadecimal.md", "topics/binary-ascii-unicode.md", "topics/wwntr-binary.md"],
+      "material": ["topics/binary-representation.md", "topics/binary-hexadecimal.md", "topics/binary-ascii-unicode.md", "topics/binary-python-bytes.md", "topics/wwntr-binary.md"],
       "videos": [
         { "title": "Binary in Computers", "title_he": "בינארי במחשבים", "youtube": "1GSjbWt0c9M" },
-        { "title": "Binary and Different Bases", "title_he": "בינארי ובסיסים שונים", "youtube": "LpuPe81bc2w" }
+        { "title": "Binary and Different Bases", "title_he": "בינארי ובסיסים שונים", "youtube": "LpuPe81bc2w" },
+        { "title": "Emoji and Unicode, watch when you have time", "title_he": "אימוג'י ו-Unicode, צפו כשיש לכם זמן", "youtube": "z9HyJTO35Fg" }
       ],
       "quizzes": ["quizzes/binary-quiz.md"],
       "bots": [
