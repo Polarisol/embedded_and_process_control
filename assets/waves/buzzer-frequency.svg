@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 370" width="768" height="370" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker></defs>
+<rect width="768" height="370" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">A buzzer: always 50 % duty, the frequency sets the pitch</text>
+<text x="24.0" y="88.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">262 Hz</text>
+<text x="24.0" y="108.0" font-size="12" text-anchor="start" fill="#1d4ed8">note C4, T = 3.82 ms</text>
+<text x="142.0" y="74.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="142.0" y="124.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round" points="150.0,120.0 150.0,120.0 150.0,70.0 228.2,70.0 228.2,120.0 306.5,120.0 306.5,70.0 384.7,70.0 384.7,120.0 463.0,120.0 463.0,70.0 541.2,70.0 541.2,120.0 560.0,120.0"/>
+<path d="M588,87 h8 l10,-9 v34 l-10,-9 h-8 z" fill="#111827"/>
+<path d="M613.0,83.1 A14,14 0 0 1 613.0,106.9" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M620.0,71.2 A28,28 0 0 1 620.0,118.8" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M627.0,59.3 A42,42 0 0 1 627.0,130.7" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<text x="680.0" y="100.0" font-size="12" font-weight="bold" text-anchor="start" fill="#111827">low pitch</text>
+<text x="24.0" y="180.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">440 Hz</text>
+<text x="24.0" y="200.0" font-size="12" text-anchor="start" fill="#1d4ed8">note A4, T = 2.27 ms</text>
+<text x="142.0" y="166.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="142.0" y="216.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round" points="150.0,212.0 150.0,212.0 150.0,162.0 196.6,162.0 196.6,212.0 243.2,212.0 243.2,162.0 289.8,162.0 289.8,212.0 336.4,212.0 336.4,162.0 383.0,162.0 383.0,212.0 429.5,212.0 429.5,162.0 476.1,162.0 476.1,212.0 522.7,212.0 522.7,162.0 560.0,162.0"/>
+<path d="M588,179 h8 l10,-9 v34 l-10,-9 h-8 z" fill="#111827"/>
+<path d="M613.0,175.1 A14,14 0 0 1 613.0,198.9" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M617.5,167.4 A23,23 0 0 1 617.5,206.6" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M622.0,159.8 A32,32 0 0 1 622.0,214.2" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M626.5,152.2 A41,41 0 0 1 626.5,221.8" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<text x="680.0" y="192.0" font-size="12" font-weight="bold" text-anchor="start" fill="#111827">middle pitch</text>
+<text x="24.0" y="272.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">880 Hz</text>
+<text x="24.0" y="292.0" font-size="12" text-anchor="start" fill="#1d4ed8">note A5, T = 1.14 ms</text>
+<text x="142.0" y="258.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="142.0" y="308.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#15803d" stroke-width="2.5" stroke-linejoin="round" points="150.0,304.0 150.0,304.0 150.0,254.0 173.3,254.0 173.3,304.0 196.6,304.0 196.6,254.0 219.9,254.0 219.9,304.0 243.2,304.0 243.2,254.0 266.5,254.0 266.5,304.0 289.8,304.0 289.8,254.0 313.1,254.0 313.1,304.0 336.4,304.0 336.4,254.0 359.7,254.0 359.7,304.0 383.0,304.0 383.0,254.0 406.3,254.0 406.3,304.0 429.5,304.0 429.5,254.0 452.8,254.0 452.8,304.0 476.1,304.0 476.1,254.0 499.4,254.0 499.4,304.0 522.7,304.0 522.7,254.0 546.0,254.0 546.0,304.0 560.0,304.0"/>
+<path d="M588,271 h8 l10,-9 v34 l-10,-9 h-8 z" fill="#111827"/>
+<path d="M613.0,267.1 A14,14 0 0 1 613.0,290.9" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M615.5,262.9 A19,19 0 0 1 615.5,295.1" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M618.0,258.6 A24,24 0 0 1 618.0,299.4" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<path d="M620.5,254.3 A29,29 0 0 1 620.5,303.6" fill="none" stroke="#1d4ed8" stroke-width="2"/>
+<text x="680.0" y="284.0" font-size="12" font-weight="bold" text-anchor="start" fill="#111827">high pitch</text>
+<text x="355.0" y="58.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#a16207">high for half of T, low for the other half</text>
+<text x="560.0" y="330.0" font-size="11" text-anchor="end" fill="#374151">10 ms shown</text>
+<text x="384.0" y="352.0" font-size="13" text-anchor="middle" fill="#374151">Each change of the pin pushes or pulls the buzzer. More changes per second sound like a higher note.</text>
+</svg>

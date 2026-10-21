@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 380" width="768" height="380" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker></defs>
+<rect width="768" height="380" rx="10" fill="#ffffff"/>
+<text x="384.0" y="28" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">A servo: one short pulse every 20 ms, drawn to scale</text>
+<text x="24.0" y="94.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">0.5 ms pulse</text>
+<text x="24.0" y="114.0" font-size="12" text-anchor="start" fill="#1d4ed8">duty 2.5 %</text>
+<text x="158.0" y="80.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="158.0" y="130.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#a16207" stroke-width="2.5" stroke-linejoin="round" points="166.0,126.0 166.0,126.0 166.0,76.0 175.9,76.0 175.9,126.0 560.5,126.0 560.5,76.0 570.4,76.0 570.4,126.0 600.0,126.0"/>
+<text x="181.9" y="90.0" font-size="13" font-weight="bold" text-anchor="start" fill="#a16207">0.5 ms</text>
+<path d="M650,124 A40,40 0 0 1 730,124" fill="#eef0f2" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="690" y1="124" x2="724.0" y2="124.0" stroke="#1d4ed8" stroke-width="6" stroke-linecap="round"/>
+<circle cx="690" cy="124" r="5" fill="#1d4ed8"/>
+<text x="690.0" y="144.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4ed8">0°</text>
+<text x="24.0" y="186.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">1.5 ms pulse</text>
+<text x="24.0" y="206.0" font-size="12" text-anchor="start" fill="#1d4ed8">duty 7.5 %</text>
+<text x="158.0" y="172.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="158.0" y="222.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#a16207" stroke-width="2.5" stroke-linejoin="round" points="166.0,218.0 166.0,218.0 166.0,168.0 195.6,168.0 195.6,218.0 560.5,218.0 560.5,168.0 590.1,168.0 590.1,218.0 600.0,218.0"/>
+<text x="201.6" y="182.0" font-size="13" font-weight="bold" text-anchor="start" fill="#a16207">1.5 ms</text>
+<path d="M650,216 A40,40 0 0 1 730,216" fill="#eef0f2" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="690" y1="216" x2="690.0" y2="182.0" stroke="#1d4ed8" stroke-width="6" stroke-linecap="round"/>
+<circle cx="690" cy="216" r="5" fill="#1d4ed8"/>
+<text x="690.0" y="236.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4ed8">90°</text>
+<text x="24.0" y="278.0" font-size="15" font-weight="bold" text-anchor="start" fill="#111827">2.4 ms pulse</text>
+<text x="24.0" y="298.0" font-size="12" text-anchor="start" fill="#1d4ed8">duty 12 %</text>
+<text x="158.0" y="264.0" font-size="11" text-anchor="end" fill="#374151">3.3 V</text>
+<text x="158.0" y="314.0" font-size="11" text-anchor="end" fill="#374151">0 V</text>
+<polyline fill="none" stroke="#a16207" stroke-width="2.5" stroke-linejoin="round" points="166.0,310.0 166.0,310.0 166.0,260.0 213.3,260.0 213.3,310.0 560.5,310.0 560.5,260.0 600.0,260.0"/>
+<text x="219.3" y="274.0" font-size="13" font-weight="bold" text-anchor="start" fill="#a16207">2.4 ms</text>
+<path d="M650,308 A40,40 0 0 1 730,308" fill="#eef0f2" stroke="#9ca3af" stroke-width="1.5"/>
+<line x1="690" y1="308" x2="656.0" y2="308.0" stroke="#1d4ed8" stroke-width="6" stroke-linecap="round"/>
+<circle cx="690" cy="308" r="5" fill="#1d4ed8"/>
+<text x="690.0" y="328.0" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4ed8">180°</text>
+<line x1="166.0" y1="60" x2="560.5" y2="60" stroke="#374151" stroke-width="1.3" marker-start="url(#ah)" marker-end="url(#ah)"/>
+<text x="363.3" y="54.0" font-size="11" font-weight="bold" text-anchor="middle" fill="#374151">T = 20 ms (50 Hz), always the same</text>
+<text x="384.0" y="344.0" font-size="13" text-anchor="middle" fill="#374151">Most of the time the pin is LOW. The servo measures only how long each pulse is,</text>
+<text x="384.0" y="362.0" font-size="13" text-anchor="middle" fill="#374151">so the average voltage tells it nothing. (Values for an SG90; other servos differ a little.)</text>
+</svg>
