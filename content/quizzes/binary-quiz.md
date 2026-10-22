@@ -38,6 +38,28 @@ Use an ASCII table to find the letters.
   > The first byte is `01011001` = 89. `'W'` would be 87 (`01010111`), two less.
 > Each ASCII character takes one byte. Split the bits into groups of 8, turn each byte into a number, then look up which character that number stands for.
 
+## What is Unicode?
+- [ ] A way of storing each character in exactly 2 bytes
+  > That mixes up Unicode with an encoding. Unicode only gives each character a number; how many bytes it takes depends on the encoding, such as UTF-8.
+- [ ] An 8-bit table with 256 characters that replaced ASCII
+  > 256 characters isn't nearly enough for every language. That's what the old national tables using codes 128–255 tried, and it caused the garbled-text problem.
+- [ ] A font that can draw the letters of every language
+  > A font decides how a character *looks*. Unicode decides which *number* each character gets, whatever the font.
+- [x] One big list that gives a number (a code point) to every character in every language, including emoji
+  > Right! For example `A` is `U+0041` (65) and `א` is `U+05D0` (1488). The first 128 code points are exactly ASCII.
+> **Unicode** says *which number* each character gets, written as `U+` and hex. It has about 150,000 characters and includes ASCII as its first 128 code points.
+
+## What is UTF-8?
+- [x] An encoding that stores each Unicode code point in 1 to 4 bytes
+  > Right! ASCII characters take 1 byte, Hebrew takes 2, the Euro sign takes 3 and emoji take 4.
+- [ ] Another name for Unicode
+  > Unicode gives each character a number. UTF-8 is one way of turning that number into bytes; UTF-16 is another.
+- [ ] An encoding that stores every character in exactly 8 bits
+  > The 8 is the size of its building block, one byte. Characters outside ASCII take 2, 3 or 4 bytes, so one character is not always one byte.
+- [ ] A newer version of ASCII that adds 128 European letters
+  > UTF-8 covers every Unicode character, not just European letters. It does keep plain ASCII text exactly the same, byte for byte.
+> **UTF-8** is the most common encoding: it turns Unicode code points into bytes, using 1 byte for ASCII and up to 4 for other characters. That's why a 4-letter Hebrew word is 8 bytes long and `strlen()` in C says 8.
+
 ## A `bool` variable only needs to store `true` or `false`. How much memory does it take?
 - [x] 1 byte (8 bits)
   > Right! A byte is the smallest unit the computer uses, so even a one-bit value takes a whole byte.
