@@ -10,7 +10,7 @@ Every state machine in this item is built the same way:
 
 1. **Give each state a name** with an `enum`.
 2. **Keep the current state in one variable**, and set it to the start state.
-3. In `loop()`, **read the events once** at the top: buttons, sensors, timers.
+3. In `loop()`, **read the events once** at the top: buttons, sensors, timers. (Reads that wait are the exception, see below.)
 4. **`switch` on the state.** Each state gets its own `case`. Inside it:
    - do what this state does (its **outputs**),
    - check the events that leave this state, and when one happens, **change the state variable** (a **transition**),
@@ -182,13 +182,54 @@ void loop() {
 
 That's the whole change: one new arrow on the diagram is one new condition in one `case`. Pressing the button while the light is red or yellow does nothing, because those cases never look at `pressed`. And because there is no `delay()`, the button works at any moment.
 
+## The exception: reads that wait
+
+The recipe says to read every event once, at the top of `loop()`, and not inside the `case`s. That is right for reads that **return at once**, but there is an exception for reads that **wait**:
+
+- **It returns at once** (`digitalRead()`, `analogRead()`, `millis()` checks, a button function like `buttonPressed()`): read it **at the top of `loop()`**. It costs almost nothing, and the variables are clean and ready for whichever state needs them.
+- **It blocks or pauses** (`delay()`, `pulseIn()`, waiting for a message on `Serial`): put it **inside the `case` of the one state that needs it**. At the top it would run on every pass through `loop()`, in every state, and slow the whole machine down even when nobody uses the result.
+
+For example, the **ultrasonic sensor** from the **Sensors** unit uses `pulseIn()`, which waits for the echo to come back. Here only the `MEASURE` state needs a distance, so only that `case` measures:
+
+```c
+void loop() {
+  bool pressed = buttonPressed();             // returns at once: read it at the top
+  unsigned long timeInState = millis() - enteredAt;
+  unsigned long echo = 0;                     // only the MEASURE state fills this in
+
+  switch (state) {
+    case IDLE:
+      if (pressed) {
+        goTo(MEASURE);
+      }
+      break;
+
+    case MEASURE:
+      digitalWrite(TRIG_PIN, HIGH);           // send a sound pulse
+      delayMicroseconds(10);
+      digitalWrite(TRIG_PIN, LOW);
+      echo = pulseIn(ECHO_PIN, HIGH, 30000);  // waits for the echo: up to 30 ms
+      if (echo > 0 && echo < 600) {           // something closer than about 10 cm
+        goTo(ALARM);
+      } else {
+        goTo(IDLE);
+      }
+      break;
+
+    // ... ALARM ...
+  }
+}
+```
+
+The button is still read at the top, because `buttonPressed()` returns at once. `pulseIn()` waits, so it lives in `MEASURE` and runs only when the machine is in that state. While it waits, the board still can't notice anything else, so keep waits like this short (here the timeout limits it to 30 ms).
+
 ## Common mistakes
 
 | Mistake | What happens | Fix |
 |---------|--------------|-----|
 | Forgetting `break` | The program runs on into the next `case`, so one pass does the work of two states | End every `case` with `break;` |
 | Using `delay()` inside a state | The board stops noticing buttons and sensors while it waits | Time the state with `millis()` |
-| Reading the button inside each `case` | Easy to read it twice in one pass, or to miss a press | Read every event once, at the top of `loop()` |
+| Reading the button inside each `case` | Easy to read it twice in one pass, or to miss a press | Read every event that returns at once at the top of `loop()`. Only reads that wait go inside their `case` |
 | Declaring a variable inside a `case` | Confusing compiler errors | Declare it above the `switch` |
 | Changing `state` without restarting the timer | The next state thinks its time is already up | Always change state through one function, like `goTo()` |
 
@@ -196,7 +237,7 @@ That's the whole change: one new arrow on the diagram is one new condition in on
 
 - A state machine in Arduino is an `enum` of states, one `state` variable and a `switch (state)` inside `loop()`.
 - Each **state** is a `case`. Inside it, set the **outputs**, check the **events**, and change `state` for a **transition**.
-- Read the events **once** at the top of `loop()`.
+- Read the events **once** at the top of `loop()`. The exception is a read that waits, like `pulseIn()`: it goes inside the `case` that needs it.
 - For timers use `millis()`, never `delay()`, so the board keeps listening to everything else.
 - Adding a feature usually means adding one `case` or one condition. The rest of the code stays as it is.
 
