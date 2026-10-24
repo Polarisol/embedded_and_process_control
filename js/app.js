@@ -1783,14 +1783,17 @@
 
     // The site name in the top bar goes back to the entry screen (over the main page).
     const brand = document.querySelector('.brand');
-    if (brand) brand.addEventListener('click', (e) => {
-      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      e.preventDefault();
+    const openEntry = () => {
       if (query) setQuery('');
       history.pushState({ entry: true }, '', './');
       show(MAIN);
       setEntry(true);
-      brand.blur(); // so the Enter key opens the site again
+      if (document.activeElement) document.activeElement.blur(); // so the Enter key opens the site again
+    };
+    if (brand) brand.addEventListener('click', (e) => {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      openEntry();
     });
 
     // Arrow keys (left and right are swapped in Hebrew, where the unit list is on the right):
@@ -1802,6 +1805,8 @@
     // and they move on once its end is in view.
     // On Search Results, up and down go through the results rather than the units, until
     // left steps back to the unit list.
+    // Escape works like left (on a lesson it goes back to the list of lessons first, and in
+    // the unit list to the entry screen), and Enter in the unit list works like right.
     let unitKeys = false;
     const FLIPPED_ARROWS = { ArrowLeft: 'ArrowRight', ArrowRight: 'ArrowLeft' };
     const pageItems = () => [...main.querySelectorAll(root.dataset.view === 'list' ? '.line' : '.panel')];
@@ -1900,19 +1905,47 @@
         if (first) { unitKeys = false; root.dataset.keys = ''; focusItem(first); }
       }
     });
-    // Escape on a lesson's page goes back to the list of lessons, unless something
+    // Escape on a lesson's page goes back to the list of lessons, elsewhere steps from a
+    // unit's items back to the unit list, and from the unit list to the entry screen, unless something
     // else is using it: a text box, the unit menu (which marks the key used) or the colour menu.
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape' || e.defaultPrevented || entryOpen()) return;
-      if (!currentId().startsWith('?lesson=')) return;
       if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], [role="menu"]')) return;
-      e.preventDefault();
-      const left = currentId();
-      go(LESSONS);
-      // The lesson just left is marked, so up and down carry on through the list from it.
+      const active = document.activeElement;
+      if (currentId().startsWith('?lesson=')) {
+        e.preventDefault();
+        const left = currentId();
+        go(LESSONS);
+        // The lesson just left is marked, so up and down carry on through the list from it.
+        const items = pageItems();
+        const item = items.find((i) => i.dataset.route === left) || items[0];
+        if (item) { unitKeys = false; root.dataset.keys = ''; focusItem(item); }
+        return;
+      }
+      // On a unit's items, Escape steps back to the unit list, as left does.
+      if (pageItems().some((i) => (i.closest('.line-item') || i).contains(active))) {
+        e.preventDefault();
+        unitKeys = true;
+        root.dataset.keys = '';
+        active.blur();
+        return;
+      }
+      // In the unit list, Escape goes back to the entry screen.
+      if (!active || active === document.body || nav.node.contains(active)) {
+        e.preventDefault();
+        openEntry();
+      }
+    });
+    // Enter in the unit list steps into the unit's items, as right does.
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' || e.defaultPrevented || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || entryOpen()) return;
+      if (document.activeElement && document.activeElement !== document.body) return;
       const items = pageItems();
-      const item = items.find((i) => i.dataset.route === left) || items[0];
-      if (item) { unitKeys = false; root.dataset.keys = ''; focusItem(item); }
+      if (!items.length) return;
+      e.preventDefault();
+      unitKeys = false;
+      root.dataset.keys = '';
+      focusItem(items.find((i) => i.getAttribute('aria-expanded') === 'true') || items[0]);
     });
     window.addEventListener('popstate', () => {
       if (urlQuery()) setQuery(urlQuery());
@@ -1950,7 +1983,7 @@
     btn.addEventListener('click', enter);
     // The Enter key works too, without having to tab to the button first.
     document.addEventListener('keydown', (e) => {
-      if (entryOpen() && e.key === 'Enter' && e.target === document.body) enter();
+      if (entryOpen() && e.key === 'Enter' && e.target === document.body) { e.preventDefault(); enter(); }
     });
     window.addEventListener('popstate', () => {
       const open = Boolean(history.state && history.state.entry);
