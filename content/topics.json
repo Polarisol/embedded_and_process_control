@@ -21,6 +21,15 @@
         "using-ai",
         "binary-representation"
       ]
+    },
+    {
+      "title": "Lessons 2 & 3",
+      "title_he": "שיעורים 2 ו־3",
+      "blurb": "TCP/IP: how computers find each other, talk over TCP, and build a client and a server.",
+      "blurb_he": "TCP/IP: איך מחשבים מוצאים זה את זה, מדברים ב־TCP ובונים לקוח ושרת.",
+      "items": [
+        "tcp-ip"
+      ]
     }
   ],
   "topics": [
