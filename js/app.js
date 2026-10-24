@@ -1317,7 +1317,7 @@
       if (node.classList.contains('open') && !node.contains(e.target)) setOpen(false);
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && node.classList.contains('open')) { setOpen(false); toggle.focus(); }
+      if (e.key === 'Escape' && node.classList.contains('open')) { e.preventDefault(); setOpen(false); toggle.focus(); }
     });
 
     window.addEventListener('resize', () => place(false));
@@ -1899,6 +1899,15 @@
         const first = pageItems()[0];
         if (first) { unitKeys = false; root.dataset.keys = ''; focusItem(first); }
       }
+    });
+    // Escape on a lesson's page goes back to the list of lessons, unless something
+    // else is using it: a text box, the unit menu (which marks the key used) or the colour menu.
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || e.defaultPrevented || entryOpen()) return;
+      if (!currentId().startsWith('?lesson=')) return;
+      if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], [role="menu"]')) return;
+      e.preventDefault();
+      go(LESSONS);
     });
     window.addEventListener('popstate', () => {
       if (urlQuery()) setQuery(urlQuery());
