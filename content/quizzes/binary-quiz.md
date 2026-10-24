@@ -60,6 +60,52 @@ Use an ASCII table to find the letters.
   > UTF-8 covers every Unicode character, not just European letters. It does keep plain ASCII text exactly the same, byte for byte.
 > **UTF-8** is the most common encoding: it turns Unicode code points into bytes, using 1 byte for ASCII and up to 4 for other characters. That's why a 4-letter Hebrew word is 8 bytes long and `strlen()` in C says 8.
 
+## What does Python show for `b`?
+```python
+b = bytes([72, 105, 33])
+b
+```
+- [ ] `[72, 105, 33]`
+  > That's what `list(b)` shows. The bytes object itself is shown with a `b` in front.
+- [ ] `'Hi!'`
+  > Close, but this is text (`str`). You only get text after `decode()`. Bytes always have a `b` in front.
+- [x] `b'Hi!'`
+  > Right! Python shows each byte that is a printable ASCII character as that character: 72 is `H`, 105 is `i` and 33 is `!`. Inside, `b` is still three numbers.
+- [ ] `ValueError`
+  > All three numbers are between 0 and 255, so they fit in a byte. You only get an error for a number like 300.
+> `bytes()` turns a list of numbers from 0 to 255 into bytes. The `b` in front means "this is bytes, not text".
+
+## What does this code print?
+```python
+s = "ABC"
+data = s.encode('utf-8')
+print(list(data))
+```
+- [ ] `['A', 'B', 'C']`
+  > That's `list(s)`, the characters of the text. After `encode()` you have bytes, and every byte is a number.
+- [x] `[65, 66, 67]`
+  > Right! `encode()` turns each character into its byte, and `list()` shows the number of each byte: 65 is `A`, 66 is `B` and 67 is `C`.
+- [ ] `b'ABC'`
+  > That's what `data` looks like on its own. `list()` turns the bytes into a list of numbers.
+- [ ] `[65, 0, 66, 0, 67, 0]`
+  > In UTF-8 an ASCII character takes exactly 1 byte, so there are no extra bytes.
+> `encode('utf-8')` goes from text (`str`) to `bytes`. For English text, every character becomes one byte, the same number as in the ASCII table.
+
+## What is the value of `text`?
+```python
+b = bytes([79, 75])
+text = b.decode('utf-8')
+```
+- [x] `'OK'`
+  > Right! `decode()` reads the bytes as characters: 79 is `O` and 75 is `K`. There's no `b` in front, so it's text.
+- [ ] `b'OK'`
+  > That's `b` itself. `decode()` turns bytes into text, so the result has no `b` in front.
+- [ ] `[79, 75]`
+  > That's `list(b)`. `decode()` gives text, not a list of numbers.
+- [ ] `'7975'`
+  > `decode()` doesn't write the numbers as digits. It looks up which character each byte stands for.
+> `decode('utf-8')` goes from `bytes` back to text (`str`). It is the opposite of `encode('utf-8')`.
+
 ## A `bool` variable only needs to store `true` or `false`. How much memory does it take?
 - [x] 1 byte (8 bits)
   > Right! A byte is the smallest unit the computer uses, so even a one-bit value takes a whole byte.
