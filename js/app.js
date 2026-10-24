@@ -1907,7 +1907,12 @@
       if (!currentId().startsWith('?lesson=')) return;
       if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable], [role="menu"]')) return;
       e.preventDefault();
+      const left = currentId();
       go(LESSONS);
+      // The lesson just left is marked, so up and down carry on through the list from it.
+      const items = pageItems();
+      const item = items.find((i) => i.dataset.route === left) || items[0];
+      if (item) { unitKeys = false; root.dataset.keys = ''; focusItem(item); }
     });
     window.addEventListener('popstate', () => {
       if (urlQuery()) setQuery(urlQuery());
