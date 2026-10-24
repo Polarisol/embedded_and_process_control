@@ -1239,14 +1239,6 @@ a { color: var(--accent); }
 .search-snippet mark { padding: 0 1px; border-radius: 3px; background: rgba(var(--t), 0.25); color: inherit; }
 
 /* Lessons: the list of lessons, and a lesson's page */
-.lesson-latest {
-  flex: none;
-  padding: 1px 8px;
-  border-radius: 999px;
-  background: rgba(var(--t), 0.15);
-  color: rgb(var(--t));
-  font: 600 0.75rem var(--font-mono);
-}
 .lesson-back { display: inline-block; margin-top: 8px; font: 500 0.9rem var(--font-mono); color: var(--accent); text-decoration: none; }
 .lesson-back:hover { text-decoration: underline; }
 

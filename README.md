@@ -40,7 +40,7 @@ Any field can be left out, and its section won't appear on the page.
 
 ## Add a lesson
 
-A lesson gathers items from several units onto one page. All lessons are listed under **Lessons** in the side list, the newest on top, and each has its own address (`?lesson=1`, `?lesson=2`, ...).
+A lesson gathers items from several units onto one page. All lessons are listed under **Lessons** in the side list, in order, and each has its own address (`?lesson=1`, `?lesson=2`, ...).
 
 Add a block to the `lessons` list in `content/topics.json` (lessons are numbered in the order they appear there):
 

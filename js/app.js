@@ -1630,7 +1630,7 @@
       ...extra);
   }
 
-  // The Lessons page: one line per lesson, the newest on top.
+  // The Lessons page: one line per lesson, in order.
   function showLessons(main, lessons, topics, siteTitle) {
     document.title = `${t('Lessons')} · ${siteTitle}`;
     const rows = lessons.map((lesson, i) => {
@@ -1638,13 +1638,11 @@
       const items = lessonItems(lesson, topics);
       const units = [...new Set(items.map((item) => pick(item.topic, 'title') || item.topic.id))];
       const sub = [plural(items.length, '{n} item', '{n} items'), units.join(', ')].join(' · ');
-      const row = el('a', { class: 'line', 'data-type': 'lesson', href: topicHref(lessonId(n)), 'data-route': lessonId(n) },
+      return el('a', { class: 'line', 'data-type': 'lesson', href: topicHref(lessonId(n)), 'data-route': lessonId(n) },
         ...lineParts('lesson', lessonTitle(lesson, n), sub, t('→')));
-      if (n === lessons.length) row.querySelector('.line-label').after(el('span', { class: 'lesson-latest', text: t('Latest') }));
-      return row;
-    }).reverse();
+    });
     main.replaceChildren(
-      pageHead(LESSONS_ICON, t('Lessons'), t('The material of each lesson, gathered from the units. The newest lesson is on top.')),
+      pageHead(LESSONS_ICON, t('Lessons'), t('The material of each lesson, gathered from the units.')),
       el('div', { class: 'topic-body' }, el('div', { class: 'line-list topic-lines' }, ...rows)),
     );
   }
