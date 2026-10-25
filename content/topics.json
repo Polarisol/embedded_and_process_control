@@ -40,7 +40,14 @@
       "icon": "⬇",
       "blurb": "What to install and how to install it (and when to install it... which is now).",
       "blurb_he": "מה להתקין ואיך להתקין (ומתי להתקין... כלומר עכשיו).",
-      "material": "topics/install.md"
+      "material": "topics/install.md",
+      "videos": [
+        {
+          "title": "Full Installation Process",
+          "title_he": "תהליך התקנה מלא",
+          "youtube": "https://www.youtube.com/watch?v=vGYvn_GgbMA"
+        }
+      ]
     },
     {
       "id": "starting-a-project",
