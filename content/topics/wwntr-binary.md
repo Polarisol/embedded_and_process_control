@@ -22,3 +22,7 @@
 
 11. You have to understand how ASCII encoding works, and be able to decipher a short ascii message using an ASCII table.
 
+
+12. You need to know what Unicode and UTF-8 are: Unicode gives every character in every language its own number, and UTF-8 is the way that number is stored in bytes (1 byte for English letters, 2 bytes for a Hebrew letter).
+
+13. You need to know what `encode()` and `decode()` do in Python: `encode()` turns text (`str`) into bytes, and `decode()` turns bytes back into text. (for example: what does `'Hi!'.encode('utf-8')` give you?)
