@@ -24,6 +24,8 @@ PySide6 מגיעה עם **`QTcpSocket`** (ב-`PySide6.QtNetwork`). הוא עוב
 
 ## האפליקציה
 
+![האפליקציה המוגמרת: מתג Connect/Disconnect למעלה (לחוץ, ומציג Disconnect), יומן של שורות שנשלחו ▶ והתקבלו ◀, ותיבת טקסט עם כפתור Send בתחתית](assets/tcpip-pyside/client-window.svg)
+
 כל החלון הוא מחלקה אחת, `ClientWindow`, שבנויה מארבעה רכיבים:
 
 | רכיב | איפה | מה הוא עושה |

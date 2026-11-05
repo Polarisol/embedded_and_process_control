@@ -24,6 +24,8 @@ PySide6 comes with **`QTcpSocket`** (in `PySide6.QtNetwork`). It works like `QSe
 
 ## The app
 
+![The finished app: a Connect/Disconnect toggle at the top (pressed, showing Disconnect), a log of sent ▶ and received ◀ lines, and a text box with a Send button at the bottom](assets/tcpip-pyside/client-window.svg)
+
 The whole window is one class, `ClientWindow`, built from four widgets:
 
 | Widget | Where | What it does |

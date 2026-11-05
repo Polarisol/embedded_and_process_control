@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" width="520" height="330" font-family="Helvetica, Arial, sans-serif">
+<rect width="520" height="330" rx="10" fill="#ffffff"/>
+<rect x="20" y="16" width="480" height="298" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+<path d="M20,26 a10,10 0 0 1 10,-10 h460 a10,10 0 0 1 10,10 v18 h-480 z" fill="#e5e7eb"/>
+<circle cx="38" cy="30" r="5" fill="#f87171"/><circle cx="54" cy="30" r="5" fill="#fbbf24"/><circle cx="70" cy="30" r="5" fill="#34d399"/>
+<text x="260" y="35" font-size="13" text-anchor="middle" fill="#374151">TCP Client</text>
+<rect x="32" y="54" width="456" height="32" rx="4" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+<text x="260" y="75" font-size="14" text-anchor="middle" fill="#1f2937">Disconnect</text>
+<rect x="32" y="96" width="456" height="164" rx="4" fill="#ffffff" stroke="#d1d5db"/>
+<g font-family="Menlo, Consolas, monospace" font-size="14">
+<text x="44" y="120" fill="#6b7280">Connecting to 127.0.0.1:5000…</text>
+<text x="44" y="142" fill="#6b7280">Connected</text>
+<text x="44" y="164" fill="#1d4ed8">▶ hello server</text>
+<text x="44" y="186" fill="#15803d">◀ hello client</text>
+<text x="44" y="208" fill="#1d4ed8">▶ temp?</text>
+<text x="44" y="230" fill="#15803d">◀ temp=23.5</text>
+</g>
+<rect x="32" y="270" width="364" height="32" rx="4" fill="#ffffff" stroke="#1d4ed8" stroke-width="1.5"/>
+<text x="44" y="291" font-size="14" fill="#111827">LED ON</text>
+<rect x="406" y="270" width="82" height="32" rx="4" fill="#e5e7eb" stroke="#64748b" stroke-width="1.5"/>
+<text x="447" y="291" font-size="14" text-anchor="middle" fill="#1f2937">Send</text>
+</svg>
