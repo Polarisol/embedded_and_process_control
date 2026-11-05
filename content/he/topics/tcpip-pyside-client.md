@@ -1,6 +1,6 @@
 # לקוח TCP/IP ב-PySide6
 
-בפריט על TCP ראינו שה**לקוח** הוא הצד ש**מתחיל** את החיבור. עכשיו בואו נכתוב אחד: אפליקציית דסקטופ קטנה שמתחברת לשרת, שולחת שורות טקסט ומציגה את מה שחוזר.
+בפריט על TCP ראינו שה**לקוח** הוא הצד ש**מתחיל** את החיבור. עכשיו בואו נכתוב אחד: אפליקציית דסקטופ קטנה שמתחברת לשרת בלחיצת כפתור, שולחת שורות טקסט ומציגה את מה שחוזר.
 
 ## הכלי: `QTcpSocket`
 
@@ -24,10 +24,24 @@ PySide6 מגיעה עם **`QTcpSocket`** (ב-`PySide6.QtNetwork`). הוא עוב
 
 ## האפליקציה
 
+כל החלון הוא מחלקה אחת, `ClientWindow`, שבנויה מארבעה רכיבים:
+
+| רכיב | איפה | מה הוא עושה |
+|--------|-------|--------------|
+| `QPushButton` "Connect" | למעלה | **מתג** (`setCheckable(True)`): לוחצים כדי להתחבר, ולוחצים שוב כדי להתנתק |
+| `QTextEdit` | באמצע | לקריאה בלבד; מציג את כל מה שנשלח (▶), מה שהתקבל (◀) והודעות החיבור |
+| `QLineEdit` | למטה | השורה לשליחה |
+| `QPushButton` "Send" | למטה, ליד השורה | שולח את השורה (גם Enter עושה את זה) |
+
+לחיצה על המתג רק **מבקשת** חיבור. הטקסט של הכפתור וכפתור השליחה הולכים אחרי ה-**socket**, לא אחרי הלחיצה: `set_connected()` נקראת מ-`connected`, מ-`disconnected` ומ-`errorOccurred`, כך שאם אף אחד לא מאזין, המתג חוזר לבד ל-"Connect", ואי אפשר ללחוץ על Send לפני שיש לאן לשלוח.
+
+המתג משתמש באות `clicked` ולא ב-`toggled`. `clicked` מופעל רק כש**המשתמש** לוחץ על הכפתור, ואילו `toggled` מופעל גם בכל פעם שהקוד שלנו קורא ל-`setChecked()`, והאפליקציה הייתה מתחילה להתחבר ולהתנתק מעצמה.
+
 ```python
 import sys
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPlainTextEdit, QLineEdit
-from PySide6.QtNetwork import QTcpSocket, QAbstractSocket
+from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
+                               QPushButton, QTextEdit, QLineEdit)
+from PySide6.QtNetwork import QTcpSocket
 
 HOST = "127.0.0.1"   # the server's address (this computer, for a first test)
 PORT = 5000          # the port the server listens on
@@ -37,41 +51,82 @@ class ClientWindow(QWidget):
         super().__init__()
         self.setWindowTitle("TCP Client")
 
-        # The GUI: a log and a text box
-        self.log = QPlainTextEdit()
-        self.log.setReadOnly(True)
-        self.entry = QLineEdit()
-        self.entry.setPlaceholderText("Type and press Enter…")
+        # The GUI
+        self.connect_button = QPushButton("Connect")    # top: the connect / disconnect toggle
+        self.connect_button.setCheckable(True)
+        self.text_box = QTextEdit()                     # middle: everything sent and received
+        self.text_box.setReadOnly(True)
+        self.line_edit = QLineEdit()                    # bottom: the line to send...
+        self.line_edit.setPlaceholderText("Type a message…")
+        self.send_button = QPushButton("Send")          # ...and the button that sends it
+
+        bottom_row = QHBoxLayout()
+        bottom_row.addWidget(self.line_edit)
+        bottom_row.addWidget(self.send_button)
         layout = QVBoxLayout(self)
-        layout.addWidget(self.log)
-        layout.addWidget(self.entry)
+        layout.addWidget(self.connect_button)
+        layout.addWidget(self.text_box)
+        layout.addLayout(bottom_row)
+
+        self.set_connected(False)   # nothing to send to yet
 
         # 1. Create the socket
         self.socket = QTcpSocket(self)
 
         # 2. Connect signals to functions
-        self.socket.connected.connect(lambda: self.log.appendPlainText("Connected"))
-        self.socket.disconnected.connect(lambda: self.log.appendPlainText("Disconnected"))
-        self.socket.errorOccurred.connect(lambda: self.log.appendPlainText("Error: " + self.socket.errorString()))
+        self.socket.connected.connect(self.on_connected)
+        self.socket.disconnected.connect(self.on_disconnected)
+        self.socket.errorOccurred.connect(self.on_error)
         self.socket.readyRead.connect(self.receive)
-        self.entry.returnPressed.connect(self.send)
+        self.connect_button.clicked.connect(self.toggle_connection)
+        self.send_button.clicked.connect(self.send)
+        self.line_edit.returnPressed.connect(self.send)   # Enter works too
 
-        # 3. Start connecting (returns at once; "connected" fires later)
-        self.log.appendPlainText(f"Connecting to {HOST}:{PORT}…")
-        self.socket.connectToHost(HOST, PORT)
+    def set_connected(self, connected):
+        # Keep the buttons in step with the connection
+        self.connect_button.setChecked(connected)
+        self.connect_button.setText("Disconnect" if connected else "Connect")
+        self.line_edit.setEnabled(connected)
+        self.send_button.setEnabled(connected)
+
+    def toggle_connection(self, checked):
+        if checked:
+            # 3. Start connecting (returns at once; "connected" fires later)
+            self.text_box.append(f"Connecting to {HOST}:{PORT}…")
+            self.connect_button.setText("Connecting…")
+            self.socket.connectToHost(HOST, PORT)
+        else:
+            # 6. Close the connection
+            self.socket.disconnectFromHost()
+            self.set_connected(False)   # in case we were still connecting
+
+    def on_connected(self):
+        self.text_box.append("Connected")
+        self.set_connected(True)
+
+    def on_disconnected(self):
+        self.text_box.append("Disconnected")
+        self.set_connected(False)
+
+    def on_error(self):
+        self.text_box.append("Error: " + self.socket.errorString())
+        self.socket.abort()
+        self.set_connected(False)
 
     def send(self):
         # 4. Write a line of text
-        text = self.entry.text()
-        self.socket.write((text + "\n").encode()) # Note the added newline and the encoding
-        self.log.appendPlainText("▶ " + text)
-        self.entry.clear()
+        text = self.line_edit.text()
+        if not text:
+            return
+        self.socket.write((text + "\n").encode())   # Note the added '\n' and the encoding
+        self.text_box.append("▶ " + text)
+        self.line_edit.clear()
 
     def receive(self):
         # 5. Read every complete line that has arrived
-        while self.socket.canReadLine(): # only line that ends with '\n'
-            line = self.socket.readLine().data().decode(errors="replace").strip() # Note the decoding
-            self.log.appendPlainText("◀ " + line)
+        while self.socket.canReadLine():   # only lines that end with '\n'
+            line = self.socket.readLine().data().decode(errors="replace").strip()   # Note the decoding
+            self.text_box.append("◀ " + line)
 
     def closeEvent(self, event):
         # 6. Close the connection when the window closes
@@ -86,7 +141,7 @@ sys.exit(app.exec())   # the event loop starts here and does all the waiting
 
 ## משהו לדבר איתו
 
-צריך שרת שמאזין בפורט `5000`. הריצו את האפליקציה מהפריט הבא, **שרת TCP/IP ב-PySide6**, או ב-Linux או Mac פתחו טרמינל והריצו `nc -l 5000`. אחר כך הפעילו את הלקוח, הקלידו שורה ולחצו Enter. מה שתקלידו בטרמינל של `nc` יופיע בלקוח.
+צריך שרת שמאזין בפורט `5000`. הריצו את האפליקציה מהפריט הבא, **שרת TCP/IP ב-PySide6**, או ב-Linux או Mac פתחו טרמינל והריצו `nc -l 5000`. אחר כך הפעילו את הלקוח, לחצו על **Connect**, הקלידו שורה ולחצו על **Send**. מה שתקלידו בטרמינל של `nc` יופיע בלקוח.
 
 כדי להגיע למחשב אחר או לשרת על ESP32, שנו את `HOST` לכתובת שלו באותה רשת Wi-Fi.
 
@@ -98,6 +153,8 @@ sys.exit(app.exec())   # the event loop starts here and does all the waiting
 
 ## סיכום
 
+- החלון הוא מחלקה: **מתג Connect/Disconnect** למעלה, יומן ב-`QTextEdit`, ו-`QLineEdit` עם כפתור **Send**.
+- המתג רק פותח או סוגר את החיבור. מעדכנים את הכפתורים מהאותות של ה-socket, ומשתמשים ב-`clicked` ולא ב-`toggled`.
 - `QTcpSocket` + אותות: `connected`, `readyRead`, `disconnected`, `errorOccurred`.
 - `connectToHost()` רק **מתחיל** להתחבר. שולחים אחרי ש-`connected` מופעל.
 - שולחים **בתים**: `write((text + "\n").encode())`, עם `\n` שמסמן את סוף כל הודעה.
