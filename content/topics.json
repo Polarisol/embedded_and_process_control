@@ -30,6 +30,15 @@
       "items": [
         "tcp-ip"
       ]
+    },
+    {
+      "title": "Lesson 4",
+      "title_he": "שיעור 4",
+      "blurb": "The C language: why C, the basics, strings, and what we need to remember.",
+      "blurb_he": "שפת C: למה C, היסודות, מחרוזות ומה צריך לזכור.",
+      "items": [
+        "c-language"
+      ]
     }
   ],
   "topics": [
