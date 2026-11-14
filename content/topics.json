@@ -39,6 +39,31 @@
       "items": [
         "c-language"
       ]
+    },
+    {
+      "title": "Lesson 5",
+      "title_he": "שיעור 5",
+      "blurb": "Hands on the hardware: the breadboard, resistors, LEDs and push buttons, microcontrollers and the Nano ESP32, and state machines.",
+      "blurb_he": "ידיים על החומרה: מטריצה, נגדים, נורות LED ולחצנים, מיקרו־בקרים וה־Nano ESP32, ומכונות מצבים.",
+      "items": [
+        {
+          "unit": "electronics",
+          "only": [
+            "topics/electronics-breadboard.md",
+            "topics/electronics-resistors.md",
+            "topics/electronics-leds.md"
+          ]
+        },
+        {
+          "unit": "sensors",
+          "only": [
+            "topics/sensors-button.md",
+            "topics/sensors-buttons-advanced.md"
+          ]
+        },
+        "microcontrollers",
+        "state-machines"
+      ]
     }
   ],
   "topics": [
