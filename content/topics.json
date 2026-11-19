@@ -61,7 +61,15 @@
             "topics/sensors-buttons-advanced.md"
           ]
         },
-        "microcontrollers",
+        {
+          "unit": "microcontrollers",
+          "only": [
+            "Introduction to Arduino",
+            "topics/microcontrollers-intro.md",
+            "topics/microcontrollers-nano-esp32.md",
+            "topics/microcontrollers-nano-esp32-digital.md"
+          ]
+        },
         "state-machines"
       ]
     }
