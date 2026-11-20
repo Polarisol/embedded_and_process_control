@@ -198,7 +198,16 @@
       "icon": "⟳",
       "blurb": "One state at a time, and always knowing what comes next.",
       "blurb_he": "מצב אחד בכל פעם, ותמיד לדעת מה בא אחר כך.",
-      "material": ["topics/state-machines-intro.md", "topics/state-machines-switch.md"]
+      "material": ["topics/state-machines-intro.md", "topics/state-machines-switch.md"],
+      "bots": [
+        {
+          "label": "Study Bot",
+          "label_he": "בוט לימוד",
+          "description": "I'll explain state machines! It's easy.",
+          "description_he": "אני אסביר על מכונות מצבים! זה קל.",
+          "url": "https://share.gemini.google/rOUYwuzTLZPB"
+        }
+      ]
     },
     {
       "id": "microcontrollers",
